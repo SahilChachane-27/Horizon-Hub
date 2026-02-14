@@ -126,13 +126,13 @@ function BlogGrid() {
 function BlogPagination() {
   return(
     <div className="flex justify-center items-center gap-2 mt-12" data-aos="fade-up">
-      <Button variant="outline" size="icon"><ChevronLeft className="h-4 w-4"/></Button>
-      <Button variant="outline" className="w-10 h-10 bg-accent text-accent-foreground">1</Button>
-      <Button variant="outline" size="icon">2</Button>
-      <Button variant="outline" size="icon">3</Button>
-      <Button variant="outline" size="icon">4</Button>
-      <Button variant="outline" size="icon">5</Button>
-      <Button variant="outline" size="icon"><ChevronRight className="h-4 w-4"/></Button>
+      <Button variant="outline" size="icon" suppressHydrationWarning><ChevronLeft className="h-4 w-4"/></Button>
+      <Button variant="outline" className="w-10 h-10 bg-accent text-accent-foreground" suppressHydrationWarning>1</Button>
+      <Button variant="outline" size="icon" suppressHydrationWarning>2</Button>
+      <Button variant="outline" size="icon" suppressHydrationWarning>3</Button>
+      <Button variant="outline" size="icon" suppressHydrationWarning>4</Button>
+      <Button variant="outline" size="icon" suppressHydrationWarning>5</Button>
+      <Button variant="outline" size="icon" suppressHydrationWarning><ChevronRight className="h-4 w-4"/></Button>
     </div>
   )
 }
@@ -192,8 +192,8 @@ function BlogSidebar() {
       <Card className="p-6" data-aos="fade-left">
         <CardHeader className="p-0 mb-4"><CardTitle>Search Articles</CardTitle></CardHeader>
         <div className="relative">
-          <Input placeholder="Search blog..." className="pr-10"/>
-          <Button variant="ghost" size="icon" className="absolute right-0 top-0 h-full">
+          <Input placeholder="Search blog..." className="pr-10" suppressHydrationWarning/>
+          <Button variant="ghost" size="icon" className="absolute right-0 top-0 h-full" suppressHydrationWarning>
             <Search className="h-4 w-4"/>
           </Button>
         </div>
@@ -243,8 +243,8 @@ function BlogSidebar() {
         <p className="text-foreground/70 mb-4">Get the latest insights, trends, and project updates delivered to your inbox.</p>
         {isClient && (
         <form className="space-y-4" suppressHydrationWarning>
-          <Input type="email" placeholder="Your email address" />
-          <Button type="submit" className="w-full bg-accent text-accent-foreground hover:bg-accent/90">Subscribe</Button>
+          <Input type="email" placeholder="Your email address" suppressHydrationWarning />
+          <Button type="submit" className="w-full bg-accent text-accent-foreground hover:bg-accent/90" suppressHydrationWarning>Subscribe</Button>
         </form>
         )}
       </Card>
