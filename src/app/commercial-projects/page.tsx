@@ -43,11 +43,11 @@ function CommercialHero() {
           Transforming skylines with innovative commercial developments that combine architectural excellence, functional design, and sustainable practices for businesses of the future.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-            <a href="#commercial-projects">Our Projects</a>
+          <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full transform -skew-x-12">
+            <a href="#commercial-projects"><span className="inline-block transform skew-x-12">Our Projects</span></a>
           </Button>
-          <Button asChild size="lg" variant="outline" className="border-accent text-white bg-transparent hover:bg-accent hover:text-accent-foreground">
-            <a href="#contact-form">Start Your Project</a>
+          <Button asChild size="lg" variant="outline" className="border-accent text-white bg-transparent hover:bg-accent hover:text-accent-foreground rounded-full transform -skew-x-12">
+            <a href="#contact-form"><span className="inline-block transform skew-x-12">Start Your Project</span></a>
           </Button>
         </div>
       </div>

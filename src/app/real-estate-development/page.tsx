@@ -44,11 +44,11 @@ function DevelopmentHero() {
           Transforming visions into reality through comprehensive real estate development services that create sustainable communities, enhance urban landscapes, and deliver exceptional value.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-            <a href="#development-process">Our Process</a>
+          <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full transform -skew-x-12">
+            <a href="#development-process"><span className="inline-block transform skew-x-12">Our Process</span></a>
           </Button>
-          <Button asChild size="lg" variant="outline" className="border-accent text-white bg-transparent hover:bg-accent hover:text-accent-foreground">
-            <a href="#contact-form">Discuss Your Project</a>
+          <Button asChild size="lg" variant="outline" className="border-accent text-white bg-transparent hover:bg-accent hover:text-accent-foreground rounded-full transform -skew-x-12">
+            <a href="#contact-form"><span className="inline-block transform skew-x-12">Discuss Your Project</span></a>
           </Button>
         </div>
       </div>

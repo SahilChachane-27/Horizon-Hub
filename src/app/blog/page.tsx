@@ -37,11 +37,11 @@ function BlogHero() {
           Expert perspectives, industry trends, and project stories from the leaders in real estate development and construction.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-            <a href="#featured-post">Featured Article</a>
+          <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full transform -skew-x-12">
+            <a href="#featured-post"><span className="inline-block transform skew-x-12">Featured Article</span></a>
           </Button>
-          <Button asChild size="lg" variant="outline" className="border-accent text-white bg-transparent hover:bg-accent hover:text-accent-foreground">
-            <a href="#blog-articles">Browse Articles</a>
+          <Button asChild size="lg" variant="outline" className="border-accent text-white bg-transparent hover:bg-accent hover:text-accent-foreground rounded-full transform -skew-x-12">
+            <a href="#blog-articles"><span className="inline-block transform skew-x-12">Browse Articles</span></a>
           </Button>
         </div>
       </div>
