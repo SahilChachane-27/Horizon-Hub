@@ -23,7 +23,7 @@ import React, { useEffect, useState } from 'react';
 function CommercialHero() {
   const heroImage = PlaceHolderImages.find(p => p.id === 'commercial-hero-bg');
   return (
-    <section id="commercial-hero" className="relative h-[60vh] min-h-[400px] flex items-center justify-center text-center text-white">
+    <section id="commercial-hero" className="relative h-[60vh] min-h-[400px] flex items-center justify-start text-left text-white">
       {heroImage && (
         <Image
           src={heroImage.imageUrl}
@@ -35,20 +35,22 @@ function CommercialHero() {
         />
       )}
       <div className="absolute inset-0 bg-black/50" />
-      <div className="relative z-10 p-4 max-w-4xl mx-auto" data-aos="fade-up">
-        <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 drop-shadow-lg font-headline">
-          Commercial Construction Excellence
-        </h1>
-        <p className="text-lg md:text-xl text-white/90 mb-8 max-w-3xl mx-auto drop-shadow-md">
-          Transforming skylines with innovative commercial developments that combine architectural excellence, functional design, and sustainable practices for businesses of the future.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full transform -skew-x-12">
-            <a href="#commercial-projects"><span className="inline-block transform skew-x-12">Our Projects</span></a>
-          </Button>
-          <Button asChild size="lg" variant="outline" className="border-accent text-white bg-transparent hover:bg-accent hover:text-accent-foreground rounded-full transform -skew-x-12">
-            <a href="#contact-form"><span className="inline-block transform skew-x-12">Start Your Project</span></a>
-          </Button>
+      <div className="container mx-auto pl-4 sm:pl-16 lg:pl-24 pr-4 sm:pr-6 lg:pr-8">
+        <div className="relative z-10 max-w-3xl" data-aos="fade-up">
+          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 drop-shadow-lg font-headline">
+            Commercial Construction Excellence
+          </h1>
+          <p className="text-lg md:text-xl text-white/90 mb-8 max-w-3xl drop-shadow-md">
+            Transforming skylines with innovative commercial developments that combine architectural excellence, functional design, and sustainable practices for businesses of the future.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-start">
+            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full transform -skew-x-12">
+              <a href="#commercial-projects"><span className="inline-block transform skew-x-12">Our Projects</span></a>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="border-accent text-white bg-transparent hover:bg-accent hover:text-accent-foreground rounded-full transform -skew-x-12">
+              <a href="#contact-form"><span className="inline-block transform skew-x-12">Start Your Project</span></a>
+            </Button>
+          </div>
         </div>
       </div>
     </section>
