@@ -57,7 +57,7 @@ export function Contact() {
         <div className="grid lg:grid-cols-5 gap-12">
           <div className="lg:col-span-3">
             <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6" suppressHydrationWarning>
                 <div className="grid sm:grid-cols-2 gap-6">
                   <FormField control={form.control} name="name" render={({ field }) => (
                     <FormItem><FormLabel>Your Name</FormLabel><FormControl><Input placeholder="John Doe" {...field} /></FormControl><FormMessage /></FormItem>

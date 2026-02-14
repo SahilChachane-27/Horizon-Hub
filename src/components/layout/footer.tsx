@@ -1,6 +1,9 @@
+'use client';
+
 import Link from 'next/link';
 import { Building2, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
 import { ArticleSummarizer } from '@/components/summarizer';
+import { useEffect, useState } from 'react';
 
 const socialLinks = [
   { icon: Facebook, href: '#' },
@@ -25,6 +28,12 @@ const serviceLinks = [
 ];
 
 export function Footer() {
+  const [year, setYear] = useState<number>();
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
+
   return (
     <footer className="bg-primary text-primary-foreground/80 pt-16 pb-8">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -74,7 +83,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-primary-foreground/20 pt-8 text-center text-sm">
-          <p>© {new Date().getFullYear()} Horizon Group. All Rights Reserved.</p>
+          <p>© {year} Horizon Group. All Rights Reserved.</p>
         </div>
       </div>
     </footer>

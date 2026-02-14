@@ -44,7 +44,7 @@ export function ArticleSummarizer() {
       <p className="text-sm">
         Try our AI-powered tool to summarize any article. Paste the text below.
       </p>
-      <form action={formAction} className="space-y-4">
+      <form action={formAction} className="space-y-4" suppressHydrationWarning>
         <Textarea
           name="text"
           placeholder="Paste your article text here (min. 100 characters)..."
