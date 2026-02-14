@@ -1,3 +1,58 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-bg",
+      "description": "A panoramic view of a modern city skyline at dusk, representing landmark creation.",
+      "imageUrl": "https://images.unsplash.com/photo-1575380591643-b2c92368dc6d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjaXR5JTIwc2t5bGluZXxlbnwwfHx8fDE3NzA5Nzg2NTl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "city skyline"
+    },
+    {
+      "id": "about-img",
+      "description": "A construction site with a building frame against a clear sky, symbolizing growth.",
+      "imageUrl": "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjb25zdHJ1Y3Rpb24lMjBzaXRlfGVufDB8fHx8MTc3MDk5NjYyOHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "construction site"
+    },
+    {
+      "id": "project-1",
+      "description": "The 'Skyline Towers' project, a modern glass skyscraper.",
+      "imageUrl": "https://images.unsplash.com/photo-1685211185729-9526bcc093ea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxtb2Rlcm4lMjBza3lzY3JhcGVyfGVufDB8fHx8MTc3MTA1Nzk1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "modern skyscraper"
+    },
+    {
+      "id": "project-2",
+      "description": "The 'Riverfront Residences' project, a contemporary apartment building.",
+      "imageUrl": "https://images.unsplash.com/photo-1672508061327-6efaa65896e9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cmVzaWRlbnRpYWwlMjBidWlsZGluZ3xlbnwwfHx8fDE3NzA5ODI2ODJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "residential building"
+    },
+    {
+      "id": "project-3",
+      "description": "The 'Horizon Plaza' project, a bustling commercial center.",
+      "imageUrl": "https://images.unsplash.com/photo-1748437323477-6c7ce4049348?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjb21tZXJjaWFsJTIwcGxhemF8ZW58MHx8fHwxNzcwOTgxOTg4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "commercial plaza"
+    },
+    {
+      "id": "testimonial-1",
+      "description": "Portrait of Robert Johnson.",
+      "imageUrl": "https://images.unsplash.com/photo-1590086782792-42dd2350140d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwZXJzb24lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NzEwNDg3OTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person portrait"
+    },
+    {
+      "id": "testimonial-2",
+      "description": "Portrait of Sarah Williams.",
+      "imageUrl": "https://images.unsplash.com/photo-1540569014015-19a7be504e3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxwZXJzb24lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NzEwNDg3OTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person portrait"
+    },
+    {
+      "id": "testimonial-3",
+      "description": "Portrait of Michael Chen.",
+      "imageUrl": "https://images.unsplash.com/flagged/photo-1595514191830-3e96a518989b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cGVyc29uJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzcxMDQ4Nzk4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person portrait"
+    },
+    {
+      "id": "map-placeholder",
+      "description": "A map showing the location of Horizon Group.",
+      "imageUrl": "https://images.unsplash.com/photo-1619468129361-605ebea04b44?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjaXR5JTIwbWFwfGVufDB8fHx8MTc3MTAzMjk5NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "city map"
+    }
+  ]
 }
