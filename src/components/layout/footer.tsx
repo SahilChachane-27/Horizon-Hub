@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from 'next/link';
@@ -51,7 +52,7 @@ export function Footer() {
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (
-                <a key={index} href={social.href} className="text-primary-foreground/60 hover:text-accent transition-colors" data-aos="fade-up" data-aos-delay={index * 100}>
+                <a key={index} href={social.href} className="text-primary-foreground/60 hover:text-accent transition-colors" data-aos="fade-up" data-aos-delay={100 * (index + 1)}>
                   <social.icon className="h-5 w-5" />
                 </a>
               ))}
@@ -62,7 +63,7 @@ export function Footer() {
             <h5 className="font-bold text-lg text-primary-foreground mb-4">Quick Links</h5>
             <ul className="space-y-2">
               {quickLinks.map((link, index) => (
-                <li key={link.href} data-aos="fade-up" data-aos-delay={100 * (index + 1)}>
+                <li key={link.href} data-aos="fade-right" data-aos-delay={150 * (index + 1)}>
                   <a href={link.href} className="hover:text-accent transition-colors">{link.label}</a>
                 </li>
               ))}
@@ -73,7 +74,7 @@ export function Footer() {
             <h5 className="font-bold text-lg text-primary-foreground mb-4">Our Services</h5>
             <ul className="space-y-2">
               {serviceLinks.map((link, index) => (
-                <li key={link.label} data-aos="fade-up" data-aos-delay={100 * (index + 1)}>
+                <li key={link.label} data-aos="fade-left" data-aos-delay={150 * (index + 1)}>
                   <Link href={link.href} className="hover:text-accent transition-colors">{link.label}</Link>
                 </li>
               ))}
