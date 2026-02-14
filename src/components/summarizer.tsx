@@ -1,11 +1,11 @@
 'use client';
 
-import { useFormState, useFormStatus } from 'react-dom';
+import { useFormStatus } from 'react-dom';
 import { handleSummarize } from '@/app/actions';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { useEffect } from 'react';
+import { useActionState, useEffect } from 'react';
 import { useToast } from '@/hooks/use-toast';
 import { Loader2 } from 'lucide-react';
 
@@ -25,7 +25,7 @@ function SubmitButton() {
 }
 
 export function ArticleSummarizer() {
-  const [state, formAction] = useFormState(handleSummarize, initialState);
+  const [state, formAction] = useActionState(handleSummarize, initialState);
   const { toast } = useToast();
 
   useEffect(() => {
