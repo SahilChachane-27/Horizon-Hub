@@ -18,14 +18,14 @@ export function Hero() {
         />
       )}
       <div className="absolute inset-0 bg-black/50" />
-      <div className="relative z-10 p-4 max-w-4xl mx-auto" data-aos="fade-up">
-        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 drop-shadow-lg font-headline">
+      <div className="relative z-10 p-4 max-w-4xl mx-auto">
+        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 drop-shadow-lg font-headline" data-aos="fade-up">
           Building Dreams. Creating Landmarks.
         </h1>
-        <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto drop-shadow-md">
+        <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto drop-shadow-md" data-aos="fade-up" data-aos-delay="100">
           For over two decades, Horizon Group has been transforming skylines and communities through innovative real estate development and premium construction services.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="200">
           <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
             <a href="#projects">View Our Projects</a>
           </Button>
