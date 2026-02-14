@@ -23,7 +23,7 @@ const quickLinks = [
 const serviceLinks = [
   { href: '/residential-construction', label: 'Residential Construction' },
   { href: '/commercial-projects', label: 'Commercial Projects' },
-  { href: '#services', label: 'Real Estate Development' },
+  { href: '/real-estate-development', label: 'Real Estate Development' },
   { href: '#services', label: 'Renovation & Remodeling' },
 ];
 

@@ -155,6 +155,30 @@
       "description": "A tall skyscraper in a financial district.",
       "imageUrl": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
       "imageHint": "city skyscraper"
+    },
+    {
+      "id": "development-hero-bg",
+      "description": "Architectural blueprints and a model of a new development.",
+      "imageUrl": "https://images.unsplash.com/photo-1519638399535-1b036603ac77?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxyZWFsJTIwZXN0YXRlJTIwZGV2ZWxvcG1lbnR8ZW58MHx8fHwxNzcxNTYzMzU5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "development blueprint"
+    },
+    {
+      "id": "development-portfolio-mixed-use",
+      "description": "A vibrant street scene in a modern mixed-use development at night.",
+      "imageUrl": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+      "imageHint": "mixed-use development"
+    },
+    {
+      "id": "development-portfolio-waterfront",
+      "description": "Luxury homes overlooking a serene waterfront.",
+      "imageUrl": "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+      "imageHint": "waterfront community"
+    },
+    {
+      "id": "development-portfolio-office-campus",
+      "description": "A sprawling, modern office campus with plenty of green space.",
+      "imageUrl": "https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+      "imageHint": "office campus"
     }
   ]
 }
