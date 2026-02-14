@@ -82,7 +82,7 @@ export function Header() {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <Link href="/" className="flex items-center gap-2 text-2xl font-bold text-accent">
+          <Link href="/" className="flex items-center gap-2 text-2xl font-bold text-accent font-headline">
             <Building2 className="h-7 w-7" />
             <span>Horizon Group</span>
           </Link>

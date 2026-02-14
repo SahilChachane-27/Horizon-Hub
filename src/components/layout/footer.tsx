@@ -43,7 +43,7 @@ export function Footer() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           <div className="space-y-4" data-aos="fade-up">
-            <Link href="#hero" className="flex items-center gap-2 text-2xl font-bold text-accent">
+            <Link href="#hero" className="flex items-center gap-2 text-2xl font-bold text-accent font-headline">
                 <Building2 className="h-7 w-7" />
                 <span>Horizon Group</span>
             </Link>
