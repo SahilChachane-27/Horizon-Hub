@@ -41,7 +41,7 @@ export function Footer() {
     <footer className="bg-primary text-primary-foreground/80 pt-16 pb-8">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-          <div className="space-y-4">
+          <div className="space-y-4" data-aos="fade-up">
             <Link href="#hero" className="flex items-center gap-2 text-2xl font-bold text-primary-foreground">
                 <Building2 className="h-7 w-7 text-accent" />
                 <span>Horizon Group</span>
@@ -58,7 +58,7 @@ export function Footer() {
             </div>
           </div>
 
-          <div>
+          <div data-aos="fade-up" data-aos-delay="100">
             <h5 className="font-bold text-lg text-primary-foreground mb-4">Quick Links</h5>
             <ul className="space-y-2">
               {quickLinks.map(link => (
@@ -69,7 +69,7 @@ export function Footer() {
             </ul>
           </div>
           
-          <div>
+          <div data-aos="fade-up" data-aos-delay="200">
             <h5 className="font-bold text-lg text-primary-foreground mb-4">Our Services</h5>
             <ul className="space-y-2">
               {serviceLinks.map(link => (
@@ -80,12 +80,12 @@ export function Footer() {
             </ul>
           </div>
 
-          <div>
+          <div data-aos="fade-up" data-aos-delay="300">
             {isClient && <ArticleSummarizer suppressHydrationWarning />}
           </div>
         </div>
 
-        <div className="border-t border-primary-foreground/20 pt-8 text-center text-sm" suppressHydrationWarning>
+        <div className="border-t border-primary-foreground/20 pt-8 text-center text-sm" suppressHydrationWarning data-aos="fade-up">
           {isClient && <p suppressHydrationWarning>© {year} Horizon Group. All Rights Reserved.</p>}
         </div>
       </div>
