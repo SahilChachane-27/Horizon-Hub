@@ -31,7 +31,7 @@ export function About() {
             <p className="text-lg text-foreground/80">
               Our integrated approach combines innovative design, sustainable practices, and meticulous craftsmanship to deliver exceptional value to our clients and communities.
             </p>
-            <Card className="bg-card border-l-4 border-accent shadow-lg">
+            <Card className="bg-card border-0 border-l-4 border-accent shadow-lg">
               <CardHeader>
                 <CardTitle className="text-primary">Our Mission</CardTitle>
               </CardHeader>
