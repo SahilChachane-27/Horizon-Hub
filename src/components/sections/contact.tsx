@@ -8,7 +8,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { Frame } from "lucide-react";
+import { Frame, Square } from "lucide-react";
 import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { useEffect, useState } from "react";
@@ -57,7 +57,7 @@ export function Contact() {
         <div className="text-center mb-12" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Get In Touch</h2>
           <div className="mt-4 w-24 h-1 bg-accent mx-auto"></div>
-          <p className="mt-6 text-lg text-foreground/80 max-w-2xl mx-auto">
+          <p className="mt-6 text-base md:text-lg text-foreground/80 max-w-2xl mx-auto">
             Contact us to discuss your next real estate or construction project.
           </p>
         </div>
@@ -93,7 +93,7 @@ export function Contact() {
               <h3 className="text-2xl font-bold font-headline">Contact Information</h3>
               {contactInfo.map((info) => (
                 <div key={info.title} className="flex items-start gap-4">
-                  <div className="text-accent mt-1"><Frame className="h-4 w-4" /></div>
+                  <div className="text-accent mt-1"><Square className="h-4 w-4" /></div>
                   <div>
                     <h4 className="font-semibold">{info.title}</h4>
                     {info.lines.map((line, i) => <p key={i} className="text-primary-foreground/80">{line}</p>)}

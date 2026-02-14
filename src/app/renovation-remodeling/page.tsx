@@ -97,7 +97,7 @@ function BeforeAfterShowcase() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Transformation Showcase</h2>
-          <p className="mt-4 text-lg text-foreground/80 max-w-2xl mx-auto">
+          <p className="mt-4 text-base md:text-lg text-foreground/80 max-w-2xl mx-auto">
             See how we've transformed outdated spaces into beautiful, functional environments.
           </p>
         </div>
@@ -167,7 +167,7 @@ function RenovationServices() {
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12" data-aos="fade-up">
                     <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Renovation & Remodeling Services</h2>
-                    <p className="mt-4 text-lg text-foreground/80 max-w-2xl mx-auto">Comprehensive renovation solutions tailored to transform your residential or commercial space.</p>
+                    <p className="mt-4 text-base md:text-lg text-foreground/80 max-w-2xl mx-auto">Comprehensive renovation solutions tailored to transform your residential or commercial space.</p>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     {renovationServicesList.map((service, index) => {
@@ -215,7 +215,7 @@ function RenovationProcess() {
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12" data-aos="fade-up">
                     <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Our Renovation Process</h2>
-                    <p className="mt-4 text-lg text-foreground/80 max-w-2xl mx-auto">A structured approach that ensures your renovation project runs smoothly from concept to completion.</p>
+                    <p className="mt-4 text-base md:text-lg text-foreground/80 max-w-2xl mx-auto">A structured approach that ensures your renovation project runs smoothly from concept to completion.</p>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     {renovationProcessSteps.map((step, index) => (
@@ -261,7 +261,7 @@ function WhyChooseRenovation() {
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     <div className="space-y-8" data-aos="fade-right">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Why Choose Horizon Group for Your Renovation</h2>
-                        <p className="text-lg text-foreground/80">With decades of renovation experience, we bring precision, craftsmanship, and innovative solutions to every project.</p>
+                        <p className="text-base md:text-lg text-foreground/80">With decades of renovation experience, we bring precision, craftsmanship, and innovative solutions to every project.</p>
                         {whyChooseFeatures.map(feature => (
                             <div key={feature.title} className="flex items-start gap-4">
                                 <div className="bg-primary text-primary-foreground p-3 rounded-full mt-1 flex-shrink-0"><feature.icon className="h-6 w-6" /></div>
@@ -317,7 +317,7 @@ function RenovationPortfolio() {
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12" data-aos="fade-up">
                     <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Renovation Portfolio</h2>
-                    <p className="mt-4 text-lg text-foreground/80 max-w-2xl mx-auto">Explore our gallery of completed renovation projects that showcase our attention to detail and design excellence.</p>
+                    <p className="mt-4 text-base md:text-lg text-foreground/80 max-w-2xl mx-auto">Explore our gallery of completed renovation projects that showcase our attention to detail and design excellence.</p>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     {renovationPortfolioItems.map((item, index) => {
@@ -354,7 +354,7 @@ function RenovationTestimonials() {
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12" data-aos="fade-up">
                     <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">What Our Renovation Clients Say</h2>
-                    <p className="mt-4 text-lg text-foreground/80 max-w-2xl mx-auto">Hear from homeowners and business owners who have transformed their spaces with Horizon Group.</p>
+                    <p className="mt-4 text-base md:text-lg text-foreground/80 max-w-2xl mx-auto">Hear from homeowners and business owners who have transformed their spaces with Horizon Group.</p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {renovationTestimonialsList.map((testimonial, index) => {
@@ -413,7 +413,7 @@ function RenovationContactForm() {
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
                 <div className="text-center mb-12" data-aos="fade-up">
                     <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Start Your Renovation Project</h2>
-                    <p className="mt-4 text-lg text-foreground/80">Contact us for a free consultation and estimate for your renovation or remodeling project.</p>
+                    <p className="mt-4 text-base md:text-lg text-foreground/80">Contact us for a free consultation and estimate for your renovation or remodeling project.</p>
                 </div>
                 {isClient && (
                     <Form {...form}>

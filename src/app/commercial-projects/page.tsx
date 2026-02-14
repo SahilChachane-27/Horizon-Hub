@@ -96,7 +96,7 @@ function CommercialProjectTypes() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Commercial Project Expertise</h2>
-          <p className="mt-4 text-lg text-foreground/80 max-w-3xl mx-auto">
+          <p className="mt-4 text-base md:text-lg text-foreground/80 max-w-3xl mx-auto">
             We specialize in delivering a diverse range of commercial construction projects, each tailored to meet specific business needs and market demands.
           </p>
         </div>
@@ -138,7 +138,7 @@ function FeaturedCaseStudy() {
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12" data-aos="fade-up">
                     <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Featured Case Study</h2>
-                    <p className="mt-4 text-lg text-foreground/80 max-w-2xl mx-auto">
+                    <p className="mt-4 text-base md:text-lg text-foreground/80 max-w-2xl mx-auto">
                         Discover how we delivered a landmark commercial project that transformed an urban district.
                     </p>
                 </div>
@@ -207,7 +207,7 @@ function CommercialServices() {
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12" data-aos="fade-up">
                     <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Commercial Construction Services</h2>
-                    <p className="mt-4 text-lg text-foreground/80 max-w-3xl mx-auto">
+                    <p className="mt-4 text-base md:text-lg text-foreground/80 max-w-3xl mx-auto">
                         We provide comprehensive commercial construction solutions from initial concept to final completion.
                     </p>
                 </div>
@@ -251,7 +251,7 @@ function CommercialProcess() {
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12" data-aos="fade-up">
                     <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Our Commercial Construction Process</h2>
-                    <p className="mt-4 text-lg text-foreground/80 max-w-2xl mx-auto">
+                    <p className="mt-4 text-base md:text-lg text-foreground/80 max-w-2xl mx-auto">
                         A structured approach that ensures every commercial project meets the highest standards of quality and efficiency.
                     </p>
                 </div>
@@ -316,7 +316,7 @@ function CommercialContactForm() {
                 <div className="max-w-4xl mx-auto">
                     <div className="text-center mb-12" data-aos="fade-up">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Start Your Commercial Project</h2>
-                        <p className="mt-4 text-lg text-foreground/80">
+                        <p className="mt-4 text-base md:text-lg text-foreground/80">
                             Contact us for a comprehensive consultation about your commercial construction needs.
                         </p>
                     </div>

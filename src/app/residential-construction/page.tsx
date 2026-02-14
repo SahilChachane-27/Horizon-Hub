@@ -85,7 +85,7 @@ function ResidentialServices() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Our Residential Construction Services</h2>
-          <p className="mt-4 text-lg text-foreground/80 max-w-3xl mx-auto">
+          <p className="mt-4 text-base md:text-lg text-foreground/80 max-w-3xl mx-auto">
             We specialize in creating exceptional residential properties that combine aesthetics, functionality, and sustainability.
           </p>
         </div>
@@ -126,7 +126,7 @@ function ConstructionProcess() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Our Residential Construction Process</h2>
-          <p className="mt-4 text-lg text-foreground/80 max-w-3xl mx-auto">
+          <p className="mt-4 text-base md:text-lg text-foreground/80 max-w-3xl mx-auto">
             We follow a meticulous, transparent process to ensure your home is built to the highest standards of quality and craftsmanship.
           </p>
         </div>
@@ -162,7 +162,7 @@ function ResidentialGallery() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Residential Project Gallery</h2>
-          <p className="mt-4 text-lg text-foreground/80 max-w-2xl mx-auto">
+          <p className="mt-4 text-base md:text-lg text-foreground/80 max-w-2xl mx-auto">
             Explore our portfolio of exquisite residential properties that showcase our commitment to quality and design excellence.
           </p>
         </div>
@@ -215,7 +215,7 @@ function WhyChooseResidential() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8" data-aos="fade-right">
             <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Why Choose Horizon Group for Your Home</h2>
-            <p className="text-lg text-foreground/80">
+            <p className="text-base md:text-lg text-foreground/80">
               Building a home is one of the most significant investments you'll make. Our approach ensures your project is completed with exceptional quality, transparency, and care.
             </p>
             {whyChooseUsFeatures.map(feature => (
@@ -294,7 +294,7 @@ function ResidentialContactForm() {
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12" data-aos="fade-up">
             <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Start Your Residential Project</h2>
-            <p className="mt-4 text-lg text-foreground/80">
+            <p className="mt-4 text-base md:text-lg text-foreground/80">
               Contact us for a personalized consultation about your residential construction project.
             </p>
           </div>

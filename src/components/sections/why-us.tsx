@@ -32,7 +32,7 @@ export function WhyUs() {
             Why Choose Horizon Group
           </h2>
           <div className="mt-4 w-24 h-1 bg-accent mx-auto"></div>
-          <p className="mt-6 text-lg text-foreground/80 max-w-2xl mx-auto">
+          <p className="mt-6 text-base md:text-lg text-foreground/80 max-w-2xl mx-auto">
             Our commitment to excellence and client satisfaction sets us apart in
             the industry.
           </p>

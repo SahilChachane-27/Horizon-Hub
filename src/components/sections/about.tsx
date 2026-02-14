@@ -25,13 +25,13 @@ export function About() {
             <h2 className="text-3xl md:text-4xl font-bold text-foreground font-headline" data-aos="fade-up">
               <span className="underline decoration-accent">About</span> Horizon Group
             </h2>
-            <p className="text-lg text-foreground/80">
+            <p className="text-base md:text-lg text-foreground/80">
               Founded in 1998, Horizon Group has established itself as a premier real estate development and construction firm with a portfolio of landmark projects across the country.
             </p>
-            <p className="text-lg text-foreground/80">
+            <p className="text-base md:text-lg text-foreground/80">
               Our integrated approach combines innovative design, sustainable practices, and meticulous craftsmanship to deliver exceptional value to our clients and communities.
             </p>
-            <Card className="bg-card border-0 border-l-4 border-accent shadow-lg rounded-r-none">
+            <Card className="bg-card border-0 border-l-4 border-accent shadow-lg rounded-r-lg rounded-l-none">
               <CardHeader>
                 <CardTitle className="text-primary">Our Mission</CardTitle>
               </CardHeader>

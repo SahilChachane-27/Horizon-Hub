@@ -33,7 +33,7 @@ export function Testimonials() {
         <div className="text-center mb-12" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Client Testimonials</h2>
           <div className="mt-4 w-24 h-1 bg-accent mx-auto"></div>
-          <p className="mt-6 text-lg text-foreground/80 max-w-2xl mx-auto">
+          <p className="mt-6 text-base md:text-lg text-foreground/80 max-w-2xl mx-auto">
             What our clients say about working with Horizon Group.
           </p>
         </div>

@@ -79,7 +79,7 @@ function FeaturedPost() {
             <div className="flex items-center gap-2"><Clock className="h-4 w-4" /> {featuredPost.readTime}</div>
             <div className="flex items-center gap-2"><User className="h-4 w-4" /> By {featuredPost.author}</div>
           </div>
-          <p className="text-foreground/80 mb-6">{featuredPost.excerpt}</p>
+          <p className="text-base md:text-lg text-foreground/80 mb-6">{featuredPost.excerpt}</p>
           <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
             <Link href="#">Read Full Article</Link>
           </Button>
