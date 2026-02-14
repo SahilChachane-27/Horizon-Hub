@@ -24,7 +24,7 @@ const serviceLinks = [
   { href: '/residential-construction', label: 'Residential Construction' },
   { href: '/commercial-projects', label: 'Commercial Projects' },
   { href: '/real-estate-development', label: 'Real Estate Development' },
-  { href: '#services', label: 'Renovation & Remodeling' },
+  { href: '/renovation-remodeling', label: 'Renovation & Remodeling' },
 ];
 
 export function Footer() {
@@ -80,12 +80,12 @@ export function Footer() {
           </div>
 
           <div>
-            {isClient && <ArticleSummarizer />}
+            {isClient && <ArticleSummarizer suppressHydrationWarning />}
           </div>
         </div>
 
         <div className="border-t border-primary-foreground/20 pt-8 text-center text-sm">
-          <p>© {year} Horizon Group. All Rights Reserved.</p>
+          {isClient && <p>© {year} Horizon Group. All Rights Reserved.</p>}
         </div>
       </div>
     </footer>

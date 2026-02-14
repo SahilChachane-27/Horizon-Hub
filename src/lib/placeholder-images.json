@@ -179,6 +179,120 @@
       "description": "A sprawling, modern office campus with plenty of green space.",
       "imageUrl": "https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
       "imageHint": "office campus"
+    },
+    {
+      "id": "renovation-hero-bg",
+      "description": "A beautifully renovated, modern living room with stylish furniture and bright lighting.",
+      "imageUrl": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxyZW5vdmF0ZWQlMjBsaXZpbmclMjByb29tfGVufDB8fHx8MTc3MTU3ODMyNnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "renovated livingroom"
+    },
+    {
+      "id": "renovation-before",
+      "description": "An old, dated kitchen before renovation.",
+      "imageUrl": "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxvbGQlMjBraXRjaGVufGVufDB8fHx8MTc3MTU3ODQyMnww&ixlib=rb-4.1.0&q=80&w=800",
+      "imageHint": "old kitchen"
+    },
+    {
+      "id": "renovation-after",
+      "description": "A modern, stylish kitchen after renovation.",
+      "imageUrl": "https://images.unsplash.com/photo-1600585152220-90363fe7e115?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBraXRjaGVufGVufDB8fHx8MTc3MTU3ODQ2NHww&ixlib=rb-4.1.0&q=80&w=800",
+      "imageHint": "modern kitchen"
+    },
+    {
+      "id": "renovation-service-kitchen",
+      "description": "A beautifully remodeled kitchen with custom cabinetry and premium appliances.",
+      "imageUrl": "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+      "imageHint": "kitchen remodel"
+    },
+    {
+      "id": "renovation-service-bathroom",
+      "description": "A luxurious remodeled bathroom with premium fixtures and custom tile work.",
+      "imageUrl": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+      "imageHint": "bathroom renovation"
+    },
+    {
+      "id": "renovation-service-whole-house",
+      "description": "The interior of a completely renovated house, showing open-plan living.",
+      "imageUrl": "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+      "imageHint": "house interior"
+    },
+    {
+      "id": "renovation-service-commercial",
+      "description": "A modern and functional renovated commercial office space.",
+      "imageUrl": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+      "imageHint": "commercial office"
+    },
+    {
+      "id": "renovation-service-basement",
+      "description": "A finished basement converted into a comfortable family entertainment room.",
+      "imageUrl": "https://images.unsplash.com/photo-1618220179428-22790b461013?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+      "imageHint": "finished basement"
+    },
+    {
+      "id": "renovation-service-exterior",
+      "description": "The updated exterior of a house with new siding and windows.",
+      "imageUrl": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+      "imageHint": "house exterior"
+    },
+    {
+      "id": "renovation-portfolio-1",
+      "description": "A stylish modern kitchen after a full renovation.",
+      "imageUrl": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+      "imageHint": "modern kitchen"
+    },
+    {
+      "id": "renovation-portfolio-2",
+      "description": "A luxury bathroom remodel featuring a freestanding tub.",
+      "imageUrl": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+      "imageHint": "luxury bathroom"
+    },
+    {
+      "id": "renovation-portfolio-3",
+      "description": "An open-concept living space created by removing walls.",
+      "imageUrl": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+      "imageHint": "open concept"
+    },
+    {
+      "id": "renovation-portfolio-4",
+      "description": "A stylish home office created from a basement conversion.",
+      "imageUrl": "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+      "imageHint": "home office"
+    },
+    {
+      "id": "renovation-portfolio-5",
+      "description": "A renovated commercial office designed for collaboration.",
+      "imageUrl": "https://images.unsplash.com/photo-1618220179428-22790b461013?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+      "imageHint": "commercial office"
+    },
+    {
+      "id": "renovation-portfolio-6",
+      "description": "A complete exterior facelift of a suburban home.",
+      "imageUrl": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+      "imageHint": "exterior renovation"
+    },
+    {
+      "id": "testimonial-renovation-1",
+      "description": "Portrait of Jennifer Martinez",
+      "imageUrl": "https://images.unsplash.com/photo-1557053910-d9eadeed1c58?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc3MTExMjQ2Nnww&ixlib=rb-4.1.0&q=80&w=100",
+      "imageHint": "woman portrait"
+    },
+    {
+      "id": "testimonial-renovation-2",
+      "description": "Portrait of David Chen",
+      "imageUrl": "https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NzExMTI0MzF8MA&ixlib=rb-4.1.0&q=80&w=100",
+      "imageHint": "man portrait"
+    },
+    {
+      "id": "testimonial-renovation-3",
+      "description": "Portrait of Sarah Johnson",
+      "imageUrl": "https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc3MTExMjQ2Nnww&ixlib=rb-4.1.0&q=80&w=100",
+      "imageHint": "woman portrait"
+    },
+    {
+      "id": "testimonial-renovation-4",
+      "description": "Portrait of Michael Roberts",
+      "imageUrl": "https://images.unsplash.com/photo-1583067614143-267595304959?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NzExMTI0MzF8MA&ixlib=rb-4.1.0&q=80&w=100",
+      "imageHint": "man portrait"
     }
   ]
 }
