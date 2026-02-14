@@ -35,7 +35,7 @@ function RenovationHero() {
         />
       )}
       <div className="absolute inset-0 bg-black/50" />
-      <div className="relative z-10 p-4 max-w-4xl mx-auto">
+      <div className="relative z-10 p-4 max-w-4xl mx-auto" data-aos="fade-up">
         <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 drop-shadow-lg font-headline">
           Transform Your Space
         </h1>
@@ -92,7 +92,7 @@ function BeforeAfterShowcase() {
   return (
     <section className="py-16 md:py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Transformation Showcase</h2>
           <p className="mt-4 text-lg text-foreground/80 max-w-2xl mx-auto">
             See how we've transformed outdated spaces into beautiful, functional environments.
@@ -109,6 +109,8 @@ function BeforeAfterShowcase() {
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleMouseUp}
+            data-aos="fade-up"
+            data-aos-delay="200"
           >
             <Image
               src={afterImage.imageUrl}
@@ -139,7 +141,7 @@ function BeforeAfterShowcase() {
             </div>
           </div>
         )}
-         <div className="text-center mt-4">
+         <div className="text-center mt-4" data-aos="fade-up">
           <p className="text-sm text-muted-foreground">Drag the slider to see the transformation</p>
         </div>
       </div>
@@ -160,15 +162,15 @@ function RenovationServices() {
     return (
         <section id="renovation-services" className="py-16 md:py-24 bg-secondary">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-12">
+                <div className="text-center mb-12" data-aos="fade-up">
                     <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Renovation & Remodeling Services</h2>
                     <p className="mt-4 text-lg text-foreground/80 max-w-2xl mx-auto">Comprehensive renovation solutions tailored to transform your residential or commercial space.</p>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {renovationServicesList.map(service => {
+                    {renovationServicesList.map((service, index) => {
                         const image = PlaceHolderImages.find(p => p.id === service.id);
                         return (
-                            <Card key={service.id} className="overflow-hidden group relative">
+                            <Card key={service.id} className="overflow-hidden group relative" data-aos="fade-up" data-aos-delay={index * 100}>
                                 <div className="aspect-[4/3] relative">
                                     {image && (
                                         <Image
@@ -208,13 +210,13 @@ function RenovationProcess() {
     return (
         <section className="py-16 md:py-24">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-12">
+                <div className="text-center mb-12" data-aos="fade-up">
                     <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Our Renovation Process</h2>
                     <p className="mt-4 text-lg text-foreground/80 max-w-2xl mx-auto">A structured approach that ensures your renovation project runs smoothly from concept to completion.</p>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {renovationProcessSteps.map(step => (
-                        <Card key={step.number} className="p-6">
+                    {renovationProcessSteps.map((step, index) => (
+                        <Card key={step.number} className="p-6" data-aos="fade-up" data-aos-delay={index * 100}>
                             <CardHeader className="flex flex-row items-center gap-4 p-0 mb-4">
                                 <div className="bg-primary text-primary-foreground rounded-full h-12 w-12 flex-shrink-0 flex items-center justify-center text-xl font-bold">{step.number}</div>
                                 <CardTitle className="text-primary text-xl">{step.title}</CardTitle>
@@ -254,7 +256,7 @@ function WhyChooseRenovation() {
         <section className="py-16 md:py-24 bg-secondary">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    <div className="space-y-8">
+                    <div className="space-y-8" data-aos="fade-right">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Why Choose Horizon Group for Your Renovation</h2>
                         <p className="text-lg text-foreground/80">With decades of renovation experience, we bring precision, craftsmanship, and innovative solutions to every project.</p>
                         {whyChooseFeatures.map(feature => (
@@ -267,7 +269,7 @@ function WhyChooseRenovation() {
                             </div>
                         ))}
                     </div>
-                    <Card className="p-8 shadow-lg">
+                    <Card className="p-8 shadow-lg" data-aos="fade-left">
                         <h3 className="text-2xl font-bold text-primary mb-6">Renovation Expertise</h3>
                         <div className="space-y-4 mb-8">
                             <h4 className="font-semibold text-primary">Our Renovation Capabilities</h4>
@@ -310,15 +312,15 @@ function RenovationPortfolio() {
     return (
         <section className="py-16 md:py-24">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-12">
+                <div className="text-center mb-12" data-aos="fade-up">
                     <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Renovation Portfolio</h2>
                     <p className="mt-4 text-lg text-foreground/80 max-w-2xl mx-auto">Explore our gallery of completed renovation projects that showcase our attention to detail and design excellence.</p>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {renovationPortfolioItems.map(item => {
+                    {renovationPortfolioItems.map((item, index) => {
                         const image = PlaceHolderImages.find(p => p.id === item.id);
                         return (
-                            <Card key={item.id} className="overflow-hidden group relative">
+                            <Card key={item.id} className="overflow-hidden group relative" data-aos="fade-up" data-aos-delay={index * 100}>
                                 <div className="aspect-[4/3] relative">
                                     {image && <Image src={image.imageUrl} alt={image.description} fill className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105" data-ai-hint={image.imageHint} />}
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
@@ -347,15 +349,15 @@ function RenovationTestimonials() {
     return (
         <section className="py-16 md:py-24 bg-secondary">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-12">
+                <div className="text-center mb-12" data-aos="fade-up">
                     <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">What Our Renovation Clients Say</h2>
                     <p className="mt-4 text-lg text-foreground/80 max-w-2xl mx-auto">Hear from homeowners and business owners who have transformed their spaces with Horizon Group.</p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {renovationTestimonialsList.map(testimonial => {
+                    {renovationTestimonialsList.map((testimonial, index) => {
                         const image = PlaceHolderImages.find(p => p.id === testimonial.id);
                         return (
-                            <Card key={testimonial.id} className="p-6">
+                            <Card key={testimonial.id} className="p-6" data-aos="fade-up" data-aos-delay={index * 100}>
                                 <CardContent className="p-0">
                                     <p className="italic text-foreground/80 mb-4">"{testimonial.quote}"</p>
                                     <div className="flex items-center gap-4">
@@ -406,13 +408,13 @@ function RenovationContactForm() {
     return (
         <section id="contact-form" className="py-16 md:py-24">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-                <div className="text-center mb-12">
+                <div className="text-center mb-12" data-aos="fade-up">
                     <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Start Your Renovation Project</h2>
                     <p className="mt-4 text-lg text-foreground/80">Contact us for a free consultation and estimate for your renovation or remodeling project.</p>
                 </div>
                 {isClient && (
                     <Form {...form}>
-                        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 bg-secondary p-8 rounded-lg shadow-lg">
+                        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 bg-secondary p-8 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="200">
                             <div className="grid sm:grid-cols-2 gap-6">
                                 <FormField control={form.control} name="name" render={({ field }) => (
                                     <FormItem><FormLabel>Name</FormLabel><FormControl><Input placeholder="Your Name" {...field} /></FormControl><FormMessage /></FormItem>
