@@ -54,14 +54,14 @@ export function Contact() {
   return (
     <section id="contact" className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Get In Touch</h2>
           <p className="mt-4 text-lg text-foreground/80 max-w-2xl mx-auto">
             Contact us to discuss your next real estate or construction project.
           </p>
         </div>
         <div className="grid lg:grid-cols-5 gap-12">
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-3" data-aos="fade-right">
             {isClient && (
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -87,7 +87,7 @@ export function Contact() {
               </Form>
             )}
           </div>
-          <div className="lg:col-span-2 space-y-6">
+          <div className="lg:col-span-2 space-y-6" data-aos="fade-left">
             <div className="bg-card p-6 rounded-lg shadow-md space-y-6">
               <h3 className="text-xl font-bold text-primary">Contact Information</h3>
               {contactInfo.map((info) => (

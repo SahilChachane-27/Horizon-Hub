@@ -26,14 +26,14 @@ export function Blog() {
   return (
     <section id="blog" className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Horizon Insights</h2>
           <p className="mt-4 text-lg text-foreground/80 max-w-2xl mx-auto">
             Explore the latest trends, insights, and stories from the world of real estate and construction.
           </p>
         </div>
         <div className="grid lg:grid-cols-2 gap-8 items-stretch">
-          <Card className="overflow-hidden shadow-xl group">
+          <Card className="overflow-hidden shadow-xl group" data-aos="fade-right">
             <Link href="/blog">
               {featuredImage && (
                 <div className="relative aspect-video">
@@ -57,7 +57,7 @@ export function Blog() {
               </CardContent>
             </Link>
           </Card>
-          <div className="space-y-6 flex flex-col justify-between">
+          <div className="space-y-6 flex flex-col justify-between" data-aos="fade-left">
             {recentPosts.map(post => {
               const postImage = PlaceHolderImages.find(p => p.id === post.id);
               return(

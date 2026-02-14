@@ -9,7 +9,7 @@ export function About() {
     <section id="about" className="py-16 md:py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="relative aspect-[4/5] rounded-lg overflow-hidden shadow-2xl">
+          <div className="relative aspect-[4/5] rounded-lg overflow-hidden shadow-2xl" data-aos="fade-right">
             {aboutImage && (
               <Image
                 src={aboutImage.imageUrl}
@@ -21,8 +21,8 @@ export function About() {
               />
             )}
           </div>
-          <div className="space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">About Horizon Group</h2>
+          <div className="space-y-6" data-aos="fade-left">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline" data-aos="fade-up">About Horizon Group</h2>
             <p className="text-lg text-foreground/80">
               Founded in 1998, Horizon Group has established itself as a premier real estate development and construction firm with a portfolio of landmark projects across the country.
             </p>

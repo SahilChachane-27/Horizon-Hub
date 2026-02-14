@@ -18,7 +18,7 @@ export function Hero() {
         />
       )}
       <div className="absolute inset-0 bg-black/50" />
-      <div className="relative z-10 p-4 max-w-4xl mx-auto">
+      <div className="relative z-10 p-4 max-w-4xl mx-auto" data-aos="fade-up">
         <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 drop-shadow-lg font-headline">
           Building Dreams. Creating Landmarks.
         </h1>

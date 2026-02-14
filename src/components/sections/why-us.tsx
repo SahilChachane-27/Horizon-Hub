@@ -28,7 +28,7 @@ export function WhyUs() {
   return (
     <section id="why-us" className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Why Choose Horizon Group</h2>
           <p className="mt-4 text-lg text-foreground/80 max-w-2xl mx-auto">
             Our commitment to excellence and client satisfaction sets us apart in the industry.
@@ -36,7 +36,7 @@ export function WhyUs() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
-            <div key={index} className="text-center p-6">
+            <div key={index} className="text-center p-6" data-aos="fade-up" data-aos-delay={index * 100}>
               <div className="flex justify-center mb-4">
                 <div className="bg-primary text-primary-foreground p-4 rounded-full">
                   <feature.icon className="h-8 w-8" />

@@ -30,7 +30,7 @@ export function Testimonials() {
   return (
     <section id="testimonials" className="py-16 md:py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Client Testimonials</h2>
           <p className="mt-4 text-lg text-foreground/80 max-w-2xl mx-auto">
             What our clients say about working with Horizon Group.
@@ -42,6 +42,7 @@ export function Testimonials() {
             loop: true,
           }}
           className="w-full max-w-4xl mx-auto"
+          data-aos="fade-up"
         >
           <CarouselContent>
             {testimonials.map((testimonial) => {

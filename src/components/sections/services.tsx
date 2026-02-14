@@ -29,7 +29,7 @@ export function Services() {
   return (
     <section id="services" className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Our Services</h2>
           <p className="mt-4 text-lg text-foreground/80 max-w-2xl mx-auto">
             We offer comprehensive real estate and construction solutions tailored to meet the diverse needs of our clients.
@@ -37,7 +37,7 @@ export function Services() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className="text-center group hover:shadow-2xl transition-shadow duration-300 flex flex-col">
+            <Card key={index} className="text-center group hover:shadow-2xl transition-shadow duration-300 flex flex-col" data-aos="fade-up" data-aos-delay={index * 100}>
               <CardHeader className="items-center">
                 <div className="bg-primary text-primary-foreground p-4 rounded-full mb-4">
                   <service.icon className="h-8 w-8" />

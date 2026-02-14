@@ -24,17 +24,17 @@ export function Projects() {
   return (
     <section id="projects" className="py-16 md:py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Featured Projects</h2>
           <p className="mt-4 text-lg text-foreground/80 max-w-2xl mx-auto">
             Explore our portfolio of landmark developments that redefine skylines and communities.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => {
+          {projects.map((project, index) => {
             const projectImage = PlaceHolderImages.find(p => p.id === project.id);
             return (
-              <Card key={project.id} className="overflow-hidden group relative">
+              <Card key={project.id} className="overflow-hidden group relative" data-aos="fade-up" data-aos-delay={index * 100}>
                 <div className="aspect-w-4 aspect-h-3">
                   {projectImage && (
                      <Image
