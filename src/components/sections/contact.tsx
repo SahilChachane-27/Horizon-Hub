@@ -8,16 +8,16 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { Frame } from "lucide-react";
 import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { useEffect, useState } from "react";
 
 const contactInfo = [
-  { icon: MapPin, title: "Address", lines: ["123 Wall Street, Suite 500", "New York, NY 10005"] },
-  { icon: Phone, title: "Phone", lines: ["+1 (212) 555-1234"] },
-  { icon: Mail, title: "Email", lines: ["info@horizongroup.com"] },
-  { icon: Clock, title: "Business Hours", lines: ["Monday - Friday: 8:00 AM - 6:00 PM", "Saturday: 9:00 AM - 2:00 PM"] },
+  { title: "Address", lines: ["123 Wall Street, Suite 500", "New York, NY 10005"] },
+  { title: "Phone", lines: ["+1 (212) 555-1234"] },
+  { title: "Email", lines: ["info@horizongroup.com"] },
+  { title: "Business Hours", lines: ["Monday - Friday: 8:00 AM - 6:00 PM", "Saturday: 9:00 AM - 2:00 PM"] },
 ];
 
 const formSchema = z.object({
@@ -89,14 +89,14 @@ export function Contact() {
             )}
           </div>
           <div className="lg:col-span-2 space-y-6" data-aos="fade-left">
-            <div className="bg-card p-6 rounded-lg shadow-md space-y-6">
-              <h3 className="text-xl font-bold text-primary">Contact Information</h3>
+            <div className="bg-primary p-8 rounded-2xl shadow-lg space-y-6 text-primary-foreground">
+              <h3 className="text-2xl font-bold font-headline">Contact Information</h3>
               {contactInfo.map((info) => (
                 <div key={info.title} className="flex items-start gap-4">
-                  <div className="text-accent mt-1"><info.icon className="h-5 w-5" /></div>
+                  <div className="text-accent mt-1"><Frame className="h-4 w-4" /></div>
                   <div>
-                    <h4 className="font-semibold text-primary">{info.title}</h4>
-                    {info.lines.map((line, i) => <p key={i} className="text-foreground/80">{line}</p>)}
+                    <h4 className="font-semibold">{info.title}</h4>
+                    {info.lines.map((line, i) => <p key={i} className="text-primary-foreground/80">{line}</p>)}
                   </div>
                 </div>
               ))}
