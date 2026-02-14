@@ -5,7 +5,7 @@ import { handleSummarize } from '@/app/actions';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { useActionState, useEffect } from 'react';
+import { useActionState, useEffect, useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
 import { Loader2 } from 'lucide-react';
 
@@ -27,6 +27,11 @@ function SubmitButton() {
 export function ArticleSummarizer() {
   const [state, formAction] = useActionState(handleSummarize, initialState);
   const { toast } = useToast();
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   useEffect(() => {
     if (state.error) {
@@ -44,26 +49,30 @@ export function ArticleSummarizer() {
       <p className="text-sm">
         Try our AI-powered tool to summarize any article. Paste the text below.
       </p>
-      <form action={formAction} className="space-y-4" suppressHydrationWarning>
-        <Textarea
-          name="text"
-          placeholder="Paste your article text here (min. 100 characters)..."
-          className="bg-primary-foreground/10 text-primary-foreground placeholder:text-primary-foreground/50 border-primary-foreground/20 focus:bg-primary-foreground/20"
-          rows={5}
-          required
-        />
-        <SubmitButton />
-      </form>
+      {isClient && (
+        <>
+          <form action={formAction} className="space-y-4">
+            <Textarea
+              name="text"
+              placeholder="Paste your article text here (min. 100 characters)..."
+              className="bg-primary-foreground/10 text-primary-foreground placeholder:text-primary-foreground/50 border-primary-foreground/20 focus:bg-primary-foreground/20"
+              rows={5}
+              required
+            />
+            <SubmitButton />
+          </form>
 
-      {state.summary && (
-        <Card className="mt-6 bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground">
-          <CardHeader>
-            <CardTitle>Summary</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <CardDescription className="text-primary-foreground/80">{state.summary}</CardDescription>
-          </CardContent>
-        </Card>
+          {state.summary && (
+            <Card className="mt-6 bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground">
+              <CardHeader>
+                <CardTitle>Summary</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-primary-foreground/80">{state.summary}</CardDescription>
+              </CardContent>
+            </Card>
+          )}
+        </>
       )}
     </div>
   );
