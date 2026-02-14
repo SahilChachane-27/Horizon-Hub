@@ -36,7 +36,7 @@ function DevelopmentHero() {
         />
       )}
       <div className="absolute inset-0 bg-black/50" />
-      <div className="relative z-10 p-4 max-w-4xl mx-auto">
+      <div className="relative z-10 p-4 max-w-4xl mx-auto" data-aos="fade-up">
         <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 drop-shadow-lg font-headline">
           Real Estate Development Excellence
         </h1>
@@ -67,13 +67,13 @@ function DevelopmentPhilosophy() {
     return (
         <section className="py-16 md:py-24 bg-secondary">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-12">
+                <div className="text-center mb-12" data-aos="fade-up">
                     <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Our Development Philosophy</h2>
                     <p className="mt-4 text-lg text-foreground/80 max-w-3xl mx-auto">Built on a foundation of innovation, sustainability, and community-centric design principles.</p>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {philosophyPillars.map(pillar => (
-                        <div key={pillar.title} className="text-center p-6">
+                    {philosophyPillars.map((pillar, index) => (
+                        <div key={pillar.title} className="text-center p-6" data-aos="fade-up" data-aos-delay={index * 100}>
                             <div className="flex justify-center mb-4">
                                 <div className="bg-primary text-primary-foreground p-4 rounded-full">
                                     <pillar.icon className="h-8 w-8" />
@@ -103,13 +103,13 @@ function DevelopmentProcess() {
   return (
     <section id="development-process" className="py-16 md:py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">End-to-End Development Process</h2>
           <p className="mt-4 text-lg text-foreground/80 max-w-3xl mx-auto">Our comprehensive approach to real estate development ensures every project is executed with precision and excellence.</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {processSteps.slice(0,4).map((step) => (
-                <Card key={step.title} className="p-6 text-center">
+            {processSteps.slice(0,4).map((step, index) => (
+                <Card key={step.title} className="p-6 text-center" data-aos="fade-up" data-aos-delay={index * 100}>
                     <CardHeader>
                         <CardTitle className="text-primary text-xl">{step.title}</CardTitle>
                     </CardHeader>
@@ -120,8 +120,8 @@ function DevelopmentProcess() {
             ))}
         </div>
          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 lg:w-3/4 mx-auto">
-             {processSteps.slice(4).map((step) => (
-                <Card key={step.title} className="p-6 text-center">
+             {processSteps.slice(4).map((step, index) => (
+                <Card key={step.title} className="p-6 text-center" data-aos="fade-up" data-aos-delay={index * 100}>
                     <CardHeader>
                         <CardTitle className="text-primary text-xl">{step.title}</CardTitle>
                     </CardHeader>
@@ -146,15 +146,15 @@ function FeaturedDevelopmentProjects() {
     return (
         <section className="py-16 md:py-24 bg-secondary">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-12">
+                <div className="text-center mb-12" data-aos="fade-up">
                     <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Featured Development Projects</h2>
                     <p className="mt-4 text-lg text-foreground/80 max-w-2xl mx-auto">Explore our portfolio of transformative real estate developments that have redefined communities and created lasting value.</p>
                 </div>
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    {portfolioItems.map(item => {
+                    {portfolioItems.map((item, index) => {
                         const image = PlaceHolderImages.find(p => p.id === item.id);
                         return (
-                        <Card key={item.id} className="overflow-hidden group">
+                        <Card key={item.id} className="overflow-hidden group" data-aos="fade-up" data-aos-delay={index * 100}>
                             {image && <div className="relative aspect-video"><Image src={image.imageUrl} alt={image.description} fill className="object-cover transition-transform duration-500 group-hover:scale-105" data-ai-hint={image.imageHint}/></div>}
                             <CardContent className="p-6 space-y-4">
                                 <h3 className="text-xl font-bold text-primary">{item.title}</h3>
@@ -182,13 +182,13 @@ function DevelopmentExpertise() {
     return (
         <section className="py-16 md:py-24">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-12">
+                <div className="text-center mb-12" data-aos="fade-up">
                     <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Our Development Expertise</h2>
                     <p className="mt-4 text-lg text-foreground/80 max-w-2xl mx-auto">Specialized development capabilities across diverse property types and markets.</p>
                 </div>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {expertiseAreas.map(area => (
-                        <Card key={area.title} className="flex flex-col text-center items-center p-6">
+                    {expertiseAreas.map((area, index) => (
+                        <Card key={area.title} className="flex flex-col text-center items-center p-6" data-aos="fade-up" data-aos-delay={index * 100}>
                             <div className="bg-primary text-primary-foreground p-4 rounded-full mb-4"><area.icon className="h-8 w-8" /></div>
                             <h3 className="text-xl font-bold text-primary mb-3">{area.title}</h3>
                             <p className="text-foreground/70 mb-4 flex-grow">{area.description}</p>
@@ -232,7 +232,7 @@ function StrategicApproach() {
         <section className="py-16 md:py-24 bg-secondary">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    <div className="space-y-8">
+                    <div className="space-y-8" data-aos="fade-right">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Our Strategic Development Approach</h2>
                         <p className="text-lg text-foreground/80">We combine market intelligence, financial acumen, and design excellence to create developments that succeed financially while making positive community impacts.</p>
                         {approachFeatures.map(feature => (
@@ -245,7 +245,7 @@ function StrategicApproach() {
                             </div>
                         ))}
                     </div>
-                    <Card className="p-8 shadow-lg">
+                    <Card className="p-8 shadow-lg" data-aos="fade-left">
                         <h3 className="text-2xl font-bold text-primary mb-6">Development Metrics</h3>
                         <div className="space-y-4 mb-8">
                             {developmentMetrics.map(metric => (
@@ -305,13 +305,13 @@ function DevelopmentContactForm() {
     return (
         <section id="contact-form" className="py-16 md:py-24">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-                <div className="text-center mb-12">
+                <div className="text-center mb-12" data-aos="fade-up">
                     <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Partner With Our Development Team</h2>
                     <p className="mt-4 text-lg text-foreground/80">Contact us to discuss your real estate development project, investment opportunity, or partnership.</p>
                 </div>
                 {isClient && (
                   <Form {...form}>
-                      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 bg-secondary p-8 rounded-lg shadow-lg">
+                      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 bg-secondary p-8 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="200">
                           <div className="grid sm:grid-cols-2 gap-6">
                               <FormField control={form.control} name="name" render={({ field }) => (
                                   <FormItem><FormLabel>Name</FormLabel><FormControl><Input placeholder="Your Name" {...field} /></FormControl><FormMessage /></FormItem>

@@ -1,3 +1,4 @@
+
 // @ts-nocheck
 'use client';
 
@@ -28,7 +29,7 @@ function BlogHero() {
         />
       )}
       <div className="absolute inset-0 bg-black/50" />
-      <div className="relative z-10 p-4 max-w-4xl mx-auto">
+      <div className="relative z-10 p-4 max-w-4xl mx-auto" data-aos="fade-up">
         <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 drop-shadow-lg font-headline">
           Horizon Insights
         </h1>
@@ -61,7 +62,7 @@ const featuredPost = {
 function FeaturedPost() {
   const postImage = PlaceHolderImages.find(p => p.id === featuredPost.id);
   return (
-    <div id="featured-post" className="mb-12">
+    <div id="featured-post" className="mb-12" data-aos="fade-up">
       <Card className="overflow-hidden shadow-2xl">
         {postImage && (
           <div className="relative aspect-video">
@@ -98,10 +99,10 @@ const blogPosts = [
 function BlogGrid() {
   return (
     <div id="blog-articles" className="grid md:grid-cols-2 gap-8">
-      {blogPosts.map(post => {
+      {blogPosts.map((post, index) => {
         const postImage = PlaceHolderImages.find(p => p.id === post.id);
         return(
-          <Card key={post.id} className="overflow-hidden shadow-lg flex flex-col">
+          <Card key={post.id} className="overflow-hidden shadow-lg flex flex-col" data-aos="fade-up" data-aos-delay={index * 100}>
             {postImage && <div className="relative aspect-video"><Image src={postImage.imageUrl} alt={post.title} fill className="object-cover" data-ai-hint={postImage.imageHint} /></div>}
             <CardContent className="p-6 flex flex-col flex-grow">
               <span className="text-sm font-semibold text-accent mb-2">{post.category}</span>
@@ -124,7 +125,7 @@ function BlogGrid() {
 
 function BlogPagination() {
   return(
-    <div className="flex justify-center items-center gap-2 mt-12">
+    <div className="flex justify-center items-center gap-2 mt-12" data-aos="fade-up">
       <Button variant="outline" size="icon"><ChevronLeft className="h-4 w-4"/></Button>
       <Button variant="outline" className="w-10 h-10 bg-accent text-accent-foreground">1</Button>
       <Button variant="outline" size="icon">2</Button>
@@ -146,7 +147,7 @@ const author = {
 function AuthorBio() {
   const authorImage = PlaceHolderImages.find(p => p.id === author.id);
   return (
-    <div className="mt-12 bg-secondary p-6 rounded-lg">
+    <div className="mt-12 bg-secondary p-6 rounded-lg" data-aos="fade-up">
       <Card className="bg-card flex flex-col sm:flex-row items-center gap-6 p-6">
         {authorImage && <Image src={authorImage.imageUrl} alt={author.name} width={100} height={100} className="rounded-full flex-shrink-0" data-ai-hint={authorImage.imageHint} />}
         <div>
@@ -188,7 +189,7 @@ function BlogSidebar() {
   }, []);
   return (
     <aside className="space-y-8">
-      <Card className="p-6">
+      <Card className="p-6" data-aos="fade-left">
         <CardHeader className="p-0 mb-4"><CardTitle>Search Articles</CardTitle></CardHeader>
         <div className="relative">
           <Input placeholder="Search blog..." className="pr-10"/>
@@ -197,7 +198,7 @@ function BlogSidebar() {
           </Button>
         </div>
       </Card>
-      <Card className="p-6">
+      <Card className="p-6" data-aos="fade-left" data-aos-delay="100">
         <CardHeader className="p-0 mb-4"><CardTitle>Categories</CardTitle></CardHeader>
         <ul className="space-y-2">
           {categories.map(cat => (
@@ -210,7 +211,7 @@ function BlogSidebar() {
           ))}
         </ul>
       </Card>
-      <Card className="p-6">
+      <Card className="p-6" data-aos="fade-left" data-aos-delay="200">
         <CardHeader className="p-0 mb-4"><CardTitle>Recent Posts</CardTitle></CardHeader>
         <div className="space-y-4">
           {recentPosts.map(post => {
@@ -227,7 +228,7 @@ function BlogSidebar() {
           })}
         </div>
       </Card>
-       <Card className="p-6">
+       <Card className="p-6" data-aos="fade-left" data-aos-delay="300">
         <CardHeader className="p-0 mb-4"><CardTitle>Popular Tags</CardTitle></CardHeader>
         <div className="flex flex-wrap gap-2">
           {tags.map(tag => (
@@ -237,7 +238,7 @@ function BlogSidebar() {
           ))}
         </div>
       </Card>
-      <Card className="p-6 bg-secondary">
+      <Card className="p-6 bg-secondary" data-aos="fade-left" data-aos-delay="400">
         <CardHeader className="p-0 mb-4"><CardTitle>Subscribe to Our Newsletter</CardTitle></CardHeader>
         <p className="text-foreground/70 mb-4">Get the latest insights, trends, and project updates delivered to your inbox.</p>
         {isClient && (

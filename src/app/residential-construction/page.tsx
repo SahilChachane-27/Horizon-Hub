@@ -1,3 +1,4 @@
+
 // @ts-nocheck
 'use client';
 
@@ -35,7 +36,7 @@ function ResidentialHero() {
         />
       )}
       <div className="absolute inset-0 bg-black/50" />
-      <div className="relative z-10 p-4 max-w-4xl mx-auto">
+      <div className="relative z-10 p-4 max-w-4xl mx-auto" data-aos="fade-up">
         <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 drop-shadow-lg font-headline">
           Premium Residential Construction
         </h1>
@@ -80,7 +81,7 @@ function ResidentialServices() {
   return (
     <section id="residential-services" className="py-16 md:py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Our Residential Construction Services</h2>
           <p className="mt-4 text-lg text-foreground/80 max-w-3xl mx-auto">
             We specialize in creating exceptional residential properties that combine aesthetics, functionality, and sustainability.
@@ -88,7 +89,7 @@ function ResidentialServices() {
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {residentialServices.map((service, index) => (
-            <Card key={index} className="flex flex-col text-center items-center p-6">
+            <Card key={index} className="flex flex-col text-center items-center p-6" data-aos="fade-up" data-aos-delay={index * 100}>
               <div className="bg-primary text-primary-foreground p-4 rounded-full mb-4">
                 <service.icon className="h-8 w-8" />
               </div>
@@ -121,7 +122,7 @@ function ConstructionProcess() {
   return (
     <section id="construction-process" className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Our Residential Construction Process</h2>
           <p className="mt-4 text-lg text-foreground/80 max-w-3xl mx-auto">
             We follow a meticulous, transparent process to ensure your home is built to the highest standards of quality and craftsmanship.
@@ -129,7 +130,7 @@ function ConstructionProcess() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {constructionProcessSteps.map((step, index) => (
-            <Card key={index} className="p-6 text-center bg-card">
+            <Card key={index} className="p-6 text-center bg-card" data-aos="fade-up" data-aos-delay={index * 100}>
               <CardHeader>
                 <CardTitle className="text-primary text-xl">{step.title}</CardTitle>
               </CardHeader>
@@ -157,17 +158,17 @@ function ResidentialGallery() {
   return (
     <section id="residential-gallery" className="py-16 md:py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Residential Project Gallery</h2>
           <p className="mt-4 text-lg text-foreground/80 max-w-2xl mx-auto">
             Explore our portfolio of exquisite residential properties that showcase our commitment to quality and design excellence.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {galleryItems.map((item) => {
+          {galleryItems.map((item, index) => {
             const image = PlaceHolderImages.find(p => p.id === item.id);
             return (
-              <Card key={item.id} className="overflow-hidden group relative">
+              <Card key={item.id} className="overflow-hidden group relative" data-aos="fade-up" data-aos-delay={index * 100}>
                 <div className="aspect-[4/3]">
                   {image && (
                     <Image
@@ -210,7 +211,7 @@ function WhyChooseResidential() {
     <section id="why-choose-us-residential" className="py-16 md:py-24 bg-secondary">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8">
+          <div className="space-y-8" data-aos="fade-right">
             <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Why Choose Horizon Group for Your Home</h2>
             <p className="text-lg text-foreground/80">
               Building a home is one of the most significant investments you'll make. Our approach ensures your project is completed with exceptional quality, transparency, and care.
@@ -225,7 +226,7 @@ function WhyChooseResidential() {
               </div>
             ))}
           </div>
-          <div className="bg-card p-8 rounded-lg shadow-lg">
+          <div className="bg-card p-8 rounded-lg shadow-lg" data-aos="fade-left">
             <h3 className="text-2xl font-bold text-primary mb-6">Residential Construction Testimonials</h3>
             <div className="space-y-8">
               {residentialTestimonials.map(testimonial => {
@@ -289,7 +290,7 @@ function ResidentialContactForm() {
     <section id="contact-form" className="py-16 md:py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12" data-aos="fade-up">
             <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Start Your Residential Project</h2>
             <p className="mt-4 text-lg text-foreground/80">
               Contact us for a personalized consultation about your residential construction project.
@@ -298,7 +299,7 @@ function ResidentialContactForm() {
           
           {isClient && (
             <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 bg-secondary p-8 rounded-lg shadow-lg">
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 bg-secondary p-8 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="200">
                 <div className="grid sm:grid-cols-2 gap-6">
                     <FormField control={form.control} name="name" render={({ field }) => (
                     <FormItem><FormLabel>Your Name</FormLabel><FormControl><Input placeholder="John Doe" {...field} /></FormControl><FormMessage /></FormItem>

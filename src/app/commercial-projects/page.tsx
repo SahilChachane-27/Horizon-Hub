@@ -1,3 +1,4 @@
+
 // @ts-nocheck
 'use client';
 
@@ -34,7 +35,7 @@ function CommercialHero() {
         />
       )}
       <div className="absolute inset-0 bg-black/50" />
-      <div className="relative z-10 p-4 max-w-4xl mx-auto">
+      <div className="relative z-10 p-4 max-w-4xl mx-auto" data-aos="fade-up">
         <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 drop-shadow-lg font-headline">
           Commercial Construction Excellence
         </h1>
@@ -66,8 +67,8 @@ function CommercialStats() {
         <section className="bg-secondary py-12 md:py-16">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                    {stats.map(stat => (
-                        <div key={stat.label}>
+                    {stats.map((stat, index) => (
+                        <div key={stat.label} data-aos="fade-up" data-aos-delay={index * 100}>
                             <p className="text-4xl md:text-5xl font-bold text-primary">{stat.number}</p>
                             <p className="text-sm md:text-base text-foreground/80 mt-2">{stat.label}</p>
                         </div>
@@ -91,17 +92,17 @@ function CommercialProjectTypes() {
   return (
     <section id="commercial-projects" className="py-16 md:py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Commercial Project Expertise</h2>
           <p className="mt-4 text-lg text-foreground/80 max-w-3xl mx-auto">
             We specialize in delivering a diverse range of commercial construction projects, each tailored to meet specific business needs and market demands.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projectTypes.map((project) => {
+          {projectTypes.map((project, index) => {
             const image = PlaceHolderImages.find(p => p.id === project.id);
             return (
-              <Card key={project.id} className="overflow-hidden group relative">
+              <Card key={project.id} className="overflow-hidden group relative" data-aos="fade-up" data-aos-delay={index * 100}>
                 <div className="aspect-[4/3] relative">
                   {image && (
                     <Image
@@ -133,13 +134,13 @@ function FeaturedCaseStudy() {
     return (
         <section className="py-16 md:py-24 bg-secondary">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-12">
+                <div className="text-center mb-12" data-aos="fade-up">
                     <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Featured Case Study</h2>
                     <p className="mt-4 text-lg text-foreground/80 max-w-2xl mx-auto">
                         Discover how we delivered a landmark commercial project that transformed an urban district.
                     </p>
                 </div>
-                <Card className="overflow-hidden shadow-2xl lg:grid lg:grid-cols-2 lg:gap-0">
+                <Card className="overflow-hidden shadow-2xl lg:grid lg:grid-cols-2 lg:gap-0" data-aos="fade-up" data-aos-delay="200">
                     <div className="relative aspect-[4/3] lg:aspect-auto">
                         {caseStudyImage && (
                             <Image 
@@ -202,7 +203,7 @@ function CommercialServices() {
     return (
         <section id="commercial-services" className="py-16 md:py-24">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-12">
+                <div className="text-center mb-12" data-aos="fade-up">
                     <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Commercial Construction Services</h2>
                     <p className="mt-4 text-lg text-foreground/80 max-w-3xl mx-auto">
                         We provide comprehensive commercial construction solutions from initial concept to final completion.
@@ -210,7 +211,7 @@ function CommercialServices() {
                 </div>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {commercialServices.map((service, index) => (
-                        <Card key={index} className="flex flex-col text-center items-center p-6">
+                        <Card key={index} className="flex flex-col text-center items-center p-6" data-aos="fade-up" data-aos-delay={index * 100}>
                             <div className="bg-primary text-primary-foreground p-4 rounded-full mb-4">
                                 <service.icon className="h-8 w-8" />
                             </div>
@@ -246,7 +247,7 @@ function CommercialProcess() {
     return (
         <section className="py-16 md:py-24 bg-secondary">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-12">
+                <div className="text-center mb-12" data-aos="fade-up">
                     <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Our Commercial Construction Process</h2>
                     <p className="mt-4 text-lg text-foreground/80 max-w-2xl mx-auto">
                         A structured approach that ensures every commercial project meets the highest standards of quality and efficiency.
@@ -255,8 +256,8 @@ function CommercialProcess() {
                 <div className="relative">
                     <div className="hidden lg:block absolute left-0 right-0 top-1/2 -translate-y-1/2 h-0.5 bg-border/80" />
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-8 relative">
-                        {commercialProcessSteps.map((step) => (
-                            <div key={step.number} className="text-center p-4">
+                        {commercialProcessSteps.map((step, index) => (
+                            <div key={step.number} className="text-center p-4" data-aos="fade-up" data-aos-delay={index * 100}>
                                 <div className="relative inline-block">
                                     <div className="w-16 h-16 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-2xl font-bold mb-4 border-4 border-secondary">
                                         {step.number}
@@ -311,7 +312,7 @@ function CommercialContactForm() {
         <section id="contact-form" className="py-16 md:py-24">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="max-w-4xl mx-auto">
-                    <div className="text-center mb-12">
+                    <div className="text-center mb-12" data-aos="fade-up">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Start Your Commercial Project</h2>
                         <p className="mt-4 text-lg text-foreground/80">
                             Contact us for a comprehensive consultation about your commercial construction needs.
@@ -319,7 +320,7 @@ function CommercialContactForm() {
                     </div>
                     {isClient && (
                       <Form {...form}>
-                          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 bg-secondary p-8 rounded-lg shadow-lg">
+                          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 bg-secondary p-8 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="200">
                               <div className="grid sm:grid-cols-2 gap-6">
                                   <FormField control={form.control} name="companyName" render={({ field }) => (
                                       <FormItem><FormLabel>Company Name</FormLabel><FormControl><Input placeholder="Your Company Inc." {...field} /></FormControl><FormMessage /></FormItem>
