@@ -22,7 +22,9 @@ export function About() {
             )}
           </div>
           <div className="lg:col-span-3 space-y-6" data-aos="fade-left">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline underline" data-aos="fade-up">About Horizon Group</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline" data-aos="fade-up">
+              <span className="text-accent underline">About</span> Horizon Group
+            </h2>
             <p className="text-lg text-foreground/80">
               Founded in 1998, Horizon Group has established itself as a premier real estate development and construction firm with a portfolio of landmark projects across the country.
             </p>
