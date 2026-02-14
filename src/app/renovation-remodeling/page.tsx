@@ -47,7 +47,7 @@ function RenovationHero() {
           <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
             <a href="#renovation-services">Our Services</a>
           </Button>
-          <Button asChild size="lg" variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground">
+          <Button asChild size="lg" variant="outline" className="border-accent text-white bg-transparent hover:bg-accent hover:text-accent-foreground">
             <a href="#contact-form">Free Consultation</a>
           </Button>
         </div>

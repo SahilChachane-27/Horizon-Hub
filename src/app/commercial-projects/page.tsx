@@ -46,7 +46,7 @@ function CommercialHero() {
           <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
             <a href="#commercial-projects">Our Projects</a>
           </Button>
-          <Button asChild size="lg" variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground">
+          <Button asChild size="lg" variant="outline" className="border-accent text-white bg-transparent hover:bg-accent hover:text-accent-foreground">
             <a href="#contact-form">Start Your Project</a>
           </Button>
         </div>
