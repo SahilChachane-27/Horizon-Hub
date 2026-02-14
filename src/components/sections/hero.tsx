@@ -28,7 +28,7 @@ export function Hero() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-start" data-aos="fade-right" data-aos-delay="300">
             <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full transform -skew-x-12">
-                <a href="#projects"><span className="inline-block transform skew-x-12">View Our Projects</span></a>
+                <a href="#projects"><span className="inline-block transform skew-x-12 font-bold">View Our Projects</span></a>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-accent text-white bg-transparent hover:bg-accent hover:text-accent-foreground rounded-full transform -skew-x-12">
                 <a href="#contact"><span className="inline-block transform skew-x-12">Contact Us</span></a>
