@@ -293,6 +293,78 @@
       "description": "Portrait of Michael Roberts",
       "imageUrl": "https://images.unsplash.com/photo-1583067614143-267595304959?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NzExMTI0MzF8MA&ixlib=rb-4.1.0&q=80&w=100",
       "imageHint": "man portrait"
+    },
+    {
+      "id": "blog-hero-bg",
+      "description": "A person writing in a notebook, symbolizing insights and articles.",
+      "imageUrl": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxpbnNpZ2h0c3xlbnwwfHx8fDE3NzE2NTg1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "insights chart"
+    },
+    {
+      "id": "featured-post",
+      "description": "A modern building with green features, representing sustainable construction.",
+      "imageUrl": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      "imageHint": "sustainable building"
+    },
+    {
+      "id": "blog-post-1",
+      "description": "An architectural model of a city, representing urban development trends.",
+      "imageUrl": "https://images.unsplash.com/photo-1487956382158-bb926046304a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+      "imageHint": "urban development"
+    },
+    {
+      "id": "blog-post-2",
+      "description": "The exterior of a luxury home, illustrating residential design.",
+      "imageUrl": "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+      "imageHint": "luxury home"
+    },
+    {
+      "id": "blog-post-3",
+      "description": "A modern open-plan office space, for commercial real estate topics.",
+      "imageUrl": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+      "imageHint": "commercial office"
+    },
+    {
+      "id": "blog-post-4",
+      "description": "A robot arm working on a construction model, symbolizing technology in construction.",
+      "imageUrl": "https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+      "imageHint": "construction technology"
+    },
+    {
+      "id": "blog-post-5",
+      "description": "A beautifully renovated room, for renovation project topics.",
+      "imageUrl": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+      "imageHint": "renovation project"
+    },
+    {
+      "id": "blog-post-6",
+      "description": "A birds-eye view of a housing development, for real estate market discussions.",
+      "imageUrl": "https://images.unsplash.com/photo-1448630360428-65456885c650?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+      "imageHint": "real estate"
+    },
+    {
+      "id": "author-bio",
+      "description": "Portrait of Michael Chen, author.",
+      "imageUrl": "https://images.unsplash.com/photo-1590086782792-42dd2350140d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwZXJzb24lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NzEwNDg3OTh8MA&ixlib=rb-4.1.0&q=80&w=100",
+      "imageHint": "author portrait"
+    },
+    {
+      "id": "recent-post-1",
+      "description": "An updated house exterior.",
+      "imageUrl": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=60",
+      "imageHint": "exterior renovation"
+    },
+    {
+      "id": "recent-post-2",
+      "description": "A modern living room with smart home features.",
+      "imageUrl": "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=60",
+      "imageHint": "smart home"
+    },
+    {
+      "id": "recent-post-3",
+      "description": "A mixed-use development building.",
+      "imageUrl": "https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=60",
+      "imageHint": "mixed use"
     }
   ]
 }

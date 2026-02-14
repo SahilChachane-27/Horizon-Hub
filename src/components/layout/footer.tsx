@@ -25,6 +25,7 @@ const serviceLinks = [
   { href: '/commercial-projects', label: 'Commercial Projects' },
   { href: '/real-estate-development', label: 'Real Estate Development' },
   { href: '/renovation-remodeling', label: 'Renovation & Remodeling' },
+  { href: '/blog', label: 'Blog' },
 ];
 
 export function Footer() {
@@ -84,8 +85,8 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-primary-foreground/20 pt-8 text-center text-sm">
-          {isClient && <p>© {year} Horizon Group. All Rights Reserved.</p>}
+        <div className="border-t border-primary-foreground/20 pt-8 text-center text-sm" suppressHydrationWarning>
+          {isClient && <p suppressHydrationWarning>© {year} Horizon Group. All Rights Reserved.</p>}
         </div>
       </div>
     </footer>

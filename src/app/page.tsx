@@ -6,6 +6,7 @@ import { Services } from '@/components/sections/services';
 import { Projects } from '@/components/sections/projects';
 import { WhyUs } from '@/components/sections/why-us';
 import { Testimonials } from '@/components/sections/testimonials';
+import { Blog } from '@/components/sections/blog';
 import { Contact } from '@/components/sections/contact';
 import { ScrollToTop } from '@/components/layout/scroll-to-top';
 
@@ -20,6 +21,7 @@ export default function Home() {
         <Projects />
         <WhyUs />
         <Testimonials />
+        <Blog />
         <Contact />
       </main>
       <Footer />

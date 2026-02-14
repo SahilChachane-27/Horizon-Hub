@@ -14,6 +14,7 @@ const navLinks = [
   { href: '#projects', label: 'Projects' },
   { href: '#why-us', label: 'Why Us' },
   { href: '#testimonials', label: 'Testimonials' },
+  { href: '/blog', label: 'Blog' },
   { href: '#contact', label: 'Contact' },
 ];
 
@@ -31,15 +32,40 @@ export function Header() {
   const NavContent = ({ inSheet }: { inSheet?: boolean }) => (
     <>
       {navLinks.map((link) => {
-        const NavLink = inSheet ? SheetClose : 'a';
+        const isPageLink = link.href.startsWith('/');
+        const className = "text-lg md:text-sm font-medium text-primary-foreground/80 hover:text-primary-foreground transition-colors";
+
+        if (isPageLink) {
+          if (inSheet) {
+            return (
+              <SheetClose asChild key={link.href}>
+                <Link href={link.href} className={className}>
+                  {link.label}
+                </Link>
+              </SheetClose>
+            );
+          }
+          return (
+            <Link key={link.href} href={link.href} className={className}>
+              {link.label}
+            </Link>
+          );
+        }
+
+        // Anchor link
+        if (inSheet) {
+          return (
+            <SheetClose asChild key={link.href}>
+              <a href={link.href} className={className}>
+                {link.label}
+              </a>
+            </SheetClose>
+          );
+        }
         return (
-          <NavLink
-            key={link.href}
-            href={link.href}
-            className="text-lg md:text-sm font-medium text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-          >
+          <a key={link.href} href={link.href} className={className}>
             {link.label}
-          </NavLink>
+          </a>
         );
       })}
     </>
@@ -54,7 +80,7 @@ export function Header() {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <Link href="#hero" className="flex items-center gap-2 text-2xl font-bold text-primary-foreground">
+          <Link href="/" className="flex items-center gap-2 text-2xl font-bold text-primary-foreground">
             <Building2 className="h-7 w-7 text-accent" />
             <span>Horizon Group</span>
           </Link>
