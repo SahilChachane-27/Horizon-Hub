@@ -107,6 +107,54 @@
       "description": "Portrait of Jennifer Carter",
       "imageUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc3MTExMjQ2Nnww&ixlib=rb-4.1.0&q=80&w=100",
       "imageHint": "woman portrait"
+    },
+    {
+      "id": "commercial-hero-bg",
+      "description": "A modern commercial building with a sleek glass facade.",
+      "imageUrl": "https://images.unsplash.com/photo-1600880292210-f521132fb209?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjb21tZXJjaWFsJTIwYnVpbGRpbmdzfGVufDB8fHx8MTc3MTM4MDMzN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "commercial building"
+    },
+    {
+      "id": "commercial-project-office",
+      "description": "Interior of a modern, open-plan office space.",
+      "imageUrl": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+      "imageHint": "modern office"
+    },
+    {
+      "id": "commercial-project-retail",
+      "description": "A stylish clothing retail store with bright lighting.",
+      "imageUrl": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+      "imageHint": "retail store"
+    },
+    {
+      "id": "commercial-project-hospitality",
+      "description": "A luxurious hotel resort with a swimming pool.",
+      "imageUrl": "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+      "imageHint": "hotel resort"
+    },
+    {
+      "id": "commercial-project-mixed-use",
+      "description": "A modern building complex representing mixed-use development.",
+      "imageUrl": "https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+      "imageHint": "modern building"
+    },
+    {
+      "id": "commercial-project-healthcare",
+      "description": "The exterior of a modern hospital building.",
+      "imageUrl": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+      "imageHint": "hospital building"
+    },
+    {
+      "id": "commercial-project-industrial",
+      "description": "The interior of a large, modern industrial warehouse.",
+      "imageUrl": "https://images.unsplash.com/photo-1531973576160-7125cd663d86?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+      "imageHint": "warehouse interior"
+    },
+    {
+      "id": "commercial-case-study",
+      "description": "A tall skyscraper in a financial district.",
+      "imageUrl": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+      "imageHint": "city skyscraper"
     }
   ]
 }

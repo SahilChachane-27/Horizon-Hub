@@ -22,16 +22,18 @@ const quickLinks = [
 
 const serviceLinks = [
   { href: '/residential-construction', label: 'Residential Construction' },
-  { href: '#services', label: 'Commercial Projects' },
+  { href: '/commercial-projects', label: 'Commercial Projects' },
   { href: '#services', label: 'Real Estate Development' },
   { href: '#services', label: 'Renovation & Remodeling' },
 ];
 
 export function Footer() {
   const [year, setYear] = useState<number>();
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
     setYear(new Date().getFullYear());
+    setIsClient(true);
   }, []);
 
   return (
@@ -78,7 +80,7 @@ export function Footer() {
           </div>
 
           <div>
-            <ArticleSummarizer />
+            {isClient && <ArticleSummarizer />}
           </div>
         </div>
 
