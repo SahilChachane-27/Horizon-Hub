@@ -21,7 +21,7 @@ const quickLinks = [
 ];
 
 const serviceLinks = [
-  { href: '#services', label: 'Residential Construction' },
+  { href: '/residential-construction', label: 'Residential Construction' },
   { href: '#services', label: 'Commercial Projects' },
   { href: '#services', label: 'Real Estate Development' },
   { href: '#services', label: 'Renovation & Remodeling' },
@@ -71,7 +71,7 @@ export function Footer() {
             <ul className="space-y-2">
               {serviceLinks.map(link => (
                 <li key={link.label}>
-                  <a href={link.href} className="hover:text-accent transition-colors">{link.label}</a>
+                  <Link href={link.href} className="hover:text-accent transition-colors">{link.label}</Link>
                 </li>
               ))}
             </ul>
