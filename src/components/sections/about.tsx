@@ -31,12 +31,12 @@ export function About() {
             <p className="text-lg text-foreground/80">
               Our integrated approach combines innovative design, sustainable practices, and meticulous craftsmanship to deliver exceptional value to our clients and communities.
             </p>
-            <Card className="bg-secondary border-none shadow-lg">
+            <Card className="bg-card border-l-4 border-accent shadow-lg">
               <CardHeader>
-                <CardTitle className="text-secondary-foreground">Our Mission</CardTitle>
+                <CardTitle className="text-primary">Our Mission</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-secondary-foreground/80">
+                <p className="text-foreground/80">
                   To create enduring spaces that enrich lives and communities through innovative design, sustainable construction, and unwavering commitment to quality.
                 </p>
               </CardContent>
