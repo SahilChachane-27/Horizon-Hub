@@ -8,20 +8,22 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 
 const navLinks = [
-  { href: '#hero', label: 'Home' },
-  { href: '#about', label: 'About' },
-  { href: '#services', label: 'Services' },
-  { href: '#projects', label: 'Projects' },
-  { href: '#why-us', label: 'Why Us' },
-  { href: '#testimonials', label: 'Testimonials' },
+  { href: '/#hero', label: 'Home' },
+  { href: '/#about', label: 'About' },
+  { href: '/#services', label: 'Services' },
+  { href: '/#projects', label: 'Projects' },
+  { href: '/#why-us', label: 'Why Us' },
+  { href: '/#testimonials', label: 'Testimonials' },
   { href: '/blog', label: 'Blog' },
-  { href: '#contact', label: 'Contact' },
+  { href: '/#contact', label: 'Contact' },
 ];
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
+    setIsClient(true);
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
@@ -90,19 +92,21 @@ export function Header() {
           </nav>
 
           <div className="md:hidden">
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-primary-foreground/10">
-                   <Menu className="h-6 w-6" />
-                  <span className="sr-only">Toggle navigation</span>
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="right" className="bg-primary border-l-0 text-primary-foreground w-64 p-6">
-                <nav className="flex flex-col items-start space-y-6 mt-8">
-                  <NavContent inSheet />
-                </nav>
-              </SheetContent>
-            </Sheet>
+            {isClient && (
+              <Sheet>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-primary-foreground/10">
+                    <Menu className="h-6 w-6" />
+                    <span className="sr-only">Toggle navigation</span>
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="right" className="bg-primary border-l-0 text-primary-foreground w-64 p-6">
+                  <nav className="flex flex-col items-start space-y-6 mt-8">
+                    <NavContent inSheet />
+                  </nav>
+                </SheetContent>
+              </Sheet>
+            )}
           </div>
         </div>
       </div>
