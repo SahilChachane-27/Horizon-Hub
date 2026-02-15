@@ -122,7 +122,7 @@ const constructionProcessSteps = [
 
 function ConstructionProcess() {
   return (
-    <section id="construction-process" className="py-16 md:py-24 bg-secondary">
+    <section id="construction-process" className="py-16 md:py-24 bg-white">
       <div className="container mx-auto pl-4 sm:pl-16 lg:pl-24 pr-4 sm:pr-6 lg:pr-8">
         <div className="text-center mb-12" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Our Residential Construction Process</h2>
