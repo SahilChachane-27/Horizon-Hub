@@ -219,7 +219,7 @@ function CommercialServices() {
                 </div>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {commercialServices.map((service, index) => (
-                        <Card key={index} className="flex flex-col text-center items-center p-6" data-aos="fade-up" data-aos-delay={index * 100}>
+                        <Card key={index} className="flex flex-col text-center items-center p-8 rounded-lg shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl" data-aos="fade-up" data-aos-delay={index * 100}>
                             <div className="bg-primary text-primary-foreground p-4 rounded-full mb-4">
                                 <service.icon className="h-8 w-8" />
                             </div>
