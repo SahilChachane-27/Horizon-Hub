@@ -219,7 +219,7 @@ function RenovationProcess() {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     {renovationProcessSteps.map((step, index) => (
-                        <Card key={step.title} className="p-6 text-center border-0 shadow-lg rounded-lg bg-card transition-all duration-300 hover:shadow-2xl hover:-translate-y-2" data-aos="fade-up" data-aos-delay={index * 100}>
+                        <Card key={step.title} className="p-6 text-center bg-card rounded-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2" data-aos="fade-up" data-aos-delay={index * 100}>
                             <CardHeader className="p-0 mb-4">
                                 <CardTitle className="text-primary text-xl">{step.title}</CardTitle>
                             </CardHeader>
@@ -256,7 +256,7 @@ const renovationMetrics = [
 function WhyChooseRenovation() {
     return (
         <section className="py-16 md:py-24 bg-secondary">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="container mx-auto pl-4 sm:pl-16 lg:pl-24 pr-4 sm:pr-6 lg:pr-8">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     <div className="space-y-8" data-aos="fade-right">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Why Choose Horizon Group for Your Renovation</h2>
