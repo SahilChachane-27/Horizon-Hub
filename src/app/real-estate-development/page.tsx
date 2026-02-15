@@ -158,16 +158,20 @@ function FeaturedDevelopmentProjects() {
                     {portfolioItems.map((item, index) => {
                         const image = PlaceHolderImages.find(p => p.id === item.id);
                         return (
-                        <Card key={item.id} className="overflow-hidden group" data-aos="fade-up" data-aos-delay={index * 100}>
-                            {image && <div className="relative aspect-video"><Image src={image.imageUrl} alt={image.description} fill className="object-cover transition-transform duration-500 group-hover:scale-105" data-ai-hint={image.imageHint}/></div>}
-                            <CardContent className="p-6 space-y-4">
-                                <h3 className="text-xl font-bold text-primary">{item.title}</h3>
-                                <p className="text-foreground/70">{item.description}</p>
-                                <div className="flex justify-between items-center text-primary font-medium border-t pt-4">
-                                    <div className="flex items-center gap-2"><item.stat1Icon className="h-5 w-5 text-accent"/><span>{item.stat1}</span></div>
-                                    <div className="flex items-center gap-2"><item.stat2Icon className="h-5 w-5 text-accent"/><span>{item.stat2}</span></div>
+                        <Card key={item.id} className="overflow-hidden group relative" data-aos="fade-up" data-aos-delay={index * 100}>
+                            <div className="relative aspect-video">
+                                {image && <Image src={image.imageUrl} alt={image.description} fill className="object-cover transition-transform duration-500 group-hover:scale-105" data-ai-hint={image.imageHint}/>}
+                            </div>
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                                <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                                    <h3 className="text-xl font-bold text-white">{item.title}</h3>
+                                    <p className="text-white/80 text-sm mb-4">{item.description}</p>
+                                    <div className="flex justify-between items-center text-white font-medium border-t border-white/30 pt-4">
+                                        <div className="flex items-center gap-2"><item.stat1Icon className="h-5 w-5 text-accent"/><span>{item.stat1}</span></div>
+                                        <div className="flex items-center gap-2"><item.stat2Icon className="h-5 w-5 text-accent"/><span>{item.stat2}</span></div>
+                                    </div>
                                 </div>
-                            </CardContent>
+                            </div>
                         </Card>
                     )})}
                 </div>
