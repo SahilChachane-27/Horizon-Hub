@@ -24,16 +24,18 @@ import React, { useEffect, useState } from 'react';
 function DevelopmentHero() {
   const heroImage = PlaceHolderImages.find(p => p.id === 'development-hero-bg');
   return (
-    <section id="development-hero" className="relative h-[60vh] min-h-[400px] flex items-center justify-start text-left text-white">
+    <section id="development-hero" className="relative h-[60vh] min-h-[400px] flex items-center justify-start text-left text-white overflow-hidden">
       {heroImage && (
-        <Image
-          src={heroImage.imageUrl}
-          alt={heroImage.description}
-          fill
-          className="object-cover"
-          priority
-          data-ai-hint={heroImage.imageHint}
-        />
+        <div className="absolute inset-0" data-aos="zoom-in" data-aos-duration="1500">
+          <Image
+            src={heroImage.imageUrl}
+            alt={heroImage.description}
+            fill
+            className="object-cover"
+            priority
+            data-ai-hint={heroImage.imageHint}
+          />
+        </div>
       )}
       <div className="absolute inset-0 bg-black/50" />
       <div className="container mx-auto pl-4 sm:pl-16 lg:pl-24 pr-4 sm:pr-6 lg:pr-8">
