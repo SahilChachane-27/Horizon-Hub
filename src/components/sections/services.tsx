@@ -1,27 +1,32 @@
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { Home, Building, Building2, Paintbrush } from 'lucide-react';
 
 const services = [
   {
     href: '/residential-construction',
     title: 'Residential Construction',
     description: 'Custom luxury homes, multi-family developments, and residential communities built with precision and care.',
+    icon: Home,
   },
   {
     href: '/commercial-projects',
     title: 'Commercial Projects',
     description: 'Office towers, retail centers, hotels, and mixed-use developments designed for functionality and aesthetics.',
+    icon: Building,
   },
   {
     href: '/real-estate-development',
     title: 'Real Estate Development',
     description: 'End-to-end development services from land acquisition and planning to construction and marketing.',
+    icon: Building2,
   },
   {
     href: '/renovation-remodeling',
     title: 'Renovation & Remodeling',
     description: 'Transforming existing spaces with innovative designs and quality craftsmanship to meet modern needs.',
+    icon: Paintbrush,
   },
 ];
 
@@ -38,10 +43,15 @@ export function Services() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
-            <div key={index} className="transform -skew-x-12" data-aos="fade-up" data-aos-delay={index * 100}>
-              <Card className="text-center bg-card shadow-lg rounded-3xl flex flex-col p-6 h-full transform skew-x-12">
+            <div key={index} data-aos="fade-up" data-aos-delay={index * 100}>
+              <Card className="text-center bg-card shadow-lg rounded-3xl flex flex-col p-6 h-full transition-transform duration-300 hover:-rotate-3">
                   <div className="flex-grow">
-                      <h3 className="text-2xl font-bold font-body mt-6 mb-4">{service.title}</h3>
+                      <div className="flex justify-center mb-4">
+                        <div className="p-4 border-2 border-accent rounded-full">
+                          <service.icon className="h-8 w-8 text-primary" />
+                        </div>
+                      </div>
+                      <h3 className="text-2xl font-bold font-body mt-2 mb-4">{service.title}</h3>
                       <p className="text-sm font-body text-foreground/70">{service.description}</p>
                   </div>
                   <Button asChild className="mt-5 py-2 px-4 text-sm bg-accent hover:bg-accent/90 text-accent-foreground rounded-full transform -skew-x-12 self-center">
