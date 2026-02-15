@@ -28,7 +28,7 @@ const services = [
 export function Services() {
   return (
     <section id="services" className="py-16 md:py-24 bg-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto pl-4 sm:pl-16 lg:pl-24 pr-4 sm:pr-6 lg:pr-8">
         <div className="text-center mb-12" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Our Services</h2>
           <div className="mt-4 w-24 h-1 bg-accent mx-auto"></div>
@@ -41,7 +41,7 @@ export function Services() {
             <Card key={index} className="text-center bg-card shadow-lg rounded-3xl flex flex-col p-6" data-aos="fade-up" data-aos-delay={index * 100}>
                 <div className="flex-grow">
                     <h3 className="text-2xl font-bold text-primary mb-4 font-headline mt-6">{service.title}</h3>
-                    <p className="text-foreground/70">{service.description}</p>
+                    <p className="text-foreground/70 text-sm font-body">{service.description}</p>
                 </div>
                 <Button asChild size="sm" className="mt-8 h-8 px-2.5 text-xs bg-accent hover:bg-accent/90 text-accent-foreground rounded-full transform -skew-x-12">
                     <Link href={service.href}><span className="inline-block transform skew-x-12">View More</span></Link>
