@@ -212,7 +212,7 @@ const renovationProcessSteps = [
 function RenovationProcess() {
     return (
         <section className="py-16 md:py-24">
-            <div className="container mx-auto pl-4 sm:pl-16 lg:pl-24 pr-4 sm:pr-6 lg:pr-8">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12" data-aos="fade-up">
                     <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Our Renovation Process</h2>
                     <p className="mt-4 text-base md:text-lg text-foreground/80 max-w-2xl mx-auto">A structured approach that ensures your renovation project runs smoothly from concept to completion.</p>
@@ -256,7 +256,7 @@ const renovationMetrics = [
 function WhyChooseRenovation() {
     return (
         <section className="py-16 md:py-24 bg-secondary">
-            <div className="container mx-auto pl-4 sm:pl-16 lg:pl-24 pr-4 sm:pr-6 lg:pr-8">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     <div className="space-y-8" data-aos="fade-right">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Why Choose Horizon Group for Your Renovation</h2>
@@ -317,7 +317,7 @@ const renovationPortfolioItems = [
 function RenovationPortfolio() {
     return (
         <section className="py-16 md:py-24">
-            <div className="container mx-auto pl-4 sm:pl-16 lg:pl-24 pr-4 sm:pr-6 lg:pr-8">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12" data-aos="fade-up">
                     <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Renovation Portfolio</h2>
                     <p className="mt-4 text-base md:text-lg text-foreground/80 max-w-2xl mx-auto">Explore our gallery of completed renovation projects that showcase our attention to detail and design excellence.</p>
@@ -355,7 +355,7 @@ const renovationTestimonialsList = [
 function RenovationTestimonials() {
     return (
         <section className="py-16 md:py-24 bg-secondary">
-            <div className="container mx-auto pl-4 sm:pl-16 lg:pl-24 pr-4 sm:pr-6 lg:pr-8">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12" data-aos="fade-up">
                     <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">What Our Renovation Clients Say</h2>
                     <p className="mt-4 text-base md:text-lg text-foreground/80 max-w-2xl mx-auto">Hear from homeowners and business owners who have transformed their spaces with Horizon Group.</p>
