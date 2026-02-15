@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Building2, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -43,8 +43,7 @@ export function Footer() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           <div className="space-y-4" data-aos="fade-up">
-            <Link href="#hero" className="flex items-center gap-2 text-2xl font-bold text-accent font-headline">
-                <Building2 className="h-7 w-7" />
+            <Link href="#hero" className="flex items-center text-2xl font-bold text-accent font-headline">
                 <span>Horizon Group</span>
             </Link>
             <p className="text-sm">
@@ -87,7 +86,7 @@ export function Footer() {
               Subscribe to our newsletter for updates on our latest projects and industry insights.
             </p>
             {isClient && (
-              <form className="flex gap-2">
+              <form className="flex gap-2" suppressHydrationWarning>
                 <Input
                   type="email"
                   placeholder="Your Email"
