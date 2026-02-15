@@ -352,7 +352,7 @@ function DevelopmentContactForm() {
                               <FormItem><FormLabel>Project Details</FormLabel><FormControl><Textarea placeholder="Your project details, investment parameters, timeline..." rows={5} {...field} /></FormControl><FormMessage /></FormItem>
                           )} />
                           <div className="text-center">
-                              <Button type="submit" size="lg" className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-accent/90">Submit Development Inquiry</Button>
+                              <Button type="submit" size="lg" className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-accent/90 rounded-full transform -skew-x-12"><span className="inline-block transform skew-x-12">Submit Development Inquiry</span></Button>
                               <p className="text-sm text-muted-foreground mt-3">Our team will contact you within 48 hours.</p>
                           </div>
                       </form>

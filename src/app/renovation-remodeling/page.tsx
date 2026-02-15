@@ -452,7 +452,7 @@ function RenovationContactForm() {
                                 <FormItem><FormLabel>Project Details</FormLabel><FormControl><Textarea placeholder="Tell us about your renovation project..." rows={5} {...field} /></FormControl><FormMessage /></FormItem>
                             )} />
                             <div className="text-center">
-                                <Button type="submit" size="lg" className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-accent/90">Request Free Consultation</Button>
+                                <Button type="submit" size="lg" className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-accent/90 rounded-full transform -skew-x-12"><span className="inline-block transform skew-x-12">Request Free Consultation</span></Button>
                                 <p className="text-sm text-muted-foreground mt-3">We'll contact you within 24 hours.</p>
                             </div>
                         </form>

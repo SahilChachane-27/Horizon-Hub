@@ -17,9 +17,17 @@ const initialState = {
 function SubmitButton() {
   const { pending } = useFormStatus();
   return (
-    <Button type="submit" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground" disabled={pending}>
-      {pending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
-      {pending ? 'Summarizing...' : 'Summarize'}
+    <Button type="submit" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground rounded-full transform -skew-x-12" disabled={pending}>
+      <span className="inline-block transform skew-x-12">
+      {pending ? (
+        <>
+          <Loader2 className="inline mr-2 h-4 w-4 animate-spin" />
+          {'Summarizing...'}
+        </>
+      ) : (
+        'Summarize'
+      )}
+      </span>
     </Button>
   );
 }

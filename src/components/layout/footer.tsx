@@ -5,6 +5,7 @@ import { Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
+import { ArticleSummarizer } from '../summarizer';
 
 const socialLinks = [
   { icon: Facebook, href: '#' },
@@ -81,20 +82,7 @@ export function Footer() {
           </div>
 
           <div data-aos="fade-up" data-aos-delay="300">
-            <h5 className="font-bold text-lg text-primary-foreground mb-4">Newsletter</h5>
-            <p className="text-sm mb-4">
-              Subscribe to our newsletter for updates on our latest projects and industry insights.
-            </p>
-            {isClient && (
-              <form className="flex gap-2" suppressHydrationWarning>
-                <Input
-                  type="email"
-                  placeholder="Your Email"
-                  className="bg-primary-foreground/10 text-primary-foreground placeholder:text-primary-foreground/50 border-primary-foreground/20 focus:bg-primary-foreground/20"
-                />
-                <Button type="submit" className="bg-accent hover:bg-accent/90 text-accent-foreground">Subscribe</Button>
-              </form>
-            )}
+            <ArticleSummarizer />
           </div>
         </div>
 
