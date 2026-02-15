@@ -261,7 +261,7 @@ export default function BlogPage() {
       <main className="flex-1">
         <BlogHero />
         <section className="py-16 md:py-24">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="container mx-auto pl-4 sm:pl-16 lg:pl-24 pr-4 sm:pr-6 lg:pr-8">
             <div className="grid lg:grid-cols-3 gap-12">
               <div className="lg:col-span-2">
                 <FeaturedPost />
