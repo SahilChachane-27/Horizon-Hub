@@ -68,7 +68,7 @@ const philosophyPillars = [
 function DevelopmentPhilosophy() {
     return (
         <section className="py-16 md:py-24 bg-secondary">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="container mx-auto pl-4 sm:pl-16 lg:pl-24 pr-4 sm:pr-6 lg:pr-8">
                 <div className="text-center mb-12" data-aos="fade-up">
                     <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Our Development Philosophy</h2>
                     <p className="mt-4 text-base md:text-lg text-foreground/80 max-w-3xl mx-auto">Built on a foundation of innovation, sustainability, and community-centric design principles.</p>
@@ -78,7 +78,7 @@ function DevelopmentPhilosophy() {
                         <Card key={pillar.title} className="text-center p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay={index * 100}>
                             <CardHeader className="p-0 flex items-center justify-center mb-4">
                                 <div className="bg-primary text-primary-foreground p-4 rounded-full">
-                                    <pillar.icon className="h-8 w-8" />
+                                    <pillar.icon className="h-8 w-8 text-accent" />
                                 </div>
                             </CardHeader>
                             <CardContent className="p-0">
