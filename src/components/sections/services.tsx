@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
@@ -38,16 +38,19 @@ export function Services() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className="text-center bg-card shadow-lg rounded-2xl flex flex-col" data-aos="fade-up" data-aos-delay={index * 100}>
-              <CardHeader className="items-center">
-                <CardTitle className="text-primary">{service.title}</CardTitle>
-              </CardHeader>
-              <CardContent className="flex-grow flex flex-col">
-                <p className="text-foreground/70 flex-grow">{service.description}</p>
-                <Button asChild className="mt-4 bg-accent hover:bg-accent/90 text-accent-foreground rounded-full">
-                  <Link href={service.href}>View More</Link>
+            <Card key={index} className="text-center bg-card shadow-lg rounded-3xl flex flex-col p-8" data-aos="fade-up" data-aos-delay={index * 100}>
+                <div className="flex-grow">
+                    <div className="flex justify-center mb-6">
+                        <div className="bg-muted rounded-full h-24 w-24 flex items-center justify-center">
+                            <div className="h-8 w-8 border-2 border-accent"></div>
+                        </div>
+                    </div>
+                    <h3 className="text-2xl font-bold text-primary mb-4 font-headline">{service.title}</h3>
+                    <p className="text-foreground/70">{service.description}</p>
+                </div>
+                <Button asChild className="mt-8 bg-accent hover:bg-accent/90 text-accent-foreground rounded-full">
+                    <Link href={service.href}>View More</Link>
                 </Button>
-              </CardContent>
             </Card>
           ))}
         </div>
