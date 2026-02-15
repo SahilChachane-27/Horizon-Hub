@@ -43,7 +43,7 @@ export function Services() {
                     <h3 className="text-2xl font-bold text-primary mb-4 font-body mt-6">{service.title}</h3>
                     <p className="text-foreground/70 text-sm font-body">{service.description}</p>
                 </div>
-                <Button asChild size="sm" className="mt-8 h-8 px-2.5 text-xs bg-accent hover:bg-accent/90 text-accent-foreground rounded-full transform -skew-x-12">
+                <Button asChild size="sm" className="mt-8 h-8 px-2 text-xs bg-accent hover:bg-accent/90 text-accent-foreground rounded-full transform -skew-x-12">
                     <Link href={service.href}><span className="inline-block transform skew-x-12">View More</span></Link>
                 </Button>
             </Card>
