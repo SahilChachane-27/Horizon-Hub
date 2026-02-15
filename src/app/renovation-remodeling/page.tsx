@@ -219,7 +219,7 @@ function RenovationProcess() {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     {renovationProcessSteps.map((step, index) => (
-                        <Card key={step.title} className="p-6 text-center border-0 shadow-none" data-aos="fade-up" data-aos-delay={index * 100}>
+                        <Card key={step.title} className="p-6 text-center border-0 shadow-lg rounded-lg bg-card transition-all duration-300 hover:shadow-2xl hover:-translate-y-2" data-aos="fade-up" data-aos-delay={index * 100}>
                             <CardHeader className="p-0 mb-4">
                                 <CardTitle className="text-primary text-xl">{step.title}</CardTitle>
                             </CardHeader>
