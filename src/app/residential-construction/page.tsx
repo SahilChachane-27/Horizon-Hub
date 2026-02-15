@@ -82,7 +82,7 @@ const residentialServices = [
 function ResidentialServices() {
   return (
     <section id="residential-services" className="py-16 md:py-24">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto pl-4 sm:pl-16 lg:pl-24 pr-4 sm:pr-6 lg:pr-8">
         <div className="text-center mb-12" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Our Residential Construction Services</h2>
           <p className="mt-4 text-base md:text-lg text-foreground/80 max-w-3xl mx-auto">
@@ -123,7 +123,7 @@ const constructionProcessSteps = [
 function ConstructionProcess() {
   return (
     <section id="construction-process" className="py-16 md:py-24 bg-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto pl-4 sm:pl-16 lg:pl-24 pr-4 sm:pr-6 lg:pr-8">
         <div className="text-center mb-12" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Our Residential Construction Process</h2>
           <p className="mt-4 text-base md:text-lg text-foreground/80 max-w-3xl mx-auto">
@@ -159,7 +159,7 @@ const galleryItems = [
 function ResidentialGallery() {
   return (
     <section id="residential-gallery" className="py-16 md:py-24">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto pl-4 sm:pl-16 lg:pl-24 pr-4 sm:pr-6 lg:pr-8">
         <div className="text-center mb-12" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Residential Project Gallery</h2>
           <p className="mt-4 text-base md:text-lg text-foreground/80 max-w-2xl mx-auto">
@@ -300,7 +300,7 @@ function ResidentialContactForm() {
           
           {isClient && (
             <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 bg-secondary p-8 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 bg-white p-8 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="200">
                 <div className="grid sm:grid-cols-2 gap-6">
                     <FormField control={form.control} name="name" render={({ field }) => (
                     <FormItem><FormLabel>Your Name</FormLabel><FormControl><Input placeholder="John Doe" {...field} /></FormControl><FormMessage /></FormItem>
