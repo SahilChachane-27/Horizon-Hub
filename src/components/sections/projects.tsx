@@ -36,14 +36,13 @@ export function Projects() {
             const projectImage = PlaceHolderImages.find(p => p.id === project.id);
             return (
               <Card key={project.id} className="overflow-hidden group relative" data-aos="fade-up" data-aos-delay={index * 100}>
-                <div className="aspect-w-4 aspect-h-3">
+                <div className="relative aspect-video">
                   {projectImage && (
                      <Image
                       src={projectImage.imageUrl}
                       alt={projectImage.description}
-                      width={600}
-                      height={400}
-                      className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
                       data-ai-hint={projectImage.imageHint}
                     />
                   )}
