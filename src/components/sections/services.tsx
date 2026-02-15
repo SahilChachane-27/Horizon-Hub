@@ -1,6 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Home, Building2, Factory, Wrench, Square } from 'lucide-react';
 import Link from 'next/link';
 
 const services = [
@@ -41,9 +40,6 @@ export function Services() {
           {services.map((service, index) => (
             <Card key={index} className="text-center bg-card shadow-lg rounded-2xl flex flex-col" data-aos="fade-up" data-aos-delay={index * 100}>
               <CardHeader className="items-center">
-                <div className="bg-secondary p-4 rounded-full mb-4">
-                  <Square className="h-8 w-8 text-accent" />
-                </div>
                 <CardTitle className="text-primary">{service.title}</CardTitle>
               </CardHeader>
               <CardContent className="flex-grow flex flex-col">

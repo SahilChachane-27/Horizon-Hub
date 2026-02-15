@@ -8,7 +8,6 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { Frame, Square } from "lucide-react";
 import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { useEffect, useState } from "react";
@@ -92,8 +91,7 @@ export function Contact() {
             <div className="bg-primary p-8 rounded-2xl shadow-lg space-y-6 text-primary-foreground">
               <h3 className="text-2xl font-bold font-headline">Contact Information</h3>
               {contactInfo.map((info) => (
-                <div key={info.title} className="flex items-start gap-4">
-                  <div className="text-accent mt-1"><Square className="h-4 w-4" /></div>
+                <div key={info.title}>
                   <div>
                     <h4 className="font-semibold">{info.title}</h4>
                     {info.lines.map((line, i) => <p key={i} className="text-primary-foreground/80">{line}</p>)}
