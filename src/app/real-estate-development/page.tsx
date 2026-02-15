@@ -115,7 +115,7 @@ function DevelopmentProcess() {
             {processSteps.slice(0,4).map((step, index) => (
                 <Card key={step.title} className="p-6 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay={index * 100}>
                     <CardHeader>
-                        <CardTitle className="text-primary text-xl">{step.title}</CardTitle>
+                        <CardTitle className="text-accent text-xl">{step.title}</CardTitle>
                     </CardHeader>
                     <CardContent>
                         <p className="text-foreground/70">{step.description}</p>
@@ -127,7 +127,7 @@ function DevelopmentProcess() {
              {processSteps.slice(4).map((step, index) => (
                 <Card key={step.title} className="p-6 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay={(index + 4) * 100}>
                     <CardHeader>
-                        <CardTitle className="text-primary text-xl">{step.title}</CardTitle>
+                        <CardTitle className="text-accent text-xl">{step.title}</CardTitle>
                     </CardHeader>
                     <CardContent>
                         <p className="text-foreground/70">{step.description}</p>
