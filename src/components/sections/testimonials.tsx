@@ -85,7 +85,7 @@ export function Testimonials() {
               return (
                 <CarouselItem key={testimonial.id}>
                   <div className="p-1">
-                    <Card className="bg-card shadow-lg">
+                    <Card className="bg-card shadow-lg rounded-2xl">
                       <CardContent className="p-8 md:p-12 text-center flex flex-col items-center">
                         <p className="text-lg md:text-xl text-foreground/80 mb-6 italic">
                           "{testimonial.quote}"
