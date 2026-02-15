@@ -270,7 +270,7 @@ function StrategicApproach() {
                          <div className="grid grid-cols-3 gap-4 text-center">
                             {portfolioStats.map(stat => (
                                 <div key={stat.label}>
-                                    <p className="text-3xl font-bold text-primary">{stat.value}</p>
+                                    <p className="text-3xl font-bold text-accent">{stat.value}</p>
                                     <p className="text-sm text-muted-foreground">{stat.label}</p>
                                 </div>
                             ))}
