@@ -159,7 +159,7 @@ const galleryItems = [
 function ResidentialGallery() {
   return (
     <section id="residential-gallery" className="py-16 md:py-24">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto pl-4 sm:pl-16 lg:pl-24 pr-4 sm:pr-6 lg:pr-8">
         <div className="text-center mb-12" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Residential Project Gallery</h2>
           <p className="mt-4 text-base md:text-lg text-foreground/80 max-w-2xl mx-auto">
@@ -371,5 +371,7 @@ export default function ResidentialConstructionPage() {
 }
 
 
+
+    
 
     
