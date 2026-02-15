@@ -83,11 +83,11 @@ export function Testimonials() {
                 p => p.id === testimonial.id
               );
               return (
-                <CarouselItem key={testimonial.id}>
-                  <div className="p-1">
-                    <Card className="bg-card shadow-lg rounded-3xl">
-                      <CardContent className="p-8 md:p-12 text-center flex flex-col items-center">
-                        <p className="text-lg md:text-xl text-foreground/80 mb-6 italic">
+                <CarouselItem key={testimonial.id} className="flex">
+                  <div className="p-1 flex-1">
+                    <Card className="bg-card shadow-lg rounded-3xl h-full flex flex-col">
+                      <CardContent className="p-8 md:p-12 text-center flex flex-col items-center flex-1">
+                        <p className="text-lg md:text-xl text-foreground/80 mb-6 italic flex-grow">
                           "{testimonial.quote}"
                         </p>
                         <div className="flex items-center gap-4">
