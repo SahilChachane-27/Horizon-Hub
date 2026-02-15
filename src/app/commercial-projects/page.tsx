@@ -19,6 +19,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
 
 function CommercialHero() {
   const heroImage = PlaceHolderImages.find(p => p.id === 'commercial-hero-bg');
@@ -172,6 +173,11 @@ function FeaturedCaseStudy() {
                                 <li className="flex items-center gap-2"><Check className="h-5 w-5 text-accent"/> 40% reduction in energy consumption</li>
                                 <li className="flex items-center gap-2"><Check className="h-5 w-5 text-accent"/> Integrated smart building technology</li>
                             </ul>
+                        </div>
+                        <div className="mt-8">
+                            <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
+                                <Link href="#">View Full Case Study</Link>
+                            </Button>
                         </div>
                     </div>
                 </Card>
