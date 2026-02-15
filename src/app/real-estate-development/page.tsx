@@ -196,7 +196,7 @@ function DevelopmentExpertise() {
                 </div>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {expertiseAreas.map((area, index) => (
-                        <Card key={area.title} className="flex flex-col text-center items-center p-6" data-aos="fade-up" data-aos-delay={index * 100}>
+                        <Card key={area.title} className="flex flex-col text-center items-center p-6 border-0 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl" data-aos="fade-up" data-aos-delay={index * 100}>
                             <div className="bg-primary text-primary-foreground p-4 rounded-full mb-4"><area.icon className="h-8 w-8" /></div>
                             <h3 className="text-xl font-bold text-primary mb-3">{area.title}</h3>
                             <p className="text-foreground/70 mb-4 flex-grow">{area.description}</p>
