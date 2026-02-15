@@ -44,7 +44,7 @@ export function Services() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
             <div key={index} data-aos="fade-up" data-aos-delay={index * 100}>
-              <Card className="text-center bg-card shadow-lg rounded-3xl flex flex-col p-6 h-full transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+              <Card className="text-center bg-card shadow-lg rounded-2xl flex flex-col p-6 h-full transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
                   <div className="flex-grow">
                       <div className="flex justify-center mb-4">
                         <div className="p-4 border-2 border-accent rounded-full">
@@ -54,8 +54,8 @@ export function Services() {
                       <h3 className="text-2xl font-bold font-body mt-2 mb-4">{service.title}</h3>
                       <p className="text-sm font-body text-foreground/70">{service.description}</p>
                   </div>
-                  <Button asChild className="mt-5 py-2 px-4 text-sm bg-accent hover:bg-accent/90 text-accent-foreground rounded-full transform -skew-x-12 self-center">
-                      <Link href={service.href}><span className="inline-block transform skew-x-12">View More</span></Link>
+                  <Button asChild className="mt-5 py-2 px-4 text-sm bg-accent hover:bg-accent/90 text-accent-foreground rounded-lg self-center">
+                      <Link href={service.href}>View More</Link>
                   </Button>
               </Card>
             </div>
