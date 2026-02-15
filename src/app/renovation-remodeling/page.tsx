@@ -262,11 +262,15 @@ function WhyChooseRenovation() {
                         <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Why Choose Horizon Group for Your Renovation</h2>
                         <p className="text-base md:text-lg text-foreground/80">With decades of renovation experience, we bring precision, craftsmanship, and innovative solutions to every project.</p>
                         {whyChooseFeatures.map(feature => (
-                            <div key={feature.title} className="flex items-start gap-4">
-                                <div className="bg-primary text-primary-foreground p-3 rounded-full mt-1 flex-shrink-0"><feature.icon className="h-6 w-6" /></div>
-                                <div>
-                                    <h3 className="text-xl font-bold text-primary">{feature.title}</h3>
-                                    <p className="text-foreground/70">{feature.description}</p>
+                            <div key={feature.title} className="group rounded-lg p-6 bg-card transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                                <div className="flex items-start gap-4">
+                                    <div className="bg-primary text-primary-foreground p-3 rounded-full mt-1 flex-shrink-0 transition-colors group-hover:bg-accent group-hover:text-accent-foreground">
+                                        <feature.icon className="h-6 w-6" />
+                                    </div>
+                                    <div>
+                                        <h3 className="text-xl font-bold text-primary">{feature.title}</h3>
+                                        <p className="text-foreground/70">{feature.description}</p>
+                                    </div>
                                 </div>
                             </div>
                         ))}
