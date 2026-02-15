@@ -72,7 +72,7 @@ export function Testimonials() {
             align: 'start',
             loop: true,
           }}
-          className="w-full max-w-4xl mx-auto"
+          className="w-full max-w-5xl mx-auto"
           data-aos="fade-up"
           onMouseEnter={plugin.current.stop}
           onMouseLeave={plugin.current.reset}
@@ -85,7 +85,7 @@ export function Testimonials() {
               return (
                 <CarouselItem key={testimonial.id}>
                   <div className="p-1">
-                    <Card className="bg-card shadow-lg rounded-2xl">
+                    <Card className="bg-card shadow-lg rounded-3xl">
                       <CardContent className="p-8 md:p-12 text-center flex flex-col items-center">
                         <p className="text-lg md:text-xl text-foreground/80 mb-6 italic">
                           "{testimonial.quote}"
