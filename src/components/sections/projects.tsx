@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const projects = [
@@ -36,7 +36,7 @@ export function Projects() {
             const projectImage = PlaceHolderImages.find(p => p.id === project.id);
             return (
               <Card key={project.id} className="overflow-hidden group relative" data-aos="fade-up" data-aos-delay={index * 100}>
-                <div className="relative aspect-video">
+                <div className="relative aspect-[16/10]">
                   {projectImage && (
                      <Image
                       src={projectImage.imageUrl}
@@ -47,10 +47,11 @@ export function Projects() {
                     />
                   )}
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                <div className="absolute bottom-0 left-0 p-6 text-white">
-                  <h3 className="text-2xl font-bold">{project.title}</h3>
-                  <p className="text-white/80">{project.location}</p>
+                <div className="absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+                  <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
+                    <h3 className="text-2xl font-bold text-white">{project.title}</h3>
+                    <p className="text-white/80">{project.location}</p>
+                  </div>
                 </div>
               </Card>
             );
