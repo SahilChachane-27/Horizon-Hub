@@ -317,7 +317,7 @@ const renovationPortfolioItems = [
 function RenovationPortfolio() {
     return (
         <section className="py-16 md:py-24">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="container mx-auto pl-4 sm:pl-16 lg:pl-24 pr-4 sm:pr-6 lg:pr-8">
                 <div className="text-center mb-12" data-aos="fade-up">
                     <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Renovation Portfolio</h2>
                     <p className="mt-4 text-base md:text-lg text-foreground/80 max-w-2xl mx-auto">Explore our gallery of completed renovation projects that showcase our attention to detail and design excellence.</p>
@@ -329,11 +329,12 @@ function RenovationPortfolio() {
                             <Card key={item.id} className="overflow-hidden group relative" data-aos="fade-up" data-aos-delay={index * 100}>
                                 <div className="aspect-[4/3] relative">
                                     {image && <Image src={image.imageUrl} alt={image.description} fill className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105" data-ai-hint={image.imageHint} />}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                                 </div>
-                                <div className="absolute bottom-0 left-0 p-6 text-white">
-                                    <h3 className="text-xl font-bold">{item.title}</h3>
-                                    <p className="text-sm text-white/80">{item.description}</p>
+                                <div className="absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+                                    <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
+                                        <h3 className="text-xl font-bold text-white">{item.title}</h3>
+                                        <p className="text-sm text-white/80">{item.description}</p>
+                                    </div>
                                 </div>
                             </Card>
                         )
@@ -354,7 +355,7 @@ const renovationTestimonialsList = [
 function RenovationTestimonials() {
     return (
         <section className="py-16 md:py-24 bg-secondary">
-            <div className="container mx-auto px-4 sm:px-16 lg:px-24">
+            <div className="container mx-auto pl-4 sm:pl-16 lg:pl-24 pr-4 sm:pr-6 lg:pr-8">
                 <div className="text-center mb-12" data-aos="fade-up">
                     <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">What Our Renovation Clients Say</h2>
                     <p className="mt-4 text-base md:text-lg text-foreground/80 max-w-2xl mx-auto">Hear from homeowners and business owners who have transformed their spaces with Horizon Group.</p>
