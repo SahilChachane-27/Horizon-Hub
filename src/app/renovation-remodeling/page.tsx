@@ -201,27 +201,26 @@ function RenovationServices() {
 }
 
 const renovationProcessSteps = [
-    { number: 1, title: "Initial Consultation", description: "We discuss your vision, assess your space, and understand your needs, timeline, and budget." },
-    { number: 2, title: "Design & Planning", description: "Our designers create detailed plans, 3D visualizations, and material selections tailored to your preferences." },
-    { number: 3, title: "Detailed Proposal", description: "We provide a comprehensive proposal with transparent pricing, timeline, and scope of work." },
-    { number: 4, title: "Pre-Construction", description: "Permitting, material procurement, and scheduling to prepare for a smooth construction phase." },
-    { number: 5, title: "Construction Phase", description: "Our skilled craftsmen execute the renovation with regular updates and minimal disruption." },
-    { number: 6, title: "Final Walkthrough", description: "We conduct a comprehensive final inspection to ensure every detail meets our quality standards." },
+    { title: "Initial Consultation", description: "We discuss your vision, assess your space, and understand your needs, timeline, and budget." },
+    { title: "Design & Planning", description: "Our designers create detailed plans, 3D visualizations, and material selections tailored to your preferences." },
+    { title: "Detailed Proposal", description: "We provide a comprehensive proposal with transparent pricing, timeline, and scope of work." },
+    { title: "Pre-Construction", description: "Permitting, material procurement, and scheduling to prepare for a smooth construction phase." },
+    { title: "Construction Phase", description: "Our skilled craftsmen execute the renovation with regular updates and minimal disruption." },
+    { title: "Final Walkthrough", description: "We conduct a comprehensive final inspection to ensure every detail meets our quality standards." },
 ];
 
 function RenovationProcess() {
     return (
         <section className="py-16 md:py-24">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="container mx-auto pl-4 sm:pl-16 lg:pl-24 pr-4 sm:pr-6 lg:pr-8">
                 <div className="text-center mb-12" data-aos="fade-up">
                     <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Our Renovation Process</h2>
                     <p className="mt-4 text-base md:text-lg text-foreground/80 max-w-2xl mx-auto">A structured approach that ensures your renovation project runs smoothly from concept to completion.</p>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     {renovationProcessSteps.map((step, index) => (
-                        <Card key={step.number} className="p-6" data-aos="fade-up" data-aos-delay={index * 100}>
-                            <CardHeader className="flex flex-row items-center gap-4 p-0 mb-4">
-                                <div className="bg-primary text-primary-foreground rounded-full h-12 w-12 flex-shrink-0 flex items-center justify-center text-xl font-bold">{step.number}</div>
+                        <Card key={step.title} className="p-6 text-center border-0 shadow-none" data-aos="fade-up" data-aos-delay={index * 100}>
+                            <CardHeader className="p-0 mb-4">
                                 <CardTitle className="text-primary text-xl">{step.title}</CardTitle>
                             </CardHeader>
                             <CardContent className="p-0">
