@@ -73,7 +73,8 @@ function DevelopmentPhilosophy() {
             <div className="container mx-auto pl-4 sm:pl-16 lg:pl-24 pr-4 sm:pr-6 lg:pr-8">
                 <div className="text-center mb-12" data-aos="fade-up">
                     <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Our Development Philosophy</h2>
-                    <p className="mt-4 text-base md:text-lg text-foreground/80 max-w-3xl mx-auto">Built on a foundation of innovation, sustainability, and community-centric design principles.</p>
+                    <div className="mt-4 w-24 h-1 bg-accent mx-auto"></div>
+                    <p className="mt-6 text-base md:text-lg text-foreground/80 max-w-3xl mx-auto">Built on a foundation of innovation, sustainability, and community-centric design principles.</p>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     {philosophyPillars.map((pillar, index) => (
@@ -111,7 +112,8 @@ function DevelopmentProcess() {
       <div className="container mx-auto pl-4 sm:pl-16 lg:pl-24 pr-4 sm:pr-6 lg:pr-8">
         <div className="text-center mb-12" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">End-to-End Development Process</h2>
-          <p className="mt-4 text-base md:text-lg text-foreground/80 max-w-3xl mx-auto">Our comprehensive approach to real estate development ensures every project is executed with precision and excellence.</p>
+          <div className="mt-4 w-24 h-1 bg-accent mx-auto"></div>
+          <p className="mt-6 text-base md:text-lg text-foreground/80 max-w-3xl mx-auto">Our comprehensive approach to real estate development ensures every project is executed with precision and excellence.</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {processSteps.slice(0,4).map((step, index) => (
@@ -154,7 +156,8 @@ function FeaturedDevelopmentProjects() {
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12" data-aos="fade-up">
                     <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Featured Development Projects</h2>
-                    <p className="mt-4 text-base md:text-lg text-foreground/80 max-w-2xl mx-auto">Explore our portfolio of transformative real estate developments that have redefined communities and created lasting value.</p>
+                    <div className="mt-4 w-24 h-1 bg-accent mx-auto"></div>
+                    <p className="mt-6 text-base md:text-lg text-foreground/80 max-w-2xl mx-auto">Explore our portfolio of transformative real estate developments that have redefined communities and created lasting value.</p>
                 </div>
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     {portfolioItems.map((item, index) => {
@@ -194,7 +197,8 @@ function DevelopmentExpertise() {
             <div className="container mx-auto pl-4 sm:pl-16 lg:pl-24 pr-4 sm:pr-6 lg:pr-8">
                 <div className="text-center mb-12" data-aos="fade-up">
                     <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Our Development Expertise</h2>
-                    <p className="mt-4 text-base md:text-lg text-foreground/80 max-w-2xl mx-auto">Specialized development capabilities across diverse property types and markets.</p>
+                    <div className="mt-4 w-24 h-1 bg-accent mx-auto"></div>
+                    <p className="mt-6 text-base md:text-lg text-foreground/80 max-w-2xl mx-auto">Specialized development capabilities across diverse property types and markets.</p>
                 </div>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {expertiseAreas.map((area, index) => (
@@ -243,7 +247,10 @@ function StrategicApproach() {
             <div className="container mx-auto pl-4 sm:pl-16 lg:pl-24 pr-4 sm:pr-6 lg:pr-8">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     <div className="space-y-8" data-aos="fade-right">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Our Strategic Development Approach</h2>
+                        <div>
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Our Strategic Development Approach</h2>
+                            <div className="mt-4 w-24 h-1 bg-accent"></div>
+                        </div>
                         <p className="text-base md:text-lg text-foreground/80">We combine market intelligence, financial acumen, and design excellence to create developments that succeed financially while making positive community impacts.</p>
                         {approachFeatures.map(feature => (
                             <div key={feature.title} className="flex items-start gap-4">
@@ -317,7 +324,8 @@ function DevelopmentContactForm() {
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
                 <div className="text-center mb-12" data-aos="fade-up">
                     <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Partner With Our Development Team</h2>
-                    <p className="mt-4 text-base md:text-lg text-foreground/80">Contact us to discuss your real estate development project, investment opportunity, or partnership.</p>
+                    <div className="mt-4 w-24 h-1 bg-accent mx-auto"></div>
+                    <p className="mt-6 text-base md:text-lg text-foreground/80">Contact us to discuss your real estate development project, investment opportunity, or partnership.</p>
                 </div>
                 {isClient && (
                   <Form {...form}>
