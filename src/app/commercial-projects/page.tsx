@@ -175,8 +175,8 @@ function FeaturedCaseStudy() {
                             </ul>
                         </div>
                         <div className="mt-8">
-                            <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                                <Link href="#">View Full Case Study</Link>
+                            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full transform -skew-x-12">
+                                <Link href="#"><span className="inline-block transform skew-x-12">View Full Case Study</span></Link>
                             </Button>
                         </div>
                     </div>
