@@ -26,7 +26,7 @@ const features = [
 export function WhyUs() {
   return (
     <section id="why-us" className="py-16 md:py-24 bg-white">
-      <div className="container mx-auto pl-4 sm:pl-16 lg:pl-24 pr-4 sm:pr-6 lg:pr-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">
             Why Choose Horizon Group
@@ -41,7 +41,7 @@ export function WhyUs() {
           {features.map((feature, index) => (
             <Card
               key={index}
-              className="text-center p-8 bg-card shadow-lg rounded-3xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+              className="text-center p-8 bg-card shadow-lg rounded-2xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
