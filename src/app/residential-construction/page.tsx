@@ -122,8 +122,8 @@ const constructionProcessSteps = [
 
 function ConstructionProcess() {
   return (
-    <section id="construction-process" className="py-16 md:py-24 bg-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="construction-process" className="py-16 md:py-24 bg-secondary">
+      <div className="container mx-auto pl-4 sm:pl-16 lg:pl-24 pr-4 sm:pr-6 lg:pr-8">
         <div className="text-center mb-12" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Our Residential Construction Process</h2>
           <p className="mt-4 text-base md:text-lg text-foreground/80 max-w-3xl mx-auto">
@@ -132,7 +132,7 @@ function ConstructionProcess() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {constructionProcessSteps.map((step, index) => (
-            <Card key={index} className="p-6 text-center bg-card" data-aos="fade-up" data-aos-delay={index * 100}>
+            <Card key={index} className="p-6 text-center bg-card rounded-2xl shadow-lg" data-aos="fade-up" data-aos-delay={index * 100}>
               <CardHeader>
                 <CardTitle className="text-primary text-xl">{step.title}</CardTitle>
               </CardHeader>
