@@ -106,14 +106,14 @@ const processSteps = [
 function DevelopmentProcess() {
   return (
     <section id="development-process" className="py-16 md:py-24">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto pl-4 sm:pl-16 lg:pl-24 pr-4 sm:pr-6 lg:pr-8">
         <div className="text-center mb-12" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">End-to-End Development Process</h2>
           <p className="mt-4 text-base md:text-lg text-foreground/80 max-w-3xl mx-auto">Our comprehensive approach to real estate development ensures every project is executed with precision and excellence.</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {processSteps.slice(0,4).map((step, index) => (
-                <Card key={step.title} className="p-6 text-center" data-aos="fade-up" data-aos-delay={index * 100}>
+                <Card key={step.title} className="p-6 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay={index * 100}>
                     <CardHeader>
                         <CardTitle className="text-primary text-xl">{step.title}</CardTitle>
                     </CardHeader>
@@ -125,7 +125,7 @@ function DevelopmentProcess() {
         </div>
          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 lg:w-3/4 mx-auto">
              {processSteps.slice(4).map((step, index) => (
-                <Card key={step.title} className="p-6 text-center" data-aos="fade-up" data-aos-delay={index * 100}>
+                <Card key={step.title} className="p-6 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay={(index + 4) * 100}>
                     <CardHeader>
                         <CardTitle className="text-primary text-xl">{step.title}</CardTitle>
                     </CardHeader>
