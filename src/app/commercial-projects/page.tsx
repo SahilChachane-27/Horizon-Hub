@@ -261,21 +261,35 @@ function CommercialProcess() {
                         A structured approach that ensures every commercial project meets the highest standards of quality and efficiency.
                     </p>
                 </div>
-                <div className="relative">
-                    <div className="hidden lg:block absolute left-0 right-0 top-1/2 -translate-y-1/2 h-0.5 bg-border/80" />
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-8 relative">
-                        {commercialProcessSteps.map((step, index) => (
-                            <div key={step.number} className="text-center p-4" data-aos="fade-up" data-aos-delay={index * 100}>
-                                <div className="relative inline-block">
-                                    <div className="w-16 h-16 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-2xl font-bold mb-4 border-4 border-secondary">
-                                        {step.number}
-                                    </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    {commercialProcessSteps.slice(0, 4).map((step, index) => (
+                        <Card key={step.number} className="text-center p-6 shadow-lg" data-aos="fade-up" data-aos-delay={index * 100}>
+                            <CardHeader className="p-0 items-center mb-2">
+                                <div className="w-16 h-16 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-2xl font-bold mb-4">
+                                    {step.number}
                                 </div>
-                                <h3 className="font-bold text-primary mb-2">{step.title}</h3>
+                                <CardTitle className="text-xl">{step.title}</CardTitle>
+                            </CardHeader>
+                            <CardContent className="p-0">
                                 <p className="text-sm text-foreground/70">{step.description}</p>
-                            </div>
-                        ))}
-                    </div>
+                            </CardContent>
+                        </Card>
+                    ))}
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 lg:w-3/4 mx-auto">
+                    {commercialProcessSteps.slice(4).map((step, index) => (
+                        <Card key={step.number} className="text-center p-6 shadow-lg" data-aos="fade-up" data-aos-delay={(index + 4) * 100}>
+                            <CardHeader className="p-0 items-center mb-2">
+                                <div className="w-16 h-16 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-2xl font-bold mb-4">
+                                    {step.number}
+                                </div>
+                                <CardTitle className="text-xl">{step.title}</CardTitle>
+                            </CardHeader>
+                            <CardContent className="p-0">
+                                <p className="text-sm text-foreground/70">{step.description}</p>
+                            </CardContent>
+                        </Card>
+                    ))}
                 </div>
             </div>
         </section>
