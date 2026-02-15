@@ -75,15 +75,17 @@ function DevelopmentPhilosophy() {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     {philosophyPillars.map((pillar, index) => (
-                        <div key={pillar.title} className="text-center p-6" data-aos="fade-up" data-aos-delay={index * 100}>
-                            <div className="flex justify-center mb-4">
+                        <Card key={pillar.title} className="text-center p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay={index * 100}>
+                            <CardHeader className="p-0 flex items-center justify-center mb-4">
                                 <div className="bg-primary text-primary-foreground p-4 rounded-full">
                                     <pillar.icon className="h-8 w-8" />
                                 </div>
-                            </div>
-                            <h3 className="text-xl font-bold text-primary mb-2">{pillar.title}</h3>
-                            <p className="text-foreground/70">{pillar.description}</p>
-                        </div>
+                            </CardHeader>
+                            <CardContent className="p-0">
+                              <h3 className="text-xl font-bold text-primary mb-2">{pillar.title}</h3>
+                              <p className="text-foreground/70">{pillar.description}</p>
+                            </CardContent>
+                        </Card>
                     ))}
                 </div>
             </div>
