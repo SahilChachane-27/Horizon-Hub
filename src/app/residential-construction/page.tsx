@@ -8,7 +8,7 @@ import { ScrollToTop } from '@/components/layout/scroll-to-top';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Compass, Building, Home, CheckCircle2, Quote, Check } from 'lucide-react';
+import { CheckCircle2, Quote } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -46,68 +46,12 @@ function ResidentialHero() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-start">
             <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full transform -skew-x-12">
-              <a href="#residential-services"><span className="inline-block transform skew-x-12">Our Services</span></a>
+              <a href="#construction-process"><span className="inline-block transform skew-x-12">Our Process</span></a>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-accent text-white bg-transparent hover:bg-accent hover:text-accent-foreground rounded-full transform -skew-x-12">
               <a href="#contact-form"><span className="inline-block transform skew-x-12">Request Consultation</span></a>
             </Button>
           </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-const residentialServices = [
-  {
-    icon: Compass,
-    title: 'Custom Home Design & Build',
-    description: 'Complete design-build services for custom luxury homes tailored to your lifestyle and preferences, from concept to completion.',
-    features: ['Architectural design', 'Interior planning', 'Material selection']
-  },
-  {
-    icon: Building,
-    title: 'Multi-Family Developments',
-    description: 'Construction of apartment complexes, condominiums, and townhouse communities with modern amenities and sustainable features.',
-    features: ['Community planning', 'Shared amenities', 'Sustainable design']
-  },
-  {
-    icon: Home,
-    title: 'Luxury Residential Communities',
-    description: 'Master-planned communities with custom homes, landscaping, and premium amenities that create exceptional living environments.',
-    features: ['Master planning', 'Landscaping design', 'Community amenities']
-  }
-];
-
-function ResidentialServices() {
-  return (
-    <section id="residential-services" className="py-16 md:py-24">
-      <div className="container mx-auto pl-4 sm:pl-16 lg:pl-24 pr-4 sm:pr-6 lg:pr-8">
-        <div className="text-center mb-12" data-aos="fade-up">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Our Residential Construction Services</h2>
-          <div className="mt-4 w-24 h-1 bg-accent mx-auto"></div>
-          <p className="mt-6 text-base md:text-lg text-foreground/80 max-w-3xl mx-auto">
-            We specialize in creating exceptional residential properties that combine aesthetics, functionality, and sustainability.
-          </p>
-        </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {residentialServices.map((service, index) => (
-            <Card key={index} className="flex flex-col text-center items-center p-8 rounded-lg shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl" data-aos="fade-up" data-aos-delay={index * 100}>
-                <div className="bg-primary text-primary-foreground p-4 rounded-full mb-4">
-                    <service.icon className="h-8 w-8" />
-                </div>
-                <h3 className="text-xl font-bold text-primary mb-3">{service.title}</h3>
-                <p className="text-foreground/70 mb-4 flex-grow">{service.description}</p>
-                <ul className="space-y-2 text-left w-full">
-                    {service.features.map(feature => (
-                        <li key={feature} className="flex items-center gap-3">
-                            <Check className="h-5 w-5 text-accent" />
-                            <span className="text-foreground/80">{feature}</span>
-                        </li>
-                    ))}
-                </ul>
-            </Card>
-          ))}
         </div>
       </div>
     </section>
@@ -365,7 +309,6 @@ export default function ResidentialConstructionPage() {
       <Header />
       <main className="flex-1">
         <ResidentialHero />
-        <ResidentialServices />
         <ConstructionProcess />
         <ResidentialGallery />
         <WhyChooseResidential />
@@ -376,7 +319,3 @@ export default function ResidentialConstructionPage() {
     </div>
   );
 }
-
-    
-
-    
