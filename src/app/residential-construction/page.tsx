@@ -92,21 +92,7 @@ function ResidentialServices() {
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {residentialServices.map((service, index) => (
-            <Card key={index} className="flex flex-col text-center items-center p-6 rounded-[70px]" data-aos="fade-up" data-aos-delay={index * 100}>
-              <div className="bg-primary text-primary-foreground p-4 rounded-full mb-4">
-                <service.icon className="h-8 w-8" />
-              </div>
-              <h3 className="text-xl font-bold text-primary mb-3">{service.title}</h3>
-              <p className="text-foreground/70 mb-4 flex-grow">{service.description}</p>
-              <ul className="space-y-2 text-left w-full">
-                {service.features.map(feature => (
-                  <li key={feature} className="flex items-center gap-3">
-                    <Check className="h-5 w-5 text-accent" />
-                    <span className="text-foreground/80">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </Card>
+            null
           ))}
         </div>
       </div>
@@ -134,7 +120,7 @@ function ConstructionProcess() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {constructionProcessSteps.map((step, index) => (
-            <Card key={index} className="p-6 text-center bg-card rounded-[70px] shadow-lg" data-aos="fade-up" data-aos-delay={index * 100}>
+            <Card key={index} className="p-6 text-center bg-card shadow-lg" data-aos="fade-up" data-aos-delay={index * 100}>
               <CardHeader>
                 <CardTitle className="text-primary text-xl">{step.title}</CardTitle>
               </CardHeader>
@@ -376,3 +362,5 @@ export default function ResidentialConstructionPage() {
     </div>
   );
 }
+
+    
