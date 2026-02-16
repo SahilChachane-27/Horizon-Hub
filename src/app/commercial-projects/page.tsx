@@ -106,7 +106,7 @@ function CommercialProjectTypes() {
           {projectTypes.map((project, index) => {
             const image = PlaceHolderImages.find(p => p.id === project.id);
             return (
-              <Card key={project.id} className="overflow-hidden group relative" data-aos="fade-up" data-aos-delay={index * 100}>
+              <Card key={project.id} className="overflow-hidden group relative rounded-[70px]" data-aos="fade-up" data-aos-delay={index * 100}>
                 <div className="aspect-[4/3] relative">
                   {image && (
                     <Image
@@ -145,7 +145,7 @@ function FeaturedCaseStudy() {
                         Discover how we delivered a landmark commercial project that transformed an urban district.
                     </p>
                 </div>
-                <Card className="overflow-hidden shadow-2xl lg:grid lg:grid-cols-2 lg:gap-0" data-aos="fade-up" data-aos-delay="200">
+                <Card className="overflow-hidden shadow-2xl lg:grid lg:grid-cols-2 lg:gap-0 rounded-[70px]" data-aos="fade-up" data-aos-delay="200">
                     <div className="relative aspect-[4/3] lg:aspect-auto">
                         {caseStudyImage && (
                             <Image 
@@ -222,7 +222,7 @@ function CommercialServices() {
                 </div>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {commercialServices.map((service, index) => (
-                        <Card key={index} className="flex flex-col text-center items-center p-8 rounded-lg shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl" data-aos="fade-up" data-aos-delay={index * 100}>
+                        <Card key={index} className="flex flex-col text-center items-center p-8 rounded-[70px] shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl" data-aos="fade-up" data-aos-delay={index * 100}>
                             <div className="bg-primary text-primary-foreground p-4 rounded-full mb-4">
                                 <service.icon className="h-8 w-8" />
                             </div>
@@ -267,7 +267,7 @@ function CommercialProcess() {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     {commercialProcessSteps.slice(0, 4).map((step, index) => (
-                        <Card key={step.number} className="text-center p-6 shadow-lg" data-aos="fade-up" data-aos-delay={index * 100}>
+                        <Card key={step.number} className="text-center p-6 shadow-lg rounded-[70px]" data-aos="fade-up" data-aos-delay={index * 100}>
                             <CardHeader className="p-0 items-center mb-2">
                                 <div className="w-16 h-16 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-2xl font-bold mb-4">
                                     {step.number}
@@ -282,7 +282,7 @@ function CommercialProcess() {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 lg:w-3/4 mx-auto">
                     {commercialProcessSteps.slice(4).map((step, index) => (
-                        <Card key={step.number} className="text-center p-6 shadow-lg" data-aos="fade-up" data-aos-delay={(index + 4) * 100}>
+                        <Card key={step.number} className="text-center p-6 shadow-lg rounded-[70px]" data-aos="fade-up" data-aos-delay={(index + 4) * 100}>
                             <CardHeader className="p-0 items-center mb-2">
                                 <div className="w-16 h-16 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-2xl font-bold mb-4">
                                     {step.number}
@@ -347,7 +347,7 @@ function CommercialContactForm() {
                     </div>
                     {isClient && (
                       <Form {...form}>
-                          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 bg-secondary p-8 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 bg-secondary p-8 rounded-[70px] shadow-lg" data-aos="fade-up" data-aos-delay="200">
                               <div className="grid sm:grid-cols-2 gap-6">
                                   <FormField control={form.control} name="companyName" render={({ field }) => (
                                       <FormItem><FormLabel>Company Name</FormLabel><FormControl><Input placeholder="Your Company Inc." {...field} /></FormControl><FormMessage /></FormItem>

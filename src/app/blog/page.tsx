@@ -65,7 +65,7 @@ function FeaturedPost() {
   const postImage = PlaceHolderImages.find(p => p.id === featuredPost.id);
   return (
     <div id="featured-post" className="mb-12" data-aos="fade-up">
-      <Card className="overflow-hidden shadow-2xl">
+      <Card className="overflow-hidden shadow-2xl rounded-[70px]">
         {postImage && (
           <div className="relative aspect-video">
             <Image src={postImage.imageUrl} alt={postImage.description} fill className="object-cover" data-ai-hint={postImage.imageHint}/>
@@ -104,7 +104,7 @@ function BlogGrid() {
       {blogPosts.map((post, index) => {
         const postImage = PlaceHolderImages.find(p => p.id === post.id);
         return(
-          <Card key={post.id} className="overflow-hidden shadow-lg flex flex-col" data-aos="fade-up" data-aos-delay={index * 100}>
+          <Card key={post.id} className="overflow-hidden shadow-lg flex flex-col rounded-[70px]" data-aos="fade-up" data-aos-delay={index * 100}>
             {postImage && <div className="relative aspect-video"><Image src={postImage.imageUrl} alt={post.title} fill className="object-cover" data-ai-hint={postImage.imageHint} /></div>}
             <CardContent className="p-6 flex flex-col flex-grow">
               <span className="text-sm font-semibold text-accent mb-2">{post.category}</span>
@@ -149,8 +149,8 @@ const author = {
 function AuthorBio() {
   const authorImage = PlaceHolderImages.find(p => p.id === author.id);
   return (
-    <div className="mt-12 bg-secondary p-6 rounded-lg" data-aos="fade-up">
-      <Card className="bg-card flex flex-col sm:flex-row items-center gap-6 p-6">
+    <div className="mt-12 bg-secondary p-6 rounded-[70px]" data-aos="fade-up">
+      <Card className="bg-card flex flex-col sm:flex-row items-center gap-6 p-6 rounded-[70px]">
         {authorImage && <Image src={authorImage.imageUrl} alt={author.name} width={100} height={100} className="rounded-full flex-shrink-0" data-ai-hint={authorImage.imageHint} />}
         <div>
           <h4 className="text-xl font-bold text-primary mb-2">About the Editor</h4>
@@ -191,7 +191,7 @@ function BlogSidebar() {
   }, []);
   return (
     <aside className="space-y-8">
-      <Card className="p-6" data-aos="fade-left">
+      <Card className="p-6 rounded-[70px]" data-aos="fade-left">
         <CardHeader className="p-0 mb-4"><CardTitle>Search Articles</CardTitle></CardHeader>
         <div className="relative">
           <Input placeholder="Search blog..." className="pr-10" suppressHydrationWarning/>
@@ -200,7 +200,7 @@ function BlogSidebar() {
           </Button>
         </div>
       </Card>
-      <Card className="p-6" data-aos="fade-left" data-aos-delay="100">
+      <Card className="p-6 rounded-[70px]" data-aos="fade-left" data-aos-delay="100">
         <CardHeader className="p-0 mb-4"><CardTitle>Categories</CardTitle></CardHeader>
         <ul className="space-y-2">
           {categories.map(cat => (
@@ -213,7 +213,7 @@ function BlogSidebar() {
           ))}
         </ul>
       </Card>
-      <Card className="p-6" data-aos="fade-left" data-aos-delay="200">
+      <Card className="p-6 rounded-[70px]" data-aos="fade-left" data-aos-delay="200">
         <CardHeader className="p-0 mb-4"><CardTitle>Recent Posts</CardTitle></CardHeader>
         <div className="space-y-4">
           {recentPosts.map(post => {
@@ -230,7 +230,7 @@ function BlogSidebar() {
           })}
         </div>
       </Card>
-       <Card className="p-6" data-aos="fade-left" data-aos-delay="300">
+       <Card className="p-6 rounded-[70px]" data-aos="fade-left" data-aos-delay="300">
         <CardHeader className="p-0 mb-4"><CardTitle>Popular Tags</CardTitle></CardHeader>
         <div className="flex flex-wrap gap-2">
           {tags.map(tag => (
@@ -240,7 +240,7 @@ function BlogSidebar() {
           ))}
         </div>
       </Card>
-      <Card className="p-6 bg-secondary" data-aos="fade-left" data-aos-delay="400">
+      <Card className="p-6 bg-secondary rounded-[70px]" data-aos="fade-left" data-aos-delay="400">
         <CardHeader className="p-0 mb-4"><CardTitle>Subscribe to Our Newsletter</CardTitle></CardHeader>
         <p className="text-foreground/70 mb-4">Get the latest insights, trends, and project updates delivered to your inbox.</p>
         {isClient && (

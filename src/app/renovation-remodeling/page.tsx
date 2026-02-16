@@ -105,7 +105,7 @@ function BeforeAfterShowcase() {
         {beforeImage && afterImage && (
           <div
             ref={containerRef}
-            className="relative w-full max-w-4xl mx-auto aspect-video overflow-hidden rounded-lg shadow-2xl select-none cursor-ew-resize"
+            className="relative w-full max-w-4xl mx-auto aspect-video overflow-hidden rounded-[70px] shadow-2xl select-none cursor-ew-resize"
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
             onMouseDown={handleMouseDown}
@@ -175,7 +175,7 @@ function RenovationServices() {
                     {renovationServicesList.map((service, index) => {
                         const image = PlaceHolderImages.find(p => p.id === service.id);
                         return (
-                            <Card key={service.id} className="overflow-hidden group relative" data-aos="fade-up" data-aos-delay={index * 100}>
+                            <Card key={service.id} className="overflow-hidden group relative rounded-[70px]" data-aos="fade-up" data-aos-delay={index * 100}>
                                 <div className="aspect-[4/3] relative">
                                     {image && (
                                         <Image
@@ -222,7 +222,7 @@ function RenovationProcess() {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     {renovationProcessSteps.map((step, index) => (
-                        <Card key={step.title} className="p-6 text-center bg-card rounded-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2" data-aos="fade-up" data-aos-delay={index * 100}>
+                        <Card key={step.title} className="p-6 text-center bg-card rounded-[70px] transition-all duration-300 hover:shadow-xl hover:-translate-y-2" data-aos="fade-up" data-aos-delay={index * 100}>
                             <CardHeader className="p-0 mb-4">
                                 <CardTitle className="text-primary text-xl">{step.title}</CardTitle>
                             </CardHeader>
@@ -268,7 +268,7 @@ function WhyChooseRenovation() {
                         </div>
                         <p className="text-base md:text-lg text-foreground/80">With decades of renovation experience, we bring precision, craftsmanship, and innovative solutions to every project.</p>
                         {whyChooseFeatures.map(feature => (
-                            <div key={feature.title} className="group rounded-lg p-6 bg-card transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                            <div key={feature.title} className="group rounded-[70px] p-6 bg-card transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                                 <div className="flex items-start gap-4">
                                     <div className="bg-primary text-primary-foreground p-3 rounded-full mt-1 flex-shrink-0 transition-colors group-hover:bg-accent group-hover:text-accent-foreground">
                                         <feature.icon className="h-6 w-6" />
@@ -281,7 +281,7 @@ function WhyChooseRenovation() {
                             </div>
                         ))}
                     </div>
-                    <Card className="p-8 shadow-lg" data-aos="fade-left">
+                    <Card className="p-8 shadow-lg rounded-[70px]" data-aos="fade-left">
                         <h3 className="text-2xl font-bold text-primary mb-6">Renovation Expertise</h3>
                         <div className="space-y-4 mb-8">
                             <h4 className="font-semibold text-primary">Our Renovation Capabilities</h4>
@@ -333,7 +333,7 @@ function RenovationPortfolio() {
                     {renovationPortfolioItems.map((item, index) => {
                         const image = PlaceHolderImages.find(p => p.id === item.id);
                         return (
-                            <Card key={item.id} className="overflow-hidden group relative" data-aos="fade-up" data-aos-delay={index * 100}>
+                            <Card key={item.id} className="overflow-hidden group relative rounded-[70px]" data-aos="fade-up" data-aos-delay={index * 100}>
                                 <div className="aspect-[4/3] relative">
                                     {image && <Image src={image.imageUrl} alt={image.description} fill className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105" data-ai-hint={image.imageHint} />}
                                 </div>
@@ -372,7 +372,7 @@ function RenovationTestimonials() {
                     {renovationTestimonialsList.map((testimonial, index) => {
                         const image = PlaceHolderImages.find(p => p.id === testimonial.id);
                         return (
-                            <Card key={testimonial.id} className="p-6" data-aos="fade-up" data-aos-delay={index * 100}>
+                            <Card key={testimonial.id} className="p-6 rounded-[70px]" data-aos="fade-up" data-aos-delay={index * 100}>
                                 <CardContent className="p-0">
                                     <p className="italic text-foreground/80 mb-4">"{testimonial.quote}"</p>
                                     <div className="flex items-center gap-4">
@@ -430,7 +430,7 @@ function RenovationContactForm() {
                 </div>
                 {isClient && (
                     <Form {...form}>
-                        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 bg-secondary p-8 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 bg-secondary p-8 rounded-[70px] shadow-lg" data-aos="fade-up" data-aos-delay="200">
                             <div className="grid sm:grid-cols-2 gap-6">
                                 <FormField control={form.control} name="name" render={({ field }) => (
                                     <FormItem><FormLabel>Name</FormLabel><FormControl><Input placeholder="Your Name" {...field} /></FormControl><FormMessage /></FormItem>

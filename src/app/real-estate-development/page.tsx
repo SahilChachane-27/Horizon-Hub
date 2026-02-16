@@ -78,7 +78,7 @@ function DevelopmentPhilosophy() {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     {philosophyPillars.map((pillar, index) => (
-                        <Card key={pillar.title} className="text-center p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay={index * 100}>
+                        <Card key={pillar.title} className="text-center p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl rounded-[70px]" data-aos="fade-up" data-aos-delay={index * 100}>
                             <CardHeader className="p-0 flex items-center justify-center mb-4">
                                 <div className="bg-primary text-primary-foreground p-4 rounded-full">
                                     <pillar.icon className="h-8 w-8 text-accent" />
@@ -117,7 +117,7 @@ function DevelopmentProcess() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {processSteps.slice(0,4).map((step, index) => (
-                <Card key={step.title} className="p-6 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay={index * 100}>
+                <Card key={step.title} className="p-6 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl rounded-[70px]" data-aos="fade-up" data-aos-delay={index * 100}>
                     <CardHeader>
                         <CardTitle className="text-accent text-xl">{step.title}</CardTitle>
                     </CardHeader>
@@ -129,7 +129,7 @@ function DevelopmentProcess() {
         </div>
          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 lg:w-3/4 mx-auto">
              {processSteps.slice(4).map((step, index) => (
-                <Card key={step.title} className="p-6 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay={(index + 4) * 100}>
+                <Card key={step.title} className="p-6 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl rounded-[70px]" data-aos="fade-up" data-aos-delay={(index + 4) * 100}>
                     <CardHeader>
                         <CardTitle className="text-accent text-xl">{step.title}</CardTitle>
                     </CardHeader>
@@ -163,7 +163,7 @@ function FeaturedDevelopmentProjects() {
                     {portfolioItems.map((item, index) => {
                         const image = PlaceHolderImages.find(p => p.id === item.id);
                         return (
-                        <Card key={item.id} className="overflow-hidden group relative" data-aos="fade-up" data-aos-delay={index * 100}>
+                        <Card key={item.id} className="overflow-hidden group relative rounded-[70px]" data-aos="fade-up" data-aos-delay={index * 100}>
                             <div className="relative aspect-video">
                                 {image && <Image src={image.imageUrl} alt={image.description} fill className="object-cover transition-transform duration-500 group-hover:scale-105" data-ai-hint={image.imageHint}/>}
                             </div>
@@ -202,7 +202,7 @@ function DevelopmentExpertise() {
                 </div>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {expertiseAreas.map((area, index) => (
-                        <Card key={area.title} className="flex flex-col text-center items-center p-6 border-0 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl" data-aos="fade-up" data-aos-delay={index * 100}>
+                        <Card key={area.title} className="flex flex-col text-center items-center p-6 border-0 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl rounded-[70px]" data-aos="fade-up" data-aos-delay={index * 100}>
                             <div className="bg-primary text-primary-foreground p-4 rounded-full mb-4"><area.icon className="h-8 w-8" /></div>
                             <h3 className="text-xl font-bold text-primary mb-3">{area.title}</h3>
                             <p className="text-foreground/70 mb-4 flex-grow">{area.description}</p>
@@ -262,7 +262,7 @@ function StrategicApproach() {
                             </div>
                         ))}
                     </div>
-                    <Card className="p-8 shadow-lg" data-aos="fade-left">
+                    <Card className="p-8 shadow-lg rounded-[70px]" data-aos="fade-left">
                         <h3 className="text-2xl font-bold text-primary mb-6">Development Metrics</h3>
                         <div className="space-y-4 mb-8">
                             {developmentMetrics.map(metric => (
@@ -329,7 +329,7 @@ function DevelopmentContactForm() {
                 </div>
                 {isClient && (
                   <Form {...form}>
-                      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 bg-secondary p-8 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 bg-secondary p-8 rounded-[70px] shadow-lg" data-aos="fade-up" data-aos-delay="200">
                           <div className="grid sm:grid-cols-2 gap-6">
                               <FormField control={form.control} name="name" render={({ field }) => (
                                   <FormItem><FormLabel>Name</FormLabel><FormControl><Input placeholder="Your Name" {...field} /></FormControl><FormMessage /></FormItem>

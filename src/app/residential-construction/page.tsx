@@ -92,7 +92,7 @@ function ResidentialServices() {
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {residentialServices.map((service, index) => (
-            <Card key={index} className="flex flex-col text-center items-center p-6" data-aos="fade-up" data-aos-delay={index * 100}>
+            <Card key={index} className="flex flex-col text-center items-center p-6 rounded-[70px]" data-aos="fade-up" data-aos-delay={index * 100}>
               <div className="bg-primary text-primary-foreground p-4 rounded-full mb-4">
                 <service.icon className="h-8 w-8" />
               </div>
@@ -134,7 +134,7 @@ function ConstructionProcess() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {constructionProcessSteps.map((step, index) => (
-            <Card key={index} className="p-6 text-center bg-card rounded-2xl shadow-lg" data-aos="fade-up" data-aos-delay={index * 100}>
+            <Card key={index} className="p-6 text-center bg-card rounded-[70px] shadow-lg" data-aos="fade-up" data-aos-delay={index * 100}>
               <CardHeader>
                 <CardTitle className="text-primary text-xl">{step.title}</CardTitle>
               </CardHeader>
@@ -173,7 +173,7 @@ function ResidentialGallery() {
           {galleryItems.map((item, index) => {
             const image = PlaceHolderImages.find(p => p.id === item.id);
             return (
-              <Card key={item.id} className="overflow-hidden group relative" data-aos="fade-up" data-aos-delay={index * 100}>
+              <Card key={item.id} className="overflow-hidden group relative rounded-[70px]" data-aos="fade-up" data-aos-delay={index * 100}>
                 <div className="relative aspect-[4/3]">
                   {image && (
                     <Image
@@ -233,7 +233,7 @@ function WhyChooseResidential() {
               </div>
             ))}
           </div>
-          <div className="bg-card p-8 rounded-lg shadow-lg" data-aos="fade-left">
+          <div className="bg-card p-8 rounded-[70px] shadow-lg" data-aos="fade-left">
             <h3 className="text-2xl font-bold text-primary mb-6">Residential Construction Testimonials</h3>
             <div className="space-y-8">
               {residentialTestimonials.map(testimonial => {
@@ -307,7 +307,7 @@ function ResidentialContactForm() {
           
           {isClient && (
             <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 bg-white p-8 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 bg-white p-8 rounded-[70px] shadow-lg" data-aos="fade-up" data-aos-delay="200">
                 <div className="grid sm:grid-cols-2 gap-6">
                     <FormField control={form.control} name="name" render={({ field }) => (
                     <FormItem><FormLabel>Your Name</FormLabel><FormControl><Input placeholder="John Doe" {...field} /></FormControl><FormMessage /></FormItem>

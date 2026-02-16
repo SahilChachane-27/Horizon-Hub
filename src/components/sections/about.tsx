@@ -9,7 +9,7 @@ export function About() {
     <section id="about" className="py-16 md:py-24">
       <div className="container mx-auto pl-4 sm:pl-16 lg:pl-24 pr-4 sm:pr-6 lg:pr-8">
         <div className="grid lg:grid-cols-5 gap-12 items-center">
-          <div className="lg:col-span-2 relative aspect-[4/5] rounded-lg overflow-hidden shadow-2xl" data-aos="fade-right">
+          <div className="lg:col-span-2 relative aspect-[4/5] rounded-[70px] overflow-hidden shadow-2xl" data-aos="fade-right">
             {aboutImage && (
               <Image
                 src={aboutImage.imageUrl}
@@ -34,7 +34,7 @@ export function About() {
             <p className="text-base md:text-lg text-foreground/80">
               Our integrated approach combines innovative design, sustainable practices, and meticulous craftsmanship to deliver exceptional value to our clients and communities.
             </p>
-            <Card className="bg-card border-0 border-l-4 border-accent shadow-lg rounded-[25px]">
+            <Card className="bg-card border-0 border-l-4 border-accent shadow-lg rounded-[70px]">
               <CardHeader>
                 <CardTitle className="text-primary">Our Mission</CardTitle>
               </CardHeader>

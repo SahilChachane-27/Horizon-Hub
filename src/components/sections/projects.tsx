@@ -35,7 +35,7 @@ export function Projects() {
           {projects.map((project, index) => {
             const projectImage = PlaceHolderImages.find(p => p.id === project.id);
             return (
-              <Card key={project.id} className="overflow-hidden group relative" data-aos="fade-up" data-aos-delay={index * 100}>
+              <Card key={project.id} className="overflow-hidden group relative rounded-[70px]" data-aos="fade-up" data-aos-delay={index * 100}>
                 <div className="relative aspect-[16/10]">
                   {projectImage && (
                      <Image
