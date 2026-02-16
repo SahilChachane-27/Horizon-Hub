@@ -45,11 +45,11 @@ function CommercialHero() {
             Transforming skylines with innovative commercial developments that combine architectural excellence, functional design, and sustainable practices for businesses of the future.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-start">
-            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full transform -skew-x-12">
-              <a href="#commercial-projects"><span className="inline-block transform skew-x-12">Our Projects</span></a>
+            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-none">
+              <a href="#commercial-projects">Our Projects</a>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-accent text-white bg-transparent hover:bg-accent hover:text-accent-foreground rounded-full transform -skew-x-12">
-              <a href="#contact-form"><span className="inline-block transform skew-x-12">Start Your Project</span></a>
+            <Button asChild size="lg" variant="outline" className="border-accent text-white bg-transparent hover:bg-accent hover:text-accent-foreground rounded-none">
+              <a href="#contact-form">Start Your Project</a>
             </Button>
           </div>
         </div>
@@ -106,7 +106,7 @@ function CommercialProjectTypes() {
           {projectTypes.map((project, index) => {
             const image = PlaceHolderImages.find(p => p.id === project.id);
             return (
-              <Card key={project.id} className="overflow-hidden group relative rounded-[70px]" data-aos="fade-up" data-aos-delay={index * 100}>
+              <Card key={project.id} className="overflow-hidden group relative rounded-none" data-aos="fade-up" data-aos-delay={index * 100}>
                 <div className="aspect-[4/3] relative">
                   {image && (
                     <Image
@@ -145,7 +145,7 @@ function FeaturedCaseStudy() {
                         Discover how we delivered a landmark commercial project that transformed an urban district.
                     </p>
                 </div>
-                <Card className="overflow-hidden shadow-2xl lg:grid lg:grid-cols-2 lg:gap-0 rounded-[70px]" data-aos="fade-up" data-aos-delay="200">
+                <Card className="overflow-hidden shadow-2xl lg:grid lg:grid-cols-2 lg:gap-0 rounded-none" data-aos="fade-up" data-aos-delay="200">
                     <div className="relative aspect-[4/3] lg:aspect-auto">
                         {caseStudyImage && (
                             <Image 
@@ -177,8 +177,8 @@ function FeaturedCaseStudy() {
                             </ul>
                         </div>
                         <div className="mt-8">
-                            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full transform -skew-x-12">
-                                <Link href="#"><span className="inline-block transform skew-x-12">View Full Case Study</span></Link>
+                            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-none">
+                                <Link href="#">View Full Case Study</Link>
                             </Button>
                         </div>
                     </div>
@@ -222,8 +222,8 @@ function CommercialServices() {
                 </div>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {commercialServices.map((service, index) => (
-                        <Card key={index} className="flex flex-col text-center items-center p-8 rounded-[70px] shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl" data-aos="fade-up" data-aos-delay={index * 100}>
-                            <div className="bg-primary text-primary-foreground p-4 rounded-full mb-4">
+                        <Card key={index} className="flex flex-col text-center items-center p-8 rounded-none shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl" data-aos="fade-up" data-aos-delay={index * 100}>
+                            <div className="bg-primary text-primary-foreground p-4 rounded-none mb-4">
                                 <service.icon className="h-8 w-8" />
                             </div>
                             <h3 className="text-xl font-bold text-primary mb-3">{service.title}</h3>
@@ -267,9 +267,9 @@ function CommercialProcess() {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     {commercialProcessSteps.slice(0, 4).map((step, index) => (
-                        <Card key={step.number} className="text-center p-6 shadow-lg rounded-[70px]" data-aos="fade-up" data-aos-delay={index * 100}>
+                        <Card key={step.number} className="text-center p-6 shadow-lg rounded-none" data-aos="fade-up" data-aos-delay={index * 100}>
                             <CardHeader className="p-0 items-center mb-2">
-                                <div className="w-16 h-16 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-2xl font-bold mb-4">
+                                <div className="w-16 h-16 bg-primary text-primary-foreground rounded-none flex items-center justify-center text-2xl font-bold mb-4">
                                     {step.number}
                                 </div>
                                 <CardTitle className="text-xl">{step.title}</CardTitle>
@@ -282,9 +282,9 @@ function CommercialProcess() {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 lg:w-3/4 mx-auto">
                     {commercialProcessSteps.slice(4).map((step, index) => (
-                        <Card key={step.number} className="text-center p-6 shadow-lg rounded-[70px]" data-aos="fade-up" data-aos-delay={(index + 4) * 100}>
+                        <Card key={step.number} className="text-center p-6 shadow-lg rounded-none" data-aos="fade-up" data-aos-delay={(index + 4) * 100}>
                             <CardHeader className="p-0 items-center mb-2">
-                                <div className="w-16 h-16 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-2xl font-bold mb-4">
+                                <div className="w-16 h-16 bg-primary text-primary-foreground rounded-none flex items-center justify-center text-2xl font-bold mb-4">
                                     {step.number}
                                 </div>
                                 <CardTitle className="text-xl">{step.title}</CardTitle>
@@ -347,7 +347,7 @@ function CommercialContactForm() {
                     </div>
                     {isClient && (
                       <Form {...form}>
-                          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 bg-secondary p-8 rounded-[70px] shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 bg-secondary p-8 rounded-none shadow-lg" data-aos="fade-up" data-aos-delay="200">
                               <div className="grid sm:grid-cols-2 gap-6">
                                   <FormField control={form.control} name="companyName" render={({ field }) => (
                                       <FormItem><FormLabel>Company Name</FormLabel><FormControl><Input placeholder="Your Company Inc." {...field} /></FormControl><FormMessage /></FormItem>
@@ -405,7 +405,7 @@ function CommercialContactForm() {
                                   <FormItem><FormLabel>Project Details</FormLabel><FormControl><Textarea placeholder="Your project requirements, timeline, and specific needs..." rows={5} {...field} /></FormControl><FormMessage /></FormItem>
                               )} />
                               <div className="text-center">
-                                  <Button type="submit" size="lg" className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-accent/90 rounded-full transform -skew-x-12"><span className="inline-block transform skew-x-12">Request Commercial Consultation</span></Button>
+                                  <Button type="submit" size="lg" className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-accent/90 rounded-none">Request Commercial Consultation</Button>
                                   <p className="text-sm text-muted-foreground mt-3">Our commercial team will contact you within 24 hours.</p>
                               </div>
                           </form>

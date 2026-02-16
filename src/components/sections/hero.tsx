@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
@@ -27,11 +28,11 @@ export function Hero() {
             For over two decades, Horizon Group has been transforming skylines and communities through innovative real estate development and premium construction services.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-start" data-aos="fade-right" data-aos-delay="300">
-            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full transform -skew-x-12">
-                <a href="#projects"><span className="inline-block transform skew-x-12 font-bold">View Our Projects</span></a>
+            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-none">
+                <a href="#projects" className='font-bold'>View Our Projects</a>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-accent text-white bg-transparent hover:bg-accent hover:text-accent-foreground rounded-full transform -skew-x-12">
-                <a href="#contact"><span className="inline-block transform skew-x-12">Contact Us</span></a>
+            <Button asChild size="lg" variant="outline" className="border-accent text-white bg-transparent hover:bg-accent hover:text-accent-foreground rounded-none">
+                <a href="#contact">Contact Us</a>
             </Button>
             </div>
         </div>

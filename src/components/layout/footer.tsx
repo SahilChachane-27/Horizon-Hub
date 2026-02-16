@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from 'next/link';
@@ -89,7 +90,7 @@ export function Footer() {
               {isClient && (
                 <form className="flex gap-2">
                   <Input type="email" placeholder="Your Email" className="bg-primary-foreground/10 text-primary-foreground placeholder:text-primary-foreground/50 border-primary-foreground/20 focus:bg-primary-foreground/20" />
-                  <Button type="submit" className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full transform -skew-x-12"><span className="inline-block transform skew-x-12">Subscribe</span></Button>
+                  <Button type="submit" className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-none">Subscribe</Button>
                 </form>
               )}
             </div>

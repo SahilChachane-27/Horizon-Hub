@@ -1,3 +1,4 @@
+
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
@@ -44,17 +45,17 @@ export function Services() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
             <div key={index} data-aos="fade-up" data-aos-delay={index * 100}>
-              <Card className="text-center bg-card shadow-lg rounded-[70px] flex flex-col py-10 px-8 h-full transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+              <Card className="text-center bg-card shadow-lg rounded-none flex flex-col py-10 px-8 h-full transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
                   <div className="flex-grow flex flex-col items-center">
                       <div className="flex justify-center mb-4">
-                        <div className="h-20 w-20 bg-muted rounded-full flex items-center justify-center">
+                        <div className="h-20 w-20 bg-muted rounded-none flex items-center justify-center">
                           <service.icon className="h-8 w-8 text-accent" />
                         </div>
                       </div>
                       <h3 className="text-2xl font-bold font-headline mt-2 mb-4">{service.title}</h3>
                       <p className="text-sm text-foreground/70 flex-grow">{service.description}</p>
                   </div>
-                  <Button asChild className="mt-6 bg-accent hover:bg-accent/90 text-accent-foreground rounded-full self-center px-8 py-3">
+                  <Button asChild className="mt-6 bg-accent hover:bg-accent/90 text-accent-foreground rounded-none self-center px-8 py-3">
                       <Link href={service.href}>View More</Link>
                   </Button>
               </Card>

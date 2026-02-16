@@ -45,11 +45,11 @@ function ResidentialHero() {
             Creating exceptional living spaces that blend innovative design, sustainable practices, and meticulous craftsmanship to build homes that stand the test of time.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-start">
-            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full transform -skew-x-12">
-              <a href="#construction-process"><span className="inline-block transform skew-x-12">Our Process</span></a>
+            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-none">
+              <a href="#construction-process">Our Process</a>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-accent text-white bg-transparent hover:bg-accent hover:text-accent-foreground rounded-full transform -skew-x-12">
-              <a href="#contact-form"><span className="inline-block transform skew-x-12">Request Consultation</span></a>
+            <Button asChild size="lg" variant="outline" className="border-accent text-white bg-transparent hover:bg-accent hover:text-accent-foreground rounded-none">
+              <a href="#contact-form">Request Consultation</a>
             </Button>
           </div>
         </div>
@@ -78,7 +78,7 @@ function ConstructionProcess() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {constructionProcessSteps.map((step, index) => (
-            <Card key={index} className="p-6 text-center bg-card shadow-lg" data-aos="fade-up" data-aos-delay={index * 100}>
+            <Card key={index} className="p-6 text-center bg-card shadow-lg rounded-none" data-aos="fade-up" data-aos-delay={index * 100}>
               <CardHeader>
                 <CardTitle className="text-primary text-xl">{step.title}</CardTitle>
               </CardHeader>
@@ -117,7 +117,7 @@ function ResidentialGallery() {
           {galleryItems.map((item, index) => {
             const image = PlaceHolderImages.find(p => p.id === item.id);
             return (
-              <Card key={item.id} className="overflow-hidden group relative rounded-[70px]" data-aos="fade-up" data-aos-delay={index * 100}>
+              <Card key={item.id} className="overflow-hidden group relative rounded-none" data-aos="fade-up" data-aos-delay={index * 100}>
                 <div className="relative aspect-[4/3]">
                   {image && (
                     <Image
@@ -177,7 +177,7 @@ function WhyChooseResidential() {
               </div>
             ))}
           </div>
-          <div className="bg-card p-8 rounded-[70px] shadow-lg" data-aos="fade-left">
+          <div className="bg-card p-8 rounded-none shadow-lg" data-aos="fade-left">
             <h3 className="text-2xl font-bold text-primary mb-6">Residential Construction Testimonials</h3>
             <div className="space-y-8">
               {residentialTestimonials.map(testimonial => {
@@ -251,7 +251,7 @@ function ResidentialContactForm() {
           
           {isClient && (
             <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 bg-white p-8 rounded-[70px] shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 bg-white p-8 rounded-none shadow-lg" data-aos="fade-up" data-aos-delay="200">
                 <div className="grid sm:grid-cols-2 gap-6">
                     <FormField control={form.control} name="name" render={({ field }) => (
                     <FormItem><FormLabel>Your Name</FormLabel><FormControl><Input placeholder="John Doe" {...field} /></FormControl><FormMessage /></FormItem>
@@ -290,7 +290,7 @@ function ResidentialContactForm() {
                     <FormItem><FormLabel>Tell us about your project</FormLabel><FormControl><Textarea placeholder="Your project vision, requirements, timeline..." rows={5} {...field} /></FormControl><FormMessage /></FormItem>
                 )} />
                 <div className="text-center">
-                    <Button type="submit" size="lg" className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-accent/90 rounded-full transform -skew-x-12"><span className="inline-block transform skew-x-12">Submit Request</span></Button>
+                    <Button type="submit" size="lg" className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-accent/90 rounded-none">Submit Request</Button>
                     <p className="text-sm text-muted-foreground mt-3">We'll contact you within 24 hours to schedule your consultation.</p>
                 </div>
                 </form>

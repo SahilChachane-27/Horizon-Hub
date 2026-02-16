@@ -38,11 +38,11 @@ function BlogHero() {
             Expert perspectives, industry trends, and project stories from the leaders in real estate development and construction.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-start">
-            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full transform -skew-x-12">
-              <a href="#featured-post"><span className="inline-block transform skew-x-12">Featured Article</span></a>
+            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-none">
+              <a href="#featured-post">Featured Article</a>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-accent text-white bg-transparent hover:bg-accent hover:text-accent-foreground rounded-full transform -skew-x-12">
-              <a href="#blog-articles"><span className="inline-block transform skew-x-12">Browse Articles</span></a>
+            <Button asChild size="lg" variant="outline" className="border-accent text-white bg-transparent hover:bg-accent hover:text-accent-foreground rounded-none">
+              <a href="#blog-articles">Browse Articles</a>
             </Button>
           </div>
         </div>
@@ -65,7 +65,7 @@ function FeaturedPost() {
   const postImage = PlaceHolderImages.find(p => p.id === featuredPost.id);
   return (
     <div id="featured-post" className="mb-12" data-aos="fade-up">
-      <Card className="overflow-hidden shadow-2xl rounded-[70px]">
+      <Card className="overflow-hidden shadow-2xl rounded-none">
         {postImage && (
           <div className="relative aspect-video">
             <Image src={postImage.imageUrl} alt={postImage.description} fill className="object-cover" data-ai-hint={postImage.imageHint}/>
@@ -80,8 +80,8 @@ function FeaturedPost() {
             <div className="flex items-center gap-2"><User className="h-4 w-4" /> By {featuredPost.author}</div>
           </div>
           <p className="text-base md:text-lg text-foreground/80 mb-6">{featuredPost.excerpt}</p>
-          <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full transform -skew-x-12">
-            <Link href="#"><span className="inline-block transform skew-x-12">Read Full Article</span></Link>
+          <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-none">
+            <Link href="#">Read Full Article</Link>
           </Button>
         </CardContent>
       </Card>
@@ -104,7 +104,7 @@ function BlogGrid() {
       {blogPosts.map((post, index) => {
         const postImage = PlaceHolderImages.find(p => p.id === post.id);
         return(
-          <Card key={post.id} className="overflow-hidden shadow-lg flex flex-col rounded-[70px]" data-aos="fade-up" data-aos-delay={index * 100}>
+          <Card key={post.id} className="overflow-hidden shadow-lg flex flex-col rounded-none" data-aos="fade-up" data-aos-delay={index * 100}>
             {postImage && <div className="relative aspect-video"><Image src={postImage.imageUrl} alt={post.title} fill className="object-cover" data-ai-hint={postImage.imageHint} /></div>}
             <CardContent className="p-6 flex flex-col flex-grow">
               <span className="text-sm font-semibold text-accent mb-2">{post.category}</span>
@@ -114,8 +114,8 @@ function BlogGrid() {
                 <div className="flex items-center gap-1"><Clock className="h-3 w-3" />{post.readTime}</div>
               </div>
               <p className="text-foreground/70 mb-4 flex-grow">{post.excerpt}</p>
-              <Button asChild variant="outline" size="sm" className="self-start rounded-full transform -skew-x-12">
-                <Link href="#"><span className="inline-block transform skew-x-12">Read More</span></Link>
+              <Button asChild variant="outline" size="sm" className="self-start rounded-none">
+                <Link href="#">Read More</Link>
               </Button>
             </CardContent>
           </Card>
@@ -128,13 +128,13 @@ function BlogGrid() {
 function BlogPagination() {
   return(
     <div className="flex justify-center items-center gap-2 mt-12" data-aos="fade-up">
-      <Button variant="outline" size="icon" suppressHydrationWarning className="rounded-full transform -skew-x-12"><span className="inline-block transform skew-x-12"><ChevronLeft className="h-4 w-4"/></span></Button>
-      <Button variant="outline" className="w-10 h-10 bg-accent text-accent-foreground rounded-full transform -skew-x-12" suppressHydrationWarning><span className="inline-block transform skew-x-12">1</span></Button>
-      <Button variant="outline" size="icon" suppressHydrationWarning className="rounded-full transform -skew-x-12"><span className="inline-block transform skew-x-12">2</span></Button>
-      <Button variant="outline" size="icon" suppressHydrationWarning className="rounded-full transform -skew-x-12"><span className="inline-block transform skew-x-12">3</span></Button>
-      <Button variant="outline" size="icon" suppressHydrationWarning className="rounded-full transform -skew-x-12"><span className="inline-block transform skew-x-12">4</span></Button>
-      <Button variant="outline" size="icon" suppressHydrationWarning className="rounded-full transform -skew-x-12"><span className="inline-block transform skew-x-12">5</span></Button>
-      <Button variant="outline" size="icon" suppressHydrationWarning className="rounded-full transform -skew-x-12"><span className="inline-block transform skew-x-12"><ChevronRight className="h-4 w-4"/></span></Button>
+      <Button variant="outline" size="icon" suppressHydrationWarning className="rounded-none"><ChevronLeft className="h-4 w-4"/></Button>
+      <Button variant="outline" className="w-10 h-10 bg-accent text-accent-foreground rounded-none" suppressHydrationWarning>1</Button>
+      <Button variant="outline" size="icon" suppressHydrationWarning className="rounded-none">2</Button>
+      <Button variant="outline" size="icon" suppressHydrationWarning className="rounded-none">3</Button>
+      <Button variant="outline" size="icon" suppressHydrationWarning className="rounded-none">4</Button>
+      <Button variant="outline" size="icon" suppressHydrationWarning className="rounded-none">5</Button>
+      <Button variant="outline" size="icon" suppressHydrationWarning className="rounded-none"><ChevronRight className="h-4 w-4"/></Button>
     </div>
   )
 }
@@ -149,8 +149,8 @@ const author = {
 function AuthorBio() {
   const authorImage = PlaceHolderImages.find(p => p.id === author.id);
   return (
-    <div className="mt-12 bg-secondary p-6 rounded-[70px]" data-aos="fade-up">
-      <Card className="bg-card flex flex-col sm:flex-row items-center gap-6 p-6 rounded-[70px]">
+    <div className="mt-12 bg-secondary p-6 rounded-none" data-aos="fade-up">
+      <Card className="bg-card flex flex-col sm:flex-row items-center gap-6 p-6 rounded-none">
         {authorImage && <Image src={authorImage.imageUrl} alt={author.name} width={100} height={100} className="rounded-full flex-shrink-0" data-ai-hint={authorImage.imageHint} />}
         <div>
           <h4 className="text-xl font-bold text-primary mb-2">About the Editor</h4>
@@ -191,7 +191,7 @@ function BlogSidebar() {
   }, []);
   return (
     <aside className="space-y-8">
-      <Card className="p-6 rounded-[70px]" data-aos="fade-left">
+      <Card className="p-6 rounded-none" data-aos="fade-left">
         <CardHeader className="p-0 mb-4"><CardTitle>Search Articles</CardTitle></CardHeader>
         <div className="relative">
           <Input placeholder="Search blog..." className="pr-10" suppressHydrationWarning/>
@@ -200,7 +200,7 @@ function BlogSidebar() {
           </Button>
         </div>
       </Card>
-      <Card className="p-6 rounded-[70px]" data-aos="fade-left" data-aos-delay="100">
+      <Card className="p-6 rounded-none" data-aos="fade-left" data-aos-delay="100">
         <CardHeader className="p-0 mb-4"><CardTitle>Categories</CardTitle></CardHeader>
         <ul className="space-y-2">
           {categories.map(cat => (
@@ -213,7 +213,7 @@ function BlogSidebar() {
           ))}
         </ul>
       </Card>
-      <Card className="p-6 rounded-[70px]" data-aos="fade-left" data-aos-delay="200">
+      <Card className="p-6 rounded-none" data-aos="fade-left" data-aos-delay="200">
         <CardHeader className="p-0 mb-4"><CardTitle>Recent Posts</CardTitle></CardHeader>
         <div className="space-y-4">
           {recentPosts.map(post => {
@@ -230,23 +230,23 @@ function BlogSidebar() {
           })}
         </div>
       </Card>
-       <Card className="p-6 rounded-[70px]" data-aos="fade-left" data-aos-delay="300">
+       <Card className="p-6 rounded-none" data-aos="fade-left" data-aos-delay="300">
         <CardHeader className="p-0 mb-4"><CardTitle>Popular Tags</CardTitle></CardHeader>
         <div className="flex flex-wrap gap-2">
           {tags.map(tag => (
-            <Button key={tag} variant="outline" size="sm" asChild className="rounded-full transform -skew-x-12">
-              <Link href="#"><span className="inline-block transform skew-x-12">{tag}</span></Link>
+            <Button key={tag} variant="outline" size="sm" asChild className="rounded-none">
+              <Link href="#">{tag}</Link>
             </Button>
           ))}
         </div>
       </Card>
-      <Card className="p-6 bg-secondary rounded-[70px]" data-aos="fade-left" data-aos-delay="400">
+      <Card className="p-6 bg-secondary rounded-none" data-aos="fade-left" data-aos-delay="400">
         <CardHeader className="p-0 mb-4"><CardTitle>Subscribe to Our Newsletter</CardTitle></CardHeader>
         <p className="text-foreground/70 mb-4">Get the latest insights, trends, and project updates delivered to your inbox.</p>
         {isClient && (
         <form className="space-y-4" suppressHydrationWarning>
           <Input type="email" placeholder="Your email address" suppressHydrationWarning />
-          <Button type="submit" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 rounded-full transform -skew-x-12" suppressHydrationWarning><span className="inline-block transform skew-x-12">Subscribe</span></Button>
+          <Button type="submit" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 rounded-none" suppressHydrationWarning>Subscribe</Button>
         </form>
         )}
       </Card>

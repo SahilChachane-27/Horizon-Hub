@@ -1,3 +1,4 @@
+
 'use client';
 
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -82,13 +83,13 @@ export function Contact() {
                   <FormField control={form.control} name="message" render={({ field }) => (
                     <FormItem><FormLabel>Your Message</FormLabel><FormControl><Textarea placeholder="Tell us about your project..." rows={5} {...field} /></FormControl><FormMessage /></FormItem>
                   )} />
-                  <Button type="submit" size="lg" className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-accent/90 rounded-full transform -skew-x-12"><span className="inline-block transform skew-x-12">Send Message</span></Button>
+                  <Button type="submit" size="lg" className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-accent/90 rounded-none">Send Message</Button>
                 </form>
               </Form>
             )}
           </div>
           <div className="lg:col-span-2 space-y-6" data-aos="fade-left">
-            <div className="bg-primary p-8 rounded-[70px] shadow-lg space-y-6 text-primary-foreground">
+            <div className="bg-primary p-8 rounded-none shadow-lg space-y-6 text-primary-foreground">
               <h3 className="text-2xl font-bold font-headline">Contact Information</h3>
               {contactInfo.map((info) => (
                 <div key={info.title}>
@@ -100,7 +101,7 @@ export function Contact() {
               ))}
             </div>
             {mapImage && (
-              <div className="aspect-[4/3] relative rounded-[70px] overflow-hidden shadow-md">
+              <div className="aspect-[4/3] relative rounded-none overflow-hidden shadow-md">
                 <Image src={mapImage.imageUrl} alt={mapImage.description} fill className="object-cover" data-ai-hint={mapImage.imageHint} />
               </div>
             )}

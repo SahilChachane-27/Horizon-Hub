@@ -1,3 +1,4 @@
+
 'use client';
 
 import Image from 'next/image';
@@ -85,7 +86,7 @@ export function Testimonials() {
               return (
                 <CarouselItem key={testimonial.id} className="flex">
                   <div className="p-1 flex-1">
-                    <Card className="bg-card shadow-lg rounded-[70px] h-full flex flex-col">
+                    <Card className="bg-card shadow-lg rounded-none h-full flex flex-col">
                       <CardContent className="p-8 md:p-12 text-center flex flex-col items-center flex-1">
                         <p className="text-lg md:text-xl text-foreground/80 mb-6 italic flex-grow">
                           "{testimonial.quote}"
