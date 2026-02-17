@@ -90,7 +90,7 @@ export function Contact() {
             )}
           </div>
           <div className="lg:col-span-2 space-y-6" data-aos="fade-left">
-            <div className="bg-primary p-8 rounded-[30px] shadow-lg space-y-6 text-primary-foreground">
+            <div className="bg-primary p-8 shadow-lg space-y-6 text-primary-foreground rounded-funky border border-primary-foreground/20">
               <h3 className="text-2xl font-bold font-headline">Contact Information</h3>
               {contactInfo.map((info) => (
                 <div key={info.title} className="flex items-start gap-4">
@@ -103,7 +103,7 @@ export function Contact() {
               ))}
             </div>
             {mapImage && (
-              <div className="aspect-[4/3] relative rounded-[30px] overflow-hidden shadow-md">
+              <div className="aspect-[4/3] relative rounded-funky overflow-hidden shadow-md">
                 <Image src={mapImage.imageUrl} alt={mapImage.description} fill className="object-cover" data-ai-hint={mapImage.imageHint} />
               </div>
             )}
