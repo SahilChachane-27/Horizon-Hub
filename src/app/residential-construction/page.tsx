@@ -134,7 +134,7 @@ function ConstructionProcess() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {constructionProcessSteps.map((step, index) => (
-            <Card key={index} className="p-6 text-center bg-card shadow-lg rounded-none" data-aos="fade-up" data-aos-delay={index * 100}>
+            <Card key={index} className="p-6 text-center bg-card shadow-lg rounded-xl transform -rotate-2 hover:rotate-0 transition-transform duration-300 ease-in-out hover:scale-105" data-aos="fade-up" data-aos-delay={index * 100}>
               <CardHeader>
                 <CardTitle className="text-primary text-xl">{step.title}</CardTitle>
               </CardHeader>
@@ -376,6 +376,8 @@ export default function ResidentialConstructionPage() {
     </div>
   );
 }
+
+    
 
     
 
