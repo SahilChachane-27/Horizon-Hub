@@ -38,10 +38,10 @@ function BlogHero() {
             Expert perspectives, industry trends, and project stories from the leaders in real estate development and construction.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-start">
-            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full transform -rotate-2 hover:rotate-0 transition-transform duration-300 ease-in-out hover:scale-105">
+            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full transition-transform duration-300 ease-in-out hover:scale-105">
               <a href="#featured-post">Featured Article</a>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-accent text-white bg-transparent hover:bg-accent hover:text-accent-foreground rounded-full transform rotate-2 hover:rotate-0 transition-transform duration-300 ease-in-out hover:scale-105">
+            <Button asChild size="lg" variant="outline" className="border-accent text-white bg-transparent hover:bg-accent hover:text-accent-foreground rounded-full transition-transform duration-300 ease-in-out hover:scale-105">
               <a href="#blog-articles">Browse Articles</a>
             </Button>
           </div>
@@ -80,7 +80,7 @@ function FeaturedPost() {
             <div className="flex items-center gap-2"><User className="h-4 w-4" /> By {featuredPost.author}</div>
           </div>
           <p className="text-base md:text-lg text-foreground/80 mb-6">{featuredPost.excerpt}</p>
-          <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full transform -rotate-2 hover:rotate-0 transition-transform duration-300 ease-in-out hover:scale-105">
+          <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full transition-transform duration-300 ease-in-out hover:scale-105">
             <Link href="#">Read Full Article</Link>
           </Button>
         </CardContent>
@@ -114,7 +114,7 @@ function BlogGrid() {
                 <div className="flex items-center gap-1"><Clock className="h-3 w-3" />{post.readTime}</div>
               </div>
               <p className="text-foreground/70 mb-4 flex-grow">{post.excerpt}</p>
-              <Button asChild variant="outline" size="sm" className="self-start rounded-full transform rotate-2 hover:rotate-0 transition-transform duration-300 ease-in-out hover:scale-105">
+              <Button asChild variant="outline" size="sm" className="self-start rounded-full transition-transform duration-300 ease-in-out hover:scale-105">
                 <Link href="#">Read More</Link>
               </Button>
             </CardContent>
@@ -246,7 +246,7 @@ function BlogSidebar() {
         {isClient && (
         <form className="space-y-4" suppressHydrationWarning>
           <Input type="email" placeholder="Your email address" suppressHydrationWarning />
-          <Button type="submit" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 rounded-full transform -rotate-2 hover:rotate-0 transition-transform duration-300 ease-in-out hover:scale-105" suppressHydrationWarning>Subscribe</Button>
+          <Button type="submit" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 rounded-full transition-transform duration-300 ease-in-out hover:scale-105" suppressHydrationWarning>Subscribe</Button>
         </form>
         )}
       </Card>

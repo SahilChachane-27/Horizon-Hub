@@ -28,10 +28,10 @@ export function Hero() {
             For over two decades, Horizon Group has been transforming skylines and communities through innovative real estate development and premium construction services.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-start" data-aos="fade-right" data-aos-delay="300">
-            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-primary-foreground rounded-full transform -rotate-2 hover:rotate-0 transition-transform duration-300 ease-in-out hover:scale-105">
+            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-primary-foreground rounded-full transition-transform duration-300 ease-in-out hover:scale-105">
                 <a href="#projects">View Our Projects</a>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-accent text-accent bg-transparent hover:bg-accent hover:text-accent-foreground rounded-full transform rotate-2 hover:rotate-0 transition-transform duration-300 ease-in-out hover:scale-105">
+            <Button asChild size="lg" variant="outline" className="border-accent text-accent bg-transparent hover:bg-accent hover:text-accent-foreground rounded-full transition-transform duration-300 ease-in-out hover:scale-105">
                 <a href="#contact">Contact Us</a>
             </Button>
             </div>

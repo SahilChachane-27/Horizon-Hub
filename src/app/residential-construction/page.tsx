@@ -45,10 +45,10 @@ function ResidentialHero() {
             Creating exceptional living spaces that blend innovative design, sustainable practices, and meticulous craftsmanship to build homes that stand the test of time.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-start">
-            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full transform -rotate-2 hover:rotate-0 transition-transform duration-300 ease-in-out hover:scale-105">
+            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full transition-transform duration-300 ease-in-out hover:scale-105">
               <a href="#construction-process">Our Process</a>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-accent text-white bg-transparent hover:bg-accent hover:text-accent-foreground rounded-full transform rotate-2 hover:rotate-0 transition-transform duration-300 ease-in-out hover:scale-105">
+            <Button asChild size="lg" variant="outline" className="border-accent text-white bg-transparent hover:bg-accent hover:text-accent-foreground rounded-full transition-transform duration-300 ease-in-out hover:scale-105">
               <a href="#contact-form">Request Consultation</a>
             </Button>
           </div>
@@ -134,7 +134,7 @@ function ConstructionProcess() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {constructionProcessSteps.map((step, index) => (
-            <Card key={index} className="p-6 text-center bg-card shadow-lg rounded-[30px] transform -rotate-2 hover:rotate-0 transition-transform duration-300 ease-in-out hover:scale-105" data-aos="fade-up" data-aos-delay={index * 100}>
+            <Card key={index} className="p-6 text-center bg-card shadow-lg rounded-[30px] transition-transform duration-300 ease-in-out hover:scale-105" data-aos="fade-up" data-aos-delay={index * 100}>
               <CardHeader>
                 <CardTitle className="text-primary text-xl">{step.title}</CardTitle>
               </CardHeader>
@@ -346,7 +346,7 @@ function ResidentialContactForm() {
                     <FormItem><FormLabel>Tell us about your project</FormLabel><FormControl><Textarea placeholder="Your project vision, requirements, timeline..." rows={5} {...field} /></FormControl><FormMessage /></FormItem>
                 )} />
                 <div className="text-center">
-                    <Button type="submit" size="lg" className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-accent/90 rounded-full transform -rotate-2 hover:rotate-0 transition-transform duration-300 ease-in-out hover:scale-105">Submit Request</Button>
+                    <Button type="submit" size="lg" className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-accent/90 rounded-full transition-transform duration-300 ease-in-out hover:scale-105">Submit Request</Button>
                     <p className="text-sm text-muted-foreground mt-3">We'll contact you within 24 hours to schedule your consultation.</p>
                 </div>
                 </form>
@@ -382,4 +382,5 @@ export default function ResidentialConstructionPage() {
     
 
     
+
 
