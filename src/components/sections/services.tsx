@@ -55,7 +55,7 @@ export function Services() {
                       <h3 className="text-2xl font-bold font-headline mt-2 mb-4">{service.title}</h3>
                       <p className="text-sm text-foreground/70 flex-grow">{service.description}</p>
                   </div>
-                  <Button asChild className="mt-6 bg-accent hover:bg-accent/90 text-accent-foreground rounded-none self-center px-8 py-3">
+                  <Button asChild className="mt-6 bg-accent hover:bg-accent/90 text-accent-foreground rounded-full self-center px-8 py-3">
                       <Link href={service.href}>View More</Link>
                   </Button>
               </Card>
