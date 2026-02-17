@@ -51,7 +51,7 @@ export function WhyUs() {
               data-aos-delay={index * 100}
             >
               <div className="flex justify-center mb-6">
-                <div className="h-20 w-20 bg-muted rounded-none flex items-center justify-center">
+                <div className="h-20 w-20 bg-muted rounded-full flex items-center justify-center">
                   <feature.icon className="h-8 w-8 text-accent" />
                 </div>
               </div>

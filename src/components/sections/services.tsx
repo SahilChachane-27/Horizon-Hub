@@ -48,7 +48,7 @@ export function Services() {
               <Card className="text-center bg-card shadow-lg rounded-funky flex flex-col py-10 px-8 h-full transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border-opacity-20">
                   <div className="flex-grow flex flex-col items-center">
                       <div className="flex justify-center mb-4">
-                        <div className="h-20 w-20 bg-muted rounded-none flex items-center justify-center">
+                        <div className="h-20 w-20 bg-muted rounded-full flex items-center justify-center">
                           <service.icon className="h-8 w-8 text-accent" />
                         </div>
                       </div>
