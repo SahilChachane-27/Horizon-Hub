@@ -87,8 +87,8 @@ export function Testimonials() {
                 <CarouselItem key={testimonial.id} className="flex">
                   <div className="p-1 flex-1">
                     <Card className="bg-card shadow-lg rounded-funky h-full flex flex-col border-opacity-20">
-                      <CardContent className="p-8 md:p-12 text-center flex flex-col items-center flex-1">
-                        <p className="text-lg md:text-xl text-foreground/80 mb-6 italic flex-grow">
+                      <CardContent className="p-8 md:p-12 flex flex-col flex-1">
+                        <p className="text-lg md:text-xl text-center text-foreground/80 mb-6 italic flex-grow">
                           "{testimonial.quote}"
                         </p>
                         <div className="flex items-center gap-4">
@@ -102,7 +102,7 @@ export function Testimonials() {
                               data-ai-hint={testimonialImage.imageHint}
                             />
                           )}
-                          <div>
+                          <div className="text-left">
                             <p className="font-bold text-lg text-primary">
                               {testimonial.name}
                             </p>
