@@ -1,4 +1,3 @@
-
 'use client';
 
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -12,12 +11,13 @@ import { useToast } from "@/hooks/use-toast";
 import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { useEffect, useState } from "react";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 const contactInfo = [
-  { title: "Address", lines: ["123 Wall Street, Suite 500", "New York, NY 10005"] },
-  { title: "Phone", lines: ["+1 (212) 555-1234"] },
-  { title: "Email", lines: ["info@horizongroup.com"] },
-  { title: "Business Hours", lines: ["Monday - Friday: 8:00 AM - 6:00 PM", "Saturday: 9:00 AM - 2:00 PM"] },
+  { title: "Address", icon: MapPin, lines: ["123 Wall Street, Suite 500", "New York, NY 10005"] },
+  { title: "Phone", icon: Phone, lines: ["+1 (212) 555-1234"] },
+  { title: "Email", icon: Mail, lines: ["info@horizongroup.com"] },
+  { title: "Business Hours", icon: Clock, lines: ["Monday - Friday: 8:00 AM - 6:00 PM", "Saturday: 9:00 AM - 2:00 PM"] },
 ];
 
 const formSchema = z.object({
@@ -89,19 +89,20 @@ export function Contact() {
             )}
           </div>
           <div className="lg:col-span-2 space-y-6" data-aos="fade-left">
-            <div className="bg-primary p-8 rounded-none shadow-lg space-y-6 text-primary-foreground">
+            <div className="bg-primary p-8 rounded-[30px] shadow-lg space-y-6 text-primary-foreground">
               <h3 className="text-2xl font-bold font-headline">Contact Information</h3>
               {contactInfo.map((info) => (
-                <div key={info.title}>
+                <div key={info.title} className="flex items-start gap-4">
+                  <info.icon className="h-5 w-5 text-accent mt-1 flex-shrink-0" />
                   <div>
-                    <h4 className="font-semibold">{info.title}</h4>
+                    <h4 className="font-semibold text-lg">{info.title}</h4>
                     {info.lines.map((line, i) => <p key={i} className="text-primary-foreground/80">{line}</p>)}
                   </div>
                 </div>
               ))}
             </div>
             {mapImage && (
-              <div className="aspect-[4/3] relative rounded-none overflow-hidden shadow-md">
+              <div className="aspect-[4/3] relative rounded-[30px] overflow-hidden shadow-md">
                 <Image src={mapImage.imageUrl} alt={mapImage.description} fill className="object-cover" data-ai-hint={mapImage.imageHint} />
               </div>
             )}
