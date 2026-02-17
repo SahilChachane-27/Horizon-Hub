@@ -45,10 +45,10 @@ function CommercialHero() {
             Transforming skylines with innovative commercial developments that combine architectural excellence, functional design, and sustainable practices for businesses of the future.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-start">
-            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground transition-transform duration-300 ease-in-out hover:scale-105">
+            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground transition-transform duration-300 ease-in-out hover:scale-105 rounded-funky">
               <a href="#commercial-projects">Our Projects</a>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-accent text-white bg-transparent hover:bg-accent hover:text-accent-foreground transition-transform duration-300 ease-in-out hover:scale-105">
+            <Button asChild size="lg" variant="outline" className="border-accent text-white bg-transparent hover:bg-accent hover:text-accent-foreground transition-transform duration-300 ease-in-out hover:scale-105 rounded-funky">
               <a href="#contact-form">Start Your Project</a>
             </Button>
           </div>
@@ -177,7 +177,7 @@ function FeaturedCaseStudy() {
                             </ul>
                         </div>
                         <div className="mt-8">
-                            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground transition-transform duration-300 ease-in-out hover:scale-105">
+                            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground transition-transform duration-300 ease-in-out hover:scale-105 rounded-funky">
                                 <Link href="#">View Full Case Study</Link>
                             </Button>
                         </div>
@@ -405,7 +405,7 @@ function CommercialContactForm() {
                                   <FormItem><FormLabel>Project Details</FormLabel><FormControl><Textarea placeholder="Your project requirements, timeline, and specific needs..." rows={5} {...field} /></FormControl><FormMessage /></FormItem>
                               )} />
                               <div className="text-center">
-                                  <Button type="submit" size="lg" className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-accent/90 transition-transform duration-300 ease-in-out hover:scale-105">Request Commercial Consultation</Button>
+                                  <Button type="submit" size="lg" className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-accent/90 transition-transform duration-300 ease-in-out hover:scale-105 rounded-funky">Request Commercial Consultation</Button>
                                   <p className="text-sm text-muted-foreground mt-3">Our commercial team will contact you within 24 hours.</p>
                               </div>
                           </form>

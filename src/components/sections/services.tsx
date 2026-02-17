@@ -48,7 +48,7 @@ export function Services() {
 <Card
   className="
     text-center bg-card rounded-funky flex flex-col py-10 px-8 h-full
-    border-0
+    border border-border/50
     shadow-md
     transition-all duration-300
     hover:-translate-y-2 hover:shadow-2xl
@@ -64,7 +64,7 @@ export function Services() {
                       <h3 className="text-2xl font-bold font-headline mt-2 mb-4">{service.title}</h3>
                       <p className="text-sm text-foreground/70 flex-grow">{service.description}</p>
                   </div>
-                  <Button asChild className="mt-6 bg-accent hover:bg-accent/90 text-accent-foreground self-center px-8 py-3 transition-transform duration-300 ease-in-out hover:scale-105">
+                  <Button asChild className="mt-6 bg-accent hover:bg-accent/90 text-accent-foreground self-center px-8 py-3 transition-transform duration-300 ease-in-out hover:scale-105 rounded-funky">
                       <Link href={service.href}>View More</Link>
                   </Button>
               </Card>

@@ -13,8 +13,8 @@ export function About() {
           <div className="lg:col-span-2 relative aspect-[8/5] rounded-none overflow-hidden shadow-2xl">
             {aboutImage && (
               <Image
-                src="/2151933412.jpg"
-                alt="Hello"
+                src={aboutImage.imageUrl}
+                alt={aboutImage.description}
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 40vw"
@@ -35,7 +35,7 @@ export function About() {
             <p className="text-base md:text-lg text-foreground/80">
               Our integrated approach combines innovative design, sustainable practices, and meticulous craftsmanship to deliver exceptional value to our clients and communities.
             </p>
-            <Card className="bg-card border-0 border-l-4 border-accent shadow-lg rounded-[30px]">
+            <Card className="bg-card border-0 border-l-4 border-accent shadow-lg rounded-funky">
               <CardHeader>
                 <CardTitle className="text-primary">Our Mission</CardTitle>
               </CardHeader>

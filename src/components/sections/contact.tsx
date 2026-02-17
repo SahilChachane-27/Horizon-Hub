@@ -84,7 +84,7 @@ export function Contact() {
                   <FormField control={form.control} name="message" render={({ field }) => (
                     <FormItem><FormLabel>Your Message</FormLabel><FormControl><Textarea placeholder="Tell us about your project..." rows={5} {...field} /></FormControl><FormMessage /></FormItem>
                   )} />
-                  <Button type="submit" size="lg" className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-accent/90">Send Message</Button>
+                  <Button type="submit" size="lg" className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-accent/90 rounded-funky">Send Message</Button>
                 </form>
               </Form>
             )}

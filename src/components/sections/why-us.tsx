@@ -46,7 +46,7 @@ export function WhyUs() {
           {features.map((feature, index) => (
             <Card
               key={index}
-              className="text-center p-8 bg-card shadow-lg rounded-funky transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border-opacity-20"
+              className="text-center p-8 bg-card shadow-lg rounded-funky transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border-border/50"
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >

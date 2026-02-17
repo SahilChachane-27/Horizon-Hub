@@ -86,7 +86,7 @@ export function Testimonials() {
               return (
                 <CarouselItem key={testimonial.id} className="flex">
                   <div className="p-1 flex-1">
-                    <Card className="bg-card shadow-lg rounded-funky h-full flex flex-col border-opacity-20">
+                    <Card className="bg-card shadow-lg rounded-funky h-full flex flex-col border-border/50">
                       <CardContent className="p-8 md:p-12 flex flex-col flex-1">
                         <p className="text-lg md:text-xl text-center text-foreground/80 mb-6 italic flex-grow">
                           "{testimonial.quote}"
