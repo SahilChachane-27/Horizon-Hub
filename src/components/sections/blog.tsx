@@ -77,7 +77,7 @@ export function Blog() {
                 </Card>
               )
             })}
-             <Button asChild size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 rounded-none">
+             <Button asChild size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 rounded-full transform -rotate-2 hover:rotate-0 transition-transform duration-300 ease-in-out hover:scale-105">
               <Link href="/blog">View All Articles</Link>
             </Button>
           </div>

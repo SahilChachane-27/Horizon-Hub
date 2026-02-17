@@ -36,7 +36,7 @@ export function ScrollToTop() {
       size="icon"
       onClick={scrollToTop}
       className={cn(
-        'fixed bottom-4 right-4 rounded-none h-12 w-12 bg-accent text-accent-foreground hover:bg-accent/90 transition-opacity duration-300 z-50',
+        'fixed bottom-4 right-4 rounded-full h-12 w-12 bg-accent text-accent-foreground hover:bg-accent/90 transition-opacity duration-300 z-50',
         isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
       )}
       aria-label="Scroll to top"

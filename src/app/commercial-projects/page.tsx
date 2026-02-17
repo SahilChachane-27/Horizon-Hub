@@ -177,7 +177,7 @@ function FeaturedCaseStudy() {
                             </ul>
                         </div>
                         <div className="mt-8">
-                            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-none">
+                            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full transform -rotate-2 hover:rotate-0 transition-transform duration-300 ease-in-out hover:scale-105">
                                 <Link href="#">View Full Case Study</Link>
                             </Button>
                         </div>
@@ -405,7 +405,7 @@ function CommercialContactForm() {
                                   <FormItem><FormLabel>Project Details</FormLabel><FormControl><Textarea placeholder="Your project requirements, timeline, and specific needs..." rows={5} {...field} /></FormControl><FormMessage /></FormItem>
                               )} />
                               <div className="text-center">
-                                  <Button type="submit" size="lg" className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-accent/90 rounded-none">Request Commercial Consultation</Button>
+                                  <Button type="submit" size="lg" className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-accent/90 rounded-full transform -rotate-2 hover:rotate-0 transition-transform duration-300 ease-in-out hover:scale-105">Request Commercial Consultation</Button>
                                   <p className="text-sm text-muted-foreground mt-3">Our commercial team will contact you within 24 hours.</p>
                               </div>
                           </form>
