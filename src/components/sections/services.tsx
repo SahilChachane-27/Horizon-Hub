@@ -45,7 +45,7 @@ export function Services() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
             <div key={index} data-aos="fade-up" data-aos-delay={index * 100}>
-              <Card className="text-center bg-card shadow-lg rounded-[70px] flex flex-col py-10 px-8 h-full transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+              <Card className="text-center bg-card shadow-lg rounded-funky flex flex-col py-10 px-8 h-full transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
                   <div className="flex-grow flex flex-col items-center">
                       <div className="flex justify-center mb-4">
                         <div className="h-20 w-20 bg-muted rounded-none flex items-center justify-center">
