@@ -45,10 +45,10 @@ function RenovationHero() {
             Expert renovation and remodeling services that breathe new life into your home or commercial property, combining innovative design with meticulous craftsmanship.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-start">
-            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full transition-transform duration-300 ease-in-out hover:scale-105">
+            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground transition-transform duration-300 ease-in-out hover:scale-105">
               <a href="#renovation-services">Our Services</a>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-accent text-white bg-transparent hover:bg-accent hover:text-accent-foreground rounded-full transition-transform duration-300 ease-in-out hover:scale-105">
+            <Button asChild size="lg" variant="outline" className="border-accent text-white bg-transparent hover:bg-accent hover:text-accent-foreground transition-transform duration-300 ease-in-out hover:scale-105">
               <a href="#contact-form">Free Consultation</a>
             </Button>
           </div>
@@ -461,7 +461,7 @@ function RenovationContactForm() {
                                 <FormItem><FormLabel>Project Details</FormLabel><FormControl><Textarea placeholder="Tell us about your renovation project..." rows={5} {...field} /></FormControl><FormMessage /></FormItem>
                             )} />
                             <div className="text-center">
-                                <Button type="submit" size="lg" className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-accent/90 rounded-full transition-transform duration-300 ease-in-out hover:scale-105">Request Free Consultation</Button>
+                                <Button type="submit" size="lg" className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-accent/90 transition-transform duration-300 ease-in-out hover:scale-105">Request Free Consultation</Button>
                                 <p className="text-sm text-muted-foreground mt-3">We'll contact you within 24 hours.</p>
                             </div>
                         </form>

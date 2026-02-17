@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .rounded-funky {
+    border-radius: 15px 50px 30px;
+  }
+}
+
 @layer base {
   html {
     @apply !scroll-smooth;

@@ -15,11 +15,11 @@ const socialLinks = [
 ];
 
 const quickLinks = [
-  { href: '#hero', label: 'Home' },
-  { href: '#about', label: 'About Us' },
-  { href: '#services', label: 'Services' },
-  { href: '#projects', label: 'Projects' },
-  { href: '#contact', label: 'Contact' },
+  { href: '/#hero', label: 'Home' },
+  { href: '/#about', label: 'About Us' },
+  { href: '/#services', label: 'Services' },
+  { href: '/#projects', label: 'Projects' },
+  { href: '/#contact', label: 'Contact' },
 ];
 
 const serviceLinks = [
@@ -44,7 +44,7 @@ export function Footer() {
       <div className="container mx-auto pl-4 sm:pl-16 lg:pl-24 pr-4 sm:pr-6 lg:pr-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           <div className="space-y-4" data-aos="fade-up">
-            <Link href="#hero" className="flex items-center text-2xl font-bold text-accent font-headline">
+            <Link href="/" className="flex items-center text-2xl font-bold text-accent font-headline">
                 <span>Horizon Group</span>
             </Link>
             <p className="text-sm">
@@ -90,7 +90,7 @@ export function Footer() {
               {isClient && (
                 <form className="flex gap-2">
                   <Input type="email" placeholder="Your Email" className="bg-primary-foreground/10 text-primary-foreground placeholder:text-primary-foreground/50 border-primary-foreground/20 focus:bg-primary-foreground/20" />
-                  <Button type="submit" className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full transition-transform duration-300 ease-in-out hover:scale-105">Subscribe</Button>
+                  <Button type="submit" className="bg-accent hover:bg-accent/90 text-accent-foreground transition-transform duration-300 ease-in-out hover:scale-105">Subscribe</Button>
                 </form>
               )}
             </div>
