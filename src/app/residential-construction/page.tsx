@@ -8,7 +8,7 @@ import { ScrollToTop } from '@/components/layout/scroll-to-top';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { CheckCircle2, Quote } from 'lucide-react';
+import { CheckCircle2, Quote, DraftingCompass, Building, Home, Check } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -52,6 +52,62 @@ function ResidentialHero() {
               <a href="#contact-form">Request Consultation</a>
             </Button>
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ResidentialConstructionServices() {
+  const services = [
+    {
+      icon: DraftingCompass,
+      title: 'Custom Home Design & Build',
+      description: 'Complete design-build services for custom luxury homes tailored to your lifestyle and preferences, from concept to completion.',
+      features: ['Architectural design', 'Interior planning', 'Material selection'],
+    },
+    {
+      icon: Building,
+      title: 'Multi-Family Developments',
+      description: 'Construction of apartment complexes, condominiums, and townhouse communities with modern amenities and sustainable features.',
+      features: ['Community planning', 'Shared amenities', 'Sustainable design'],
+    },
+    {
+      icon: Home,
+      title: 'Luxury Residential Communities',
+      description: 'Master-planned communities with custom homes, landscaping, and premium amenities that create exceptional living environments.',
+      features: ['Master planning', 'Landscaping design', 'Community amenities'],
+    },
+  ];
+
+  return (
+    <section id="residential-services" className="py-16 md:py-24 bg-background">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12" data-aos="fade-up">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Our Residential Construction Services</h2>
+          <div className="mt-4 w-24 h-1 bg-accent mx-auto"></div>
+          <p className="mt-6 text-base md:text-lg text-foreground/80 max-w-3xl mx-auto">
+            We specialize in creating exceptional residential properties that combine aesthetics, functionality, and sustainability.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {services.map((service, index) => (
+            <Card key={service.title} className="p-8 bg-secondary rounded-none flex flex-col items-center border" data-aos="fade-up" data-aos-delay={index * 100}>
+              <div className="flex justify-center mb-6">
+                 <service.icon className="h-10 w-10 text-primary" />
+              </div>
+              <h3 className="text-2xl font-bold text-primary text-center mb-4 font-headline">{service.title}</h3>
+              <p className="text-foreground/70 text-center mb-6 flex-grow">{service.description}</p>
+              <ul className="space-y-3 self-start w-full">
+                {service.features.map((feature) => (
+                  <li key={feature} className="flex items-center gap-3">
+                    <Check className="h-5 w-5 text-accent flex-shrink-0" />
+                    <span className="text-foreground/80">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </Card>
+          ))}
         </div>
       </div>
     </section>
@@ -309,6 +365,7 @@ export default function ResidentialConstructionPage() {
       <Header />
       <main className="flex-1">
         <ResidentialHero />
+        <ResidentialConstructionServices />
         <ConstructionProcess />
         <ResidentialGallery />
         <WhyChooseResidential />
