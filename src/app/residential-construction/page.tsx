@@ -45,10 +45,10 @@ function ResidentialHero() {
             Creating exceptional living spaces that blend innovative design, sustainable practices, and meticulous craftsmanship to build homes that stand the test of time.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-start">
-            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-none">
+            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full transform -rotate-2 hover:rotate-0 transition-transform duration-300 ease-in-out hover:scale-105">
               <a href="#construction-process">Our Process</a>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-accent text-white bg-transparent hover:bg-accent hover:text-accent-foreground rounded-none">
+            <Button asChild size="lg" variant="outline" className="border-accent text-white bg-transparent hover:bg-accent hover:text-accent-foreground rounded-full transform rotate-2 hover:rotate-0 transition-transform duration-300 ease-in-out hover:scale-105">
               <a href="#contact-form">Request Consultation</a>
             </Button>
           </div>
