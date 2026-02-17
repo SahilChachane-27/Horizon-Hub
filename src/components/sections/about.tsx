@@ -13,8 +13,8 @@ export function About() {
           <div className="lg:col-span-2 relative aspect-[4/5] rounded-none overflow-hidden shadow-2xl" data-aos="fade-right">
             {aboutImage && (
               <Image
-                src={aboutImage.imageUrl}
-                alt={aboutImage.description}
+                src="/2151933412.jpg"
+                alt="Hello"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 40vw"
