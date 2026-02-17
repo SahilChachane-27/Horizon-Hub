@@ -98,7 +98,7 @@ function ResidentialConstructionServices() {
               </div>
               <h3 className="text-2xl font-bold text-primary text-center mb-4 font-headline">{service.title}</h3>
               <p className="text-foreground/70 text-center mb-6 flex-grow">{service.description}</p>
-              <ul className="space-y-3 self-start w-full">
+              <ul className="space-y-3">
                 {service.features.map((feature) => (
                   <li key={feature} className="flex items-center gap-3">
                     <Check className="h-5 w-5 text-accent flex-shrink-0" />
@@ -376,3 +376,5 @@ export default function ResidentialConstructionPage() {
     </div>
   );
 }
+
+    
