@@ -97,8 +97,8 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-primary-foreground/20 pt-8 text-center text-sm" suppressHydrationWarning data-aos="fade-up">
-          {isClient && <p suppressHydrationWarning>© {year} Horizon Group. All Rights Reserved.</p>}
+        <div className="border-t border-primary-foreground/20 pt-8 text-center text-sm" data-aos="fade-up">
+          {isClient && <p>© {year} Horizon Group. All Rights Reserved.</p>}
         </div>
       </div>
     </footer>
