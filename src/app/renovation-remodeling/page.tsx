@@ -36,7 +36,7 @@ function RenovationHero() {
         />
       )}
       <div className="absolute inset-0 bg-black/50" />
-      <div className="container mx-auto pl-4 sm:pl-16 lg:pl-24 pr-4 sm:pr-6 lg:pr-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative z-10 max-w-3xl" data-aos="fade-up">
           <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 drop-shadow-lg font-headline">
             Transform Your Space
@@ -214,7 +214,7 @@ const renovationProcessSteps = [
 function RenovationProcess() {
     return (
         <section className="py-16 md:py-24">
-            <div className="container mx-auto pl-4 sm:pl-16 lg:pl-24 pr-4 sm:pr-6 lg:pr-8">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12" data-aos="fade-up">
                     <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Our Renovation Process</h2>
                     <div className="mt-4 w-24 h-1 bg-accent mx-auto"></div>
@@ -259,7 +259,7 @@ const renovationMetrics = [
 function WhyChooseRenovation() {
     return (
         <section className="py-16 md:py-24 bg-secondary">
-            <div className="container mx-auto pl-4 sm:pl-16 lg:pl-24 pr-4 sm:pr-6 lg:pr-8">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     <div className="space-y-8" data-aos="fade-right">
                         <div>
@@ -323,7 +323,7 @@ const renovationPortfolioItems = [
 function RenovationPortfolio() {
     return (
         <section className="py-16 md:py-24">
-            <div className="container mx-auto pl-4 sm:pl-16 lg:pl-24 pr-4 sm:pr-6 lg:pr-8">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12" data-aos="fade-up">
                     <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Renovation Portfolio</h2>
                     <div className="mt-4 w-24 h-1 bg-accent mx-auto"></div>
@@ -362,7 +362,7 @@ const renovationTestimonialsList = [
 function RenovationTestimonials() {
     return (
         <section className="py-16 md:py-24 bg-secondary">
-            <div className="container mx-auto pl-4 sm:pl-16 lg:pl-24 pr-4 sm:pr-6 lg:pr-8">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12" data-aos="fade-up">
                     <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">What Our Renovation Clients Say</h2>
                     <div className="mt-4 w-24 h-1 bg-accent mx-auto"></div>

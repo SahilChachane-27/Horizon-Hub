@@ -19,7 +19,7 @@ export function Hero() {
         />
       )}
       <div className="absolute inset-0 bg-black/50" />
-      <div className="container mx-auto pl-4 sm:pl-16 lg:pl-24 pr-4 sm:pr-6 lg:pr-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative z-10 max-w-3xl" data-aos="fade-right">
             <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 drop-shadow-lg font-headline" data-aos="fade-right" data-aos-delay="100">
             Building Dreams. Creating Landmarks.
