@@ -10,7 +10,7 @@ export function About() {
     <section id="about" className="py-16 md:py-24">
       <div className="container mx-auto pl-4 sm:pl-16 lg:pl-24 pr-4 sm:pr-6 lg:pr-8">
         <div className="grid lg:grid-cols-5 gap-12 items-center">
-          <div className="lg:col-span-2 relative aspect-[4/5] rounded-none overflow-hidden shadow-2xl" data-aos="fade-right">
+          <div className="lg:col-span-2 relative aspect-[8/5] rounded-none overflow-hidden shadow-2xl">
             {aboutImage && (
               <Image
                 src="/2151933412.jpg"
