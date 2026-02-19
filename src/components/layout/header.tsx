@@ -94,9 +94,14 @@ export function Header() {
             <span>Horizon Group</span>
           </Link>
           
-          <nav className="hidden lg:flex items-center space-x-4 xl:space-x-6">
-            <NavContent />
-          </nav>
+          <div className="hidden lg:flex items-center space-x-6">
+            <nav className="flex items-center space-x-4 xl:space-x-6">
+              <NavContent />
+            </nav>
+            <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-funky transition-transform duration-300 ease-in-out hover:scale-105">
+              <Link href="#journal-start">Start Your Journal</Link>
+            </Button>
+          </div>
 
           <div className="lg:hidden">
             {isClient && (
@@ -113,6 +118,11 @@ export function Header() {
                   </SheetHeader>
                   <nav className="flex flex-col items-start space-y-4 mt-8">
                     <NavContent inSheet />
+                    <SheetClose asChild>
+                      <Button asChild className="w-full bg-accent hover:bg-accent/90 text-accent-foreground mt-4 rounded-funky transition-transform duration-300 ease-in-out hover:scale-105">
+                        <Link href="#journal-start">Start Your Journal</Link>
+                      </Button>
+                    </SheetClose>
                   </nav>
                 </SheetContent>
               </Sheet>
