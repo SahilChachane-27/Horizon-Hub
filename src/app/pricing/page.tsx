@@ -7,7 +7,6 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { 
   Check, 
-  Info, 
   Microscope, 
   FlaskConical, 
   BookOpen, 
@@ -31,12 +30,12 @@ import {
 import { useState, useEffect } from 'react';
 
 const plans = [
-  { name: "Starter", price: "₹15,000", period: "Annually", featured: true, slug: "starter" },
-  { name: "Experience Plan", price: "₹5,000", period: "90 Days", slug: "experience" },
-  { name: "Free", price: "₹0", period: "Annually", slug: "free" },
-  { name: "Enterprise", price: "₹30,000", period: "Annually", slug: "enterprise" },
-  { name: "Institute", price: "₹20,000", period: "Annually", slug: "institute" },
-  { name: "Professional Plan", price: "₹25,000", period: "Annually", slug: "professional" },
+  { name: "Starter", priceINR: "₹15,000", priceUSD: "$215.00", period: "Annually", featured: true, slug: "starter" },
+  { name: "Experience Plan (3month)", priceINR: "₹5,000", priceUSD: "$60.00", period: "90 Days", slug: "experience" },
+  { name: "Free", priceINR: "₹0", priceUSD: "$0.00", period: "Annually", slug: "free" },
+  { name: "Enterprise", priceINR: "₹30,000", priceUSD: "$355.00", period: "Annually", slug: "enterprise" },
+  { name: "Institute", priceINR: "₹20,000", priceUSD: "$285.00", period: "Annually", slug: "institute" },
+  { name: "Professional Plan", priceINR: "₹25,000", priceUSD: "$315.00", period: "Annually", slug: "professional" },
 ];
 
 const features = [
@@ -125,7 +124,9 @@ export default function SubscriptionPlansPage() {
                           {plan.featured && <span className="bg-accent text-accent-foreground text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Most Popular</span>}
                           <span className="font-bold text-primary text-base">{plan.name}</span>
                           <div className="flex flex-col">
-                            <span className="text-2xl font-black text-primary">{plan.price}</span>
+                            <span className="text-2xl font-black text-primary">
+                              {currency === 'INR' ? plan.priceINR : plan.priceUSD}
+                            </span>
                             <span className="text-[10px] text-muted-foreground uppercase">{plan.period}</span>
                           </div>
                           <Button className={`w-full rounded-funky ${plan.featured ? 'bg-accent text-accent-foreground' : 'bg-primary text-primary-foreground'}`}>
@@ -142,7 +143,6 @@ export default function SubscriptionPlansPage() {
                       <TableCell className="font-medium text-xs text-primary uppercase py-4 border-r">{feature}</TableCell>
                       {plans.map((plan) => (
                         <TableCell key={`${plan.slug}-${idx}`} className={`text-center py-4 ${plan.featured ? 'bg-accent/5' : ''}`}>
-                          {/* Logic for showing ticks/dashes based on plan - Simplified for template */}
                           {feature === "Minimum PhD Required" || feature === "Revenue Sharing 50/50 Split" ? (
                             plan.slug === "free" ? <Check className="mx-auto h-5 w-5 text-accent" /> : <span className="text-muted-foreground">—</span>
                           ) : (
@@ -174,9 +174,10 @@ export default function SubscriptionPlansPage() {
                 </CardContent>
               </Card>
 
-              {/* Guarantee Banner */}
-              <div className="relative p-1 rounded-funky bg-gradient-to-r from-accent via-orange-400 to-accent" data-aos="fade-left">
-                <div className="bg-orange-50 rounded-funky p-10 flex flex-col md:flex-row items-center gap-8">
+              {/* Guarantee Banner with animated border effect */}
+              <div className="relative p-[3px] rounded-funky overflow-hidden group" data-aos="fade-left">
+                <div className="absolute inset-0 bg-gradient-to-r from-accent via-orange-400 to-accent animate-gradient-x" style={{ backgroundSize: '200% 200%' }}></div>
+                <div className="relative bg-orange-50 rounded-funky p-10 flex flex-col md:flex-row items-center gap-8">
                   <ShieldCheck className="h-20 w-20 text-accent shrink-0" />
                   <div>
                     <h3 className="text-2xl font-bold text-primary mb-4">30-Day Money-Back Guarantee</h3>
@@ -217,6 +218,15 @@ export default function SubscriptionPlansPage() {
         </section>
       </main>
       <Footer />
+      <style jsx global>{`
+        @keyframes gradient-x {
+          0%, 100% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+        }
+        .animate-gradient-x {
+          animation: gradient-x 3s linear infinite;
+        }
+      `}</style>
     </div>
   );
 }
