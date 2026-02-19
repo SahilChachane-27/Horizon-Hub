@@ -16,15 +16,13 @@ import {
 
 const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '#journal', label: 'Journal' },
-  { href: '#list', label: 'List' },
+  { href: '/#about', label: 'About' },
+  { href: '#journal-list', label: 'Journal List' },
   { href: '#pricing', label: 'Pricing' },
   { href: '#compare', label: 'Compare' },
-  { href: '/#about', label: 'About' },
   { href: '/#services', label: 'Services' },
   { href: '#team', label: 'Team' },
-  { href: '#docs', label: 'Docs' },
-  { href: '#hub', label: 'hub' },
+  { href: '#docshub', label: 'Docshub' },
   { href: '/blog', label: 'Blog' },
 ];
 
@@ -44,7 +42,7 @@ export function Header() {
   const NavContent = ({ inSheet }: { inSheet?: boolean }) => (
     <>
       {navLinks.map((link) => {
-        const isPageLink = link.href.startsWith('/');
+        const isPageLink = link.href.startsWith('/') && !link.href.includes('#');
         const className = "text-lg lg:text-sm font-medium text-primary-foreground/80 hover:text-primary-foreground transition-colors";
 
         if (isPageLink) {
@@ -64,7 +62,7 @@ export function Header() {
           );
         }
 
-        // Anchor link
+        // Anchor link or hash link
         if (inSheet) {
           return (
             <SheetClose asChild key={link.label}>
@@ -111,7 +109,7 @@ export function Header() {
                 </SheetTrigger>
                 <SheetContent side="right" className="bg-primary border-l-0 text-primary-foreground w-64 p-6 overflow-y-auto">
                   <SheetHeader>
-                    <SheetTitle className="text-accent">Navigation Menu</SheetTitle>
+                    <SheetTitle className="text-accent sr-only">Navigation Menu</SheetTitle>
                   </SheetHeader>
                   <nav className="flex flex-col items-start space-y-4 mt-8">
                     <NavContent inSheet />
