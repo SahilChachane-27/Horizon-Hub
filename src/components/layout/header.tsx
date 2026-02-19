@@ -15,13 +15,17 @@ import {
 } from '@/components/ui/sheet';
 
 const navLinks = [
-  { href: '/#hero', label: 'Home' },
+  { href: '/', label: 'Home' },
+  { href: '#journal', label: 'Journal' },
+  { href: '#list', label: 'List' },
+  { href: '#pricing', label: 'Pricing' },
+  { href: '#compare', label: 'Compare' },
   { href: '/#about', label: 'About' },
   { href: '/#services', label: 'Services' },
-  { href: '/#projects', label: 'Projects' },
-  { href: '/#why-us', label: 'Why Us' },
-  { href: '/#testimonials', label: 'Testimonials' },
-  { href: '/#contact', label: 'Contact' },
+  { href: '#team', label: 'Team' },
+  { href: '#docs', label: 'Docs' },
+  { href: '#hub', label: 'hub' },
+  { href: '/blog', label: 'Blog' },
 ];
 
 export function Header() {
@@ -41,12 +45,12 @@ export function Header() {
     <>
       {navLinks.map((link) => {
         const isPageLink = link.href.startsWith('/');
-        const className = "text-lg md:text-sm font-medium text-primary-foreground/80 hover:text-primary-foreground transition-colors";
+        const className = "text-lg lg:text-sm font-medium text-primary-foreground/80 hover:text-primary-foreground transition-colors";
 
         if (isPageLink) {
           if (inSheet) {
             return (
-              <SheetClose asChild key={link.href}>
+              <SheetClose asChild key={link.label}>
                 <Link href={link.href} className={className}>
                   {link.label}
                 </Link>
@@ -54,7 +58,7 @@ export function Header() {
             );
           }
           return (
-            <Link key={link.href} href={link.href} className={className}>
+            <Link key={link.label} href={link.href} className={className}>
               {link.label}
             </Link>
           );
@@ -63,7 +67,7 @@ export function Header() {
         // Anchor link
         if (inSheet) {
           return (
-            <SheetClose asChild key={link.href}>
+            <SheetClose asChild key={link.label}>
               <a href={link.href} className={className}>
                 {link.label}
               </a>
@@ -71,7 +75,7 @@ export function Header() {
           );
         }
         return (
-          <a key={link.href} href={link.href} className={className}>
+          <a key={link.label} href={link.href} className={className}>
             {link.label}
           </a>
         );
@@ -83,7 +87,7 @@ export function Header() {
     <header
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-        scrolled ? 'bg-primary shadow-md' : 'bg-transparent md:bg-gradient-to-b md:from-black/50'
+        scrolled ? 'bg-primary shadow-md' : 'bg-transparent lg:bg-gradient-to-b lg:from-black/50'
       )}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -92,11 +96,11 @@ export function Header() {
             <span>Horizon Group</span>
           </Link>
           
-          <nav className="hidden md:flex items-center space-x-6">
+          <nav className="hidden lg:flex items-center space-x-4 xl:space-x-6">
             <NavContent />
           </nav>
 
-          <div className="md:hidden">
+          <div className="lg:hidden">
             {isClient && (
               <Sheet>
                 <SheetTrigger asChild>
@@ -105,11 +109,11 @@ export function Header() {
                     <span className="sr-only">Toggle navigation</span>
                   </Button>
                 </SheetTrigger>
-                <SheetContent side="right" className="bg-primary border-l-0 text-primary-foreground w-64 p-6">
+                <SheetContent side="right" className="bg-primary border-l-0 text-primary-foreground w-64 p-6 overflow-y-auto">
                   <SheetHeader>
-                    <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+                    <SheetTitle className="text-accent">Navigation Menu</SheetTitle>
                   </SheetHeader>
-                  <nav className="flex flex-col items-start space-y-6 mt-8">
+                  <nav className="flex flex-col items-start space-y-4 mt-8">
                     <NavContent inSheet />
                   </nav>
                 </SheetContent>
