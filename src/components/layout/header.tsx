@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -16,13 +17,13 @@ import {
 
 const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/#about', label: 'About' },
-  { href: '#journal-list', label: 'Journal List' },
-  { href: '#pricing', label: 'Pricing' },
-  { href: '#compare', label: 'Compare' },
-  { href: '/#services', label: 'Services' },
-  { href: '#team', label: 'Team' },
-  { href: '#docshub', label: 'Docshub' },
+  { href: '/about', label: 'About' },
+  { href: '/journals', label: 'Journal List' },
+  { href: '/pricing', label: 'Pricing' },
+  { href: '/pricing#compare', label: 'Compare' },
+  { href: '/services', label: 'Services' },
+  { href: '/#team', label: 'Team' },
+  { href: '/#docshub', label: 'Docshub' },
   { href: '/blog', label: 'Blog' },
 ];
 
@@ -91,7 +92,7 @@ export function Header() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="flex items-center text-2xl font-bold text-accent font-headline">
-            <span>Horizon Group</span>
+            <span>Technical Journals</span>
           </Link>
           
           <div className="hidden lg:flex items-center space-x-6">
@@ -99,7 +100,7 @@ export function Header() {
               <NavContent />
             </nav>
             <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-funky transition-transform duration-300 ease-in-out hover:scale-105">
-              <Link href="#journal-start">Start Your Journal</Link>
+              <Link href="/for-universities">Start Your Journal</Link>
             </Button>
           </div>
 
@@ -120,7 +121,7 @@ export function Header() {
                     <NavContent inSheet />
                     <SheetClose asChild>
                       <Button asChild className="w-full bg-accent hover:bg-accent/90 text-accent-foreground mt-4 rounded-funky transition-transform duration-300 ease-in-out hover:scale-105">
-                        <Link href="#journal-start">Start Your Journal</Link>
+                        <Link href="/for-universities">Start Your Journal</Link>
                       </Button>
                     </SheetClose>
                   </nav>
