@@ -81,7 +81,6 @@ export default function SubscriptionPlansPage() {
       <Header />
       <main className="flex-1">
         <section className="relative overflow-hidden bg-primary text-white pt-32 pb-24">
-          {/* Animated Icons Background */}
           <div className="absolute inset-0 pointer-events-none opacity-10">
             <Microscope className="absolute top-1/4 left-[10%] w-24 h-24 animate-float" />
             <FlaskConical className="absolute top-1/3 right-[15%] w-20 h-20 animate-float" style={{ animationDelay: '2s' }} />
@@ -113,7 +112,6 @@ export default function SubscriptionPlansPage() {
           </div>
         </section>
 
-        {/* Pricing Comparison Table */}
         <section id="compare" className="py-20 -mt-12 bg-white/95 rounded-t-[50px] shadow-2xl relative z-20">
           <div className="container mx-auto px-4">
             <div className="overflow-x-auto shadow-2xl rounded-funky border border-border/50" data-aos="fade-up">
@@ -165,9 +163,7 @@ export default function SubscriptionPlansPage() {
               </Table>
             </div>
 
-            {/* Support & Add-ons Grid */}
             <div className="grid lg:grid-cols-2 gap-12 mt-20 items-stretch">
-              {/* Support Card */}
               <Card className="rounded-funky shadow-lg border-primary/10 overflow-hidden" data-aos="fade-right">
                 <CardContent className="p-10">
                   <h2 className="text-2xl font-bold text-primary mb-8 font-headline">Support & Maintenance</h2>
@@ -206,9 +202,7 @@ export default function SubscriptionPlansPage() {
                 </CardContent>
               </Card>
 
-              {/* Add-ons & Guarantee Column */}
               <div className="flex flex-col gap-8">
-                {/* Add-ons Card */}
                 <Card className="rounded-funky shadow-lg border-primary/10 bg-slate-50 overflow-hidden flex-1" data-aos="fade-left">
                   <CardContent className="p-10">
                     <h2 className="text-2xl font-bold text-primary mb-8 font-headline flex items-center gap-3">
@@ -225,7 +219,6 @@ export default function SubscriptionPlansPage() {
                   </CardContent>
                 </Card>
 
-                {/* Animated Guarantee Card */}
                 <div className="relative p-[3px] rounded-funky overflow-hidden group shadow-xl" data-aos="zoom-in">
                   <div className="absolute inset-0 bg-gradient-to-r from-accent via-orange-400 to-accent animate-gradient-x" style={{ backgroundSize: '200% 200%' }}></div>
                   <div className="relative bg-white rounded-funky p-10 flex flex-col md:flex-row items-center gap-8">
@@ -251,7 +244,6 @@ export default function SubscriptionPlansPage() {
           </div>
         </section>
 
-        {/* CTA Section */}
         <section className="py-24 bg-secondary">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-5xl font-extrabold text-primary mb-6 font-headline" data-aos="fade-up">Ready to Empower Your Research?</h2>
@@ -260,7 +252,7 @@ export default function SubscriptionPlansPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="200">
               <Button size="lg" className="bg-primary text-primary-foreground px-12 py-8 text-lg font-bold rounded-funky hover:scale-105 transition-all shadow-xl" asChild>
-                <Link href="/for-universities">Start Your Journal</Link>
+                <Link href="/start-journal">Start Your Journal</Link>
               </Button>
               <Button variant="outline" size="lg" className="border-primary text-primary px-12 py-8 text-lg font-bold rounded-funky hover:bg-primary hover:text-white transition-all shadow-lg" asChild>
                 <Link href="/contact">Book a Technical Demo</Link>

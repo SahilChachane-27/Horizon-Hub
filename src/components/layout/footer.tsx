@@ -1,7 +1,8 @@
+
 'use client';
 
 import Link from 'next/link';
-import { Facebook, Twitter, Linkedin, Instagram, Mail, PhoneCall, Globe, ShieldCheck } from 'lucide-react';
+import { Twitter, Linkedin, Instagram, Mail, PhoneCall } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 
@@ -93,7 +94,6 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Startup India Banner */}
         <div className="mb-12" data-aos="fade-up">
           <div className="bg-slate-50 border-2 border-orange-500/30 rounded-2xl p-6 flex flex-col md:flex-row items-center gap-8 shadow-inner">
             <div className="flex items-center gap-4 border-b-2 md:border-b-0 md:border-r-2 border-orange-500/20 pb-6 md:pb-0 md:pr-8 shrink-0">
