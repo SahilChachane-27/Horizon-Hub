@@ -1,9 +1,8 @@
-
 'use client';
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import {
@@ -17,10 +16,10 @@ import {
 
 const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
   { href: '/journals', label: 'Journal List' },
   { href: '/pricing', label: 'Pricing' },
   { href: '/compare', label: 'Compare' },
+  { href: '/about', label: 'About' },
   { href: '/services', label: 'Services' },
   { href: '/team', label: 'Team' },
   { href: '/documentation', label: 'Docs hub' },
@@ -43,33 +42,24 @@ export function Header() {
   const NavContent = ({ inSheet }: { inSheet?: boolean }) => (
     <>
       {navLinks.map((link) => {
-        const isPageLink = link.href.startsWith('/') && !link.href.includes('#');
         const className = cn(
-          "text-lg lg:text-sm font-medium transition-colors",
+          "text-lg lg:text-xs xl:text-sm font-medium transition-colors whitespace-nowrap",
           scrolled ? "text-primary-foreground/80 hover:text-white" : "text-white/80 hover:text-white"
         );
 
-        if (isPageLink) {
-          if (inSheet) {
-            return (
-              <SheetClose asChild key={link.label}>
-                <Link href={link.href} className={className}>
-                  {link.label}
-                </Link>
-              </SheetClose>
-            );
-          }
+        if (inSheet) {
           return (
-            <Link key={link.label} href={link.href} className={className}>
-              {link.label}
-            </Link>
+            <SheetClose asChild key={link.label}>
+              <Link href={link.href} className={className}>
+                {link.label}
+              </Link>
+            </SheetClose>
           );
         }
-
         return (
-          <a key={link.label} href={link.href} className={className}>
+          <Link key={link.label} href={link.href} className={className}>
             {link.label}
-          </a>
+          </Link>
         );
       })}
     </>
@@ -84,16 +74,24 @@ export function Header() {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <Link href="/" className="flex items-center text-2xl font-bold text-accent font-headline">
-            <span>Technical Journals</span>
+          <Link href="/" className="flex items-center gap-2 group">
+            <div className="bg-white rounded-lg p-1.5 shadow-lg group-hover:scale-105 transition-transform">
+              <span className="text-primary font-black text-xl leading-none">SJ</span>
+            </div>
+            <div className="flex flex-col">
+              <div className="text-xl font-bold text-accent font-headline leading-none">
+                Scholar<span className="ml-0.5">JMS</span>
+              </div>
+              <span className="text-[8px] text-white/60 tracking-widest uppercase font-bold">Next-Gen Journal Management</span>
+            </div>
           </Link>
           
-          <div className="hidden lg:flex items-center space-x-6">
-            <nav className="flex items-center space-x-4 xl:space-x-6">
+          <div className="hidden lg:flex items-center space-x-4 xl:space-x-8">
+            <nav className="flex items-center space-x-3 xl:space-x-6">
               <NavContent />
             </nav>
-            <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-funky transition-transform duration-300 ease-in-out hover:scale-105">
-              <Link href="/for-universities">Start Your Journal</Link>
+            <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-funky transition-transform duration-300 ease-in-out hover:scale-105 shadow-lg h-10 px-6">
+              <Link href="/start-journal">Start Your Journal</Link>
             </Button>
           </div>
 
@@ -108,13 +106,13 @@ export function Header() {
                 </SheetTrigger>
                 <SheetContent side="right" className="bg-primary border-l-0 text-white w-64 p-6 overflow-y-auto">
                   <SheetHeader>
-                    <SheetTitle className="text-accent visually-hidden">Navigation Menu</SheetTitle>
+                    <SheetTitle className="text-accent text-left">Navigation</SheetTitle>
                   </SheetHeader>
                   <nav className="flex flex-col items-start space-y-4 mt-8">
                     <NavContent inSheet />
                     <SheetClose asChild>
                       <Button asChild className="w-full bg-accent hover:bg-accent/90 text-accent-foreground mt-4 rounded-funky transition-transform duration-300 ease-in-out hover:scale-105">
-                        <Link href="/for-universities">Start Your Journal</Link>
+                        <Link href="/start-journal">Start Your Journal</Link>
                       </Button>
                     </SheetClose>
                   </nav>
