@@ -20,10 +20,10 @@ const navLinks = [
   { href: '/about', label: 'About' },
   { href: '/journals', label: 'Journal List' },
   { href: '/pricing', label: 'Pricing' },
-  { href: '/pricing#compare', label: 'Compare' },
+  { href: '/compare', label: 'Compare' },
   { href: '/services', label: 'Services' },
-  { href: '/#team', label: 'Team' },
-  { href: '/#docshub', label: 'Docshub' },
+  { href: '/team', label: 'Team' },
+  { href: '/documentation', label: 'Docs hub' },
   { href: '/blog', label: 'Blog' },
 ];
 
@@ -44,7 +44,10 @@ export function Header() {
     <>
       {navLinks.map((link) => {
         const isPageLink = link.href.startsWith('/') && !link.href.includes('#');
-        const className = "text-lg lg:text-sm font-medium text-primary-foreground/80 hover:text-primary-foreground transition-colors";
+        const className = cn(
+          "text-lg lg:text-sm font-medium transition-colors",
+          scrolled ? "text-primary-foreground/80 hover:text-white" : "text-white/80 hover:text-white"
+        );
 
         if (isPageLink) {
           if (inSheet) {
@@ -63,16 +66,6 @@ export function Header() {
           );
         }
 
-        // Anchor link or hash link
-        if (inSheet) {
-          return (
-            <SheetClose asChild key={link.label}>
-              <a href={link.href} className={className}>
-                {link.label}
-              </a>
-            </SheetClose>
-          );
-        }
         return (
           <a key={link.label} href={link.href} className={className}>
             {link.label}
@@ -86,7 +79,7 @@ export function Header() {
     <header
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-        scrolled ? 'bg-primary shadow-md' : 'bg-transparent lg:bg-gradient-to-b lg:from-black/50'
+        scrolled ? 'bg-primary shadow-md border-b border-white/10' : 'bg-transparent lg:bg-gradient-to-b lg:from-black/50'
       )}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -108,14 +101,14 @@ export function Header() {
             {isClient && (
               <Sheet>
                 <SheetTrigger asChild>
-                  <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-primary-foreground/10">
+                  <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
                     <Menu className="h-6 w-6" />
                     <span className="sr-only">Toggle navigation</span>
                   </Button>
                 </SheetTrigger>
-                <SheetContent side="right" className="bg-primary border-l-0 text-primary-foreground w-64 p-6 overflow-y-auto">
+                <SheetContent side="right" className="bg-primary border-l-0 text-white w-64 p-6 overflow-y-auto">
                   <SheetHeader>
-                    <SheetTitle className="text-accent sr-only">Navigation Menu</SheetTitle>
+                    <SheetTitle className="text-accent visually-hidden">Navigation Menu</SheetTitle>
                   </SheetHeader>
                   <nav className="flex flex-col items-start space-y-4 mt-8">
                     <NavContent inSheet />

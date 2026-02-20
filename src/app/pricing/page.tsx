@@ -28,6 +28,7 @@ import {
   TableRow 
 } from "@/components/ui/table";
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 const plans = [
   { name: "Starter", priceINR: "₹15,000", priceUSD: "$215.00", period: "Annually", featured: true, slug: "starter" },
@@ -76,14 +77,13 @@ export default function SubscriptionPlansPage() {
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
       <main className="flex-1">
-        {/* Floating Icon Hero */}
         <section className="relative overflow-hidden bg-primary text-white pt-32 pb-20">
           <div className="absolute inset-0 pointer-events-none opacity-10">
-            <Microscope className="absolute top-1/4 left-[10%] w-24 h-24 animate-bounce" style={{ animationDuration: '8s' }} />
-            <FlaskConical className="absolute top-1/3 right-[15%] w-20 h-20 animate-bounce" style={{ animationDuration: '6s', animationDelay: '1s' }} />
-            <BookOpen className="absolute bottom-1/4 left-[15%] w-28 h-28 animate-bounce" style={{ animationDuration: '10s', animationDelay: '2s' }} />
-            <Atom className="absolute top-1/2 right-[10%] w-32 h-32 animate-spin" style={{ animationDuration: '15s' }} />
-            <Dna className="absolute bottom-1/3 right-[20%] w-24 h-24 animate-pulse" />
+            <Microscope className="absolute top-1/4 left-[10%] w-24 h-24 animate-float" />
+            <FlaskConical className="absolute top-1/3 right-[15%] w-20 h-20 animate-float" style={{ animationDelay: '2s' }} />
+            <BookOpen className="absolute bottom-1/4 left-[15%] w-28 h-28 animate-float" style={{ animationDelay: '1s' }} />
+            <Atom className="absolute top-1/2 right-[10%] w-32 h-32 animate-float" style={{ animationDelay: '3s' }} />
+            <Dna className="absolute bottom-1/3 right-[20%] w-24 h-24 animate-float" style={{ animationDelay: '1.5s' }} />
           </div>
 
           <div className="container mx-auto px-4 relative z-10 text-center">
@@ -92,7 +92,6 @@ export default function SubscriptionPlansPage() {
               Choose the plan that fits your needs and start your academic journey today.
             </p>
 
-            {/* Currency Toggle */}
             <div className="inline-flex bg-white/10 p-1 rounded-funky border border-white/20" data-aos="fade-up" data-aos-delay="200">
               <button 
                 onClick={() => setCurrency('USD')}
@@ -110,10 +109,9 @@ export default function SubscriptionPlansPage() {
           </div>
         </section>
 
-        {/* Comparison Table Section */}
-        <section className="py-20 -mt-10 bg-white/95 rounded-t-[50px]">
+        <section id="compare" className="py-20 -mt-10 bg-white/95 rounded-t-[50px]">
           <div className="container mx-auto px-4">
-            <div className="overflow-x-auto" data-aos="fade-up">
+            <div className="overflow-x-auto shadow-2xl rounded-funky border border-border/50" data-aos="fade-up">
               <Table className="border-collapse min-w-[1000px]">
                 <TableHeader>
                   <TableRow className="bg-secondary/50 hover:bg-secondary/50">
@@ -141,22 +139,22 @@ export default function SubscriptionPlansPage() {
                   {features.map((feature, idx) => (
                     <TableRow key={idx} className="hover:bg-secondary/30">
                       <TableCell className="font-medium text-xs text-primary uppercase py-4 border-r">{feature}</TableCell>
-                      {plans.map((plan) => (
-                        <TableCell key={`${plan.slug}-${idx}`} className={`text-center py-4 ${plan.featured ? 'bg-accent/5' : ''}`}>
-                          {feature === "Minimum PhD Required" || feature === "Revenue Sharing 50/50 Split" ? (
-                            plan.slug === "free" ? <Check className="mx-auto h-5 w-5 text-accent" /> : <span className="text-muted-foreground">—</span>
-                          ) : (
-                            <Check className="mx-auto h-5 w-5 text-accent" />
-                          )}
-                        </TableCell>
-                      ))}
+                      {plans.map((plan) => {
+                        const isSpecialFreeFeature = feature === "Minimum PhD Required" || feature === "Revenue Sharing 50/50 Split";
+                        const showCheck = isSpecialFreeFeature ? plan.slug === "free" : true;
+                        
+                        return (
+                          <TableCell key={`${plan.slug}-${idx}`} className={`text-center py-4 ${plan.featured ? 'bg-accent/5' : ''}`}>
+                            {showCheck ? <Check className="mx-auto h-5 w-5 text-accent" /> : <span className="text-muted-foreground">—</span>}
+                          </TableCell>
+                        );
+                      })}
                     </TableRow>
                   ))}
                 </TableBody>
               </Table>
             </div>
 
-            {/* Support & Maintenance List */}
             <div className="grid lg:grid-cols-2 gap-12 mt-16 items-center">
               <Card className="rounded-funky shadow-lg border-primary/10 overflow-hidden" data-aos="fade-right">
                 <CardContent className="p-10">
@@ -174,7 +172,6 @@ export default function SubscriptionPlansPage() {
                 </CardContent>
               </Card>
 
-              {/* Guarantee Banner with animated border effect */}
               <div className="relative p-[3px] rounded-funky overflow-hidden group" data-aos="fade-left">
                 <div className="absolute inset-0 bg-gradient-to-r from-accent via-orange-400 to-accent animate-gradient-x" style={{ backgroundSize: '200% 200%' }}></div>
                 <div className="relative bg-orange-50 rounded-funky p-10 flex flex-col md:flex-row items-center gap-8">
@@ -199,7 +196,6 @@ export default function SubscriptionPlansPage() {
           </div>
         </section>
 
-        {/* Bottom CTA */}
         <section className="py-20 bg-secondary">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-5xl font-extrabold text-primary mb-6" data-aos="fade-up">Want to Launch Your Own Journal?</h2>
@@ -207,11 +203,11 @@ export default function SubscriptionPlansPage() {
               Join over 50 journals currently utilizing ScholarJMS for robust, end-to-end publishing management.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="200">
-              <Button size="lg" className="bg-primary text-primary-foreground px-12 py-8 text-lg font-bold rounded-funky hover:scale-105 transition-transform">
-                Start Your Journal
+              <Button size="lg" className="bg-primary text-primary-foreground px-12 py-8 text-lg font-bold rounded-funky hover:scale-105 transition-transform" asChild>
+                <Link href="/for-universities">Start Your Journal</Link>
               </Button>
-              <Button variant="outline" size="lg" className="border-primary text-primary px-12 py-8 text-lg font-bold rounded-funky hover:bg-primary hover:text-white transition-all">
-                Book a Demo
+              <Button variant="outline" size="lg" className="border-primary text-primary px-12 py-8 text-lg font-bold rounded-funky hover:bg-primary hover:text-white transition-all" asChild>
+                <Link href="/contact">Book a Demo</Link>
               </Button>
             </div>
           </div>
@@ -225,6 +221,13 @@ export default function SubscriptionPlansPage() {
         }
         .animate-gradient-x {
           animation: gradient-x 3s linear infinite;
+        }
+        @keyframes float {
+          0%, 100% { transform: translateY(0) rotate(0); }
+          50% { transform: translateY(-20px) rotate(5deg); }
+        }
+        .animate-float {
+          animation: float 6s ease-in-out infinite;
         }
       `}</style>
     </div>
