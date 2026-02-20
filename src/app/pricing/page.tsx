@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Header } from '@/components/layout/header';
@@ -16,7 +17,8 @@ import {
   Puzzle, 
   ReceiptText, 
   FileText, 
-  ShieldCheck 
+  ShieldCheck,
+  Zap
 } from 'lucide-react';
 import { 
   Table, 
@@ -31,7 +33,7 @@ import Link from 'next/link';
 
 const plans = [
   { name: "Starter", priceINR: "₹15,000", priceUSD: "$215.00", period: "Annually", featured: true, slug: "starter" },
-  { name: "Experience Plan (3month)", priceINR: "₹5,000", priceUSD: "$60.00", period: "90 Days", slug: "experience" },
+  { name: "Experience Plan", priceINR: "₹5,000", priceUSD: "$60.00", period: "90 Days", slug: "experience" },
   { name: "Free", priceINR: "₹0", priceUSD: "$0.00", period: "Annually", slug: "free" },
   { name: "Enterprise", priceINR: "₹30,000", priceUSD: "$355.00", period: "Annually", slug: "enterprise" },
   { name: "Institute", priceINR: "₹20,000", priceUSD: "$285.00", period: "Annually", slug: "institute" },
@@ -40,20 +42,30 @@ const plans = [
 
 const features = [
   "Transparent Peer Review System",
-  "Journal Website",
-  "DOI Integration",
-  "Google Scholar Indexing",
-  "Marketing and Promotion",
-  "Research Gate Indexing",
+  "Journal Website Hosting",
+  "DOI Integration Support",
+  "Google Scholar Optimization",
+  "Marketing & Promotion Guidance",
+  "Research Gate Indexing Support",
   "Dedicated Account Manager",
-  "Publication Certificate",
-  "Plagiarism Check",
-  "Custom Email Setup",
-  "24/7 Support",
-  "UGC Care Support",
+  "Publication Certificates",
+  "Anti-Plagiarism Integration",
+  "Custom institutional Email Setup",
+  "24/7 Technical Support",
+  "UGC Care Readiness Support",
   "API Access",
-  "Minimum PhD Required",
-  "Revenue Sharing 50/50 Split"
+  "Minimum PhD Required Policy",
+  "Revenue Sharing (Free Plan Only)"
+];
+
+const addOns = [
+  { name: "DOI Registration", price: "₹150 / article" },
+  { name: "DigiIdentify Registration", price: "₹25 / article" },
+  { name: "Anti-Plagiarism Check", price: "₹50 / article" },
+  { name: "Article Copyediting", price: "₹500 / article" },
+  { name: "Citation Digital Marketing", price: "Custom Quote" },
+  { name: "Scopus-Ready Consultation", price: "Free for Enterprise" },
+  { name: "Payment Gateway Integration", price: "Included in Premium" }
 ];
 
 export default function SubscriptionPlansPage() {
@@ -68,7 +80,8 @@ export default function SubscriptionPlansPage() {
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
       <main className="flex-1">
-        <section className="relative overflow-hidden bg-primary text-white pt-32 pb-20">
+        <section className="relative overflow-hidden bg-primary text-white pt-32 pb-24">
+          {/* Animated Icons Background */}
           <div className="absolute inset-0 pointer-events-none opacity-10">
             <Microscope className="absolute top-1/4 left-[10%] w-24 h-24 animate-float" />
             <FlaskConical className="absolute top-1/3 right-[15%] w-20 h-20 animate-float" style={{ animationDelay: '2s' }} />
@@ -80,7 +93,7 @@ export default function SubscriptionPlansPage() {
           <div className="container mx-auto px-4 relative z-10 text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 font-headline" data-aos="fade-up">Simple, Transparent Pricing</h1>
             <p className="text-xl text-white/80 max-w-2xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="100">
-              Choose the plan that fits your needs and start your academic journey today.
+              Choose the institutional plan that fits your university's research goals.
             </p>
 
             <div className="inline-flex bg-white/10 p-1 rounded-funky border border-white/20" data-aos="fade-up" data-aos-delay="200">
@@ -100,7 +113,8 @@ export default function SubscriptionPlansPage() {
           </div>
         </section>
 
-        <section id="compare" className="py-20 -mt-10 bg-white/95 rounded-t-[50px]">
+        {/* Pricing Comparison Table */}
+        <section id="compare" className="py-20 -mt-12 bg-white/95 rounded-t-[50px] shadow-2xl relative z-20">
           <div className="container mx-auto px-4">
             <div className="overflow-x-auto shadow-2xl rounded-funky border border-border/50" data-aos="fade-up">
               <Table className="border-collapse min-w-[1000px]">
@@ -118,7 +132,7 @@ export default function SubscriptionPlansPage() {
                             </span>
                             <span className="text-[10px] text-muted-foreground uppercase">{plan.period}</span>
                           </div>
-                          <Button className={`w-full rounded-funky ${plan.featured ? 'bg-accent text-accent-foreground' : 'bg-primary text-primary-foreground'}`}>
+                          <Button className={`w-full rounded-funky shadow-md hover:shadow-lg transition-all ${plan.featured ? 'bg-accent text-accent-foreground' : 'bg-primary text-primary-foreground'}`}>
                             Get Started
                           </Button>
                         </div>
@@ -129,20 +143,19 @@ export default function SubscriptionPlansPage() {
                 <TableBody>
                   {features.map((feature, idx) => (
                     <TableRow key={idx} className="hover:bg-secondary/30">
-                      <TableCell className="font-medium text-xs text-primary uppercase py-4 border-r">{feature}</TableCell>
+                      <TableCell className="font-medium text-[10px] md:text-xs text-primary uppercase py-4 border-r">{feature}</TableCell>
                       {plans.map((plan) => {
-                        const isPhD = feature === "Minimum PhD Required";
-                        const isRevenue = feature === "Revenue Sharing 50/50 Split";
+                        const isRevenue = feature.includes("Revenue Sharing");
+                        const isPhD = feature.includes("Minimum PhD");
                         
-                        // "Free" plan has PhD and Revenue features, others don't
                         let hasFeature = true;
-                        if (isPhD || isRevenue) {
+                        if (isRevenue || isPhD) {
                           hasFeature = plan.slug === 'free';
                         }
 
                         return (
                           <TableCell key={`${plan.slug}-${idx}`} className={`text-center py-4 ${plan.featured ? 'bg-accent/5' : ''}`}>
-                            {hasFeature ? <Check className="mx-auto h-5 w-5 text-accent" /> : <span className="text-muted-foreground opacity-30">—</span>}
+                            {hasFeature ? <Check className="mx-auto h-5 w-5 text-accent" strokeWidth={3} /> : <span className="text-muted-foreground opacity-30">—</span>}
                           </TableCell>
                         );
                       })}
@@ -152,7 +165,9 @@ export default function SubscriptionPlansPage() {
               </Table>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-12 mt-16 items-center">
+            {/* Support & Add-ons Grid */}
+            <div className="grid lg:grid-cols-2 gap-12 mt-20 items-stretch">
+              {/* Support Card */}
               <Card className="rounded-funky shadow-lg border-primary/10 overflow-hidden" data-aos="fade-right">
                 <CardContent className="p-10">
                   <h2 className="text-2xl font-bold text-primary mb-8 font-headline">Support & Maintenance</h2>
@@ -161,51 +176,72 @@ export default function SubscriptionPlansPage() {
                       <div className="h-10 w-10 bg-secondary rounded-funky flex items-center justify-center shrink-0">
                         <Compass className="h-5 w-5 text-accent" />
                       </div>
-                      <span className="text-sm">24/7 Technical Support (Chat & Email)</span>
+                      <span className="text-sm font-medium">24/7 Technical Support (Chat & Email)</span>
                     </li>
                     <li className="flex items-center gap-4">
                       <div className="h-10 w-10 bg-secondary rounded-funky flex items-center justify-center shrink-0">
                         <CalendarDays className="h-5 w-5 text-accent" />
                       </div>
-                      <span className="text-sm">Free Ongoing Software Updates</span>
+                      <span className="text-sm font-medium">Free Ongoing Software Updates</span>
                     </li>
                     <li className="flex items-center gap-4">
                       <div className="h-10 w-10 bg-secondary rounded-funky flex items-center justify-center shrink-0">
                         <Puzzle className="h-5 w-5 text-accent" />
                       </div>
-                      <span className="text-sm">Data Migration Support (from OJS or other systems)</span>
+                      <span className="text-sm font-medium">Seamless Data Migration Support</span>
                     </li>
                     <li className="flex items-center gap-4">
                       <div className="h-10 w-10 bg-secondary rounded-funky flex items-center justify-center shrink-0">
                         <ReceiptText className="h-5 w-5 text-accent" />
                       </div>
-                      <span className="text-sm">Training & Onboarding for Editors and Reviewers</span>
+                      <span className="text-sm font-medium">Training for Editors & Reviewers</span>
                     </li>
-                    <li className="flex items-center gap-4 text-destructive font-bold">
-                      <div className="h-10 w-10 bg-secondary rounded-funky flex items-center justify-center shrink-0">
-                        <FileText className="h-5 w-5 text-accent" />
+                    <li className="flex items-center gap-4 text-red-600 font-bold bg-red-50 p-3 rounded-xl border border-red-100">
+                      <div className="h-10 w-10 bg-white rounded-funky flex items-center justify-center shrink-0 shadow-sm">
+                        <FileText className="h-5 w-5 text-red-600" />
                       </div>
-                      <span className="text-sm">18% GST will be applied</span>
+                      <span className="text-sm uppercase tracking-wider">18% GST will be applied</span>
                     </li>
                   </ul>
                 </CardContent>
               </Card>
 
-              <div className="relative p-[3px] rounded-funky overflow-hidden group" data-aos="fade-left">
-                <div className="absolute inset-0 bg-gradient-to-r from-accent via-orange-400 to-accent animate-gradient-x" style={{ backgroundSize: '200% 200%' }}></div>
-                <div className="relative bg-orange-50 rounded-funky p-10 flex flex-col md:flex-row items-center gap-8">
-                  <ShieldCheck className="h-20 w-20 text-accent shrink-0" />
-                  <div>
-                    <h3 className="text-2xl font-bold text-primary mb-4 font-headline">30-Day Money-Back Guarantee</h3>
-                    <p className="text-foreground/70 leading-relaxed text-sm">
-                      Try ScholarJMS risk-free. If you're not completely satisfied within the first 30 days, we'll refund your money—no questions asked.
-                    </p>
-                    <div className="flex flex-wrap gap-4 mt-6">
-                      <div className="flex items-center gap-2 text-xs font-semibold text-primary/70">
-                        <Check className="h-4 w-4 text-accent" /> No credit card required
-                      </div>
-                      <div className="flex items-center gap-2 text-xs font-semibold text-primary/70">
-                        <Check className="h-4 w-4 text-accent" /> Cancel anytime
+              {/* Add-ons & Guarantee Column */}
+              <div className="flex flex-col gap-8">
+                {/* Add-ons Card */}
+                <Card className="rounded-funky shadow-lg border-primary/10 bg-slate-50 overflow-hidden flex-1" data-aos="fade-left">
+                  <CardContent className="p-10">
+                    <h2 className="text-2xl font-bold text-primary mb-8 font-headline flex items-center gap-3">
+                      <Zap className="h-6 w-6 text-accent fill-accent" /> Add-On Services
+                    </h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      {addOns.map((addon, i) => (
+                        <div key={i} className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-all">
+                          <p className="text-xs text-muted-foreground uppercase font-bold tracking-wider mb-1">{addon.name}</p>
+                          <p className="text-primary font-bold">{addon.price}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Animated Guarantee Card */}
+                <div className="relative p-[3px] rounded-funky overflow-hidden group shadow-xl" data-aos="zoom-in">
+                  <div className="absolute inset-0 bg-gradient-to-r from-accent via-orange-400 to-accent animate-gradient-x" style={{ backgroundSize: '200% 200%' }}></div>
+                  <div className="relative bg-white rounded-funky p-10 flex flex-col md:flex-row items-center gap-8">
+                    <ShieldCheck className="h-20 w-20 text-accent shrink-0" />
+                    <div>
+                      <h3 className="text-2xl font-bold text-primary mb-4 font-headline">30-Day Money-Back Guarantee</h3>
+                      <p className="text-foreground/70 leading-relaxed text-sm">
+                        Try ScholarJMS risk-free for your university. If you're not completely satisfied within the first 30 days, we'll refund your money—no questions asked.
+                      </p>
+                      <div className="flex flex-wrap gap-4 mt-6">
+                        <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider text-primary/70">
+                          <Check className="h-4 w-4 text-accent" strokeWidth={4} /> No credit card required
+                        </div>
+                        <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider text-primary/70">
+                          <Check className="h-4 w-4 text-accent" strokeWidth={4} /> Cancel anytime
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -215,18 +251,19 @@ export default function SubscriptionPlansPage() {
           </div>
         </section>
 
-        <section className="py-20 bg-secondary">
+        {/* CTA Section */}
+        <section className="py-24 bg-secondary">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-5xl font-extrabold text-primary mb-6 font-headline" data-aos="fade-up">Want to Launch Your Own Journal?</h2>
-            <p className="text-lg text-foreground/70 max-w-2xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="100">
+            <h2 className="text-3xl md:text-5xl font-extrabold text-primary mb-6 font-headline" data-aos="fade-up">Ready to Empower Your Research?</h2>
+            <p className="text-lg text-foreground/70 max-w-2xl mx-auto mb-10 font-medium" data-aos="fade-up" data-aos-delay="100">
               Join over 50 journals currently utilizing ScholarJMS for robust, end-to-end publishing management.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="200">
-              <Button size="lg" className="bg-primary text-primary-foreground px-12 py-8 text-lg font-bold rounded-funky hover:scale-105 transition-transform" asChild>
+              <Button size="lg" className="bg-primary text-primary-foreground px-12 py-8 text-lg font-bold rounded-funky hover:scale-105 transition-all shadow-xl" asChild>
                 <Link href="/for-universities">Start Your Journal</Link>
               </Button>
-              <Button variant="outline" size="lg" className="border-primary text-primary px-12 py-8 text-lg font-bold rounded-funky hover:bg-primary hover:text-white transition-all" asChild>
-                <Link href="/contact">Book a Demo</Link>
+              <Button variant="outline" size="lg" className="border-primary text-primary px-12 py-8 text-lg font-bold rounded-funky hover:bg-primary hover:text-white transition-all shadow-lg" asChild>
+                <Link href="/contact">Book a Technical Demo</Link>
               </Button>
             </div>
           </div>

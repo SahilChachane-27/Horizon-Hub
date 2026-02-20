@@ -7,9 +7,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
-import Image from 'next/image';
-import { Search, Filter, BookOpen } from 'lucide-react';
+import { Search, Filter, BookOpen, Globe } from 'lucide-react';
 import { useState } from 'react';
 
 const subjects = [
@@ -40,7 +38,7 @@ export default function JournalHostedPage() {
             <p className="mt-6 text-foreground/80 max-w-2xl mx-auto">Browse the comprehensive list of journals exclusively hosted for university academic partners.</p>
           </div>
 
-          {/* Search and Filters */}
+          {/* Search and Filters Section (Scopus inspired) */}
           <Card className="mb-12 rounded-funky shadow-lg border-primary/10 overflow-hidden" data-aos="fade-up">
             <CardContent className="p-8 space-y-6">
               <div className="grid md:grid-cols-3 gap-6">
@@ -51,7 +49,8 @@ export default function JournalHostedPage() {
                 <Input placeholder="University Name" />
                 <Input placeholder="ISSN Number" />
               </div>
-              <div className="grid md:grid-cols-3 gap-6">
+              <div className="grid md:grid-cols-4 gap-6">
+                <Input placeholder="Country" />
                 <Select>
                   <SelectTrigger><SelectValue placeholder="Field of Study" /></SelectTrigger>
                   <SelectContent>
@@ -103,7 +102,7 @@ export default function JournalHostedPage() {
                       <div className="space-y-2 text-sm text-foreground/70 mb-6">
                         <p><span className="font-semibold text-primary">University:</span> {journal.university}</p>
                         <p><span className="font-semibold text-primary">ISSN:</span> {journal.issn}</p>
-                        <p><span className="font-semibold text-primary">Field:</span> {journal.category}</p>
+                        <p><span className="font-semibold text-primary">Domain:</span> {journal.category}</p>
                       </div>
                       <Button variant="outline" className="w-full rounded-funky border-primary text-primary hover:bg-primary hover:text-white transition-colors">
                         View Journal <BookOpen className="ml-2 h-4 w-4" />

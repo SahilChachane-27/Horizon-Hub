@@ -4,28 +4,28 @@
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Check, Book, Users, Laptop, Database, Activity } from 'lucide-react';
+import { Check, Book, Users, Laptop, Database } from 'lucide-react';
 
 const categories = [
   {
     title: "A. Journal Hosting Services",
     icon: Laptop,
-    features: ["Scholar JMS complete setup", "Server & maintenance", "DOI registration and Digiidentify", "Article-level indexing metadata", "Anti-plagiarism integration"]
+    features: ["ScholarJMS complete setup", "Server maintenance & monitoring", "DOI registration & DigiIdentify", "Article-level indexing metadata", "Anti-plagiarism integration"]
   },
   {
     title: "B. University Partnership Program",
     icon: Users,
-    features: ["Co-branded publishing", "Institutional branding", "Dedicated account manager", "Annual analytics report"]
+    features: ["Co-branded publishing", "Custom institutional branding", "Dedicated account manager", "Annual analytics & visibility reports"]
   },
   {
     title: "C. Editorial Workflow Management",
     icon: Book,
-    features: ["Manuscript submission", "Reviewer panel creation", "Automated reminders", "Copyediting + production workflow"]
+    features: ["Manuscript submission portal", "Reviewer panel management", "Automated system reminders", "Copyediting & production workflow"]
   },
   {
     title: "D. Migration Services",
     icon: Database,
-    features: ["Migrating from OJS 2.x / other platforms", "Retaining back issues", "Persistent URLs preserved"]
+    features: ["Migration from OJS 2.x / other platforms", "Retaining all back issues", "Preserving persistent URLs (PIDs)", "Historical data integrity checks"]
   }
 ];
 
@@ -36,8 +36,11 @@ export default function ServicesPage() {
       <main className="flex-1 pt-32 pb-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16" data-aos="fade-up">
-            <h1 className="text-4xl md:text-5xl font-bold text-primary font-headline">Our Services</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-primary font-headline">Academic Solutions</h1>
             <div className="mt-4 w-24 h-1 bg-accent mx-auto"></div>
+            <p className="mt-6 text-foreground/80 max-w-2xl mx-auto text-lg">
+              Empowering universities with end-to-end publishing technology and strategic indexing support.
+            </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">

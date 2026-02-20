@@ -5,27 +5,29 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { Hero } from '@/components/sections/hero';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ShieldCheck, Server, Workflow, FileText, Globe, Cpu, CheckCircle2 } from 'lucide-react';
+import { ShieldCheck, Server, Workflow, FileText, Globe, Cpu, CheckCircle2, Search, BarChart3, Database } from 'lucide-react';
 import { ScrollToTop } from '@/components/layout/scroll-to-top';
 
 const whyUsFeatures = [
-  { icon: ShieldCheck, title: "Exclusive hosting for Universities", description: "Dedicated exclusively to academic institutions." },
-  { icon: Globe, title: "No private publishers allowed", description: "Maintaining a strictly non-commercial academic environment." },
-  { icon: Server, title: "Secure ScholarJMS hosting", description: "State-of-the-art security for journal management." },
-  { icon: CheckCircle2, title: "99.9% Uptime", description: "Reliable access for researchers worldwide." },
-  { icon: Workflow, title: "End-to-end workflow", description: "From submission to peer review and publication." },
-  { icon: Cpu, title: "AI Indexing Support", description: "Optional AI-powered tools for better research visibility." }
+  { icon: ShieldCheck, title: "Exclusive hosting for Universities", description: "Dedicated exclusively to academic institutions and university-owned research." },
+  { icon: Globe, title: "No private publishers allowed", description: "Maintaining a strictly non-commercial academic environment for research integrity." },
+  { icon: Server, title: "Secure ScholarJMS hosting", description: "State-of-the-art security for Scholar Journal Management Systems (ScholarJMS)." },
+  { icon: CheckCircle2, title: "99.9% Uptime", description: "Reliable access for researchers worldwide with redundant server architecture." },
+  { icon: Workflow, title: "End-to-end workflow", description: "Seamless management from submission to peer review and final publication." },
+  { icon: Database, title: "Indexing support", description: "Dedicated format guidance for Scopus, DOAJ, and Web of Science indexing." }
 ];
 
 const servicesOverview = [
-  { title: "Journal Hosting", description: "Secure servers for your academic publications." },
-  { title: "ScholarJMS Setup", description: "Complete installation and configuration." },
-  { title: "University Partnerships", description: "Long-term co-branded institutional support." },
-  { title: "Plagiarism Check Tools", description: "Integrated tools for academic integrity." }
+  { title: "Journal Hosting", description: "Secure, scalable servers for your academic publications." },
+  { title: "ScholarJMS Setup", description: "Complete installation and configuration of journal management systems." },
+  { title: "University Partnerships", description: "Long-term institutional support and co-branded publishing solutions." },
+  { title: "Editorial board Management", description: "Comprehensive systems for managing reviewers and board members." },
+  { title: "Plagiarism Check Tools", description: "Integrated tools to ensure the highest standards of academic integrity." },
+  { title: "AI-powered indexing support", description: "Optional AI tools to enhance research visibility and discoverability." }
 ];
 
 const partners = [
@@ -125,7 +127,7 @@ export default function Home() {
                 </Button>
               </div>
               <div className="relative aspect-video rounded-funky overflow-hidden shadow-2xl" data-aos="fade-left">
-                <Image src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080" alt="Services" fill className="object-cover" />
+                <Image src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080" alt="Academic Services" fill className="object-cover" />
               </div>
             </div>
           </div>

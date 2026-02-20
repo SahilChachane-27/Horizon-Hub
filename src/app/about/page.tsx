@@ -8,11 +8,11 @@ import { Shield, BookOpen, UserCheck, Globe, Scale } from 'lucide-react';
 import Image from 'next/image';
 
 const highlights = [
-  { icon: Shield, title: "100% University-only hosting", description: "Strictly limited to academic institutions." },
-  { icon: Scale, title: "Non-commercial model", description: "Focused on academic value rather than profit." },
-  { icon: BookOpen, title: "Transparent, ethical publishing", description: "Supporting international ethics standards." },
-  { icon: UserCheck, title: "ScholarJMS Powered", description: "Industry-grade systems for reliability." },
-  { icon: Globe, title: "Global Research Visibility", description: "Maximized dissemination through indexing support." }
+  { icon: Shield, title: "100% University-only hosting", description: "Strictly limited to academic institutions to preserve research ownership." },
+  { icon: Scale, title: "Non-commercial model", description: "A system focused on academic value and research integrity rather than profit." },
+  { icon: BookOpen, title: "Transparent, ethical publishing", description: "Supporting international ethics standards and peer-review transparency." },
+  { icon: UserCheck, title: "ScholarJMS Powered", description: "Utilizing industry-grade ScholarJMS for professional journal management." },
+  { icon: Globe, title: "Global Research Visibility", description: "Maximized dissemination and visibility through strategic indexing support." }
 ];
 
 export default function AboutPage() {
@@ -30,14 +30,14 @@ export default function AboutPage() {
             <div className="space-y-6" data-aos="fade-right">
               <h2 className="text-3xl font-bold text-primary font-headline">A Dedicated Academic Mission</h2>
               <p className="text-lg text-foreground/80 leading-relaxed">
-                Technical Journals was founded to provide a secure and ethical haven for university-owned research journals. We understand that academic research should be managed by academic institutions, not commercial middlemen.
+                Technical Journals was founded to provide a secure and ethical haven for university-owned research journals. We believe that academic research should be managed by the institutions that produce it, ensuring full ownership and integrity.
               </p>
               <p className="text-lg text-foreground/80 leading-relaxed">
-                Our platform is powered by industry-grade ScholarJMS systems and secure servers, ensuring that your university's intellectual property is preserved and disseminated with the highest standards of quality.
+                Our platform is powered by industry-grade ScholarJMS systems and secure servers, ensuring that your university's intellectual property is preserved, archived, and disseminated with the highest standards of quality.
               </p>
             </div>
             <div className="relative aspect-video rounded-funky overflow-hidden shadow-2xl" data-aos="fade-left">
-              <Image src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.1.0&auto=format&fit=crop&w=1080&q=80" alt="University" fill className="object-cover" />
+              <Image src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.1.0&auto=format&fit=crop&w=1080&q=80" alt="University Research" fill className="object-cover" />
             </div>
           </div>
 
