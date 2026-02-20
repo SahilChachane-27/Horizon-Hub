@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -17,10 +16,10 @@ import {
 
 const navLinks = [
   { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
   { href: '/journals', label: 'Journal List' },
   { href: '/pricing', label: 'Pricing' },
   { href: '/compare', label: 'Compare' },
-  { href: '/about', label: 'About' },
   { href: '/services', label: 'Services' },
   { href: '/team', label: 'Team' },
   { href: '/documentation', label: 'Docs hub' },
@@ -77,13 +76,13 @@ export function Header() {
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="flex items-center gap-2 group">
             <div className="bg-white rounded-lg p-1.5 shadow-lg group-hover:scale-105 transition-transform">
-              <span className="text-primary font-black text-xl leading-none">SJ</span>
+              <span className="text-primary font-black text-xl leading-none">TJ</span>
             </div>
             <div className="flex flex-col">
               <div className="text-xl font-bold text-accent font-headline leading-none">
-                Scholar<span className="ml-0.5">JMS</span>
+                Technical<span className="ml-0.5">Journals</span>
               </div>
-              <span className="text-[8px] text-white/60 tracking-widest uppercase font-bold">Next-Gen Journal Management</span>
+              <span className="text-[8px] text-white/60 tracking-widest uppercase font-bold">University Journal Hosting</span>
             </div>
           </Link>
           

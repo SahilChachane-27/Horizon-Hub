@@ -1,4 +1,3 @@
-
 'use client';
 
 import Link from 'next/link';
@@ -8,22 +7,18 @@ import Image from 'next/image';
 
 const quickLinks = [
   { href: '/', label: 'Home' },
-  { href: '/pricing', label: 'Pricing' },
-  { href: '/compare', label: 'Compare' },
-  { href: '/journals', label: 'Journal List' },
-];
-
-const companyLinks = [
   { href: '/about', label: 'About' },
   { href: '/services', label: 'Services' },
-  { href: '/team', label: 'Team' },
-  { href: '/start-journal', label: 'Contact' },
+  { href: '/journals', label: 'Journals' },
+  { href: '/pricing', label: 'Subscription' },
+  { href: '/contact', label: 'Contact' },
 ];
 
-const supportLinks = [
-  { href: '/documentation', label: 'Documentation' },
-  { href: '/blog', label: 'Blog' },
-  { href: '/start-journal', label: 'Help Center' },
+const policyLinks = [
+  { href: '#', label: 'Privacy Policy' },
+  { href: '#', label: 'Hosting Agreement' },
+  { href: '#', label: 'Ethics & Guidelines' },
+  { href: '#', label: 'Accessibility Statement' },
 ];
 
 const socialLinks = [
@@ -44,24 +39,24 @@ export function Footer() {
   return (
     <footer className="bg-primary text-primary-foreground/80 pt-16 pb-8 border-t border-primary-foreground/10 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="lg:col-span-2 space-y-6" data-aos="fade-up">
             <div className="flex w-fit items-center gap-3 bg-white p-4 rounded-xl shadow-xl transition-transform duration-300 hover:scale-105">
               <div className="bg-primary rounded-lg p-2">
-                <span className="text-white font-black text-2xl leading-none">SJ</span>
+                <span className="text-white font-black text-2xl leading-none">TJ</span>
               </div>
               <div className="flex flex-col">
-                <span className="text-xl font-bold text-slate-900 leading-none">Scholar<span className="text-primary ml-0.5">JMS</span></span>
-                <span className="text-[10px] text-primary/60 font-bold uppercase tracking-wider">Next-Gen Journal Management</span>
+                <span className="text-xl font-bold text-slate-900 leading-none">Technical<span className="text-primary ml-0.5">Journals</span></span>
+                <span className="text-[10px] text-primary/60 font-bold uppercase tracking-wider">Academic Excellence</span>
               </div>
             </div>
             <p className="text-sm leading-relaxed max-w-md text-primary-foreground/70">
-              The complete Journal Management System for academic journal publishing. Technical Journals provides secure, scalable, and ethical hosting exclusively for University-owned journals.
+              Technical Journals provides secure, scalable, and ethical journal hosting exclusively for University-owned academic research journals.
             </p>
           </div>
 
           <div data-aos="fade-up" data-aos-delay="100">
-            <h5 className="font-bold text-lg text-primary-foreground mb-6">Platform</h5>
+            <h5 className="font-bold text-lg text-primary-foreground mb-6">Quick Links</h5>
             <ul className="space-y-3 text-sm">
               {quickLinks.map((link) => (
                 <li key={link.label}>
@@ -72,20 +67,9 @@ export function Footer() {
           </div>
           
           <div data-aos="fade-up" data-aos-delay="200">
-            <h5 className="font-bold text-lg text-primary-foreground mb-6">Company</h5>
+            <h5 className="font-bold text-lg text-primary-foreground mb-6">Policies</h5>
             <ul className="space-y-3 text-sm">
-              {companyLinks.map((link) => (
-                <li key={link.label}>
-                  <Link href={link.href} className="hover:text-accent transition-colors">{link.label}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div data-aos="fade-up" data-aos-delay="300">
-            <h5 className="font-bold text-lg text-primary-foreground mb-6">Support</h5>
-            <ul className="space-y-3 text-sm">
-              {supportLinks.map((link) => (
+              {policyLinks.map((link) => (
                 <li key={link.label}>
                   <Link href={link.href} className="hover:text-accent transition-colors">{link.label}</Link>
                 </li>
@@ -98,7 +82,14 @@ export function Footer() {
           <div className="bg-slate-50 border-2 border-orange-500/30 rounded-2xl p-6 flex flex-col md:flex-row items-center gap-8 shadow-inner">
             <div className="flex items-center gap-4 border-b-2 md:border-b-0 md:border-r-2 border-orange-500/20 pb-6 md:pb-0 md:pr-8 shrink-0">
               <div className="relative w-16 h-16 bg-white rounded-full flex items-center justify-center p-2 shadow-sm">
-                <Image src="https://scholar9.com/assets/images/Startup%20India%20Logo.webp" alt="Startup India" width={64} height={64} className="object-contain" />
+                <Image 
+                  src="https://scholar9.com/assets/images/Startup%20India%20Logo.webp" 
+                  alt="Startup India" 
+                  width={64} 
+                  height={64} 
+                  className="object-contain"
+                  unoptimized
+                />
               </div>
               <div className="flex flex-col">
                 <span className="text-slate-900 font-bold">Startup India Registered</span>
@@ -111,19 +102,19 @@ export function Footer() {
                   <Mail className="h-4 w-4" />
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Email Support</span>
+                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Support</span>
                   <span className="font-medium">scholarjms@gmail.com</span>
                 </div>
               </a>
-              <a href="tel:+918200385143" className="flex items-center gap-3 text-sm text-slate-700 hover:text-primary transition-colors group">
-                <div className="h-8 w-8 bg-white rounded-lg flex items-center justify-center shadow-sm group-hover:bg-primary group-hover:text-white transition-colors">
+              <div className="flex items-center gap-3 text-sm text-slate-700 transition-colors group">
+                <div className="h-8 w-8 bg-white rounded-lg flex items-center justify-center shadow-sm">
                   <PhoneCall className="h-4 w-4" />
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Mobile Support</span>
+                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Partnerships</span>
                   <span className="font-medium">+91 8200385143</span>
                 </div>
-              </a>
+              </div>
             </div>
             <div className="ml-auto flex gap-3">
               {socialLinks.map((social, i) => (
