@@ -1,11 +1,9 @@
-
 'use client';
 
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { Check, Info } from 'lucide-react';
+import { Check } from 'lucide-react';
 import { 
   Table, 
   TableBody, 
@@ -34,10 +32,10 @@ const compareData = [
   { feature: "Plagiarism Check", values: [true, true, true, true, true, true] },
   { feature: "UGC Care Support", values: [true, true, true, true, true, true] },
   { feature: "API Access", values: [true, true, true, true, true, true] },
-  { feature: "PhD Required", values: [false, false, true, false, false, false] },
-  { feature: "50/50 Revenue", values: [false, false, true, false, false, false] },
+  { feature: "Minimum PhD Required", values: [false, false, true, false, false, false] },
+  { feature: "50/50 Revenue Split", values: [false, false, true, false, false, false] },
   { feature: "Dedicated Server", values: [false, false, false, true, false, false] },
-  { feature: "Annual Audit", values: [false, false, false, true, true, true] },
+  { feature: "Annual Audit Report", values: [false, false, false, true, true, true] },
 ];
 
 export default function ComparePage() {

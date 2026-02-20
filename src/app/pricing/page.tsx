@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Header } from '@/components/layout/header';
@@ -57,14 +56,6 @@ const features = [
   "Revenue Sharing 50/50 Split"
 ];
 
-const supportFeatures = [
-  { icon: Compass, text: "24/7 Technical Support (Chat & Email)" },
-  { icon: CalendarDays, text: "Free Ongoing Software Updates" },
-  { icon: Puzzle, text: "Data Migration Support (from OJS or other systems)" },
-  { icon: ReceiptText, text: "Training & Onboarding for Editors and Reviewers" },
-  { icon: FileText, text: "18% GST will be applied", highlight: true },
-];
-
 export default function SubscriptionPlansPage() {
   const [currency, setCurrency] = useState<'INR' | 'USD'>('INR');
   const [isClient, setIsClient] = useState(false);
@@ -87,7 +78,7 @@ export default function SubscriptionPlansPage() {
           </div>
 
           <div className="container mx-auto px-4 relative z-10 text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6" data-aos="fade-up">Simple, Transparent Pricing</h1>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 font-headline" data-aos="fade-up">Simple, Transparent Pricing</h1>
             <p className="text-xl text-white/80 max-w-2xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="100">
               Choose the plan that fits your needs and start your academic journey today.
             </p>
@@ -140,12 +131,18 @@ export default function SubscriptionPlansPage() {
                     <TableRow key={idx} className="hover:bg-secondary/30">
                       <TableCell className="font-medium text-xs text-primary uppercase py-4 border-r">{feature}</TableCell>
                       {plans.map((plan) => {
-                        const isSpecialFreeFeature = feature === "Minimum PhD Required" || feature === "Revenue Sharing 50/50 Split";
-                        const showCheck = isSpecialFreeFeature ? plan.slug === "free" : true;
+                        const isPhD = feature === "Minimum PhD Required";
+                        const isRevenue = feature === "Revenue Sharing 50/50 Split";
                         
+                        // "Free" plan has PhD and Revenue features, others don't
+                        let hasFeature = true;
+                        if (isPhD || isRevenue) {
+                          hasFeature = plan.slug === 'free';
+                        }
+
                         return (
                           <TableCell key={`${plan.slug}-${idx}`} className={`text-center py-4 ${plan.featured ? 'bg-accent/5' : ''}`}>
-                            {showCheck ? <Check className="mx-auto h-5 w-5 text-accent" /> : <span className="text-muted-foreground">—</span>}
+                            {hasFeature ? <Check className="mx-auto h-5 w-5 text-accent" /> : <span className="text-muted-foreground opacity-30">—</span>}
                           </TableCell>
                         );
                       })}
@@ -160,14 +157,36 @@ export default function SubscriptionPlansPage() {
                 <CardContent className="p-10">
                   <h2 className="text-2xl font-bold text-primary mb-8 font-headline">Support & Maintenance</h2>
                   <ul className="space-y-6">
-                    {supportFeatures.map((item, i) => (
-                      <li key={i} className={`flex items-center gap-4 ${item.highlight ? 'text-destructive font-bold' : 'text-foreground/80'}`}>
-                        <div className="h-10 w-10 bg-secondary rounded-funky flex items-center justify-center shrink-0">
-                          <item.icon className="h-5 w-5 text-accent" />
-                        </div>
-                        <span className="text-sm">{item.text}</span>
-                      </li>
-                    ))}
+                    <li className="flex items-center gap-4">
+                      <div className="h-10 w-10 bg-secondary rounded-funky flex items-center justify-center shrink-0">
+                        <Compass className="h-5 w-5 text-accent" />
+                      </div>
+                      <span className="text-sm">24/7 Technical Support (Chat & Email)</span>
+                    </li>
+                    <li className="flex items-center gap-4">
+                      <div className="h-10 w-10 bg-secondary rounded-funky flex items-center justify-center shrink-0">
+                        <CalendarDays className="h-5 w-5 text-accent" />
+                      </div>
+                      <span className="text-sm">Free Ongoing Software Updates</span>
+                    </li>
+                    <li className="flex items-center gap-4">
+                      <div className="h-10 w-10 bg-secondary rounded-funky flex items-center justify-center shrink-0">
+                        <Puzzle className="h-5 w-5 text-accent" />
+                      </div>
+                      <span className="text-sm">Data Migration Support (from OJS or other systems)</span>
+                    </li>
+                    <li className="flex items-center gap-4">
+                      <div className="h-10 w-10 bg-secondary rounded-funky flex items-center justify-center shrink-0">
+                        <ReceiptText className="h-5 w-5 text-accent" />
+                      </div>
+                      <span className="text-sm">Training & Onboarding for Editors and Reviewers</span>
+                    </li>
+                    <li className="flex items-center gap-4 text-destructive font-bold">
+                      <div className="h-10 w-10 bg-secondary rounded-funky flex items-center justify-center shrink-0">
+                        <FileText className="h-5 w-5 text-accent" />
+                      </div>
+                      <span className="text-sm">18% GST will be applied</span>
+                    </li>
                   </ul>
                 </CardContent>
               </Card>
@@ -177,7 +196,7 @@ export default function SubscriptionPlansPage() {
                 <div className="relative bg-orange-50 rounded-funky p-10 flex flex-col md:flex-row items-center gap-8">
                   <ShieldCheck className="h-20 w-20 text-accent shrink-0" />
                   <div>
-                    <h3 className="text-2xl font-bold text-primary mb-4">30-Day Money-Back Guarantee</h3>
+                    <h3 className="text-2xl font-bold text-primary mb-4 font-headline">30-Day Money-Back Guarantee</h3>
                     <p className="text-foreground/70 leading-relaxed text-sm">
                       Try ScholarJMS risk-free. If you're not completely satisfied within the first 30 days, we'll refund your money—no questions asked.
                     </p>
@@ -198,7 +217,7 @@ export default function SubscriptionPlansPage() {
 
         <section className="py-20 bg-secondary">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-5xl font-extrabold text-primary mb-6" data-aos="fade-up">Want to Launch Your Own Journal?</h2>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-primary mb-6 font-headline" data-aos="fade-up">Want to Launch Your Own Journal?</h2>
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="100">
               Join over 50 journals currently utilizing ScholarJMS for robust, end-to-end publishing management.
             </p>
