@@ -61,23 +61,23 @@ export default function StartJournalPage() {
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
       <main className="flex-1 pt-16">
-        <section className="relative flex flex-col items-center justify-center overflow-hidden bg-primary pt-32 pb-24">
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <section className="relative flex flex-col items-center justify-center overflow-hidden bg-primary pt-32 pb-24 text-center">
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="space-y-8">
               <h1 className="text-3xl sm:text-5xl font-bold leading-tight text-white font-headline">
-                Start Your Journal with ScholarJMS
+                Start Your Journal with Technical Journals
               </h1>
-              <p className="max-w-5xl mx-auto text-lg sm:text-xl text-white/90 font-medium">
-                Fill out the form below and our team will get back to you shortly
+              <p className="max-w-5xl mx-auto text-lg sm:text-xl text-white/90 font-medium italic">
+                Empowering your institution with integrated ScholarJMS technology.
               </p>
 
               <div className="flex flex-wrap items-center justify-center gap-8 text-white/90">
                 <a 
-                  href="mailto:scholarjms@gmail.com?subject=Hi ScholarJMS 👋, I’m interested in starting my own journal." 
+                  href="mailto:support@technicaljournals.org" 
                   className="flex items-center gap-2 hover:text-white transition-colors border-r border-white/20 pr-8"
                 >
                   <Mail className="h-5 w-5" />
-                  <span className="font-bold">Email:</span> scholarjms@gmail.com
+                  <span className="font-bold">Email:</span> support@technicaljournals.org
                 </a>
                 <a 
                   href="tel:+918200385143" 
@@ -91,7 +91,7 @@ export default function StartJournalPage() {
           </div>
         </section>
 
-        <section className="bg-[#1570c7]/5 py-20">
+        <section className="bg-slate-50 py-20">
           <div className="container mx-auto px-4 max-w-4xl">
             <div className="bg-white p-8 md:p-12 rounded-funky shadow-2xl border border-border/50">
               {isClient && (
@@ -102,7 +102,7 @@ export default function StartJournalPage() {
                       name="name"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-base font-bold">Full Name <span className="text-destructive">*</span></FormLabel>
+                          <FormLabel className="text-base font-bold text-primary">Full Name <span className="text-destructive">*</span></FormLabel>
                           <FormControl>
                             <Input placeholder="Enter your full name" {...field} className="rounded-xl h-12 border-input focus:ring-primary/50" />
                           </FormControl>
@@ -118,7 +118,7 @@ export default function StartJournalPage() {
                         name="email"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel className="text-base font-bold">Email Address <span className="text-destructive">*</span></FormLabel>
+                            <FormLabel className="text-base font-bold text-primary">Email Address <span className="text-destructive">*</span></FormLabel>
                             <FormControl>
                               <Input placeholder="Enter your email address" {...field} className="rounded-xl h-12 border-input focus:ring-primary/50" />
                             </FormControl>
@@ -132,7 +132,7 @@ export default function StartJournalPage() {
                         name="mobile"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel className="text-base font-bold">Mobile Number <span className="text-destructive">*</span></FormLabel>
+                            <FormLabel className="text-base font-bold text-primary">Mobile Number <span className="text-destructive">*</span></FormLabel>
                             <FormControl>
                               <Input placeholder="Enter your mobile number" {...field} className="rounded-xl h-12 border-input focus:ring-primary/50" />
                             </FormControl>
@@ -148,7 +148,7 @@ export default function StartJournalPage() {
                       name="hasIssn"
                       render={({ field }) => (
                         <FormItem className="space-y-3">
-                          <FormLabel className="text-base font-bold">Do you have ISSN for your journal? <span className="text-destructive">*</span></FormLabel>
+                          <FormLabel className="text-base font-bold text-primary">Do you have ISSN for your journal? <span className="text-destructive">*</span></FormLabel>
                           <FormControl>
                             <RadioGroup
                               onValueChange={field.onChange}
@@ -157,13 +157,13 @@ export default function StartJournalPage() {
                             >
                               <div className="flex items-center space-x-3 border rounded-xl p-4 hover:bg-slate-50 transition-colors cursor-pointer">
                                 <RadioGroupItem value="yes" id="issn-yes" className="text-primary focus:ring-primary" />
-                                <FormLabel htmlFor="issn-yes" className="font-normal cursor-pointer flex-1">
+                                <FormLabel htmlFor="issn-yes" className="font-normal cursor-pointer flex-1 text-primary/80">
                                   Yes, I have ISSN
                                 </FormLabel>
                               </div>
                               <div className="flex items-center space-x-3 border rounded-xl p-4 hover:bg-slate-50 transition-colors cursor-pointer">
                                 <RadioGroupItem value="no" id="issn-no" className="text-primary focus:ring-primary" />
-                                <FormLabel htmlFor="issn-no" className="font-normal cursor-pointer flex-1">
+                                <FormLabel htmlFor="issn-no" className="font-normal cursor-pointer flex-1 text-primary/80">
                                   No, I want to start a new journal
                                 </FormLabel>
                               </div>
@@ -179,7 +179,7 @@ export default function StartJournalPage() {
                       name="message"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-base font-bold">Additional Message (Optional)</FormLabel>
+                          <FormLabel className="text-base font-bold text-primary">Additional Message (Optional)</FormLabel>
                           <FormControl>
                             <Textarea 
                               placeholder="Tell us more about your requirements..." 
@@ -207,7 +207,7 @@ export default function StartJournalPage() {
             </div>
             
             <div className="text-center mt-12 text-sm text-muted-foreground">
-              <p>Need help? Contact us at <a href="mailto:scholarjms@gmail.com" className="text-primary font-bold hover:underline">scholarjms@gmail.com</a></p>
+              <p>Need help? Contact us at <a href="mailto:support@technicaljournals.org" className="text-primary font-bold hover:underline">support@technicaljournals.org</a></p>
             </div>
           </div>
         </section>
