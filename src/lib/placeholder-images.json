@@ -41,6 +41,18 @@
       "description": "Portrait of a professional businesswoman.",
       "imageUrl": "https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=200",
       "imageHint": "businesswoman portrait"
+    },
+    {
+      "id": "residential-hero-bg",
+      "description": "Luxury modern home with swimming pool.",
+      "imageUrl": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1920",
+      "imageHint": "luxury home"
+    },
+    {
+      "id": "commercial-hero-bg",
+      "description": "Modern office building exterior.",
+      "imageUrl": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1920",
+      "imageHint": "commercial building"
     }
   ]
 }
