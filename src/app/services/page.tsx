@@ -9,7 +9,6 @@ import Link from 'next/link';
 
 const categories = [
   {
-    letter: "A",
     title: "Journal Hosting Services",
     icon: Laptop,
     description: "Robust, secure infrastructure tailored for academic journals.",
@@ -22,7 +21,6 @@ const categories = [
     ]
   },
   {
-    letter: "B",
     title: "University Partnership Program",
     icon: Users,
     description: "Long-term collaboration for institutional research growth.",
@@ -35,7 +33,6 @@ const categories = [
     ]
   },
   {
-    letter: "C",
     title: "Editorial Workflow Management",
     icon: Workflow,
     description: "End-to-end editorial system for maximum efficiency.",
@@ -48,7 +45,6 @@ const categories = [
     ]
   },
   {
-    letter: "D",
     title: "Migration & Legacy Services",
     icon: Database,
     description: "Transitioning legacy research to modern standards.",
@@ -85,9 +81,6 @@ export default function ServicesPage() {
                 <CardHeader className="p-8 pb-0">
                   <div className="flex items-center gap-5">
                     <div className="h-16 w-16 bg-primary rounded-funky flex items-center justify-center shadow-xl group-hover:bg-accent transition-colors duration-500 relative">
-                      <span className="absolute -top-2 -left-2 bg-white text-primary text-[10px] font-black h-6 w-6 rounded-full flex items-center justify-center border-2 border-accent">
-                        {cat.letter}
-                      </span>
                       <cat.icon className="h-8 w-8 text-white group-hover:text-primary" />
                     </div>
                     <div>
