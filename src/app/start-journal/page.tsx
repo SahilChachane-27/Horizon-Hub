@@ -47,6 +47,8 @@ export default function StartJournalPage() {
     defaultValues: { name: "", email: "", mobile: "", hasIssn: undefined, message: "" },
   });
 
+  const watchValues = form.watch();
+
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
     toast({
@@ -155,6 +157,7 @@ export default function StartJournalPage() {
                           <FormControl>
                             <Input placeholder="Enter your full name" {...field} className="rounded-xl h-12 border-input focus:ring-primary/50" />
                           </FormControl>
+                          <p className="text-xs text-muted-foreground mt-1">{(watchValues.name || "").length}/255 characters</p>
                           <FormMessage />
                         </FormItem>
                       )}
@@ -170,6 +173,7 @@ export default function StartJournalPage() {
                             <FormControl>
                               <Input placeholder="Enter your email address" {...field} className="rounded-xl h-12 border-input focus:ring-primary/50" />
                             </FormControl>
+                            <p className="text-xs text-muted-foreground mt-1">{(watchValues.email || "").length}/255 characters</p>
                             <FormMessage />
                           </FormItem>
                         )}
@@ -183,6 +187,7 @@ export default function StartJournalPage() {
                             <FormControl>
                               <Input placeholder="Enter your mobile number" {...field} className="rounded-xl h-12 border-input focus:ring-primary/50" />
                             </FormControl>
+                            <p className="text-xs text-muted-foreground mt-1">{(watchValues.mobile || "").length}/20 characters</p>
                             <FormMessage />
                           </FormItem>
                         )}
@@ -233,6 +238,7 @@ export default function StartJournalPage() {
                               {...field} 
                             />
                           </FormControl>
+                          <p className="text-xs text-muted-foreground mt-1">{(watchValues.message || "").length}/2000 characters</p>
                           <FormMessage />
                         </FormItem>
                       )}
