@@ -1,10 +1,9 @@
-
 'use client';
 
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { Button } from '@/components/ui/button';
-import { Check, Minus } from 'lucide-react';
+import { Check } from 'lucide-react';
 import { 
   Table, 
   TableBody, 
@@ -18,12 +17,12 @@ import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 
 const plans = [
-  { name: "Starter", priceINR: "₹15,000.00", period: "Annually", isPopular: true },
-  { name: "Experience Plan (3month)", priceINR: "₹5,000.00", period: "90 Days" },
+  { name: "Starter", priceINR: "₹15000.00", period: "Annually", isPopular: true },
+  { name: "Experience Plan (3month)", priceINR: "₹5000.00", period: "90 Days" },
   { name: "Free", priceINR: "₹0.00", period: "Annually" },
-  { name: "Enterprise", priceINR: "₹30,000.00", period: "Annually" },
-  { name: "Institute", priceINR: "₹20,000.00", period: "Annually" },
-  { name: "Professional Plan", priceINR: "₹25,000.00", period: "Annually" },
+  { name: "Enterprise", priceINR: "₹30000.00", period: "Annually" },
+  { name: "Institute", priceINR: "₹20000.00", period: "Annually" },
+  { name: "Professional Plan", priceINR: "₹25000.00", period: "Annually" },
 ];
 
 const compareData = [
@@ -67,23 +66,27 @@ export default function ComparePage() {
 
         <section className="py-20 bg-slate-50">
           <div className="container mx-auto px-4">
-            <div className="overflow-x-auto shadow-2xl rounded-funky border border-border/50 bg-white" data-aos="fade-up">
+            <div className="overflow-x-auto shadow-2xl border border-border/50 bg-white" data-aos="fade-up">
               <Table className="border-collapse min-w-[1200px]">
                 <TableHeader>
-                  <TableRow className="bg-secondary/50">
-                    <TableHead className="w-[300px] text-primary font-bold text-lg py-10 border-r text-center">Features</TableHead>
+                  <TableRow className="border-b-0">
+                    <TableHead className="w-[300px] text-primary font-bold text-lg py-12 bg-secondary/30 text-center border-r">Features</TableHead>
                     {plans.map((plan) => (
-                      <TableHead key={plan.name} className="text-center p-6 min-w-[160px]">
+                      <TableHead key={plan.name} className="text-center py-10 px-4 min-w-[180px] align-top bg-secondary/30">
                         <div className="flex flex-col items-center gap-2">
-                          {plan.isPopular && (
-                            <Badge className="bg-accent text-accent-foreground font-black text-[10px] uppercase px-3 mb-1">Most Popular</Badge>
-                          )}
-                          <span className="font-bold text-primary text-sm leading-tight h-8 flex items-center">{plan.name}</span>
-                          <div className="flex flex-col mt-2">
-                            <span className="text-xl font-black text-primary italic leading-none">{plan.priceINR}</span>
-                            <span className="text-[10px] text-muted-foreground uppercase font-bold mt-1 tracking-widest">{plan.period}</span>
+                          <div className="h-8 flex items-end">
+                            {plan.isPopular && (
+                              <Badge className="bg-[#1e6cd9] text-white font-bold text-[10px] uppercase px-3 py-1 rounded-full mb-1 border-none">Most Popular</Badge>
+                            )}
                           </div>
-                          <Button asChild size="sm" className="mt-4 rounded-full bg-primary text-white hover:bg-accent hover:text-primary transition-all text-[10px] font-bold h-8 px-4">
+                          <span className="font-bold text-primary text-sm leading-tight h-8 flex items-center text-center">{plan.name}</span>
+                          <span className="text-2xl font-black text-primary leading-none mt-2">{plan.priceINR}</span>
+                          <div className="mt-2 mb-4">
+                            <span className="text-[10px] bg-secondary text-primary/60 uppercase font-bold px-4 py-1 rounded-full tracking-wider border border-border/50">
+                              {plan.period}
+                            </span>
+                          </div>
+                          <Button asChild size="sm" variant="outline" className="rounded-full border-[#1e6cd9] text-[#1e6cd9] hover:bg-[#1e6cd9] hover:text-white transition-all text-xs font-bold h-9 px-6">
                             <Link href="/start-journal">Get Started</Link>
                           </Button>
                         </div>
@@ -93,18 +96,18 @@ export default function ComparePage() {
                 </TableHeader>
                 <TableBody>
                   {compareData.map((row, idx) => (
-                    <TableRow key={idx} className="hover:bg-secondary/20 transition-colors">
-                      <TableCell className="font-bold text-primary/70 text-[11px] border-r py-5 uppercase tracking-wider pl-8">{row.feature}</TableCell>
+                    <TableRow key={idx} className="hover:bg-secondary/10 transition-colors group">
+                      <TableCell className="font-bold text-primary/80 text-[11px] border-r py-6 uppercase tracking-wider pl-8 bg-secondary/10 group-hover:bg-secondary/20 transition-colors">
+                        {row.feature}
+                      </TableCell>
                       {row.values.map((val, pIdx) => (
-                        <TableCell key={pIdx} className="text-center py-5">
+                        <TableCell key={pIdx} className="text-center py-6 border-b border-border/30">
                           {val === true ? (
                             <div className="flex justify-center">
-                              <div className="h-6 w-6 rounded-full bg-accent/20 flex items-center justify-center">
-                                <Check className="h-3.5 w-3.5 text-accent stroke-[4]" />
-                              </div>
+                              <Check className="h-5 w-5 text-[#1e6cd9] stroke-[3]" />
                             </div>
                           ) : (
-                            <span className="text-muted-foreground opacity-40 font-bold">—</span>
+                            <span className="text-muted-foreground opacity-30 font-bold">—</span>
                           )}
                         </TableCell>
                       ))}
