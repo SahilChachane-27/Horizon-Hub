@@ -5,20 +5,24 @@ import { Twitter, Linkedin, Instagram, Mail, PhoneCall, ChevronRight } from 'luc
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 
-const quickLinks = [
+const platformLinks = [
   { href: '/', label: 'Home' },
+  { href: '/pricing', label: 'Pricing' },
+  { href: '/compare', label: 'Compare' },
+  { href: '/journals', label: 'List of Journal' },
+];
+
+const companyLinks = [
   { href: '/about', label: 'About Us' },
   { href: '/services', label: 'Our Services' },
-  { href: '/journals', label: 'Journals Hosted' },
-  { href: '/pricing', label: 'Subscription Plans' },
+  { href: '/team', label: 'Team' },
   { href: '/contact', label: 'Contact Us' },
 ];
 
-const policyLinks = [
-  { href: '#', label: 'Privacy Policy' },
-  { href: '#', label: 'Hosting Agreement' },
-  { href: '#', label: 'Ethics & Guidelines' },
-  { href: '#', label: 'Accessibility Statement' },
+const supportLinks = [
+  { href: '/documentation', label: 'Documentation' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/start-journal', label: 'Help Center' },
 ];
 
 const socialLinks = [
@@ -41,7 +45,7 @@ export function Footer() {
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/5 rounded-full -mr-48 -mb-48 pointer-events-none" />
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16 relative z-10">
           <div className="lg:col-span-2 space-y-8" data-aos="fade-up">
             <div className="flex w-fit items-center gap-3 bg-white p-4 rounded-xl shadow-2xl transition-transform duration-300 hover:scale-105 border border-accent/10">
               <div className="bg-primary rounded-lg p-2">
@@ -65,9 +69,9 @@ export function Footer() {
           </div>
 
           <div data-aos="fade-up" data-aos-delay="100">
-            <h5 className="font-bold text-lg text-white mb-8 font-headline italic border-b border-accent/30 pb-2 inline-block">Quick Links</h5>
+            <h5 className="font-bold text-lg text-white mb-8 font-headline italic border-b border-accent/30 pb-2 inline-block">Platform</h5>
             <ul className="space-y-4">
-              {quickLinks.map((link) => (
+              {platformLinks.map((link) => (
                 <li key={link.label}>
                   <Link href={link.href} className="text-sm font-bold text-primary-foreground/60 hover:text-accent flex items-center gap-2 group transition-colors">
                     <ChevronRight className="h-3 w-3 text-accent group-hover:translate-x-1 transition-transform" />
@@ -79,9 +83,9 @@ export function Footer() {
           </div>
           
           <div data-aos="fade-up" data-aos-delay="200">
-            <h5 className="font-bold text-lg text-white mb-8 font-headline italic border-b border-accent/30 pb-2 inline-block">Policies</h5>
+            <h5 className="font-bold text-lg text-white mb-8 font-headline italic border-b border-accent/30 pb-2 inline-block">Company</h5>
             <ul className="space-y-4">
-              {policyLinks.map((link) => (
+              {companyLinks.map((link) => (
                 <li key={link.label}>
                   <Link href={link.href} className="text-sm font-bold text-primary-foreground/60 hover:text-accent flex items-center gap-2 group transition-colors">
                     <ChevronRight className="h-3 w-3 text-accent group-hover:translate-x-1 transition-transform" />
@@ -90,6 +94,47 @@ export function Footer() {
                 </li>
               ))}
             </ul>
+          </div>
+
+          <div data-aos="fade-up" data-aos-delay="300">
+            <h5 className="font-bold text-lg text-white mb-8 font-headline italic border-b border-accent/30 pb-2 inline-block">Support</h5>
+            <ul className="space-y-4">
+              {supportLinks.map((link) => (
+                <li key={link.label}>
+                  <Link href={link.href} className="text-sm font-bold text-primary-foreground/60 hover:text-accent flex items-center gap-2 group transition-colors">
+                    <ChevronRight className="h-3 w-3 text-accent group-hover:translate-x-1 transition-transform" />
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Startup India Banner */}
+        <div className="mb-12 relative z-10" data-aos="fade-up">
+          <div className="flex flex-wrap items-center justify-between gap-6 p-6 rounded-2xl bg-white/5 border-2 border-accent/20 backdrop-blur-sm transition-transform duration-500 hover:scale-[1.01]">
+            <div className="flex flex-col md:flex-row md:items-center gap-6">
+              <div className="flex items-center gap-4 border-b-2 border-accent/20 md:border-b-0 md:border-r-2 pb-4 md:pb-0 md:pr-6">
+                <div className="bg-white p-2 rounded-lg">
+                  <Image src="https://scholar9.com/assets/images/Startup%20India%20Logo.webp" alt="DPIIT Startup India" width={80} height={32} className="h-8 w-auto grayscale brightness-0" />
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-sm font-black uppercase text-white tracking-wider">Startup India Registered</span>
+                  <span className="text-[10px] font-bold text-accent uppercase tracking-widest">DPIIT Recognized | Make in India</span>
+                </div>
+              </div>
+              <div className="flex flex-col gap-2">
+                <a href="mailto:support@technicaljournals.org" className="flex items-center gap-2 text-xs font-bold text-primary-foreground/70 hover:text-accent transition-colors">
+                  <Mail className="h-4 w-4 text-accent" />
+                  <span className="text-white">Email:</span> support@technicaljournals.org
+                </a>
+                <div className="flex items-center gap-2 text-xs font-bold text-primary-foreground/70">
+                  <PhoneCall className="h-4 w-4 text-accent" />
+                  <span className="text-white">Mobile:</span> +91 8200385143
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
