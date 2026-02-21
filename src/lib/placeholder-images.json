@@ -2,9 +2,9 @@
   "placeholderImages": [
     {
       "id": "hero-bg",
-      "description": "A modern university library with a focused academic atmosphere.",
-      "imageUrl": "https://images.unsplash.com/photo-1541339907198-e08756eaa589?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "university library"
+      "description": "A grand, modern university hall with high ceilings and a sophisticated academic atmosphere.",
+      "imageUrl": "https://images.unsplash.com/photo-1523050853051-f750004c4129?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1920",
+      "imageHint": "university architecture"
     },
     {
       "id": "journal-hosting-img",
