@@ -28,7 +28,10 @@ import {
   PenTool,
   Layout,
   Zap,
-  Cpu
+  Cpu,
+  Landmark,
+  GraduationCap,
+  School
 } from 'lucide-react';
 import { ScrollToTop } from '@/components/layout/scroll-to-top';
 
@@ -64,7 +67,11 @@ const platformFeatures = [
 ];
 
 const partners = [
-  "SSIPMT Raipur", "VIT Pune", "AAFT University Raipur", "Arya Group of Colleges Jaipur", "Noida International University"
+  { name: "SSIPMT Raipur", icon: Landmark },
+  { name: "VIT Pune", icon: School },
+  { name: "AAFT University Raipur", icon: GraduationCap },
+  { name: "Arya Group of Colleges", icon: Landmark },
+  { name: "Noida International University", icon: School }
 ];
 
 const journals = [
@@ -201,15 +208,28 @@ export default function Home() {
         </section>
 
         {/* Global University Partners */}
-        <section className="py-20 bg-white border-t border-border/50">
+        <section className="py-24 bg-white border-t border-border/50 relative overflow-hidden">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16" data-aos="fade-up">
-              <h2 className="text-2xl md:text-3xl font-bold text-primary/40 font-headline uppercase tracking-[0.2em]">Global University Partners</h2>
+              <h2 className="text-sm font-black text-primary/20 uppercase tracking-[0.5em] mb-4">Institutional Network</h2>
+              <h3 className="text-3xl font-bold text-primary font-headline italic">Global University Partners</h3>
+              <div className="mt-4 w-12 h-1 bg-accent mx-auto"></div>
             </div>
-            <div className="flex flex-wrap justify-center gap-10 md:gap-20">
+            
+            <div className="flex flex-wrap justify-center gap-8 md:gap-16">
               {partners.map((partner, i) => (
-                <div key={i} className="text-xl font-black text-primary/20 hover:text-accent transition-all duration-500 cursor-default select-none" data-aos="fade-up" data-aos-delay={i * 100}>
-                  {partner}
+                <div 
+                  key={i} 
+                  className="flex flex-col items-center gap-4 group"
+                  data-aos="zoom-in" 
+                  data-aos-delay={i * 100}
+                >
+                  <div className="h-20 w-20 rounded-full bg-slate-50 flex items-center justify-center border-2 border-dashed border-primary/10 group-hover:border-accent group-hover:bg-accent/5 transition-all duration-500 animate-float" style={{ animationDelay: `${i * 0.5}s` }}>
+                    <partner.icon className="h-8 w-8 text-primary/30 group-hover:text-accent transition-colors duration-500" />
+                  </div>
+                  <span className="text-[10px] font-black text-primary/30 group-hover:text-primary transition-colors duration-500 uppercase tracking-widest text-center max-w-[120px] leading-tight">
+                    {partner.name}
+                  </span>
                 </div>
               ))}
             </div>
@@ -224,7 +244,14 @@ export default function Home() {
           to { transform: rotate(360deg); }
         }
         .animate-spin-slow {
-          animation: spin-slow 20s linear infinite;
+          animation: spin-slow 30s linear infinite;
+        }
+        @keyframes float {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-10px); }
+        }
+        .animate-float {
+          animation: float 4s ease-in-out infinite;
         }
       `}</style>
     </div>
