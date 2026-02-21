@@ -16,13 +16,13 @@ import {
 
 const navLinks = [
   { href: '/', label: 'Home' },
+  { href: '/residential-construction', label: 'Residential' },
+  { href: '/commercial-projects', label: 'Commercial' },
+  { href: '/real-estate-development', label: 'Development' },
+  { href: '/renovation-remodeling', label: 'Renovation' },
   { href: '/about', label: 'About Us' },
-  { href: '/services', label: 'Our Services' },
-  { href: '/journals', label: 'Journals Hosted' },
-  { href: '/for-universities', label: 'For Universities' },
-  { href: '/pricing', label: 'Subscription Plans' },
-  { href: '/team', label: 'Team' },
-  { href: '/contact', label: 'Contact Us' },
+  { href: '/blog', label: 'Insights' },
+  { href: '/contact', label: 'Contact' },
 ];
 
 export function Header() {
@@ -69,21 +69,21 @@ export function Header() {
   return (
     <header
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-primary',
-        scrolled ? 'shadow-xl py-2 border-b border-accent/10' : 'py-4'
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+        scrolled ? 'bg-primary shadow-xl py-2 border-b border-accent/10' : 'bg-primary/90 backdrop-blur-md py-4'
       )}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-2 group shrink-0">
             <div className="bg-white rounded-lg p-1.5 shadow-lg group-hover:scale-110 transition-transform duration-300">
-              <span className="text-primary font-black text-xl leading-none">TJ</span>
+              <span className="text-primary font-black text-xl leading-none tracking-tighter">HG</span>
             </div>
             <div className="flex flex-col">
-              <div className="text-lg md:text-xl font-bold text-accent font-headline leading-none">
-                Technical<span className="ml-0.5">Journals</span>
+              <div className="text-lg md:text-xl font-bold text-accent font-headline leading-none uppercase">
+                Horizon<span className="ml-0.5 text-white">Group</span>
               </div>
-              <span className="text-[8px] text-white/60 tracking-widest uppercase font-bold">University Journal Hosting</span>
+              <span className="text-[8px] text-white/60 tracking-widest uppercase font-bold">Construction & Development</span>
             </div>
           </Link>
           
@@ -91,8 +91,8 @@ export function Header() {
             <nav className="flex items-center space-x-3 xl:space-x-5">
               <NavContent />
             </nav>
-            <Button asChild className="bg-accent hover:bg-white hover:text-primary text-accent-foreground rounded-funky transition-all duration-300 hover:scale-105 shadow-lg h-10 px-6 font-bold text-[10px] xl:text-xs">
-              <Link href="/start-journal">Begin Research</Link>
+            <Button asChild className="bg-accent hover:bg-white hover:text-primary text-accent-foreground rounded-funky transition-all duration-300 hover:scale-105 shadow-lg h-10 px-6 font-bold text-[10px] xl:text-xs uppercase">
+              <Link href="/contact">Get a Quote</Link>
             </Button>
           </div>
 
@@ -106,14 +106,14 @@ export function Header() {
                   </Button>
                 </SheetTrigger>
                 <SheetContent side="right" className="bg-primary border-l-accent/20 text-white w-[280px] sm:w-[350px] p-6 overflow-y-auto">
-                  <SheetHeader className="mb-8">
-                    <SheetTitle className="text-accent text-left font-headline italic text-2xl">Navigation</SheetTitle>
+                  <SheetHeader className="mb-8 border-b border-accent/10 pb-4">
+                    <SheetTitle className="text-accent text-left font-headline italic text-2xl uppercase">Navigation</SheetTitle>
                   </SheetHeader>
                   <nav className="flex flex-col items-start space-y-4">
                     <NavContent inSheet />
                     <SheetClose asChild>
-                      <Button asChild className="w-full bg-accent hover:bg-white hover:text-primary text-accent-foreground mt-6 rounded-funky transition-all font-bold">
-                        <Link href="/start-journal">Begin Research Journey</Link>
+                      <Button asChild className="w-full bg-accent hover:bg-white hover:text-primary text-accent-foreground mt-6 rounded-funky transition-all font-bold uppercase">
+                        <Link href="/contact">Contact Us Today</Link>
                       </Button>
                     </SheetClose>
                   </nav>

@@ -4,8 +4,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { AOSInit } from '@/components/AOSInit';
 
 export const metadata: Metadata = {
-  title: 'Technical Journals | Next-Gen University Journal Hosting',
-  description: 'Secure, scalable, and ethical journal hosting exclusively for University-owned academic research journals.',
+  title: 'Horizon Group | Premier Real Estate & Construction',
+  description: 'Building the future with excellence in residential construction, commercial developments, and real estate innovation.',
 };
 
 export default function RootLayout({
