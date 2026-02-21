@@ -3,29 +3,10 @@
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { ArrowRight, BookOpen } from 'lucide-react';
-import Image from 'next/image';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function Hero() {
-  const heroImg = PlaceHolderImages.find(p => p.id === 'hero-bg');
-
   return (
-    <section id="hero" className="relative h-screen flex flex-col items-center justify-center overflow-hidden bg-primary">
-      {/* Background Image with Navy Overlay */}
-      {heroImg && (
-        <div className="absolute inset-0 z-0">
-          <Image
-            src={heroImg.imageUrl}
-            alt={heroImg.description}
-            fill
-            className="object-cover"
-            priority
-            data-ai-hint={heroImg.imageHint}
-          />
-          <div className="absolute inset-0 bg-primary/80" />
-        </div>
-      )}
-
+    <section id="hero" className="relative h-screen flex flex-col items-center justify-center overflow-hidden bg-primary pt-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center" data-aos="fade-up">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20 mb-8 mx-auto shadow-xl">
