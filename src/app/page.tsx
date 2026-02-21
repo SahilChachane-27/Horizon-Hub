@@ -5,6 +5,14 @@ import { Footer } from '@/components/layout/footer';
 import { Hero } from '@/components/sections/hero';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { 
+  Table, 
+  TableBody, 
+  TableCell, 
+  TableHead, 
+  TableHeader, 
+  TableRow 
+} from "@/components/ui/table";
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -90,29 +98,41 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
 
-        {/* Trusted & Certified Section */}
-        <section className="py-16 bg-slate-50 border-y border-border/50 relative overflow-hidden">
+        {/* Trusted & Certified Table Section */}
+        <section className="py-24 bg-slate-50 border-y border-border/50 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-accent/5 rounded-full -mr-32 -mt-32 animate-pulse" />
           <div className="container mx-auto px-4 relative z-10">
             <div className="text-center mb-12" data-aos="fade-up">
-              <h2 className="text-2xl md:text-3xl font-bold text-primary font-headline">Trusted & Certified by Leading Organizations</h2>
-              <div className="mt-3 w-16 h-1 bg-accent mx-auto"></div>
+              <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Trusted &amp; Certified by Leading Organizations</h2>
+              <div className="mt-4 w-24 h-1 bg-accent mx-auto"></div>
+              <p className="mt-6 text-foreground/60 font-medium italic">Verified institutional standards and compliance frameworks.</p>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-              {certifications.map((cert, i) => (
-                <div 
-                  key={i} 
-                  className="flex flex-col items-center text-center p-6 bg-white rounded-funky shadow-md border border-border/30 transition-all hover:shadow-xl hover:-translate-y-1 group"
-                  data-aos="fade-up"
-                  data-aos-delay={i * 50}
-                >
-                  <div className="h-14 w-14 bg-secondary rounded-full flex items-center justify-center mb-4 group-hover:bg-accent transition-colors duration-300">
-                    <cert.icon className="h-7 w-7 text-accent group-hover:text-accent-foreground" />
-                  </div>
-                  <h4 className="text-sm font-bold text-primary mb-1">{cert.title}</h4>
-                  <p className="text-[10px] text-foreground/60 uppercase font-bold tracking-widest">{cert.description}</p>
-                </div>
-              ))}
+            
+            <div className="max-w-5xl mx-auto bg-white rounded-funky shadow-2xl border border-border/30 overflow-hidden" data-aos="fade-up">
+              <Table>
+                <TableHeader className="bg-primary hover:bg-primary">
+                  <TableRow className="hover:bg-primary border-none">
+                    <TableHead className="text-white font-bold w-24 py-6 text-center">Status</TableHead>
+                    <TableHead className="text-white font-bold py-6">Organization / Standard</TableHead>
+                    <TableHead className="text-white font-bold py-6">Recognition &amp; Compliance</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {certifications.map((cert, i) => (
+                    <TableRow key={i} className="hover:bg-accent/5 transition-colors border-b border-border/50">
+                      <TableCell className="text-center">
+                        <div className="h-10 w-10 bg-secondary/30 rounded-full flex items-center justify-center mx-auto group">
+                          <cert.icon className="h-5 w-5 text-accent transition-transform group-hover:scale-110" />
+                        </div>
+                      </TableCell>
+                      <TableCell className="font-bold text-primary py-5">{cert.title}</TableCell>
+                      <TableCell className="py-5">
+                        <span className="text-[10px] text-foreground/60 uppercase font-black tracking-widest">{cert.description}</span>
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
             </div>
           </div>
         </section>
