@@ -1,4 +1,3 @@
-
 'use client';
 
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -8,30 +7,30 @@ import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { useToast } from "@/hooks/use-toast";
-import Image from "next/image";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { useEffect, useState } from "react";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
-
-const contactInfo = [
-  { title: "Address", icon: MapPin, lines: ["123 Wall Street, Suite 500", "New York, NY 10005"] },
-  { title: "Phone", icon: Phone, lines: ["+1 (212) 555-1234"] },
-  { title: "Email", icon: Mail, lines: ["info@horizongroup.com"] },
-  { title: "Business Hours", icon: Clock, lines: ["Monday - Friday: 8:00 AM - 6:00 PM", "Saturday: 9:00 AM - 2:00 PM"] },
-];
 
 const formSchema = z.object({
-  name: z.string().min(2, { message: "Name must be at least 2 characters." }),
-  email: z.string().email({ message: "Please enter a valid email address." }),
-  phone: z.string().optional(),
-  subject: z.string().min(2, { message: "Subject must be at least 2 characters." }),
-  message: z.string().min(10, { message: "Message must be at least 10 characters." }),
+  name: z.string()
+    .min(2, "Name must be at least 2 characters.")
+    .max(255, "Name must be less than 255 characters.")
+    .regex(/^[a-zA-Z\s\-\.]+$/, "Name can only contain letters, spaces, hyphens, and dots"),
+  email: z.string()
+    .email("Please enter a valid email address.")
+    .max(255, "Email must be less than 255 characters."),
+  mobile: z.string()
+    .min(10, "Mobile number must be at least 10 digits.")
+    .max(20, "Mobile number must be less than 20 digits.")
+    .regex(/^[\d\s\-\+\(\)]+$/, "Please provide a valid phone number"),
+  hasIssn: z.enum(["yes", "no"], {
+    required_error: "Please select an option.",
+  }),
+  message: z.string().max(2000, "Message must be less than 2000 characters.").optional(),
 });
 
 export function Contact() {
   const { toast } = useToast();
-  const mapImage = PlaceHolderImages.find(p => p.id === 'map-placeholder');
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
@@ -40,76 +39,139 @@ export function Contact() {
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    defaultValues: { name: "", email: "", phone: "", subject: "", message: "" },
+    defaultValues: { name: "", email: "", mobile: "", hasIssn: undefined, message: "" },
   });
+
+  const watchValues = form.watch();
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
     toast({
-      title: "Message Sent!",
-      description: "Thank you for contacting us. We will get back to you shortly.",
+      title: "Inquiry Submitted!",
+      description: "Our technical team will contact you shortly to guide you through the process.",
     });
     form.reset();
   }
 
   return (
-    <section id="contact" className="py-16 md:py-24 bg-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12" data-aos="fade-up">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Get In Touch</h2>
-          <div className="mt-4 w-24 h-1 bg-accent mx-auto"></div>
-          <p className="mt-6 text-base md:text-lg text-foreground/80 max-w-2xl mx-auto">
-            Contact us to discuss your next real estate or construction project.
-          </p>
+    <div className="max-w-4xl mx-auto">
+      <div className="bg-white p-8 md:p-12 rounded-funky shadow-2xl border border-border/50" data-aos="fade-up">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl font-bold text-primary font-headline">Institutional Inquiry</h2>
+          <div className="mt-2 w-16 h-1 bg-accent mx-auto"></div>
         </div>
-        <div className="grid lg:grid-cols-5 gap-12">
-          <div className="lg:col-span-3" data-aos="fade-right">
-            {isClient && (
-              <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                  <div className="grid sm:grid-cols-2 gap-6">
-                    <FormField control={form.control} name="name" render={({ field }) => (
-                      <FormItem><FormLabel>Your Name</FormLabel><FormControl><Input placeholder="John Doe" {...field} /></FormControl><FormMessage /></FormItem>
-                    )} />
-                    <FormField control={form.control} name="email" render={({ field }) => (
-                      <FormItem><FormLabel>Your Email</FormLabel><FormControl><Input placeholder="john@example.com" {...field} /></FormControl><FormMessage /></FormItem>
-                    )} />
-                    <FormField control={form.control} name="phone" render={({ field }) => (
-                      <FormItem><FormLabel>Phone Number (Optional)</FormLabel><FormControl><Input placeholder="+1 (555) 555-5555" {...field} /></FormControl><FormMessage /></FormItem>
-                    )} />
-                    <FormField control={form.control} name="subject" render={({ field }) => (
-                      <FormItem><FormLabel>Subject</FormLabel><FormControl><Input placeholder="Project Inquiry" {...field} /></FormControl><FormMessage /></FormItem>
-                    )} />
-                  </div>
-                  <FormField control={form.control} name="message" render={({ field }) => (
-                    <FormItem><FormLabel>Your Message</FormLabel><FormControl><Textarea placeholder="Tell us about your project..." rows={5} {...field} /></FormControl><FormMessage /></FormItem>
-                  )} />
-                  <Button type="submit" size="lg" className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-accent/90 rounded-funky">Send Message</Button>
-                </form>
-              </Form>
-            )}
-          </div>
-          <div className="lg:col-span-2 space-y-6" data-aos="fade-left">
-            <div className="bg-primary p-8 shadow-lg space-y-6 text-primary-foreground rounded-funky border border-primary-foreground/20">
-              <h3 className="text-2xl font-bold font-headline">Contact Information</h3>
-              {contactInfo.map((info) => (
-                <div key={info.title} className="flex items-start gap-4">
-                  <info.icon className="h-5 w-5 text-accent mt-1 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold text-lg">{info.title}</h4>
-                    {info.lines.map((line, i) => <p key={i} className="text-primary-foreground/80">{line}</p>)}
-                  </div>
-                </div>
-              ))}
-            </div>
-            {mapImage && (
-              <div className="aspect-[4/3] relative rounded-funky overflow-hidden shadow-md">
-                <Image src={mapImage.imageUrl} alt={mapImage.description} fill className="object-cover" data-ai-hint={mapImage.imageHint} />
+        
+        {isClient && (
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+              <FormField
+                control={form.control}
+                name="name"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-base font-bold">Full Name <span className="text-destructive">*</span></FormLabel>
+                    <FormControl>
+                      <Input placeholder="Enter your full name" {...field} className="rounded-xl h-12 border-input focus:ring-primary/50" />
+                    </FormControl>
+                    <p className="text-xs text-muted-foreground mt-1">{(watchValues.name || "").length}/255 characters</p>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <div className="grid md:grid-cols-2 gap-8">
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-base font-bold">Email Address <span className="text-destructive">*</span></FormLabel>
+                      <FormControl>
+                        <Input placeholder="Enter your email address" {...field} className="rounded-xl h-12 border-input focus:ring-primary/50" />
+                      </FormControl>
+                      <p className="text-xs text-muted-foreground mt-1">{(watchValues.email || "").length}/255 characters</p>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="mobile"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-base font-bold">Mobile Number <span className="text-destructive">*</span></FormLabel>
+                      <FormControl>
+                        <Input placeholder="Enter your mobile number" {...field} className="rounded-xl h-12 border-input focus:ring-primary/50" />
+                      </FormControl>
+                      <p className="text-xs text-muted-foreground mt-1">{(watchValues.mobile || "").length}/20 characters</p>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
               </div>
-            )}
-          </div>
-        </div>
+
+              <FormField
+                control={form.control}
+                name="hasIssn"
+                render={({ field }) => (
+                  <FormItem className="space-y-3">
+                    <FormLabel className="text-base font-bold">Do you have ISSN for your journal? <span className="text-destructive">*</span></FormLabel>
+                    <FormControl>
+                      <RadioGroup
+                        onValueChange={field.onChange}
+                        defaultValue={field.value}
+                        className="grid md:grid-cols-2 gap-4"
+                      >
+                        <div className="flex items-center space-x-3 border rounded-xl p-4 hover:bg-slate-50 transition-colors cursor-pointer">
+                          <RadioGroupItem value="yes" id="issn-yes" className="text-primary focus:ring-primary" />
+                          <FormLabel htmlFor="issn-yes" className="font-normal cursor-pointer flex-1">
+                            Yes, I have ISSN
+                          </FormLabel>
+                        </div>
+                        <div className="flex items-center space-x-3 border rounded-xl p-4 hover:bg-slate-50 transition-colors cursor-pointer">
+                          <RadioGroupItem value="no" id="issn-no" className="text-primary focus:ring-primary" />
+                          <FormLabel htmlFor="issn-no" className="font-normal cursor-pointer flex-1">
+                            No, I want to start a new journal
+                          </FormLabel>
+                        </div>
+                      </RadioGroup>
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="message"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-base font-bold">Additional Message (Optional)</FormLabel>
+                    <FormControl>
+                      <Textarea 
+                        placeholder="Tell us more about your requirements..." 
+                        className="rounded-xl min-h-[120px] border-input focus:ring-primary/50" 
+                        {...field} 
+                      />
+                    </FormControl>
+                    <p className="text-xs text-muted-foreground mt-1">{(watchValues.message || "").length}/2000 characters</p>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <Button type="submit" size="lg" className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white rounded-funky py-8 text-xl font-bold shadow-xl transition-all hover:scale-[1.01]">
+                Submit Inquiry
+              </Button>
+              
+              <p className="text-sm text-center text-muted-foreground mt-4">
+                By submitting this form, you agree to our Terms of Service and Privacy Policy. 
+                We respect your privacy and will never share your information.
+              </p>
+            </form>
+          </Form>
+        )}
       </div>
-    </section>
+    </div>
   );
 }
