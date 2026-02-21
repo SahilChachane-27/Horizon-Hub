@@ -199,7 +199,7 @@ export default function StartJournalPage() {
                       )}
                     />
 
-                    <Button type="submit" size="lg" className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white rounded-funky py-8 text-xl font-bold shadow-xl transition-all hover:scale-[1.01]">
+                    <Button type="submit" size="lg" className="w-full bg-primary hover:bg-primary/90 text-accent rounded-funky py-8 text-xl font-bold shadow-xl transition-all hover:scale-[1.01]">
                       Submit Inquiry
                     </Button>
                     
