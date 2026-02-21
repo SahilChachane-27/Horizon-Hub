@@ -10,40 +10,144 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { Calendar, Clock, User, Search, Linkedin, Twitter, Instagram, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Calendar, Clock, User, Search, Linkedin, Twitter, Instagram, ChevronLeft, ChevronRight, BookOpen, Layers } from 'lucide-react';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
+const blogPosts = [
+  { 
+    id: 'blog-post-1', 
+    category: 'Industry Insights', 
+    title: 'Why Journals Running on Open Journal System (OJS) Must Transfer to Technical Journals', 
+    date: 'Dec 24, 2025', 
+    readTime: '10 min read', 
+    excerpt: 'For nearly two decades, Open Journal System (OJS) has been a staple. Discover why institutional research ownership now requires a shift to more modern, secure ScholarJMS environments.' 
+  },
+  { 
+    id: 'blog-post-2', 
+    category: 'Technology', 
+    title: 'What is Open Access Journal? A Complete Guide', 
+    date: 'Dec 18, 2025', 
+    readTime: '8 min read', 
+    excerpt: 'A Complete Guide for Researchers, Universities, and Publishers. Academic publishing is undergoing a major transition toward transparency and accessibility.' 
+  },
+  { 
+    id: 'blog-post-3', 
+    category: 'Industry Insights', 
+    title: 'What is a Peer-Reviewed Journal?', 
+    date: 'Dec 09, 2025', 
+    readTime: '6 min read', 
+    excerpt: 'Peer-reviewed journals are the foundation of academic publishing. They validate research, filter out weak or unverified claims, and ensure scholarly integrity.' 
+  },
+  { 
+    id: 'blog-post-4', 
+    category: 'Technology', 
+    title: 'Why Universities Should Start Research Journals? Importance & Benefits', 
+    date: 'Dec 08, 2025', 
+    readTime: '12 min read', 
+    excerpt: 'Research is the backbone of higher education. Every discovery begins with research, and research becomes meaningful when shared through institutional journals.' 
+  },
+  { 
+    id: 'blog-post-5', 
+    category: 'Technology', 
+    title: 'What is a Journal Management System?', 
+    date: 'Dec 01, 2025', 
+    readTime: '7 min read', 
+    excerpt: 'Academic publishing has transformed more in the past decade than in the century before. Explore how modern management systems automate complex editorial tasks.' 
+  },
+  { 
+    id: 'blog-post-6', 
+    category: 'Technology', 
+    title: 'What Are the Requirements to Start a Research Journal?', 
+    date: 'Nov 30, 2025', 
+    readTime: '9 min read', 
+    excerpt: 'Starting a research journal is one of the most impactful steps an academic institution can take. Learn the key administrative and technical requirements.' 
+  },
+  { 
+    id: 'blog-post-7', 
+    category: 'Tutorials', 
+    title: 'How to Get a USA ISSN for Your Journal? Step by Step Guide', 
+    date: 'Nov 30, 2025', 
+    readTime: '15 min read', 
+    excerpt: 'The process involves eligibility checks, sample preparation, and specific technical documentation. Our guide simplifies obtaining a US-based ISSN.' 
+  },
+  { 
+    id: 'blog-post-8', 
+    category: 'Industry Insights', 
+    title: 'The Future of Academic Publishing Is Transparent Peer Review', 
+    date: 'Nov 27, 2025', 
+    readTime: '11 min read', 
+    excerpt: 'Transparency has become one of the most important pillars of modern scholarly publishing. Discover how transparent review models build institutional trust.' 
+  },
+  { 
+    id: 'blog-post-9', 
+    category: 'Industry Insights', 
+    title: 'Launch Your Academic Journal in 24 Hours Without IT Staff', 
+    date: 'Nov 26, 2025', 
+    readTime: '5 min read', 
+    excerpt: 'Launching an academic journal is traditionally considered a long and technical process. Technical Journals changes the game with rapid institutional setup.' 
+  },
+  { 
+    id: 'blog-post-10', 
+    category: 'Company News', 
+    title: 'Why Technical Journals is Preferred Over Traditional Systems', 
+    date: 'Nov 26, 2025', 
+    readTime: '8 min read', 
+    excerpt: 'Academic publishing is moving through one of the biggest transitions in decades. Explore the next-generation features that universities prefer.' 
+  },
+  { 
+    id: 'blog-post-11', 
+    category: 'Company News', 
+    title: 'Technical Journals: Advanced Management & OJS Alternative', 
+    date: 'Nov 19, 2025', 
+    readTime: '7 min read', 
+    excerpt: 'A modern solution for modern publishing. In a rapidly evolving world, universities need tools that go beyond simple archiving to active dissemination.' 
+  },
+];
+
 function BlogHero() {
-  const heroImage = PlaceHolderImages.find(p => p.id === 'blog-hero-bg');
   return (
-    <section id="blog-hero" className="relative h-[60vh] min-h-[400px] flex items-center justify-start text-left text-white">
-      {heroImage && (
-        <Image
-          src={heroImage.imageUrl}
-          alt={heroImage.description}
-          fill
-          className="object-cover"
-          priority
-          data-ai-hint={heroImage.imageHint}
-        />
-      )}
-      <div className="absolute inset-0 bg-black/50" />
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative z-10 max-w-3xl" data-aos="fade-up">
-          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 drop-shadow-lg font-headline">
-            Horizon Insights
+    <section className="bg-primary text-white pt-32 pb-20">
+      <div className="container mx-auto px-4">
+        <div className="max-w-4xl" data-aos="fade-up">
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20 mb-6">
+            <span className="h-2 w-2 rounded-full bg-accent" />
+            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-accent">Knowledge Hub</span>
+          </div>
+          <h1 className="text-4xl md:text-6xl font-bold font-headline italic mb-6 leading-tight">
+            Technical Journals <span className="text-accent">Blog</span>
           </h1>
-          <p className="text-lg md:text-xl text-white/90 mb-8 max-w-3xl drop-shadow-md">
-            Expert perspectives, industry trends, and project stories from the leaders in real estate development and construction.
+          <p className="text-xl text-white/80 max-w-2xl font-medium italic leading-relaxed">
+            Insights, tutorials, and updates from the team at Technical Journals.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-start">
-            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground transition-transform duration-300 ease-in-out hover:scale-105">
-              <a href="#featured-post">Featured Article</a>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="border-accent text-white bg-transparent hover:bg-accent hover:text-accent-foreground transition-transform duration-300 ease-in-out hover:scale-105">
-              <a href="#blog-articles">Browse Articles</a>
-            </Button>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function BlogStats() {
+  return (
+    <section className="py-10 bg-slate-50 border-b border-border/50">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-wrap gap-8 items-center">
+          <div className="flex items-center gap-3">
+            <div className="h-12 w-12 bg-white rounded-xl shadow-md flex items-center justify-center">
+              <BookOpen className="h-6 w-6 text-accent" />
+            </div>
+            <div>
+              <p className="text-2xl font-black text-primary leading-none">11</p>
+              <p className="text-[10px] font-bold uppercase text-primary/40 tracking-widest">Total Articles</p>
+            </div>
+          </div>
+          <div className="flex items-center gap-3">
+            <div className="h-12 w-12 bg-white rounded-xl shadow-md flex items-center justify-center">
+              <Layers className="h-6 w-6 text-accent" />
+            </div>
+            <div>
+              <p className="text-2xl font-black text-primary leading-none">0</p>
+              <p className="text-[10px] font-bold uppercase text-primary/40 tracking-widest">Featured</p>
+            </div>
           </div>
         </div>
       </div>
@@ -51,71 +155,68 @@ function BlogHero() {
   );
 }
 
-const featuredPost = {
-  id: 'featured-post',
-  category: 'Featured Article',
-  title: 'The Future of Sustainable Construction: Innovations Shaping 2026',
-  date: 'June 15, 2026',
-  readTime: '8 min read',
-  author: 'Michael Chen',
-  excerpt: 'As we move further into the decade, sustainable construction practices are evolving beyond basic energy efficiency. From carbon-neutral building materials to AI-driven energy management systems, discover how technology and innovation are creating buildings that give back to the environment rather than just taking less.'
-};
-
 function FeaturedPost() {
-  const postImage = PlaceHolderImages.find(p => p.id === featuredPost.id);
+  const post = blogPosts[0];
+  const postImage = PlaceHolderImages.find(p => p.id === 'journal-hosting-img');
+  
   return (
-    <div id="featured-post" className="mb-12" data-aos="fade-up">
-      <Card className="overflow-hidden shadow-2xl rounded-none">
-        {postImage && (
-          <div className="relative aspect-video">
-            <Image src={postImage.imageUrl} alt={postImage.description} fill className="object-cover" data-ai-hint={postImage.imageHint}/>
+    <div id="featured-post" className="mb-16" data-aos="fade-up">
+      <Card className="overflow-hidden shadow-2xl rounded-funky border-none bg-white group">
+        <div className="grid lg:grid-cols-2">
+          <div className="relative aspect-video lg:aspect-auto">
+            {postImage && (
+              <Image 
+                src={postImage.imageUrl} 
+                alt={post.title} 
+                fill 
+                className="object-cover transition-transform duration-700 group-hover:scale-105" 
+                data-ai-hint={postImage.imageHint}
+              />
+            )}
+            <div className="absolute top-4 left-4 bg-accent text-accent-foreground text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">
+              LATEST UPDATE
+            </div>
           </div>
-        )}
-        <CardContent className="p-6 md:p-8">
-          <span className="text-sm font-semibold text-accent mb-2 inline-block">{featuredPost.category}</span>
-          <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4">{featuredPost.title}</h2>
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-muted-foreground mb-4">
-            <div className="flex items-center gap-2"><Calendar className="h-4 w-4" /> {featuredPost.date}</div>
-            <div className="flex items-center gap-2"><Clock className="h-4 w-4" /> {featuredPost.readTime}</div>
-            <div className="flex items-center gap-2"><User className="h-4 w-4" /> By {featuredPost.author}</div>
+          <div className="p-8 md:p-12 flex flex-col justify-center">
+            <span className="text-xs font-black text-accent mb-4 uppercase tracking-[0.2em]">{post.category}</span>
+            <h2 className="text-2xl md:text-3xl font-bold text-primary mb-6 font-headline italic leading-tight">{post.title}</h2>
+            <div className="flex flex-wrap items-center gap-6 text-xs text-muted-foreground mb-6 font-bold uppercase tracking-widest">
+              <div className="flex items-center gap-2"><Calendar className="h-4 w-4 text-accent" /> {post.date}</div>
+              <div className="flex items-center gap-2"><Clock className="h-4 w-4 text-accent" /> {post.readTime}</div>
+            </div>
+            <p className="text-base text-foreground/70 mb-8 leading-relaxed italic">{post.excerpt}</p>
+            <Button asChild className="w-fit bg-primary text-accent hover:bg-accent hover:text-primary rounded-funky px-8 py-6 text-lg font-black italic shadow-xl transition-all hover:scale-105">
+              <Link href="#">Read More →</Link>
+            </Button>
           </div>
-          <p className="text-base md:text-lg text-foreground/80 mb-6">{featuredPost.excerpt}</p>
-          <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground transition-transform duration-300 ease-in-out hover:scale-105">
-            <Link href="#">Read Full Article</Link>
-          </Button>
-        </CardContent>
+        </div>
       </Card>
     </div>
   );
 }
 
-const blogPosts = [
-  { id: 'blog-post-1', category: 'Urban Development', title: 'Revitalizing Urban Spaces: The Rise of Mixed-Use Communities', date: 'May 28, 2026', readTime: '6 min read', excerpt: 'How integrated residential-commercial developments are transforming city landscapes and creating more sustainable, walkable communities.' },
-  { id: 'blog-post-2', category: 'Residential Design', title: '2026 Luxury Home Trends: What High-End Buyers Are Looking For', date: 'May 12, 2026', readTime: '7 min read', excerpt: 'From wellness-focused design elements to smart home integration, explore the features that define luxury residential properties in today\'s market.' },
-  { id: 'blog-post-3', category: 'Commercial Real Estate', title: 'The Evolution of Office Spaces: Post-Pandemic Design Strategies', date: 'April 30, 2026', readTime: '9 min read', excerpt: 'How hybrid work models are reshaping commercial office design, with a focus on flexibility, collaboration spaces, and employee wellbeing.' },
-  { id: 'blog-post-4', category: 'Technology', title: 'Building with Robotics: How Automation is Transforming Construction', date: 'April 18, 2026', readTime: '10 min read', excerpt: 'From autonomous machinery to 3D printing and drone surveying, explore how robotics are increasing efficiency and safety on construction sites.' },
-  { id: 'blog-post-5', category: 'Renovation', title: 'Historic Preservation Meets Modern Living: Renovation Case Study', date: 'April 5, 2026', readTime: '5 min read', excerpt: 'A detailed look at how we preserved the architectural integrity of a 1920s landmark while integrating contemporary amenities and systems.' },
-  { id: 'blog-post-6', category: 'Market Insights', title: '2026 Real Estate Market Outlook: Trends to Watch', date: 'March 22, 2026', readTime: '8 min read', excerpt: 'An analysis of emerging trends in residential and commercial real estate, with predictions for the coming year based on current economic indicators.' },
-];
-
 function BlogGrid() {
   return (
     <div id="blog-articles" className="grid md:grid-cols-2 gap-8">
-      {blogPosts.map((post, index) => {
-        const postImage = PlaceHolderImages.find(p => p.id === post.id);
+      {blogPosts.slice(1).map((post, index) => {
+        const postImage = PlaceHolderImages.find(p => p.id === `journal-cover-${(index % 6) + 1}`);
         return(
-          <Card key={post.id} className="overflow-hidden shadow-lg flex flex-col rounded-none" data-aos="fade-up" data-aos-delay={index * 100}>
-            {postImage && <div className="relative aspect-video"><Image src={postImage.imageUrl} alt={post.title} fill className="object-cover" data-ai-hint={postImage.imageHint} /></div>}
-            <CardContent className="p-6 flex flex-col flex-grow">
-              <span className="text-sm font-semibold text-accent mb-2">{post.category}</span>
-              <h3 className="text-xl font-bold text-primary mb-3">{post.title}</h3>
-              <div className="flex items-center gap-4 text-xs text-muted-foreground mb-3">
-                <div className="flex items-center gap-1"><Calendar className="h-3 w-3" />{post.date}</div>
-                <div className="flex items-center gap-1"><Clock className="h-3 w-3" />{post.readTime}</div>
+          <Card key={post.id} className="overflow-hidden shadow-lg border-none bg-slate-50 flex flex-col rounded-funky transition-all duration-500 hover:bg-white hover:shadow-2xl hover:-translate-y-2 group" data-aos="fade-up" data-aos-delay={index * 50}>
+            <div className="relative aspect-video overflow-hidden">
+              {postImage && <Image src={postImage.imageUrl} alt={post.title} fill className="object-cover transition-transform duration-700 group-hover:scale-110" data-ai-hint={postImage.imageHint} />}
+              <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm text-primary text-[10px] font-black px-3 py-1 rounded-lg uppercase tracking-widest border border-accent/20">
+                {post.category}
               </div>
-              <p className="text-foreground/70 mb-4 flex-grow">{post.excerpt}</p>
-              <Button asChild variant="outline" size="sm" className="self-start transition-transform duration-300 ease-in-out hover:scale-105">
-                <Link href="#">Read More</Link>
+            </div>
+            <CardContent className="p-8 flex flex-col flex-grow">
+              <h3 className="text-xl font-bold text-primary mb-4 font-headline italic leading-tight group-hover:text-accent transition-colors">{post.title}</h3>
+              <div className="flex items-center gap-4 text-[10px] font-black uppercase text-primary/40 tracking-widest mb-6">
+                <div className="flex items-center gap-1.5"><Calendar className="h-3 w-3 text-accent" />{post.date}</div>
+                <div className="flex items-center gap-1.5"><Clock className="h-3 w-3 text-accent" />{post.readTime}</div>
+              </div>
+              <p className="text-foreground/70 text-sm mb-6 flex-grow leading-relaxed italic line-clamp-3">{post.excerpt}</p>
+              <Button asChild variant="link" className="self-start p-0 h-auto text-primary font-black italic text-sm underline decoration-accent underline-offset-8 hover:text-accent">
+                <Link href="#">Read Full Article →</Link>
               </Button>
             </CardContent>
           </Card>
@@ -125,130 +226,68 @@ function BlogGrid() {
   );
 }
 
-function BlogPagination() {
-  return(
-    <div className="flex justify-center items-center gap-2 mt-12" data-aos="fade-up">
-      <Button variant="outline" size="icon"><ChevronLeft className="h-4 w-4"/></Button>
-      <Button variant="outline" className="w-10 h-10 bg-accent text-accent-foreground">1</Button>
-      <Button variant="outline" size="icon">2</Button>
-      <Button variant="outline" size="icon">3</Button>
-      <Button variant="outline" size="icon">4</Button>
-      <Button variant="outline" size="icon">5</Button>
-      <Button variant="outline" size="icon"><ChevronRight className="h-4 w-4"/></Button>
-    </div>
-  )
-}
-
-const author = {
-  id: 'author-bio',
-  name: 'Michael Chen',
-  title: 'Director of Design and Innovation at Horizon Group',
-  bio: 'with over 15 years of experience in sustainable architecture and urban planning. His work has been featured in numerous industry publications, and he regularly speaks at international conferences on the future of construction.'
-}
-
-function AuthorBio() {
-  const authorImage = PlaceHolderImages.find(p => p.id === author.id);
-  return (
-    <div className="mt-12 bg-secondary p-6 rounded-none" data-aos="fade-up">
-      <Card className="bg-card flex flex-col sm:flex-row items-center gap-6 p-6 rounded-none">
-        {authorImage && <Image src={authorImage.imageUrl} alt={author.name} width={100} height={100} className="rounded-full flex-shrink-0" data-ai-hint={authorImage.imageHint} />}
-        <div>
-          <h4 className="text-xl font-bold text-primary mb-2">About the Editor</h4>
-          <p className="text-foreground/80"><span className="font-bold">{author.name}</span> is the {author.title} {author.bio}</p>
-          <div className="flex gap-4 mt-4">
-            <Link href="#" className="text-muted-foreground hover:text-primary"><Linkedin className="h-5 w-5"/></Link>
-            <Link href="#" className="text-muted-foreground hover:text-primary"><Twitter className="h-5 w-5"/></Link>
-            <Link href="#" className="text-muted-foreground hover:text-primary"><Instagram className="h-5 w-5"/></Link>
-          </div>
-        </div>
-      </Card>
-    </div>
-  );
-}
-
-const categories = [
-  { name: 'Residential Construction', count: 12 },
-  { name: 'Commercial Projects', count: 8 },
-  { name: 'Sustainable Design', count: 15 },
-  { name: 'Urban Development', count: 7 },
-  { name: 'Renovation & Remodeling', count: 10 },
-  { name: 'Industry News', count: 6 },
-  { name: 'Technology & Innovation', count: 9 },
-];
-
-const recentPosts = [
-  { id: 'recent-post-1', title: 'Exterior Renovation Trends for 2026', date: 'June 10, 2026' },
-  { id: 'recent-post-2', title: 'Smart Home Integration in New Developments', date: 'June 3, 2026' },
-  { id: 'recent-post-3', title: 'Mixed-Use Development Success Stories', date: 'May 25, 2026' },
-];
-
-const tags = ['Sustainability', 'Design', 'Innovation', 'LEED', 'Smart Homes', 'Urban Planning', 'Luxury', 'Renovation', 'Technology', 'Market Trends'];
-
 function BlogSidebar() {
-  const [isClient, setIsClient] = useState(false);
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
+  const categories = [
+    { name: 'Industry Insights', count: 4 },
+    { name: 'Technology', count: 5 },
+    { name: 'Tutorials', count: 1 },
+    { name: 'Company News', count: 2 },
+  ];
+
+  const recentPosts = blogPosts.slice(0, 3);
+
   return (
-    <aside className="space-y-8">
-      <Card className="p-6 rounded-none" data-aos="fade-left">
-        <CardHeader className="p-0 mb-4"><CardTitle>Search Articles</CardTitle></CardHeader>
+    <aside className="space-y-10">
+      <Card className="p-8 rounded-funky border-none bg-slate-50 shadow-lg" data-aos="fade-left">
+        <h4 className="text-lg font-bold text-primary mb-6 font-headline italic border-b border-accent/20 pb-2">Search Insights</h4>
         <div className="relative">
-          <Input placeholder="Search blog..." className="pr-10" />
-          <Button variant="ghost" size="icon" className="absolute right-0 top-0 h-full">
+          <Input placeholder="Search by keyword, author..." className="pr-12 rounded-xl h-12 border-primary/10 focus:ring-accent bg-white" />
+          <Button variant="ghost" size="icon" className="absolute right-1 top-1 h-10 w-10 text-primary hover:text-accent">
             <Search className="h-4 w-4"/>
           </Button>
         </div>
       </Card>
-      <Card className="p-6 rounded-none" data-aos="fade-left" data-aos-delay="100">
-        <CardHeader className="p-0 mb-4"><CardTitle>Categories</CardTitle></CardHeader>
+
+      <Card className="p-8 rounded-funky border-none bg-slate-50 shadow-lg" data-aos="fade-left" data-aos-delay="100">
+        <h4 className="text-lg font-bold text-primary mb-6 font-headline italic border-b border-accent/20 pb-2">Academic Categories</h4>
         <ul className="space-y-2">
+          <li>
+            <Link href="#" className="flex justify-between items-center text-xs font-bold text-accent uppercase tracking-widest hover:text-primary transition-colors py-2 border-b border-accent/10">
+              <span>All Categories</span>
+            </Link>
+          </li>
           {categories.map(cat => (
             <li key={cat.name}>
-              <Link href="#" className="flex justify-between items-center text-foreground/80 hover:text-accent">
+              <Link href="#" className="flex justify-between items-center text-xs font-bold text-primary/60 uppercase tracking-widest hover:text-accent transition-colors py-2 border-b border-accent/5">
                 <span>{cat.name}</span>
-                <span className="text-xs bg-muted text-muted-foreground rounded-full px-2 py-0.5">{cat.count}</span>
+                <span className="text-[10px] bg-white text-accent rounded-full px-2 py-0.5 border border-accent/20">{cat.count}</span>
               </Link>
             </li>
           ))}
         </ul>
       </Card>
-      <Card className="p-6 rounded-none" data-aos="fade-left" data-aos-delay="200">
-        <CardHeader className="p-0 mb-4"><CardTitle>Recent Posts</CardTitle></CardHeader>
-        <div className="space-y-4">
-          {recentPosts.map(post => {
-            const postImage = PlaceHolderImages.find(p => p.id === post.id);
-            return (
-              <div key={post.id} className="flex items-center gap-4">
-                {postImage && <Image src={postImage.imageUrl} alt={post.title} width={80} height={60} className="rounded-md object-cover" data-ai-hint={postImage.imageHint} />}
-                <div>
-                  <h6 className="font-semibold text-sm leading-snug hover:text-accent"><Link href="#">{post.title}</Link></h6>
-                  <p className="text-xs text-muted-foreground mt-1">{post.date}</p>
-                </div>
-              </div>
-            )
-          })}
-        </div>
-      </Card>
-       <Card className="p-6 rounded-none" data-aos="fade-left" data-aos-delay="300">
-        <CardHeader className="p-0 mb-4"><CardTitle>Popular Tags</CardTitle></CardHeader>
-        <div className="flex flex-wrap gap-2">
-          {tags.map(tag => (
-            <Button key={tag} variant="outline" size="sm" asChild>
-              <Link href="#">{tag}</Link>
-            </Button>
+
+      <Card className="p-8 rounded-funky border-none bg-slate-50 shadow-lg" data-aos="fade-left" data-aos-delay="200">
+        <h4 className="text-lg font-bold text-primary mb-6 font-headline italic border-b border-accent/20 pb-2">Recent Updates</h4>
+        <div className="space-y-6">
+          {recentPosts.map(post => (
+            <div key={post.id} className="group cursor-pointer">
+              <h6 className="font-bold text-sm text-primary leading-snug group-hover:text-accent transition-colors italic line-clamp-2">
+                <Link href="#">{post.title}</Link>
+              </h6>
+              <p className="text-[10px] font-black uppercase text-primary/30 tracking-widest mt-2">{post.date}</p>
+            </div>
           ))}
         </div>
       </Card>
-      <Card className="p-6 bg-secondary rounded-none" data-aos="fade-left" data-aos-delay="400">
-        <CardHeader className="p-0 mb-4"><CardTitle>Subscribe to Our Newsletter</CardTitle></CardHeader>
-        <p className="text-foreground/70 mb-4">Get the latest insights, trends, and project updates delivered to your inbox.</p>
-        {isClient && (
-        <form className="space-y-4">
-          <Input type="email" placeholder="Your email address" />
-          <Button type="submit" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 transition-transform duration-300 ease-in-out hover:scale-105">Subscribe</Button>
-        </form>
-        )}
+
+      <Card className="p-8 bg-primary text-white rounded-funky shadow-2xl relative overflow-hidden" data-aos="fade-left" data-aos-delay="300">
+        <div className="absolute top-0 right-0 w-32 h-32 bg-accent/10 rounded-full -mr-16 -mt-16" />
+        <h4 className="text-lg font-bold text-accent mb-4 font-headline italic relative z-10">Start Your Journal</h4>
+        <p className="text-xs text-white/70 mb-8 leading-relaxed relative z-10">Join 100+ universities in owning their research output.</p>
+        <Button asChild className="w-full bg-accent text-accent-foreground hover:bg-white hover:text-primary rounded-funky font-black italic shadow-xl relative z-10">
+          <Link href="/start-journal">Get Started →</Link>
+        </Button>
       </Card>
     </aside>
   );
@@ -260,14 +299,18 @@ export default function BlogPage() {
       <Header />
       <main className="flex-1">
         <BlogHero />
-        <section className="py-16 md:py-24">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-3 gap-12">
+        <BlogStats />
+        <section className="py-20">
+          <div className="container mx-auto px-4">
+            <div className="grid lg:grid-cols-3 gap-16">
               <div className="lg:col-span-2">
                 <FeaturedPost />
                 <BlogGrid />
-                <BlogPagination />
-                <AuthorBio />
+                <div className="flex justify-center mt-20" data-aos="fade-up">
+                  <Button variant="outline" className="rounded-funky border-primary text-primary font-black italic px-10 py-6 hover:bg-primary hover:text-white transition-all shadow-lg">
+                    Load More Articles
+                  </Button>
+                </div>
               </div>
               <div>
                 <BlogSidebar />
