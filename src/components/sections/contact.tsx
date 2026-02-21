@@ -132,7 +132,7 @@ export function Contact() {
                           <RadioGroupItem value="no" id="issn-no" className="text-primary focus:ring-primary" />
                           <FormLabel htmlFor="issn-no" className="font-normal cursor-pointer flex-1">
                             No, I want to start a new journal
-                          </Label>
+                          </FormLabel>
                         </div>
                       </RadioGroup>
                     </FormControl>
