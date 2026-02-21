@@ -70,7 +70,7 @@ export default function StartJournalPage() {
                 Start Your Journal with Technical Journals
               </h1>
               <p className="max-w-5xl mx-auto text-lg sm:text-xl text-white/90 font-medium italic">
-                Empowering your institution with Technical Journals integrated ScholarJMS technology.
+                Empowering your institution with Technical Journals.
               </p>
 
               <div className="flex flex-wrap items-center justify-center gap-8 text-white/90">
