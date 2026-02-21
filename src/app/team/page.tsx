@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Header } from '@/components/layout/header';
@@ -142,7 +141,7 @@ export default function TeamPage() {
                       </p>
                       <Button asChild className="w-fit bg-primary text-accent hover:bg-primary/90 rounded-funky font-bold">
                         <Link href={member.profileLink} target="_blank">
-                          View Scholar9 Profile <ExternalLink className="ml-2 h-4 w-4" />
+                          View TechnicalJournals Profile <ExternalLink className="ml-2 h-4 w-4" />
                         </Link>
                       </Button>
                     </div>
