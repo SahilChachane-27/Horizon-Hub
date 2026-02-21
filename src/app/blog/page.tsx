@@ -1,5 +1,3 @@
-
-// @ts-nocheck
 'use client';
 
 import { Header } from '@/components/layout/header';
@@ -7,10 +5,10 @@ import { Footer } from '@/components/layout/footer';
 import { ScrollToTop } from '@/components/layout/scroll-to-top';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { Calendar, Clock, User, Search, Linkedin, Twitter, Instagram, ChevronLeft, ChevronRight, BookOpen, Layers } from 'lucide-react';
+import { Calendar, Clock, Search, BookOpen, Layers, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
@@ -21,7 +19,7 @@ const blogPosts = [
     title: 'Why Journals Running on Open Journal System (OJS) Must Transfer to Technical Journals', 
     date: 'Dec 24, 2025', 
     readTime: '10 min read', 
-    excerpt: 'For nearly two decades, Open Journal System (OJS) has been a staple. Discover why institutional research ownership now requires a shift to more modern, secure ScholarJMS environments.' 
+    excerpt: 'For nearly two decades, Open Journal System (OJS) has been a staple. Discover why institutional research ownership now requires a shift to more modern, secure Technical Journals environments.' 
   },
   { 
     id: 'blog-post-2', 
@@ -74,7 +72,7 @@ const blogPosts = [
   { 
     id: 'blog-post-8', 
     category: 'Industry Insights', 
-    title: 'The Future of Academic Publishing Is Transparent Peer Review', 
+    title: 'Why Technical Journals is the Most Trusted Transparent Peer Review Solution', 
     date: 'Nov 27, 2025', 
     readTime: '11 min read', 
     excerpt: 'Transparency has become one of the most important pillars of modern scholarly publishing. Discover how transparent review models build institutional trust.' 
@@ -117,7 +115,7 @@ function BlogHero() {
           <h1 className="text-4xl md:text-6xl font-bold font-headline italic mb-6 leading-tight">
             Technical Journals <span className="text-accent">Blog</span>
           </h1>
-          <p className="text-xl text-white/80 max-w-2xl font-medium italic leading-relaxed">
+          <p className="text-xl text-white/80 max-w-2xl mx-auto md:mx-0 font-medium italic leading-relaxed">
             Insights, tutorials, and updates from the team at Technical Journals.
           </p>
         </div>
@@ -155,145 +153,15 @@ function BlogStats() {
   );
 }
 
-function FeaturedPost() {
-  const post = blogPosts[0];
-  const postImage = PlaceHolderImages.find(p => p.id === 'journal-hosting-img');
-  
-  return (
-    <div id="featured-post" className="mb-16" data-aos="fade-up">
-      <Card className="overflow-hidden shadow-2xl rounded-funky border-none bg-white group">
-        <div className="grid lg:grid-cols-2">
-          <div className="relative aspect-video lg:aspect-auto">
-            {postImage && (
-              <Image 
-                src={postImage.imageUrl} 
-                alt={post.title} 
-                fill 
-                className="object-cover transition-transform duration-700 group-hover:scale-105" 
-                data-ai-hint={postImage.imageHint}
-              />
-            )}
-            <div className="absolute top-4 left-4 bg-accent text-accent-foreground text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">
-              LATEST UPDATE
-            </div>
-          </div>
-          <div className="p-8 md:p-12 flex flex-col justify-center">
-            <span className="text-xs font-black text-accent mb-4 uppercase tracking-[0.2em]">{post.category}</span>
-            <h2 className="text-2xl md:text-3xl font-bold text-primary mb-6 font-headline italic leading-tight">{post.title}</h2>
-            <div className="flex flex-wrap items-center gap-6 text-xs text-muted-foreground mb-6 font-bold uppercase tracking-widest">
-              <div className="flex items-center gap-2"><Calendar className="h-4 w-4 text-accent" /> {post.date}</div>
-              <div className="flex items-center gap-2"><Clock className="h-4 w-4 text-accent" /> {post.readTime}</div>
-            </div>
-            <p className="text-base text-foreground/70 mb-8 leading-relaxed italic">{post.excerpt}</p>
-            <Button asChild className="w-fit bg-primary text-accent hover:bg-accent hover:text-primary rounded-funky px-8 py-6 text-lg font-black italic shadow-xl transition-all hover:scale-105">
-              <Link href="#">Read More →</Link>
-            </Button>
-          </div>
-        </div>
-      </Card>
-    </div>
-  );
-}
-
-function BlogGrid() {
-  return (
-    <div id="blog-articles" className="grid md:grid-cols-2 gap-8">
-      {blogPosts.slice(1).map((post, index) => {
-        const postImage = PlaceHolderImages.find(p => p.id === `journal-cover-${(index % 6) + 1}`);
-        return(
-          <Card key={post.id} className="overflow-hidden shadow-lg border-none bg-slate-50 flex flex-col rounded-funky transition-all duration-500 hover:bg-white hover:shadow-2xl hover:-translate-y-2 group" data-aos="fade-up" data-aos-delay={index * 50}>
-            <div className="relative aspect-video overflow-hidden">
-              {postImage && <Image src={postImage.imageUrl} alt={post.title} fill className="object-cover transition-transform duration-700 group-hover:scale-110" data-ai-hint={postImage.imageHint} />}
-              <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm text-primary text-[10px] font-black px-3 py-1 rounded-lg uppercase tracking-widest border border-accent/20">
-                {post.category}
-              </div>
-            </div>
-            <CardContent className="p-8 flex flex-col flex-grow">
-              <h3 className="text-xl font-bold text-primary mb-4 font-headline italic leading-tight group-hover:text-accent transition-colors">{post.title}</h3>
-              <div className="flex items-center gap-4 text-[10px] font-black uppercase text-primary/40 tracking-widest mb-6">
-                <div className="flex items-center gap-1.5"><Calendar className="h-3 w-3 text-accent" />{post.date}</div>
-                <div className="flex items-center gap-1.5"><Clock className="h-3 w-3 text-accent" />{post.readTime}</div>
-              </div>
-              <p className="text-foreground/70 text-sm mb-6 flex-grow leading-relaxed italic line-clamp-3">{post.excerpt}</p>
-              <Button asChild variant="link" className="self-start p-0 h-auto text-primary font-black italic text-sm underline decoration-accent underline-offset-8 hover:text-accent">
-                <Link href="#">Read Full Article →</Link>
-              </Button>
-            </CardContent>
-          </Card>
-        )
-      })}
-    </div>
-  );
-}
-
-function BlogSidebar() {
-  const categories = [
-    { name: 'Industry Insights', count: 4 },
-    { name: 'Technology', count: 5 },
-    { name: 'Tutorials', count: 1 },
-    { name: 'Company News', count: 2 },
-  ];
-
-  const recentPosts = blogPosts.slice(0, 3);
-
-  return (
-    <aside className="space-y-10">
-      <Card className="p-8 rounded-funky border-none bg-slate-50 shadow-lg" data-aos="fade-left">
-        <h4 className="text-lg font-bold text-primary mb-6 font-headline italic border-b border-accent/20 pb-2">Search Insights</h4>
-        <div className="relative">
-          <Input placeholder="Search by keyword, author..." className="pr-12 rounded-xl h-12 border-primary/10 focus:ring-accent bg-white" />
-          <Button variant="ghost" size="icon" className="absolute right-1 top-1 h-10 w-10 text-primary hover:text-accent">
-            <Search className="h-4 w-4"/>
-          </Button>
-        </div>
-      </Card>
-
-      <Card className="p-8 rounded-funky border-none bg-slate-50 shadow-lg" data-aos="fade-left" data-aos-delay="100">
-        <h4 className="text-lg font-bold text-primary mb-6 font-headline italic border-b border-accent/20 pb-2">Academic Categories</h4>
-        <ul className="space-y-2">
-          <li>
-            <Link href="#" className="flex justify-between items-center text-xs font-bold text-accent uppercase tracking-widest hover:text-primary transition-colors py-2 border-b border-accent/10">
-              <span>All Categories</span>
-            </Link>
-          </li>
-          {categories.map(cat => (
-            <li key={cat.name}>
-              <Link href="#" className="flex justify-between items-center text-xs font-bold text-primary/60 uppercase tracking-widest hover:text-accent transition-colors py-2 border-b border-accent/5">
-                <span>{cat.name}</span>
-                <span className="text-[10px] bg-white text-accent rounded-full px-2 py-0.5 border border-accent/20">{cat.count}</span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </Card>
-
-      <Card className="p-8 rounded-funky border-none bg-slate-50 shadow-lg" data-aos="fade-left" data-aos-delay="200">
-        <h4 className="text-lg font-bold text-primary mb-6 font-headline italic border-b border-accent/20 pb-2">Recent Updates</h4>
-        <div className="space-y-6">
-          {recentPosts.map(post => (
-            <div key={post.id} className="group cursor-pointer">
-              <h6 className="font-bold text-sm text-primary leading-snug group-hover:text-accent transition-colors italic line-clamp-2">
-                <Link href="#">{post.title}</Link>
-              </h6>
-              <p className="text-[10px] font-black uppercase text-primary/30 tracking-widest mt-2">{post.date}</p>
-            </div>
-          ))}
-        </div>
-      </Card>
-
-      <Card className="p-8 bg-primary text-white rounded-funky shadow-2xl relative overflow-hidden" data-aos="fade-left" data-aos-delay="300">
-        <div className="absolute top-0 right-0 w-32 h-32 bg-accent/10 rounded-full -mr-16 -mt-16" />
-        <h4 className="text-lg font-bold text-accent mb-4 font-headline italic relative z-10">Start Your Journal</h4>
-        <p className="text-xs text-white/70 mb-8 leading-relaxed relative z-10">Join 100+ universities in owning their research output.</p>
-        <Button asChild className="w-full bg-accent text-accent-foreground hover:bg-white hover:text-primary rounded-funky font-black italic shadow-xl relative z-10">
-          <Link href="/start-journal">Get Started →</Link>
-        </Button>
-      </Card>
-    </aside>
-  );
-}
-
 export default function BlogPage() {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) return null;
+
   return (
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
@@ -304,17 +172,108 @@ export default function BlogPage() {
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-3 gap-16">
               <div className="lg:col-span-2">
-                <FeaturedPost />
-                <BlogGrid />
+                {/* Featured Post */}
+                <div className="mb-16" data-aos="fade-up">
+                  <Card className="overflow-hidden shadow-2xl rounded-funky border-none bg-white group">
+                    <div className="grid lg:grid-cols-2">
+                      <div className="relative aspect-video lg:aspect-auto">
+                        <Image 
+                          src={PlaceHolderImages.find(p => p.id === 'journal-hosting-img')?.imageUrl || ''} 
+                          alt="Featured Blog" 
+                          fill 
+                          className="object-cover transition-transform duration-700 group-hover:scale-105" 
+                        />
+                        <div className="absolute top-4 left-4 bg-accent text-accent-foreground text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">
+                          LATEST UPDATE
+                        </div>
+                      </div>
+                      <div className="p-8 md:p-12 flex flex-col justify-center">
+                        <span className="text-xs font-black text-accent mb-4 uppercase tracking-[0.2em]">{blogPosts[0].category}</span>
+                        <h2 className="text-2xl md:text-3xl font-bold text-primary mb-6 font-headline italic leading-tight">{blogPosts[0].title}</h2>
+                        <div className="flex flex-wrap items-center gap-6 text-xs text-muted-foreground mb-6 font-bold uppercase tracking-widest">
+                          <div className="flex items-center gap-2"><Calendar className="h-4 w-4 text-accent" /> {blogPosts[0].date}</div>
+                          <div className="flex items-center gap-2"><Clock className="h-4 w-4 text-accent" /> {blogPosts[0].readTime}</div>
+                        </div>
+                        <p className="text-base text-foreground/70 mb-8 leading-relaxed italic">{blogPosts[0].excerpt}</p>
+                        <Button asChild className="w-fit bg-primary text-accent hover:bg-accent hover:text-primary rounded-funky px-8 py-6 text-lg font-black italic shadow-xl transition-all hover:scale-105">
+                          <Link href="#">Read More →</Link>
+                        </Button>
+                      </div>
+                    </div>
+                  </Card>
+                </div>
+
+                {/* Blog Grid */}
+                <div className="grid md:grid-cols-2 gap-8">
+                  {blogPosts.slice(1).map((post, index) => (
+                    <Card key={post.id} className="overflow-hidden shadow-lg border-none bg-slate-50 flex flex-col rounded-funky transition-all duration-500 hover:bg-white hover:shadow-2xl hover:-translate-y-2 group" data-aos="fade-up" data-aos-delay={index * 50}>
+                      <div className="relative aspect-video overflow-hidden">
+                        <Image 
+                          src={PlaceHolderImages.find(p => p.id === `journal-cover-${(index % 6) + 1}`)?.imageUrl || ''} 
+                          alt={post.title} 
+                          fill 
+                          className="object-cover transition-transform duration-700 group-hover:scale-110" 
+                        />
+                        <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm text-primary text-[10px] font-black px-3 py-1 rounded-lg uppercase tracking-widest border border-accent/20">
+                          {post.category}
+                        </div>
+                      </div>
+                      <CardContent className="p-8 flex flex-col flex-grow">
+                        <h3 className="text-xl font-bold text-primary mb-4 font-headline italic leading-tight group-hover:text-accent transition-colors">{post.title}</h3>
+                        <div className="flex items-center gap-4 text-[10px] font-black uppercase text-primary/40 tracking-widest mb-6">
+                          <div className="flex items-center gap-1.5"><Calendar className="h-3 w-3 text-accent" />{post.date}</div>
+                          <div className="flex items-center gap-1.5"><Clock className="h-3 w-3 text-accent" />{post.readTime}</div>
+                        </div>
+                        <p className="text-foreground/70 text-sm mb-6 flex-grow leading-relaxed italic line-clamp-3">{post.excerpt}</p>
+                        <Button asChild variant="link" className="self-start p-0 h-auto text-primary font-black italic text-sm underline decoration-accent underline-offset-8 hover:text-accent">
+                          <Link href="#">Read Full Article →</Link>
+                        </Button>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+
                 <div className="flex justify-center mt-20" data-aos="fade-up">
                   <Button variant="outline" className="rounded-funky border-primary text-primary font-black italic px-10 py-6 hover:bg-primary hover:text-white transition-all shadow-lg">
                     Load More Articles
                   </Button>
                 </div>
               </div>
-              <div>
-                <BlogSidebar />
-              </div>
+
+              {/* Sidebar */}
+              <aside className="space-y-10">
+                <Card className="p-8 rounded-funky border-none bg-slate-50 shadow-lg" data-aos="fade-left">
+                  <h4 className="text-lg font-bold text-primary mb-6 font-headline italic border-b border-accent/20 pb-2">Search Insights</h4>
+                  <div className="relative">
+                    <Input placeholder="Search by keyword, author..." className="pr-12 rounded-xl h-12 border-primary/10 focus:ring-accent bg-white" />
+                    <Button variant="ghost" size="icon" className="absolute right-1 top-1 h-10 w-10 text-primary hover:text-accent">
+                      <Search className="h-4 w-4"/>
+                    </Button>
+                  </div>
+                </Card>
+
+                <Card className="p-8 rounded-funky border-none bg-slate-50 shadow-lg" data-aos="fade-left" data-aos-delay="100">
+                  <h4 className="text-lg font-bold text-primary mb-6 font-headline italic border-b border-accent/20 pb-2">Academic Categories</h4>
+                  <ul className="space-y-2">
+                    {['Industry Insights', 'Technology', 'Tutorials', 'Company News'].map(cat => (
+                      <li key={cat}>
+                        <Link href="#" className="flex justify-between items-center text-xs font-bold text-primary/60 uppercase tracking-widest hover:text-accent transition-colors py-2 border-b border-accent/5">
+                          <span>{cat}</span>
+                          <ChevronRight className="h-3 w-3 text-accent" />
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </Card>
+
+                <Card className="p-8 bg-primary text-white rounded-funky shadow-2xl relative overflow-hidden" data-aos="fade-left" data-aos-delay="200">
+                  <h4 className="text-lg font-bold text-accent mb-4 font-headline italic relative z-10">Start Your Journal</h4>
+                  <p className="text-xs text-white/70 mb-8 leading-relaxed relative z-10">Join 100+ universities in owning their research output.</p>
+                  <Button asChild className="w-full bg-accent text-accent-foreground hover:bg-white hover:text-primary rounded-funky font-black italic shadow-xl relative z-10">
+                    <Link href="/start-journal">Get Started →</Link>
+                  </Button>
+                </Card>
+              </aside>
             </div>
           </div>
         </section>
