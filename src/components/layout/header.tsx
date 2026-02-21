@@ -21,6 +21,7 @@ const navLinks = [
   { href: '/journals', label: 'Journals Hosted' },
   { href: '/for-universities', label: 'For Universities' },
   { href: '/pricing', label: 'Subscription Plans' },
+  { href: '/team', label: 'Team' },
   { href: '/contact', label: 'Contact Us' },
 ];
 
