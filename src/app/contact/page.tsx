@@ -17,8 +17,8 @@ export default function ContactPage() {
   return (
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
-      <main className="flex-1">
-        <section className="relative flex flex-col items-center justify-center overflow-hidden bg-primary -mt-20 pt-32 pb-24">
+      <main className="flex-1 pt-16">
+        <section className="relative flex flex-col items-center justify-center overflow-hidden bg-primary pt-32 pb-24">
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="space-y-8">
               <h1 className="text-3xl sm:text-5xl font-bold leading-tight text-white font-headline">
