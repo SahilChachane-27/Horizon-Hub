@@ -1,10 +1,10 @@
-
 'use client';
 
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Book, Code, Shield, Terminal } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 const docs = [
   { icon: Book, title: "User Guide", desc: "Learn how to manage your journal from start to finish." },
@@ -14,19 +14,28 @@ const docs = [
 ];
 
 export default function DocsPage() {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) return null;
+
   return (
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
-      <main className="flex-1 pt-32 pb-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16" data-aos="fade-up">
-            <h1 className="text-4xl md:text-5xl font-bold text-primary font-headline">Documentation Hub</h1>
-            <div className="mt-4 w-24 h-1 bg-accent mx-auto"></div>
-            <p className="mt-6 text-foreground/80 max-w-2xl mx-auto">
+      <main className="flex-1">
+        <section className="bg-primary text-white pt-32 pb-24 text-center">
+          <div className="container mx-auto px-4">
+            <h1 className="text-4xl md:text-5xl font-bold font-headline mb-6" data-aos="fade-up">Documentation Hub</h1>
+            <p className="text-xl text-white/80 max-w-2xl mx-auto italic font-medium" data-aos="fade-up" data-aos-delay="100">
               Everything you need to know about setting up and running your university journal.
             </p>
           </div>
+        </section>
 
+        <div className="container mx-auto px-4 py-20">
           <div className="grid md:grid-cols-2 gap-8">
             {docs.map((doc, i) => (
               <Card key={i} className="rounded-funky border border-border/50 shadow-md hover:shadow-xl transition-all cursor-pointer group" data-aos="fade-up" data-aos-delay={i * 100}>

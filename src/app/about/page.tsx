@@ -5,6 +5,7 @@ import { Footer } from '@/components/layout/footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Shield, BookOpen, UserCheck, Globe, Scale, Landmark, Award, ShieldAlert } from 'lucide-react';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 const highlights = [
   { icon: Shield, title: "100% University-only hosting", description: "Strictly limited to academic institutions to preserve research ownership." },
@@ -15,17 +16,28 @@ const highlights = [
 ];
 
 export default function AboutPage() {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) return null;
+
   return (
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
-      <main className="flex-1 pt-32 pb-24">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-20" data-aos="fade-up">
-            <h1 className="text-4xl md:text-6xl font-bold text-primary font-headline">The Academic Haven</h1>
-            <div className="mt-4 w-24 h-1 bg-accent mx-auto"></div>
-            <p className="mt-6 text-foreground/80 max-w-2xl mx-auto italic font-medium">Technical Journals: Reclaiming research ownership for Universities and Academic Institutions globally.</p>
+      <main className="flex-1">
+        <section className="bg-primary text-white pt-32 pb-24 text-center">
+          <div className="container mx-auto px-4">
+            <h1 className="text-4xl md:text-6xl font-bold font-headline italic mb-6" data-aos="fade-up">The Academic Haven</h1>
+            <p className="text-xl text-white/80 max-w-2xl mx-auto italic font-medium" data-aos="fade-up" data-aos-delay="100">
+              Technical Journals: Reclaiming research ownership for Universities and Academic Institutions globally.
+            </p>
           </div>
+        </section>
 
+        <div className="container mx-auto px-4 py-20">
           <div className="grid lg:grid-cols-2 gap-20 items-center mb-32">
             <div className="space-y-8" data-aos="fade-right">
               <div>

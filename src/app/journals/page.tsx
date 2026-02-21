@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Search, Filter, BookOpen, ExternalLink, Globe, Landmark, Hash, Tag } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const subjects = [
   'Engineering', 'Technology', 'Management', 'Medical & Paramedical', 
@@ -25,18 +25,28 @@ const mockJournals = [
 
 export default function JournalHostedPage() {
   const [searchTerm, setSearchTerm] = useState('');
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) return null;
 
   return (
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
-      <main className="flex-1 pt-32 pb-24">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16" data-aos="fade-up">
-            <h1 className="text-4xl md:text-6xl font-bold text-primary font-headline">Institutional Sources</h1>
-            <div className="mt-4 w-24 h-1 bg-accent mx-auto"></div>
-            <p className="mt-6 text-foreground/80 max-w-3xl mx-auto italic font-medium">Browse our comprehensive directory of university-owned journals, managed through industry-grade ScholarJMS systems.</p>
+      <main className="flex-1">
+        <section className="bg-primary text-white pt-32 pb-24 text-center">
+          <div className="container mx-auto px-4">
+            <h1 className="text-4xl md:text-6xl font-bold font-headline mb-6" data-aos="fade-up">Institutional Sources</h1>
+            <p className="text-xl text-white/80 max-w-3xl mx-auto italic font-medium" data-aos="fade-up" data-aos-delay="100">
+              Browse our comprehensive directory of university-owned journals, managed through industry-grade ScholarJMS systems.
+            </p>
           </div>
+        </section>
 
+        <div className="container mx-auto px-4 py-20">
           {/* Scopus Inspired Search and Filters */}
           <Card className="mb-16 rounded-funky shadow-2xl border-accent/10 overflow-hidden bg-slate-50/50 backdrop-blur-sm" data-aos="fade-up">
             <CardContent className="p-8 space-y-8">

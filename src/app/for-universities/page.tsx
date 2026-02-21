@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { TrendingUp, Award, Users, CheckCircle, ArrowRight, Zap, ShieldCheck, Globe, Database } from 'lucide-react';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 const reasons = [
   { icon: TrendingUp, text: "Enhances research output and institutional impact" },
@@ -24,19 +25,28 @@ const steps = [
 ];
 
 export default function ForUniversitiesPage() {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) return null;
+
   return (
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
-      <main className="flex-1 pt-32 pb-24">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-20" data-aos="fade-up">
-            <h1 className="text-4xl md:text-6xl font-bold text-primary font-headline italic">For Universities</h1>
-            <div className="mt-4 w-24 h-1 bg-accent mx-auto"></div>
-            <p className="mt-6 text-foreground/80 max-w-3xl mx-auto italic font-medium">
+      <main className="flex-1">
+        <section className="bg-primary text-white pt-32 pb-24 text-center">
+          <div className="container mx-auto px-4">
+            <h1 className="text-4xl md:text-6xl font-bold font-headline italic mb-6" data-aos="fade-up">For Universities</h1>
+            <p className="text-xl text-white/80 max-w-3xl mx-auto italic font-medium" data-aos="fade-up" data-aos-delay="100">
               Empowering academic institutions to own their research output and enhance global scholarly standing through professional journal management.
             </p>
           </div>
+        </section>
 
+        <div className="container mx-auto px-4 py-20">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-32">
             {reasons.map((r, i) => (
               <Card key={i} className="rounded-funky bg-primary text-primary-foreground text-center group hover:bg-accent transition-all duration-500 shadow-2xl relative overflow-hidden" data-aos="zoom-in" data-aos-delay={i * 100}>
