@@ -20,7 +20,6 @@ const navLinks = [
   { href: '/services', label: 'Our Services' },
   { href: '/journals', label: 'Journals Hosted' },
   { href: '/for-universities', label: 'For Universities' },
-  { href: '/documentation', label: 'Resources' },
   { href: '/pricing', label: 'Subscription Plans' },
   { href: '/contact', label: 'Contact Us' },
 ];
