@@ -57,10 +57,12 @@ export default function StartJournalPage() {
     form.reset();
   }
 
+  if (!isClient) return null;
+
   return (
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
-      <main className="flex-1 pt-16">
+      <main className="flex-1">
         <section className="relative flex flex-col items-center justify-center overflow-hidden bg-primary pt-32 pb-24 text-center">
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="space-y-8">
@@ -68,7 +70,7 @@ export default function StartJournalPage() {
                 Start Your Journal with Technical Journals
               </h1>
               <p className="max-w-5xl mx-auto text-lg sm:text-xl text-white/90 font-medium italic">
-                Empowering your institution with integrated ScholarJMS technology.
+                Empowering your institution with Technical Journals integrated ScholarJMS technology.
               </p>
 
               <div className="flex flex-wrap items-center justify-center gap-8 text-white/90">
@@ -94,120 +96,119 @@ export default function StartJournalPage() {
         <section className="bg-slate-50 py-20">
           <div className="container mx-auto px-4 max-w-4xl">
             <div className="bg-white p-8 md:p-12 rounded-funky shadow-2xl border border-border/50">
-              {isClient && (
-                <Form {...form}>
-                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+              <div className="text-center mb-10">
+                <h2 className="text-3xl font-bold text-primary font-headline italic">Institutional Inquiry Form</h2>
+                <div className="mt-2 w-16 h-1 bg-accent mx-auto"></div>
+              </div>
+
+              <Form {...form}>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+                  <FormField
+                    control={form.control}
+                    name="name"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-base font-bold text-primary">Full Name <span className="text-destructive">*</span></FormLabel>
+                        <FormControl>
+                          <Input placeholder="Enter your full name" {...field} className="rounded-xl h-12 border-input focus:ring-primary/50" />
+                        </FormControl>
+                        <p className="text-xs text-muted-foreground mt-1">{(watchValues.name || "").length}/255 characters</p>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <div className="grid md:grid-cols-2 gap-8">
                     <FormField
                       control={form.control}
-                      name="name"
+                      name="email"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-base font-bold text-primary">Full Name <span className="text-destructive">*</span></FormLabel>
+                          <FormLabel className="text-base font-bold text-primary">Email Address <span className="text-destructive">*</span></FormLabel>
                           <FormControl>
-                            <Input placeholder="Enter your full name" {...field} className="rounded-xl h-12 border-input focus:ring-primary/50" />
+                            <Input placeholder="Enter your email address" {...field} className="rounded-xl h-12 border-input focus:ring-primary/50" />
                           </FormControl>
-                          <p className="text-xs text-muted-foreground mt-1">{(watchValues.name || "").length}/255 characters</p>
+                          <p className="text-xs text-muted-foreground mt-1">{(watchValues.email || "").length}/255 characters</p>
                           <FormMessage />
                         </FormItem>
                       )}
                     />
-
-                    <div className="grid md:grid-cols-2 gap-8">
-                      <FormField
-                        control={form.control}
-                        name="email"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel className="text-base font-bold text-primary">Email Address <span className="text-destructive">*</span></FormLabel>
-                            <FormControl>
-                              <Input placeholder="Enter your email address" {...field} className="rounded-xl h-12 border-input focus:ring-primary/50" />
-                            </FormControl>
-                            <p className="text-xs text-muted-foreground mt-1">{(watchValues.email || "").length}/255 characters</p>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                      <FormField
-                        control={form.control}
-                        name="mobile"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel className="text-base font-bold text-primary">Mobile Number <span className="text-destructive">*</span></FormLabel>
-                            <FormControl>
-                              <Input placeholder="Enter your mobile number" {...field} className="rounded-xl h-12 border-input focus:ring-primary/50" />
-                            </FormControl>
-                            <p className="text-xs text-muted-foreground mt-1">{(watchValues.mobile || "").length}/20 characters</p>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                    </div>
-
                     <FormField
                       control={form.control}
-                      name="hasIssn"
-                      render={({ field }) => (
-                        <FormItem className="space-y-3">
-                          <FormLabel className="text-base font-bold text-primary">Do you have ISSN for your journal? <span className="text-destructive">*</span></FormLabel>
-                          <FormControl>
-                            <RadioGroup
-                              onValueChange={field.onChange}
-                              defaultValue={field.value}
-                              className="grid md:grid-cols-2 gap-4"
-                            >
-                              <div className="flex items-center space-x-3 border rounded-xl p-4 hover:bg-slate-50 transition-colors cursor-pointer">
-                                <RadioGroupItem value="yes" id="issn-yes" className="text-primary focus:ring-primary" />
-                                <FormLabel htmlFor="issn-yes" className="font-normal cursor-pointer flex-1 text-primary/80">
-                                  Yes, I have ISSN
-                                </FormLabel>
-                              </div>
-                              <div className="flex items-center space-x-3 border rounded-xl p-4 hover:bg-slate-50 transition-colors cursor-pointer">
-                                <RadioGroupItem value="no" id="issn-no" className="text-primary focus:ring-primary" />
-                                <FormLabel htmlFor="issn-no" className="font-normal cursor-pointer flex-1 text-primary/80">
-                                  No, I want to start a new journal
-                                </FormLabel>
-                              </div>
-                            </RadioGroup>
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <FormField
-                      control={form.control}
-                      name="message"
+                      name="mobile"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-base font-bold text-primary">Additional Message (Optional)</FormLabel>
+                          <FormLabel className="text-base font-bold text-primary">Mobile Number <span className="text-destructive">*</span></FormLabel>
                           <FormControl>
-                            <Textarea 
-                              placeholder="Tell us more about your requirements..." 
-                              className="rounded-xl min-h-[120px] border-input focus:ring-primary/50" 
-                              {...field} 
-                            />
+                            <Input placeholder="Enter your mobile number" {...field} className="rounded-xl h-12 border-input focus:ring-primary/50" />
                           </FormControl>
-                          <p className="text-xs text-muted-foreground mt-1">{(watchValues.message || "").length}/2000 characters</p>
+                          <p className="text-xs text-muted-foreground mt-1">{(watchValues.mobile || "").length}/20 characters</p>
                           <FormMessage />
                         </FormItem>
                       )}
                     />
+                  </div>
 
-                    <Button type="submit" size="lg" className="w-full bg-primary hover:bg-primary/90 text-accent rounded-funky py-8 text-xl font-bold shadow-xl transition-all hover:scale-[1.01]">
-                      Submit Inquiry
-                    </Button>
-                    
-                    <p className="text-sm text-center text-muted-foreground mt-4">
-                      By submitting this form, you agree to our Terms of Service and Privacy Policy. 
-                      We respect your privacy and will never share your information.
-                    </p>
-                  </form>
-                </Form>
-              )}
-            </div>
-            
-            <div className="text-center mt-12 text-sm text-muted-foreground">
-              <p>Need help? Contact us at <a href="mailto:support@technicaljournals.org" className="text-primary font-bold hover:underline">support@technicaljournals.org</a></p>
+                  <FormField
+                    control={form.control}
+                    name="hasIssn"
+                    render={({ field }) => (
+                      <FormItem className="space-y-3">
+                        <FormLabel className="text-base font-bold text-primary">Do you have ISSN for your journal? <span className="text-destructive">*</span></FormLabel>
+                        <FormControl>
+                          <RadioGroup
+                            onValueChange={field.onChange}
+                            defaultValue={field.value}
+                            className="grid md:grid-cols-2 gap-4"
+                          >
+                            <div className="flex items-center space-x-3 border rounded-xl p-4 hover:bg-slate-50 transition-colors cursor-pointer">
+                              <RadioGroupItem value="yes" id="issn-yes" className="text-primary focus:ring-primary" />
+                              <FormLabel htmlFor="issn-yes" className="font-normal cursor-pointer flex-1 text-primary/80">
+                                Yes, I have ISSN
+                              </FormLabel>
+                            </div>
+                            <div className="flex items-center space-x-3 border rounded-xl p-4 hover:bg-slate-50 transition-colors cursor-pointer">
+                              <RadioGroupItem value="no" id="issn-no" className="text-primary focus:ring-primary" />
+                              <FormLabel htmlFor="issn-no" className="font-normal cursor-pointer flex-1 text-primary/80">
+                                No, I want to start a new journal
+                              </FormLabel>
+                            </div>
+                          </RadioGroup>
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={form.control}
+                    name="message"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-base font-bold text-primary">Additional Message (Optional)</FormLabel>
+                        <FormControl>
+                          <Textarea 
+                            placeholder="Tell us more about your requirements..." 
+                            className="rounded-xl min-h-[120px] border-input focus:ring-primary/50" 
+                            {...field} 
+                          />
+                        </FormControl>
+                        <p className="text-xs text-muted-foreground mt-1">{(watchValues.message || "").length}/2000 characters</p>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <Button type="submit" size="lg" className="w-full bg-primary hover:bg-primary/90 text-accent rounded-funky py-8 text-xl font-bold shadow-xl transition-all hover:scale-[1.01]">
+                    Submit Inquiry
+                  </Button>
+                  
+                  <p className="text-sm text-center text-muted-foreground mt-4">
+                    By submitting this form, you agree to our Terms of Service and Privacy Policy. 
+                    We respect your privacy and will never share your information.
+                  </p>
+                </form>
+              </Form>
             </div>
           </div>
         </section>
