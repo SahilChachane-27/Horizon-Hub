@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import {
@@ -32,7 +32,7 @@ export function Header() {
   useEffect(() => {
     setIsClient(true);
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -42,8 +42,10 @@ export function Header() {
     <>
       {navLinks.map((link) => {
         const className = cn(
-          "text-lg lg:text-[10px] xl:text-xs font-bold transition-all whitespace-nowrap uppercase tracking-wider",
-          scrolled ? "text-primary-foreground/80 hover:text-accent" : "text-white/80 hover:text-accent"
+          "text-sm font-bold transition-all whitespace-nowrap uppercase tracking-wider",
+          inSheet 
+            ? "text-lg text-white/80 hover:text-accent py-2" 
+            : "text-white/80 hover:text-accent lg:text-[10px] xl:text-xs"
         );
 
         if (inSheet) {
@@ -67,18 +69,18 @@ export function Header() {
   return (
     <header
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-500',
-        scrolled ? 'bg-primary/95 backdrop-blur-md shadow-xl border-b border-accent/20 py-2' : 'bg-primary py-4'
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-primary',
+        scrolled ? 'shadow-xl py-2 border-b border-accent/10' : 'py-4'
       )}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link href="/" className="flex items-center gap-2 group">
+          <Link href="/" className="flex items-center gap-2 group shrink-0">
             <div className="bg-white rounded-lg p-1.5 shadow-lg group-hover:scale-110 transition-transform duration-300">
               <span className="text-primary font-black text-xl leading-none">TJ</span>
             </div>
             <div className="flex flex-col">
-              <div className="text-xl font-bold text-accent font-headline leading-none">
+              <div className="text-lg md:text-xl font-bold text-accent font-headline leading-none">
                 Technical<span className="ml-0.5">Journals</span>
               </div>
               <span className="text-[8px] text-white/60 tracking-widest uppercase font-bold">University Journal Hosting</span>
@@ -89,8 +91,8 @@ export function Header() {
             <nav className="flex items-center space-x-3 xl:space-x-5">
               <NavContent />
             </nav>
-            <Button asChild className="bg-accent hover:bg-white hover:text-primary text-accent-foreground rounded-funky transition-all duration-300 hover:scale-105 shadow-lg h-10 px-6 font-bold text-xs">
-              <Link href="/start-journal">Begin your Research Journey</Link>
+            <Button asChild className="bg-accent hover:bg-white hover:text-primary text-accent-foreground rounded-funky transition-all duration-300 hover:scale-105 shadow-lg h-10 px-6 font-bold text-[10px] xl:text-xs">
+              <Link href="/start-journal">Begin Research</Link>
             </Button>
           </div>
 
@@ -103,14 +105,14 @@ export function Header() {
                     <span className="sr-only">Toggle navigation</span>
                   </Button>
                 </SheetTrigger>
-                <SheetContent side="right" className="bg-primary border-l-accent/20 text-white w-72 p-6 overflow-y-auto">
-                  <SheetHeader>
-                    <SheetTitle className="text-accent text-left font-headline italic">Menu</SheetTitle>
+                <SheetContent side="right" className="bg-primary border-l-accent/20 text-white w-[280px] sm:w-[350px] p-6 overflow-y-auto">
+                  <SheetHeader className="mb-8">
+                    <SheetTitle className="text-accent text-left font-headline italic text-2xl">Navigation</SheetTitle>
                   </SheetHeader>
-                  <nav className="flex flex-col items-start space-y-6 mt-10">
+                  <nav className="flex flex-col items-start space-y-4">
                     <NavContent inSheet />
                     <SheetClose asChild>
-                      <Button asChild className="w-full bg-accent hover:bg-white hover:text-primary text-accent-foreground mt-4 rounded-funky transition-all font-bold">
+                      <Button asChild className="w-full bg-accent hover:bg-white hover:text-primary text-accent-foreground mt-6 rounded-funky transition-all font-bold">
                         <Link href="/start-journal">Begin Research Journey</Link>
                       </Button>
                     </SheetClose>

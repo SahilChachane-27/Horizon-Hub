@@ -5,14 +5,6 @@ import { Footer } from '@/components/layout/footer';
 import { Hero } from '@/components/sections/hero';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { 
-  Table, 
-  TableBody, 
-  TableCell, 
-  TableHead, 
-  TableHeader, 
-  TableRow 
-} from "@/components/ui/table";
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -23,14 +15,7 @@ import {
   Globe, 
   CheckCircle2, 
   Database, 
-  Rocket, 
-  Copyright, 
-  Lock, 
   Link as LinkIcon, 
-  FileCheck, 
-  Headset, 
-  Search, 
-  ShieldAlert,
   FileText,
   Users,
   PenTool,
@@ -43,35 +28,22 @@ import {
 } from 'lucide-react';
 import { ScrollToTop } from '@/components/layout/scroll-to-top';
 
-const certifications = [
-  { icon: Rocket, title: "DPIIT Startup India", description: "DPIIT Recognized Startup" },
-  { icon: Copyright, title: "Creative Commons", description: "Creative Commons license" },
-  { icon: CheckCircle2, title: "UGC CARE", description: "Compliance Ready Platform" },
-  { icon: Lock, title: "SSL Encrypted", description: "Bank-Grade Security" },
-  { icon: LinkIcon, title: "CrossRef Partner", description: "Official DOI Registration" },
-  { icon: FileCheck, title: "DOAJ", description: "Compliance Ready Platform" },
-  { icon: Headset, title: "24/7 Support", description: "Always Here to Help" },
-  { icon: Search, title: "Scopus", description: "Compliance Ready Platform" },
-  { icon: Globe, title: "Web of Science", description: "Compliance Ready Platform" },
-  { icon: ShieldAlert, title: "Ithenticate", description: "Smart Plagiarism Checker" }
-];
-
 const whyUsFeatures = [
-  { icon: ShieldCheck, title: "Exclusive hosting for Universities", description: "Dedicated exclusively to academic institutions and university-owned research journals." },
-  { icon: Globe, title: "No private publishers allowed", description: "Maintaining a strictly non-commercial academic environment for maximum research integrity." },
-  { icon: Server, title: "Secure ScholarJMS hosting", description: "State-of-the-art security for Scholar Journal Management Systems (ScholarJMS)." },
+  { icon: ShieldCheck, title: "Exclusive for Universities", description: "Dedicated exclusively to academic institutions and university-owned research journals." },
+  { icon: Globe, title: "Non-Commercial", description: "Maintaining a strictly non-commercial academic environment for maximum research integrity." },
+  { icon: Server, title: "Secure ScholarJMS", description: "State-of-the-art security for Scholar Journal Management Systems (ScholarJMS)." },
   { icon: CheckCircle2, title: "99.9% Uptime", description: "Reliable access for researchers worldwide with redundant server architecture." },
-  { icon: Workflow, title: "End-to-end workflow", description: "Seamless management from submission to peer review and final publication." },
-  { icon: Database, title: "Indexing support", description: "Dedicated format guidance for Scopus, DOAJ, and Web of Science indexing readiness." }
+  { icon: Workflow, title: "End-to-End Workflow", description: "Seamless management from submission to peer review and final publication." },
+  { icon: Database, title: "Indexing Readiness", description: "Dedicated format guidance for Scopus, DOAJ, and Web of Science indexing readiness." }
 ];
 
 const platformFeatures = [
-  { icon: FileText, title: "Advanced Manuscript Management", description: "Streamlined submission workflows with automated screening and intelligent manuscript routing for optimal editorial efficiency." },
-  { icon: Users, title: "Transparent Peer Review System", description: "Sophisticated reviewer matching algorithms, customizable review forms, and automated workflow management in a transparent peer review environment." },
-  { icon: LinkIcon, title: "Integrated DOI Management", description: "Seamless DOI assignment and registration with automated metadata generation and CrossRef integration." },
-  { icon: PenTool, title: "Professional Publication Tools", description: "Advanced article formatting, metadata management, issue scheduling, and automated publication workflows." },
-  { icon: Layout, title: "Customizable Journal Architecture", description: "Configurable editorial policies, submission guidelines, and team management interfaces - all without technical implementation requirements." },
-  { icon: Server, title: "Complete Infrastructure Management", description: "Enterprise hosting, domain management, and server maintenance - enabling complete focus on scholarly content." }
+  { icon: FileText, title: "Manuscript Management", description: "Streamlined submission workflows with automated screening and intelligent routing." },
+  { icon: Users, title: "Transparent Peer Review", description: "Sophisticated matching algorithms and customizable review forms in a secure environment." },
+  { icon: LinkIcon, title: "DOI Integration", description: "Seamless DOI assignment and registration with automated CrossRef integration." },
+  { icon: PenTool, title: "Publication Tools", description: "Advanced article formatting, metadata management, and automated publication workflows." },
+  { icon: Layout, title: "Custom Architecture", description: "Configurable editorial policies and submission guidelines without technical requirements." },
+  { icon: Server, title: "Infra Management", description: "Enterprise hosting, domain management, and server maintenance handled by experts." }
 ];
 
 const partners = [
@@ -98,61 +70,22 @@ export default function Home() {
       <main className="flex-1 pt-20">
         <Hero />
 
-        {/* Trusted & Certified Table Section */}
-        <section className="py-24 bg-slate-50 border-y border-border/50 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-accent/5 rounded-full -mr-32 -mt-32 animate-pulse" />
-          <div className="container mx-auto px-4 relative z-10">
-            <div className="text-center mb-12" data-aos="fade-up">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Trusted &amp; Certified by Leading Organizations</h2>
-              <div className="mt-4 w-24 h-1 bg-accent mx-auto"></div>
-              <p className="mt-6 text-foreground/60 font-medium italic">Verified institutional standards and compliance frameworks.</p>
-            </div>
-            
-            <div className="max-w-5xl mx-auto bg-white rounded-funky shadow-2xl border border-border/30 overflow-hidden" data-aos="fade-up">
-              <Table>
-                <TableHeader className="bg-primary hover:bg-primary">
-                  <TableRow className="hover:bg-primary border-none">
-                    <TableHead className="text-white font-bold w-24 py-6 text-center">Status</TableHead>
-                    <TableHead className="text-white font-bold py-6">Organization / Standard</TableHead>
-                    <TableHead className="text-white font-bold py-6">Recognition &amp; Compliance</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {certifications.map((cert, i) => (
-                    <TableRow key={i} className="hover:bg-accent/5 transition-colors border-b border-border/50">
-                      <TableCell className="text-center">
-                        <div className="h-10 w-10 bg-secondary/30 rounded-full flex items-center justify-center mx-auto group">
-                          <cert.icon className="h-5 w-5 text-accent transition-transform group-hover:scale-110" />
-                        </div>
-                      </TableCell>
-                      <TableCell className="font-bold text-primary py-5">{cert.title}</TableCell>
-                      <TableCell className="py-5">
-                        <span className="text-[10px] text-foreground/60 uppercase font-black tracking-widest">{cert.description}</span>
-                      </TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </div>
-          </div>
-        </section>
-
         {/* Why Technical Journals? */}
-        <section className="py-24 bg-white relative">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16" data-aos="fade-up">
+        <section className="py-16 md:py-24 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12 md:mb-16" data-aos="fade-up">
               <h2 className="text-3xl md:text-5xl font-bold text-primary font-headline">Why Technical Journals?</h2>
-              <div className="mt-4 w-24 h-1 bg-accent mx-auto"></div>
-              <p className="mt-6 text-lg text-foreground/80 max-w-2xl mx-auto italic font-medium">University-focused hosting that prioritizes academic ethics, research visibility, and institutional ownership.</p>
+              <div className="mt-4 w-20 md:w-24 h-1 bg-accent mx-auto"></div>
+              <p className="mt-6 text-base md:text-lg text-foreground/80 max-w-2xl mx-auto italic font-medium">University-focused hosting that prioritizes academic ethics, research visibility, and institutional ownership.</p>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
               {whyUsFeatures.map((feature, i) => (
                 <Card key={i} className="rounded-funky shadow-xl border-none bg-slate-50 transition-all hover:bg-white hover:shadow-2xl hover:-translate-y-2 group p-2" data-aos="fade-up" data-aos-delay={i * 100}>
-                  <CardContent className="p-8 text-center flex flex-col items-center">
-                    <div className="h-20 w-20 bg-white rounded-funky shadow-inner flex items-center justify-center mb-6 group-hover:bg-accent transition-all duration-500">
-                      <feature.icon className="h-10 w-10 text-accent group-hover:text-accent-foreground" />
+                  <CardContent className="p-6 md:p-8 text-center flex flex-col items-center">
+                    <div className="h-16 w-16 md:h-20 md:w-20 bg-white rounded-funky shadow-inner flex items-center justify-center mb-6 group-hover:bg-accent transition-all duration-500">
+                      <feature.icon className="h-8 w-8 md:h-10 md:w-10 text-accent group-hover:text-accent-foreground" />
                     </div>
-                    <h3 className="text-xl font-bold text-primary mb-3 font-headline">{feature.title}</h3>
+                    <h3 className="text-lg md:text-xl font-bold text-primary mb-3 font-headline">{feature.title}</h3>
                     <p className="text-foreground/70 text-sm leading-relaxed">{feature.description}</p>
                   </CardContent>
                 </Card>
@@ -162,25 +95,25 @@ export default function Home() {
         </section>
 
         {/* Comprehensive Academic Publishing Platform */}
-        <section className="py-24 bg-primary text-white relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+        <section className="py-16 md:py-24 bg-primary text-white relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none hidden md:block">
             <div className="absolute top-10 left-10"><Cpu className="w-32 h-32 animate-spin-slow" /></div>
             <div className="absolute bottom-10 right-10"><Zap className="w-32 h-32 animate-pulse" /></div>
           </div>
-          <div className="container mx-auto px-4 relative z-10">
-            <div className="text-center mb-16" data-aos="fade-up">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="text-center mb-12 md:mb-16" data-aos="fade-up">
               <h2 className="text-3xl md:text-5xl font-bold text-accent font-headline">Comprehensive Academic Publishing Platform</h2>
-              <div className="mt-4 w-24 h-1 bg-white mx-auto"></div>
-              <p className="mt-6 text-lg text-white/80 max-w-2xl mx-auto">Enterprise-grade features designed exclusively for scholarly excellence and institutional growth.</p>
+              <div className="mt-4 w-20 md:w-24 h-1 bg-white mx-auto"></div>
+              <p className="mt-6 text-base md:text-lg text-white/80 max-w-2xl mx-auto">Enterprise-grade features designed exclusively for scholarly excellence and institutional growth.</p>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {platformFeatures.map((feature, i) => (
                 <Card key={i} className="rounded-funky shadow-2xl bg-white/10 backdrop-blur-sm border border-white/20 transition-all hover:bg-white group overflow-hidden" data-aos="fade-up" data-aos-delay={i * 100}>
-                  <CardContent className="p-10 flex flex-col items-start text-left">
-                    <div className="h-14 w-14 bg-accent/20 rounded-funky flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
-                      <feature.icon className="h-7 w-7 text-accent group-hover:text-white" />
+                  <CardContent className="p-8 md:p-10 flex flex-col items-start text-left">
+                    <div className="h-12 w-12 md:h-14 md:w-14 bg-accent/20 rounded-funky flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
+                      <feature.icon className="h-6 w-6 md:h-7 md:w-7 text-accent group-hover:text-white" />
                     </div>
-                    <h3 className="text-xl font-bold text-white group-hover:text-primary mb-4 leading-tight font-headline">{feature.title}</h3>
+                    <h3 className="text-lg md:text-xl font-bold text-white group-hover:text-primary mb-4 leading-tight font-headline">{feature.title}</h3>
                     <p className="text-sm text-white/70 group-hover:text-primary/80 leading-relaxed">{feature.description}</p>
                   </CardContent>
                 </Card>
@@ -190,14 +123,14 @@ export default function Home() {
         </section>
 
         {/* Featured Journals Section */}
-        <section className="py-24 bg-slate-50">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16" data-aos="fade-up">
+        <section className="py-16 md:py-24 bg-slate-50">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12 md:mb-16" data-aos="fade-up">
               <h2 className="text-3xl md:text-5xl font-bold text-primary font-headline">Featured University Journals</h2>
-              <div className="mt-4 w-24 h-1 bg-accent mx-auto"></div>
-              <p className="mt-6 text-lg text-foreground/70 max-w-2xl mx-auto">Discover the latest research published across our institutional network.</p>
+              <div className="mt-4 w-20 md:w-24 h-1 bg-accent mx-auto"></div>
+              <p className="mt-6 text-base md:text-lg text-foreground/70 max-w-2xl mx-auto">Discover the latest research published across our institutional network.</p>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
               {journals.map((journal, i) => {
                 const img = PlaceHolderImages.find(p => p.id === journal.id);
                 return (
@@ -208,19 +141,16 @@ export default function Home() {
                         {journal.indexing}
                       </div>
                       <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-4">
-                        <p className="text-white text-[10px] font-black uppercase tracking-tighter mb-1">{journal.university}</p>
-                        <p className="text-accent text-xs font-bold leading-tight">{journal.name}</p>
-                        <Button variant="link" className="text-white text-[10px] p-0 h-auto mt-2 justify-start font-bold underline decoration-accent underline-offset-4">
-                          View Journal portal
-                        </Button>
+                        <p className="text-white text-[8px] md:text-[10px] font-black uppercase tracking-tighter mb-1">{journal.university}</p>
+                        <p className="text-accent text-[10px] md:text-xs font-bold leading-tight">{journal.name}</p>
                       </div>
                     </div>
                   </Card>
                 );
               })}
             </div>
-            <div className="text-center mt-16">
-              <Button asChild size="lg" className="bg-primary text-primary-foreground rounded-funky px-10 py-8 text-xl font-bold shadow-2xl hover:scale-105 transition-transform">
+            <div className="text-center mt-12 md:mt-16">
+              <Button asChild size="lg" className="bg-primary text-primary-foreground rounded-funky px-8 md:px-10 py-6 md:py-8 text-lg md:text-xl font-bold shadow-2xl hover:scale-105 transition-transform w-full sm:w-auto">
                 <Link href="/journals">Explore Journal Directory</Link>
               </Button>
             </div>
@@ -228,25 +158,25 @@ export default function Home() {
         </section>
 
         {/* Global University Partners */}
-        <section className="py-24 bg-white border-t border-border/50 relative overflow-hidden">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16" data-aos="fade-up">
-              <h2 className="text-sm font-black text-primary/20 uppercase tracking-[0.5em] mb-4">Institutional Network</h2>
-              <h3 className="text-3xl font-bold text-primary font-headline italic">Global University Partners</h3>
+        <section className="py-16 md:py-24 bg-white border-t border-border/50 relative overflow-hidden">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12" data-aos="fade-up">
+              <h2 className="text-xs font-black text-primary/20 uppercase tracking-[0.5em] mb-4">Institutional Network</h2>
+              <h3 className="text-2xl md:text-3xl font-bold text-primary font-headline italic">Global University Partners</h3>
               <div className="mt-4 w-12 h-1 bg-accent mx-auto"></div>
             </div>
             
             <div className="relative w-full overflow-hidden">
-              <div className="flex animate-scroll whitespace-nowrap gap-12 py-10 w-max">
+              <div className="flex animate-scroll whitespace-nowrap gap-8 md:gap-12 py-10 w-max">
                 {[...partners, ...partners, ...partners].map((partner, i) => (
                   <div 
                     key={i} 
-                    className="flex flex-col items-center gap-4 group min-w-[180px]"
+                    className="flex flex-col items-center gap-4 group min-w-[150px] md:min-w-[180px]"
                   >
-                    <div className="h-24 w-24 rounded-[30px] bg-accent/10 flex items-center justify-center border-2 border-accent shadow-[0_0_30px_rgba(255,191,0,0.2)] group-hover:bg-accent transition-all duration-500">
-                      <partner.icon className="h-10 w-10 text-accent group-hover:text-white transition-colors duration-500" />
+                    <div className="h-20 w-20 md:h-24 md:w-24 rounded-[25px] md:rounded-[30px] bg-accent/10 flex items-center justify-center border-2 border-accent shadow-[0_0_30px_rgba(255,191,0,0.2)] group-hover:bg-accent transition-all duration-500">
+                      <partner.icon className="h-8 w-8 md:h-10 md:w-10 text-accent group-hover:text-white transition-colors duration-500" />
                     </div>
-                    <span className="text-xs font-black text-primary uppercase tracking-widest text-center leading-tight whitespace-normal max-w-[140px]">
+                    <span className="text-[10px] md:text-xs font-black text-primary uppercase tracking-widest text-center leading-tight whitespace-normal max-w-[120px] md:max-w-[140px]">
                       {partner.name}
                     </span>
                   </div>
@@ -266,22 +196,17 @@ export default function Home() {
         .animate-spin-slow {
           animation: spin-slow 30s linear infinite;
         }
-        @keyframes float {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-10px); }
-        }
-        .animate-float {
-          animation: float 4s ease-in-out infinite;
-        }
         @keyframes scroll {
           0% { transform: translateX(0); }
           100% { transform: translateX(-33.33%); }
         }
         .animate-scroll {
-          animation: scroll 25s linear infinite;
+          animation: scroll 30s linear infinite;
         }
-        .animate-scroll:hover {
-          animation-play-state: paused;
+        @media (max-width: 640px) {
+          .animate-scroll {
+            animation-duration: 20s;
+          }
         }
       `}</style>
     </div>
