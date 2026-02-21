@@ -111,33 +111,6 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Startup India Banner */}
-        <div className="mb-12 relative z-10" data-aos="fade-up">
-          <div className="flex flex-wrap items-center justify-between gap-6 p-6 rounded-2xl bg-white/5 border-2 border-accent/20 backdrop-blur-sm transition-transform duration-500 hover:scale-[1.01]">
-            <div className="flex flex-col md:flex-row md:items-center gap-6">
-              <div className="flex items-center gap-4 border-b-2 border-accent/20 md:border-b-0 md:border-r-2 pb-4 md:pb-0 md:pr-6">
-                <div className="bg-white p-2 rounded-lg">
-                  <Image src="https://scholar9.com/assets/images/Startup%20India%20Logo.webp" alt="DPIIT Startup India" width={80} height={32} className="h-8 w-auto grayscale brightness-0" />
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-sm font-black uppercase text-white tracking-wider">Startup India Registered</span>
-                  <span className="text-[10px] font-bold text-accent uppercase tracking-widest">DPIIT Recognized | Make in India</span>
-                </div>
-              </div>
-              <div className="flex flex-col gap-2">
-                <a href="mailto:support@technicaljournals.org" className="flex items-center gap-2 text-xs font-bold text-primary-foreground/70 hover:text-accent transition-colors">
-                  <Mail className="h-4 w-4 text-accent" />
-                  <span className="text-white">Email:</span> support@technicaljournals.org
-                </a>
-                <div className="flex items-center gap-2 text-xs font-bold text-primary-foreground/70">
-                  <PhoneCall className="h-4 w-4 text-accent" />
-                  <span className="text-white">Mobile:</span> +91 8200385143
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
         <div className="border-t border-accent/10 pt-10 flex flex-col lg:flex-row justify-between items-center gap-8 text-center lg:text-left relative z-10">
           {isClient && (
             <>
