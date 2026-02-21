@@ -4,13 +4,13 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { Contact } from '@/components/sections/contact';
 import { Card, CardContent } from '@/components/ui/card';
-import { Mail, PhoneCall, BookOpen, Microscope } from "lucide-react";
+import { Mail, PhoneCall, MapPin, Building } from "lucide-react";
 
 const contactOptions = [
-  { icon: Mail, title: "Support Email", text: "support@technicaljournals.org" },
-  { icon: PhoneCall, title: "Partnership Phone", text: "+91 8200385143" },
-  { icon: BookOpen, title: "University MoU", text: "Discuss legal & partnership formalities" },
-  { icon: Microscope, title: "Hosting Demo", text: "Request a custom ScholarJMS technical demo" }
+  { icon: Mail, title: "Email Inquiry", text: "contact@horizongroup.com" },
+  { icon: PhoneCall, title: "Project Hotline", text: "+1 (555) 000-1111" },
+  { icon: MapPin, title: "Our Headquarters", text: "123 Construction Plaza, Manhattan, NY" },
+  { icon: Building, title: "Project Consult", text: "Schedule a site visit or office meeting" }
 ];
 
 export default function ContactPage() {
@@ -22,26 +22,26 @@ export default function ContactPage() {
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="space-y-8">
               <h1 className="text-3xl sm:text-5xl font-bold leading-tight text-white font-headline">
-                Connect with Technical Journals
+                Start Your Project with Horizon Group
               </h1>
               <p className="max-w-5xl mx-auto text-lg sm:text-xl text-white/90 font-medium italic">
-                Our academic partnership team is here to help you navigate the setup and growth of your university journal.
+                From initial concept to final construction, our team is ready to bring your vision to life.
               </p>
 
               <div className="flex flex-wrap items-center justify-center gap-8 text-white/90">
                 <a 
-                  href="mailto:support@technicaljournals.org" 
+                  href="mailto:contact@horizongroup.com" 
                   className="flex items-center gap-2 hover:text-white transition-colors border-r border-white/20 pr-8"
                 >
                   <Mail className="h-5 w-5" />
-                  <span className="font-bold">Email:</span> support@technicaljournals.org
+                  <span className="font-bold">Email:</span> contact@horizongroup.com
                 </a>
                 <a 
-                  href="tel:+918200385143" 
+                  href="tel:+15550001111" 
                   className="flex items-center gap-2 hover:text-white transition-colors"
                 >
                   <PhoneCall className="h-5 w-5" />
-                  <span className="font-bold">Mobile:</span> +91 8200385143
+                  <span className="font-bold">Phone:</span> +1 (555) 000-1111
                 </a>
               </div>
             </div>

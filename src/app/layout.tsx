@@ -5,7 +5,7 @@ import { AOSInit } from '@/components/AOSInit';
 
 export const metadata: Metadata = {
   title: 'Horizon Group | Premier Real Estate & Construction',
-  description: 'Building the future with excellence in residential construction, commercial developments, and real estate innovation.',
+  description: 'Transforming visions into landmarks. Excellence in residential construction, commercial developments, and real estate innovation since 1998.',
 };
 
 export default function RootLayout({
@@ -14,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
