@@ -9,8 +9,36 @@ import { Card, CardContent } from '@/components/ui/card';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ShieldCheck, Server, Workflow, FileText, Globe, Cpu, CheckCircle2, Search, BarChart3, Database } from 'lucide-react';
+import { 
+  ShieldCheck, 
+  Server, 
+  Workflow, 
+  Globe, 
+  CheckCircle2, 
+  Database, 
+  Rocket, 
+  Copyright, 
+  Lock, 
+  Link as LinkIcon, 
+  FileCheck, 
+  Headset, 
+  Search, 
+  ShieldAlert 
+} from 'lucide-react';
 import { ScrollToTop } from '@/components/layout/scroll-to-top';
+
+const certifications = [
+  { icon: Rocket, title: "DPIIT Startup India", description: "DPIIT Recognized Startup" },
+  { icon: Copyright, title: "Creative Commons", description: "Creative Commons license" },
+  { icon: CheckCircle2, title: "UGC CARE", description: "Compliance Ready Platform" },
+  { icon: Lock, title: "SSL Encrypted", description: "Bank-Grade Security" },
+  { icon: LinkIcon, title: "CrossRef Partner", description: "Official DOI Registration" },
+  { icon: FileCheck, title: "DOAJ", description: "Compliance Ready Platform" },
+  { icon: Headset, title: "24/7 Support", description: "Always Here to Help" },
+  { icon: Search, title: "Scopus", description: "Compliance Ready Platform" },
+  { icon: Globe, title: "Web of Science", description: "Compliance Ready Platform" },
+  { icon: ShieldAlert, title: "Ithenticate", description: "Smart Plagiarism Checker" }
+];
 
 const whyUsFeatures = [
   { icon: ShieldCheck, title: "Exclusive hosting for Universities", description: "Dedicated exclusively to academic institutions and university-owned research." },
@@ -49,6 +77,32 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <Hero />
+
+        {/* Trusted & Certified Section */}
+        <section className="py-16 bg-slate-50 border-y border-border/50">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12" data-aos="fade-up">
+              <h2 className="text-2xl md:text-3xl font-bold text-primary font-headline">Trusted & Certified by Leading Organizations</h2>
+              <div className="mt-3 w-16 h-1 bg-accent mx-auto"></div>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+              {certifications.map((cert, i) => (
+                <div 
+                  key={i} 
+                  className="flex flex-col items-center text-center p-4 bg-white rounded-funky shadow-sm border border-border/30 transition-all hover:shadow-md"
+                  data-aos="fade-up"
+                  data-aos-delay={i * 50}
+                >
+                  <div className="h-12 w-12 bg-secondary rounded-full flex items-center justify-center mb-4">
+                    <cert.icon className="h-6 w-6 text-accent" />
+                  </div>
+                  <h4 className="text-sm font-bold text-primary mb-1">{cert.title}</h4>
+                  <p className="text-[10px] text-foreground/60 uppercase font-semibold tracking-wider">{cert.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* Why Technical Journals? */}
         <section className="py-20 bg-white">
