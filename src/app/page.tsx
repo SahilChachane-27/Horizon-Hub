@@ -23,7 +23,11 @@ import {
   FileCheck, 
   Headset, 
   Search, 
-  ShieldAlert 
+  ShieldAlert,
+  FileText,
+  Users,
+  PenTool,
+  Layout
 } from 'lucide-react';
 import { ScrollToTop } from '@/components/layout/scroll-to-top';
 
@@ -47,6 +51,15 @@ const whyUsFeatures = [
   { icon: CheckCircle2, title: "99.9% Uptime", description: "Reliable access for researchers worldwide with redundant server architecture." },
   { icon: Workflow, title: "End-to-end workflow", description: "Seamless management from submission to peer review and final publication." },
   { icon: Database, title: "Indexing support", description: "Dedicated format guidance for Scopus, DOAJ, and Web of Science indexing." }
+];
+
+const platformFeatures = [
+  { icon: FileText, title: "Advanced Manuscript Management", description: "Streamlined submission workflows with automated screening and intelligent manuscript routing for optimal editorial efficiency." },
+  { icon: Users, title: "Transparent Peer Review System", description: "Sophisticated reviewer matching algorithms, customizable review forms, and automated workflow management in a transparent peer review environment." },
+  { icon: LinkIcon, title: "Integrated DOI Management", description: "Seamless DOI assignment and registration with automated metadata generation and CrossRef integration." },
+  { icon: PenTool, title: "Professional Publication Tools", description: "Advanced article formatting, metadata management, issue scheduling, and automated publication workflows." },
+  { icon: Layout, title: "Customizable Journal Architecture", description: "Configurable editorial policies, submission guidelines, and team management interfaces - all without technical implementation requirements." },
+  { icon: Server, title: "Complete Infrastructure Management", description: "Enterprise hosting, domain management, and server maintenance - enabling complete focus on scholarly content." }
 ];
 
 const servicesOverview = [
@@ -121,6 +134,30 @@ export default function Home() {
                     </div>
                     <h3 className="text-xl font-bold text-primary mb-3">{feature.title}</h3>
                     <p className="text-foreground/70">{feature.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Comprehensive Academic Publishing Platform */}
+        <section className="py-20 bg-slate-50 border-y border-border/50">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16" data-aos="fade-up">
+              <h2 className="text-3xl md:text-5xl font-bold text-primary font-headline">Comprehensive Academic Publishing Platform</h2>
+              <div className="mt-4 w-24 h-1 bg-accent mx-auto"></div>
+              <p className="mt-6 text-lg text-foreground/80 max-w-2xl mx-auto">Enterprise-grade features designed for scholarly excellence.</p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {platformFeatures.map((feature, i) => (
+                <Card key={i} className="rounded-funky shadow-lg bg-white border-none transition-all hover:shadow-xl group" data-aos="fade-up" data-aos-delay={i * 100}>
+                  <CardContent className="p-10 flex flex-col items-start text-left">
+                    <div className="h-14 w-14 bg-secondary rounded-funky flex items-center justify-center mb-6 group-hover:bg-accent transition-colors duration-300">
+                      <feature.icon className="h-7 w-7 text-primary group-hover:text-accent-foreground" />
+                    </div>
+                    <h3 className="text-xl font-bold text-primary mb-4 leading-tight">{feature.title}</h3>
+                    <p className="text-sm text-foreground/70 leading-relaxed">{feature.description}</p>
                   </CardContent>
                 </Card>
               ))}
