@@ -67,7 +67,7 @@ export default function ServicesPage() {
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
       <main className="flex-1 pt-32 pb-24">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 sm:px-8 lg:px-16 xl:px-24">
           <div className="text-center mb-20" data-aos="fade-up">
             <h1 className="text-4xl md:text-6xl font-bold text-primary font-headline">Academic Solutions</h1>
             <div className="mt-4 w-24 h-1 bg-accent mx-auto"></div>
