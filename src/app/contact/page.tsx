@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Header } from '@/components/layout/header';
@@ -34,9 +35,12 @@ export default function ContactPage() {
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
       <main className="flex-1">
-        {/* Hero Section */}
-        <section className="relative flex flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-[#198bea] via-[#1570c7] to-[#1570c7] -mt-20 pt-32 pb-24">
+        {/* Hero Section - Navy Blue */}
+        <section className="relative flex flex-col items-center justify-center overflow-hidden bg-primary -mt-20 pt-32 pb-24">
           <div className="absolute inset-0">
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-slate-900 opacity-95" />
+            
             {/* Icons */}
             <div className="absolute top-1/4 left-[10%] animate-float opacity-10">
               <Microscope className="w-24 h-24 text-white" />

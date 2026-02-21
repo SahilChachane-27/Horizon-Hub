@@ -26,9 +26,12 @@ export function Hero() {
   }));
 
   return (
-    <section id="hero" className="relative h-screen flex flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-[#198bea] via-[#1570c7] to-[#1570c7]">
+    <section id="hero" className="relative h-screen flex flex-col items-center justify-center overflow-hidden bg-primary">
       <div className="absolute inset-0">
-        {/* Background Image with very low opacity to add texture while matching the subpage gradient */}
+        {/* Deep Navy Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-slate-900 opacity-95" />
+        
+        {/* Background Image with very low opacity */}
         {heroImage && (
           <div className="absolute inset-0 z-0 opacity-10">
             <Image
@@ -42,7 +45,7 @@ export function Hero() {
           </div>
         )}
 
-        {/* Floating Academic Icons - Exact match with other sections */}
+        {/* Floating Academic Icons */}
         <div className="absolute top-1/4 left-[10%] animate-float opacity-10">
           <Microscope className="w-24 h-24 text-white" />
         </div>
@@ -59,7 +62,7 @@ export function Hero() {
           <Dna className="w-24 h-24 text-white" />
         </div>
 
-        {/* Floating Bubbles - Exact match with other sections */}
+        {/* Floating Bubbles */}
         {isClient && bubbles.map((bubble) => (
           <div
             key={bubble.id}
