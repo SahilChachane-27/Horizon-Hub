@@ -216,22 +216,22 @@ export default function Home() {
               <div className="mt-4 w-12 h-1 bg-accent mx-auto"></div>
             </div>
             
-            <div className="flex flex-wrap justify-center gap-8 md:gap-16">
-              {partners.map((partner, i) => (
-                <div 
-                  key={i} 
-                  className="flex flex-col items-center gap-4 group"
-                  data-aos="zoom-in" 
-                  data-aos-delay={i * 100}
-                >
-                  <div className="h-20 w-20 rounded-full bg-slate-50 flex items-center justify-center border-2 border-dashed border-primary/10 group-hover:border-accent group-hover:bg-accent/5 transition-all duration-500 animate-float" style={{ animationDelay: `${i * 0.5}s` }}>
-                    <partner.icon className="h-8 w-8 text-primary/30 group-hover:text-accent transition-colors duration-500" />
+            <div className="relative w-full overflow-hidden">
+              <div className="flex animate-scroll whitespace-nowrap gap-12 py-10 w-max">
+                {[...partners, ...partners, ...partners].map((partner, i) => (
+                  <div 
+                    key={i} 
+                    className="flex flex-col items-center gap-4 group min-w-[180px]"
+                  >
+                    <div className="h-24 w-24 rounded-[30px] bg-accent/10 flex items-center justify-center border-2 border-accent shadow-[0_0_30px_rgba(255,191,0,0.2)] group-hover:bg-accent transition-all duration-500">
+                      <partner.icon className="h-10 w-10 text-accent group-hover:text-white transition-colors duration-500" />
+                    </div>
+                    <span className="text-xs font-black text-primary uppercase tracking-widest text-center leading-tight whitespace-normal max-w-[140px]">
+                      {partner.name}
+                    </span>
                   </div>
-                  <span className="text-[10px] font-black text-primary/30 group-hover:text-primary transition-colors duration-500 uppercase tracking-widest text-center max-w-[120px] leading-tight">
-                    {partner.name}
-                  </span>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -252,6 +252,16 @@ export default function Home() {
         }
         .animate-float {
           animation: float 4s ease-in-out infinite;
+        }
+        @keyframes scroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-33.33%); }
+        }
+        .animate-scroll {
+          animation: scroll 25s linear infinite;
+        }
+        .animate-scroll:hover {
+          animation-play-state: paused;
         }
       `}</style>
     </div>
