@@ -18,7 +18,7 @@ const navLinks = [
   { href: '/#hero', label: 'Home' },
   { href: '/#about', label: 'About' },
   { href: '/#services', label: 'Services' },
-  { href: '/#projects', label: 'Projects' },
+  { href: '/#projects', label: 'Journals' },
   { href: '/#why-us', label: 'Why Us' },
   { href: '/#testimonials', label: 'Testimonials' },
   { href: '/#contact', label: 'Contact' },
@@ -41,7 +41,7 @@ export function Header() {
     <>
       {navLinks.map((link) => {
         const isPageLink = link.href.startsWith('/');
-        const className = "text-lg md:text-sm font-medium text-primary-foreground/80 hover:text-primary-foreground transition-colors";
+        const className = "text-lg md:text-sm font-medium text-white/80 hover:text-white transition-colors";
 
         if (isPageLink) {
           if (inSheet) {
@@ -89,7 +89,7 @@ export function Header() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="flex items-center text-2xl font-bold text-accent font-headline">
-            <span>Horizon Group</span>
+            <span>Technical Journals</span>
           </Link>
           
           <nav className="hidden md:flex items-center space-x-6">
@@ -100,12 +100,12 @@ export function Header() {
             {isClient && (
               <Sheet>
                 <SheetTrigger asChild>
-                  <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-primary-foreground/10">
+                  <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
                     <Menu className="h-6 w-6" />
                     <span className="sr-only">Toggle navigation</span>
                   </Button>
                 </SheetTrigger>
-                <SheetContent side="right" className="bg-primary border-l-0 text-primary-foreground w-64 p-6">
+                <SheetContent side="right" className="bg-primary border-l-0 text-white w-64 p-6">
                   <SheetHeader>
                     <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
                   </SheetHeader>

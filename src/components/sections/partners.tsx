@@ -47,8 +47,8 @@ export function Partners() {
               key={`${partner.name}-${index}`}
               className="flex flex-col items-center mx-8 group cursor-default"
             >
-              <div className="w-24 h-24 flex items-center justify-center bg-card border-2 border-accent/40 rounded-xl shadow-[0_0_15px_rgba(var(--accent),0.3)] transition-all duration-300 group-hover:scale-110 group-hover:border-accent group-hover:shadow-[0_0_30px_rgba(251,191,36,0.6)]">
-                <partner.icon className="h-12 w-12 text-accent drop-shadow-[0_0_10px_rgba(251,191,36,0.8)]" />
+              <div className="w-24 h-24 flex items-center justify-center bg-card border-2 border-accent/40 rounded-xl shadow-[0_0_15px_rgba(var(--accent),0.2)] transition-all duration-300 group-hover:scale-110 group-hover:border-accent group-hover:shadow-[0_0_30px_rgba(251,191,36,0.4)]">
+                <partner.icon className="h-12 w-12 text-accent drop-shadow-[0_0_10px_rgba(251,191,36,0.5)]" />
               </div>
               <span className="mt-4 text-base font-semibold text-primary/80 group-hover:text-primary transition-colors text-center">
                 {partner.name}

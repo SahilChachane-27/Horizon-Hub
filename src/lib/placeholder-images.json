@@ -2,381 +2,57 @@
   "placeholderImages": [
     {
       "id": "hero-bg",
-      "description": "A panoramic view of a modern city skyline at dusk, representing landmark creation.",
-      "imageUrl": "https://images.unsplash.com/photo-1575380591643-b2c92368dc6d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjaXR5JTIwc2t5bGluZXxlbnwwfHx8fDE3NzE2NjE0NDJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "city skyline"
+      "description": "A panoramic view of a prestigious university campus at dawn.",
+      "imageUrl": "https://images.unsplash.com/photo-1541339907198-e087563ef3b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      "imageHint": "university campus"
     },
     {
       "id": "about-img",
-      "description": "A modern university library hall with students studying, symbolizing academic excellence.",
-      "imageUrl": "https://images.unsplash.com/photo-1541339907198-e087563ef3b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx1bml2ZXJzaXR5JTIwbGlicmFyeXxlbnwwfHx8fDE3NzE2NjEzMDh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "A modern university library hall with students studying.",
+      "imageUrl": "https://images.unsplash.com/photo-1562774053-701939374585?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
       "imageHint": "university library"
     },
     {
       "id": "project-1",
-      "description": "The 'Skyline Towers' project, a modern glass skyscraper.",
-      "imageUrl": "https://images.unsplash.com/photo-1685211185729-9526bcc093ea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxtb2Rlcm4lMjBza3lzY3JhcGVyfGVufDB8fHx8MTc3MTA1Nzk1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "modern skyscraper"
+      "description": "Journal of Engineering and Applied Sciences.",
+      "imageUrl": "https://images.unsplash.com/photo-1532012197267-da84d127e765?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      "imageHint": "academic journal"
     },
     {
       "id": "project-2",
-      "description": "The 'Riverfront Residences' project, a contemporary apartment building.",
-      "imageUrl": "https://images.unsplash.com/photo-1672508061327-6efaa65896e9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cmVzaWRlbnRpYWwlMjBidWlsZGluZ3xlbnwwfHx8fDE3NzA5ODI2ODJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "residential building"
+      "description": "Medical Research Quarterly.",
+      "imageUrl": "https://images.unsplash.com/photo-1576085898323-218337e3e43c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      "imageHint": "medical research"
     },
     {
       "id": "project-3",
-      "description": "The 'Horizon Plaza' project, a bustling commercial center.",
-      "imageUrl": "https://images.unsplash.com/photo-1748437323477-6c7ce4049348?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjb21tZXJjaWFsJTIwcGxhemF8ZW58MHx8fHwxNzcwOTgxOTg4fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "commercial plaza"
+      "description": "Journal of Arts and Media Studies.",
+      "imageUrl": "https://images.unsplash.com/photo-1516280440614-37939bbacd81?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      "imageHint": "arts media"
     },
     {
       "id": "testimonial-1",
-      "description": "Portrait of Robert Johnson.",
-      "imageUrl": "https://images.unsplash.com/photo-1590086782792-42dd2350140d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwZXJzb24lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NzEwNDg3OTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "Portrait of Dr. Robert Johnson.",
+      "imageUrl": "https://images.unsplash.com/photo-1590086782792-42dd2350140d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=100",
       "imageHint": "person portrait"
     },
     {
       "id": "testimonial-2",
-      "description": "Portrait of Sarah Williams.",
-      "imageUrl": "https://images.unsplash.com/photo-1540569014015-19a7be504e3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxwZXJzb24lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NzEwNDg3OTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "Portrait of Prof. Sarah Williams.",
+      "imageUrl": "https://images.unsplash.com/photo-1540569014015-19a7be504e3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=100",
       "imageHint": "person portrait"
     },
     {
       "id": "testimonial-3",
-      "description": "Portrait of Michael Chen.",
-      "imageUrl": "https://images.unsplash.com/flagged/photo-1595514191830-3e96a518989b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cGVyc29uJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzcxMDQ4Nzk4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "Portrait of Dr. Michael Chen.",
+      "imageUrl": "https://images.unsplash.com/flagged/photo-1595514191830-3e96a518989b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=100",
       "imageHint": "person portrait"
     },
     {
-      "id": "testimonial-4",
-      "description": "Portrait of Emily Davis.",
-      "imageUrl": "https://images.unsplash.com/photo-1557053910-d9eadeed1c58?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc3MTExMjQ2Nnww&ixlib=rb-4.1.0&q=80&w=100",
-      "imageHint": "woman portrait"
-    },
-    {
-      "id": "testimonial-5",
-      "description": "Portrait of David Rodriguez.",
-      "imageUrl": "https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NzExMTI0MzF8MA&ixlib=rb-4.1.0&q=80&w=100",
-      "imageHint": "man portrait"
-    },
-    {
       "id": "map-placeholder",
-      "description": "A map showing the location of Horizon Group.",
-      "imageUrl": "https://images.unsplash.com/photo-1619468129361-605ebea04b44?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjaXR5JTIwbWFwfGVufDB8fHx8MTc3MTAzMjk5NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "A map showing University tech hubs.",
+      "imageUrl": "https://images.unsplash.com/photo-1619468129361-605ebea04b44?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
       "imageHint": "city map"
-    },
-    {
-      "id": "residential-hero-bg",
-      "description": "The stunning exterior of a modern luxury home at twilight.",
-      "imageUrl": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBsdXh1cnklMjBob21lfGVufDB8fHx8MTc3MTExMTE4NXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "luxury home"
-    },
-    {
-      "id": "residential-gallery-1",
-      "description": "Modern Luxury Home",
-      "imageUrl": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      "imageHint": "modern home"
-    },
-    {
-      "id": "residential-gallery-2",
-      "description": "Contemporary Lake House",
-      "imageUrl": "https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      "imageHint": "lake house"
-    },
-    {
-      "id": "residential-gallery-3",
-      "description": "Urban Townhouse Development",
-      "imageUrl": "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      "imageHint": "urban townhouse"
-    },
-    {
-      "id": "residential-gallery-4",
-      "description": "Mountain Retreat",
-      "imageUrl": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      "imageHint": "mountain retreat"
-    },
-    {
-      "id": "residential-gallery-5",
-      "description": "Coastal Residence",
-      "imageUrl": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      "imageHint": "coastal residence"
-    },
-    {
-      "id": "residential-gallery-6",
-      "description": "Suburban Family Home",
-      "imageUrl": "https://images.unsplash.com/photo-1570129477492-45c003edd2be?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzdWJ1cmJhbiUyMGZhbWlseSUyMGhvbWV8ZW58MHx8fHwxNzcxMTEyMjcxfDA&ixlib=rb-4.1.0&q=80&w=800",
-      "imageHint": "suburban home"
-    },
-    {
-      "id": "testimonial-residential-1",
-      "description": "Portrait of David Miller",
-      "imageUrl": "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NzExMTI0MzF8MA&ixlib=rb-4.1.0&q=80&w=100",
-      "imageHint": "man portrait"
-    },
-    {
-      "id": "testimonial-residential-2",
-      "description": "Portrait of Jennifer Carter",
-      "imageUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc3MTExMjQ2Nnww&ixlib=rb-4.1.0&q=80&w=100",
-      "imageHint": "woman portrait"
-    },
-    {
-      "id": "commercial-hero-bg",
-      "description": "A modern commercial building with a sleek glass facade.",
-      "imageUrl": "https://images.unsplash.com/photo-1600880292210-f521132fb209?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjb21tZXJjaWFsJTIwYnVpbGRpbmdzfGVufDB8fHx8MTc3MTM4MDMzN3ww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "commercial building"
-    },
-    {
-      "id": "commercial-project-office",
-      "description": "Interior of a modern, open-plan office space.",
-      "imageUrl": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      "imageHint": "modern office"
-    },
-    {
-      "id": "commercial-project-retail",
-      "description": "A stylish clothing retail store with bright lighting.",
-      "imageUrl": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      "imageHint": "retail store"
-    },
-    {
-      "id": "commercial-project-hospitality",
-      "description": "A luxurious hotel resort with a swimming pool.",
-      "imageUrl": "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      "imageHint": "hotel resort"
-    },
-    {
-      "id": "commercial-project-mixed-use",
-      "description": "A modern building complex representing mixed-use development.",
-      "imageUrl": "https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      "imageHint": "modern building"
-    },
-    {
-      "id": "commercial-project-healthcare",
-      "description": "The exterior of a modern hospital building.",
-      "imageUrl": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      "imageHint": "hospital building"
-    },
-    {
-      "id": "commercial-project-industrial",
-      "description": "The interior of a large, modern industrial warehouse.",
-      "imageUrl": "https://images.unsplash.com/photo-1531973576160-7125cd663d86?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      "imageHint": "warehouse interior"
-    },
-    {
-      "id": "commercial-case-study",
-      "description": "A tall skyscraper in a financial district.",
-      "imageUrl": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      "imageHint": "city skyscraper"
-    },
-    {
-      "id": "development-hero-bg",
-      "description": "Architectural blueprints and a model of a new development.",
-      "imageUrl": "https://images.unsplash.com/photo-1519638399535-1b036603ac77?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxyZWFsJTIwZXN0YXRlJTIwZGV2ZWxvcG1lbnR8ZW58MHx8fHwxNzcxNTYzMzU5fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "development blueprint"
-    },
-    {
-      "id": "development-portfolio-mixed-use",
-      "description": "A vibrant street scene in a modern mixed-use development at night.",
-      "imageUrl": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      "imageHint": "mixed-use development"
-    },
-    {
-      "id": "development-portfolio-waterfront",
-      "description": "Luxury homes overlooking a serene waterfront.",
-      "imageUrl": "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      "imageHint": "waterfront community"
-    },
-    {
-      "id": "development-portfolio-office-campus",
-      "description": "A sprawling, modern office campus with plenty of green space.",
-      "imageUrl": "https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      "imageHint": "office campus"
-    },
-    {
-      "id": "renovation-hero-bg",
-      "description": "A beautifully renovated, modern living room with stylish furniture and bright lighting.",
-      "imageUrl": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxyZW5vdmF0ZWQlMjBsaXZpbmclMjByb29tfGVufDB8fHx8MTc3MTU3ODMyNnww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "renovated livingroom"
-    },
-    {
-      "id": "renovation-before",
-      "description": "An old, dated kitchen before renovation.",
-      "imageUrl": "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxvbGQlMjBraXRjaGVufGVufDB8fHx8MTc3MTU3ODQyMnww&ixlib=rb-4.1.0&q=80&w=800",
-      "imageHint": "old kitchen"
-    },
-    {
-      "id": "renovation-after",
-      "description": "A modern, stylish kitchen after renovation.",
-      "imageUrl": "https://images.unsplash.com/photo-1600585152220-90363fe7e115?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBraXRjaGVufGVufDB8fHx8MTc3MTU3ODY0NHww&ixlib=rb-4.1.0&q=80&w=800",
-      "imageHint": "modern kitchen"
-    },
-    {
-      "id": "renovation-service-kitchen",
-      "description": "A beautifully remodeled kitchen with custom cabinetry and premium appliances.",
-      "imageUrl": "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      "imageHint": "kitchen remodel"
-    },
-    {
-      "id": "renovation-service-bathroom",
-      "description": "A luxurious remodeled bathroom with premium fixtures and custom tile work.",
-      "imageUrl": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      "imageHint": "bathroom renovation"
-    },
-    {
-      "id": "renovation-service-whole-house",
-      "description": "The interior of a completely renovated house, showing open-plan living.",
-      "imageUrl": "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      "imageHint": "house interior"
-    },
-    {
-      "id": "renovation-service-commercial",
-      "description": "A modern and functional renovated commercial office space.",
-      "imageUrl": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      "imageHint": "commercial office"
-    },
-    {
-      "id": "renovation-service-basement",
-      "description": "A finished basement converted into a comfortable family entertainment room.",
-      "imageUrl": "https://images.unsplash.com/photo-1618220179428-22790b461013?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      "imageHint": "finished basement"
-    },
-    {
-      "id": "renovation-service-exterior",
-      "description": "The updated exterior of a house with new siding and windows.",
-      "imageUrl": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      "imageHint": "house exterior"
-    },
-    {
-      "id": "renovation-portfolio-1",
-      "description": "A stylish modern kitchen after a full renovation.",
-      "imageUrl": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      "imageHint": "modern kitchen"
-    },
-    {
-      "id": "renovation-portfolio-2",
-      "description": "A luxury bathroom remodel featuring a freestanding tub.",
-      "imageUrl": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      "imageHint": "luxury bathroom"
-    },
-    {
-      "id": "renovation-portfolio-3",
-      "description": "An open-concept living space created by removing walls.",
-      "imageUrl": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      "imageHint": "open concept"
-    },
-    {
-      "id": "renovation-portfolio-4",
-      "description": "A stylish home office created from a basement conversion.",
-      "imageUrl": "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      "imageHint": "home office"
-    },
-    {
-      "id": "renovation-portfolio-5",
-      "description": "A renovated commercial office designed for collaboration.",
-      "imageUrl": "https://images.unsplash.com/photo-1618220179428-22790b461013?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      "imageHint": "commercial office"
-    },
-    {
-      "id": "renovation-portfolio-6",
-      "description": "A complete exterior facelift of a suburban home.",
-      "imageUrl": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      "imageHint": "exterior renovation"
-    },
-    {
-      "id": "testimonial-renovation-1",
-      "description": "Portrait of Jennifer Martinez",
-      "imageUrl": "https://images.unsplash.com/photo-1557053910-d9eadeed1c58?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc3MTExMjQ2Nnww&ixlib=rb-4.1.0&q=80&w=100",
-      "imageHint": "woman portrait"
-    },
-    {
-      "id": "testimonial-renovation-2",
-      "description": "Portrait of David Chen",
-      "imageUrl": "https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NzExMTI0MzF8MA&ixlib=rb-4.1.0&q=80&w=100",
-      "imageHint": "man portrait"
-    },
-    {
-      "id": "testimonial-renovation-3",
-      "description": "Portrait of Sarah Johnson",
-      "imageUrl": "https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc3MTExMjQ2Nnww&ixlib=rb-4.1.0&q=80&w=100",
-      "imageHint": "woman portrait"
-    },
-    {
-      "id": "testimonial-renovation-4",
-      "description": "Portrait of Michael Roberts",
-      "imageUrl": "https://images.unsplash.com/photo-1583067614143-267595304959?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NzExMTI0MzF8MA&ixlib=rb-4.1.0&q=80&w=100",
-      "imageHint": "man portrait"
-    },
-    {
-      "id": "blog-hero-bg",
-      "description": "A person writing in a notebook, symbolizing insights and articles.",
-      "imageUrl": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxpbnNpZ2h0c3xlbnwwfHx8fDE3NzE2NTg1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "insights chart"
-    },
-    {
-      "id": "featured-post",
-      "description": "A modern building with green features, representing sustainable construction.",
-      "imageUrl": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-      "imageHint": "sustainable building"
-    },
-    {
-      "id": "blog-post-1",
-      "description": "An architectural model of a city, representing urban development trends.",
-      "imageUrl": "https://images.unsplash.com/photo-1487956382158-bb926046304a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      "imageHint": "urban development"
-    },
-    {
-      "id": "blog-post-2",
-      "description": "The exterior of a luxury home, illustrating residential design.",
-      "imageUrl": "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      "imageHint": "luxury home"
-    },
-    {
-      "id": "blog-post-3",
-      "description": "A modern open-plan office space, for commercial real estate topics.",
-      "imageUrl": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      "imageHint": "commercial office"
-    },
-    {
-      "id": "blog-post-4",
-      "description": "A robot arm working on a construction model, symbolizing technology in construction.",
-      "imageUrl": "https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      "imageHint": "construction technology"
-    },
-    {
-      "id": "blog-post-5",
-      "description": "A beautifully renovated room, for renovation project topics.",
-      "imageUrl": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      "imageHint": "renovation project"
-    },
-    {
-      "id": "blog-post-6",
-      "description": "A birds-eye view of a housing development, for real estate market discussions.",
-      "imageUrl": "https://images.unsplash.com/photo-1448630360428-65456885c650?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      "imageHint": "real estate"
-    },
-    {
-      "id": "author-bio",
-      "description": "Portrait of Michael Chen, author.",
-      "imageUrl": "https://images.unsplash.com/photo-1590086782792-42dd2350140d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwZXJzb24lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NzEwNDg3OTh8MA&ixlib=rb-4.1.0&q=80&w=100",
-      "imageHint": "author portrait"
-    },
-    {
-      "id": "recent-post-1",
-      "description": "An updated house exterior.",
-      "imageUrl": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=60",
-      "imageHint": "exterior renovation"
-    },
-    {
-      "id": "recent-post-2",
-      "description": "A modern living room with smart home features.",
-      "imageUrl": "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=60",
-      "imageHint": "smart home"
-    },
-    {
-      "id": "recent-post-3",
-      "description": "A mixed-use development building.",
-      "imageUrl": "https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=60",
-      "imageHint": "mixed use"
     }
   ]
 }

@@ -1,4 +1,3 @@
-
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
@@ -10,7 +9,7 @@ export function About() {
     <section id="about" className="py-16 md:py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-5 gap-12 items-center">
-          <div className="lg:col-span-2 relative aspect-[8/5] rounded-none overflow-hidden shadow-2xl">
+          <div className="lg:col-span-2 relative aspect-[4/5] rounded-none overflow-hidden shadow-2xl" data-aos="fade-right">
             {aboutImage && (
               <Image
                 src={aboutImage.imageUrl}
@@ -23,7 +22,7 @@ export function About() {
             )}
           </div>
           <div className="lg:col-span-3 space-y-6" data-aos="fade-left">
-            <div data-aos="fade-up">
+            <div>
               <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">
                 About Technical Journals
               </h2>
