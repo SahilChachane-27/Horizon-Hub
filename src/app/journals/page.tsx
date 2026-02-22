@@ -154,16 +154,16 @@ export default function JournalsPage() {
         </section>
 
         {/* Search & Filters Section */}
-        <section className="py-12 bg-secondary/30 relative">
+        <section className="py-16 bg-secondary/30 relative">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div 
-              className="bg-white p-6 md:p-10 rounded-[40px] shadow-2xl border border-primary/5 -mt-32 relative z-20" 
+              className="bg-white p-6 md:p-12 rounded-[40px] shadow-2xl border border-primary/5 -mt-36 relative z-20" 
               data-aos="fade-up"
             >
               {isClient ? (
-                <div className="space-y-6">
+                <div className="space-y-8">
                   {/* Top Row: Search Bars */}
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div className="relative">
                       <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
                       <Input 
@@ -194,7 +194,7 @@ export default function JournalsPage() {
                   </div>
 
                   {/* Bottom Row: Selects and Button */}
-                  <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                     <div className="relative">
                       <Globe className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground z-10" />
                       <Input 
@@ -233,7 +233,7 @@ export default function JournalsPage() {
                     </div>
                     <Button 
                       className="h-14 bg-primary text-white rounded-full font-bold hover:bg-primary/90 transition-all shadow-xl text-md"
-                      onClick={() => {}} // Could trigger a refresh or just rely on memo
+                      onClick={() => {}}
                     >
                       Search Academic Sources
                     </Button>
@@ -249,20 +249,20 @@ export default function JournalsPage() {
         </section>
 
         {/* Categories Section */}
-        <section className="py-12 bg-white">
+        <section className="py-20 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl font-bold text-primary font-headline mb-8 text-center" data-aos="fade-up">Explore by Subject</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
+            <h2 className="text-2xl font-bold text-primary font-headline mb-10 text-center" data-aos="fade-up">Explore by Subject</h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6">
               {categories.map((cat, idx) => (
                 <Button
                   key={cat.name}
                   variant={selectedCategory === cat.name ? "default" : "outline"}
-                  className={`h-auto py-6 flex flex-col gap-3 rounded-xl border-accent/20 transition-all hover:scale-105 ${selectedCategory === cat.name ? 'bg-accent text-accent-foreground shadow-lg' : 'bg-white hover:bg-secondary'}`}
+                  className={`h-auto py-8 flex flex-col gap-4 rounded-xl border-accent/20 transition-all hover:scale-105 ${selectedCategory === cat.name ? 'bg-accent text-accent-foreground shadow-lg' : 'bg-white hover:bg-secondary'}`}
                   onClick={() => setSelectedCategory(cat.name)}
                   data-aos="zoom-in"
                   data-aos-delay={idx * 50}
                 >
-                  <cat.icon className="h-6 w-6" />
+                  <cat.icon className="h-7 w-7" />
                   <span className="text-[10px] uppercase font-bold text-center leading-tight whitespace-normal">{cat.name}</span>
                 </Button>
               ))}
@@ -271,9 +271,9 @@ export default function JournalsPage() {
         </section>
 
         {/* Journals Grid */}
-        <section className="py-16 bg-secondary/20 min-h-[400px]">
+        <section className="py-20 bg-secondary/20 min-h-[400px]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between items-center mb-10">
+            <div className="flex justify-between items-center mb-12">
               <p className="text-foreground/60 font-medium">
                 Showing <span className="text-primary font-bold">{filteredJournals.length}</span> Journals
               </p>
@@ -282,7 +282,7 @@ export default function JournalsPage() {
               )}
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
               {filteredJournals.length > 0 ? (
                 filteredJournals.map((journal, index) => {
                   const journalImage = PlaceHolderImages.find(p => p.id === journal.id) || PlaceHolderImages[2];
@@ -357,17 +357,17 @@ export default function JournalsPage() {
         </section>
 
         {/* Call to Action */}
-        <section className="py-20 bg-accent text-accent-foreground">
+        <section className="py-24 bg-accent text-accent-foreground">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
             <h2 className="text-3xl md:text-4xl font-bold font-headline mb-6" data-aos="fade-up">Ready to Launch Your University Journal?</h2>
             <p className="text-lg opacity-90 mb-10" data-aos="fade-up" data-aos-delay="100">
               Join the growing network of academic institutions using Technical Journals for secure, ethical, and institutionally branded publishing.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="200">
-              <Button asChild size="lg" variant="secondary" className="bg-primary text-white hover:bg-primary/90 rounded-xl">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center" data-aos="fade-up" data-aos-delay="200">
+              <Button asChild size="lg" variant="secondary" className="bg-primary text-white hover:bg-primary/90 rounded-xl px-10">
                 <a href="/contact">Inquire Now</a>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white rounded-xl">
+              <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white rounded-xl px-10">
                 <a href="/about">Learn More</a>
               </Button>
             </div>
