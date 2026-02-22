@@ -1,9 +1,8 @@
-
 'use client';
 
 import { useState, useEffect, useMemo, useRef } from 'react';
 import { useUser, useFirestore, useCollection } from '@/firebase';
-import { collection, addDoc, deleteDoc, doc, serverTimestamp, query, orderBy } from 'firebase/firestore';
+import { collection, addDoc, deleteDoc, doc, updateDoc, serverTimestamp, query, orderBy } from 'firebase/firestore';
 import { useRouter } from 'next/navigation';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
@@ -11,9 +10,24 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
-import { Plus, Trash2, Building2, Tag, Globe, ExternalLink, ArrowLeft, Image as ImageIcon, X } from 'lucide-react';
+import { 
+  Plus, 
+  Trash2, 
+  Building2, 
+  Tag, 
+  Globe, 
+  ExternalLink, 
+  ArrowLeft, 
+  Image as ImageIcon, 
+  X, 
+  Edit3, 
+  Search, 
+  ArrowUpDown,
+  Filter
+} from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
 export default function ManageJournals() {
   const { user, loading: userLoading } = useUser();
@@ -21,6 +35,8 @@ export default function ManageJournals() {
   const router = useRouter();
   const { toast } = useToast();
 
+  // Form State
+  const [editingId, setEditingId] = useState<string | null>(null);
   const [name, setName] = useState('');
   const [university, setUniversity] = useState('');
   const [issn, setIssn] = useState('');
@@ -28,6 +44,10 @@ export default function ManageJournals() {
   const [link, setLink] = useState('');
   const [imageUrl, setImageUrl] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  // Filter & Sort State
+  const [searchFilter, setSearchFilter] = useState('');
+  const [sortOrder, setSortOrder] = useState<'newest' | 'oldest' | 'az' | 'za'>('newest');
 
   const journalsQuery = useMemo(() => {
     if (!db) return null;
@@ -43,7 +63,7 @@ export default function ManageJournals() {
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
-      if (file.size > 1024 * 1024) { // 1MB limit for base64 storage
+      if (file.size > 1024 * 1024) { 
         toast({
           variant: "destructive",
           title: "File too large",
@@ -59,37 +79,63 @@ export default function ManageJournals() {
     }
   };
 
-  const handleAddJournal = async (e: React.FormEvent) => {
+  const resetForm = () => {
+    setEditingId(null);
+    setName(''); 
+    setUniversity(''); 
+    setIssn(''); 
+    setDomain(''); 
+    setLink('');
+    setImageUrl(null);
+    if (fileInputRef.current) fileInputRef.current.value = '';
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!db) return;
 
     try {
-      await addDoc(collection(db, 'journals'), {
+      const journalData = {
         name,
         university,
         issn,
         domain,
         link,
         imageUrl,
-        createdAt: serverTimestamp(),
-      });
+        updatedAt: serverTimestamp(),
+      };
+
+      if (editingId) {
+        await updateDoc(doc(db, 'journals', editingId), journalData);
+        toast({ title: "Journal Updated", description: `${name} has been updated successfully.` });
+      } else {
+        await addDoc(collection(db, 'journals'), {
+          ...journalData,
+          createdAt: serverTimestamp(),
+        });
+        toast({ title: "Journal Added", description: `${name} has been published successfully.` });
+      }
       
-      setName(''); 
-      setUniversity(''); 
-      setIssn(''); 
-      setDomain(''); 
-      setLink('');
-      setImageUrl(null);
-      if (fileInputRef.current) fileInputRef.current.value = '';
-      
-      toast({ title: "Journal Added", description: `${name} has been published successfully.` });
+      resetForm();
     } catch (error: any) {
       toast({ variant: "destructive", title: "Error", description: error.message });
     }
   };
 
+  const handleEdit = (journal: any) => {
+    setEditingId(journal.id);
+    setName(journal.name);
+    setUniversity(journal.university);
+    setIssn(journal.issn);
+    setDomain(journal.domain);
+    setLink(journal.link);
+    setImageUrl(journal.imageUrl || null);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const handleDelete = async (id: string) => {
     if (!db) return;
+    if (!confirm("Are you sure you want to delete this journal?")) return;
     try {
       await deleteDoc(doc(db, 'journals', id));
       toast({ title: "Journal Removed", description: "The journal has been deleted." });
@@ -97,6 +143,28 @@ export default function ManageJournals() {
       toast({ variant: "destructive", title: "Error", description: error.message });
     }
   };
+
+  const filteredAndSortedJournals = useMemo(() => {
+    if (!journals) return [];
+    
+    let result = [...journals].filter((j: any) => 
+      j.name.toLowerCase().includes(searchFilter.toLowerCase()) ||
+      j.university.toLowerCase().includes(searchFilter.toLowerCase()) ||
+      j.issn.includes(searchFilter)
+    );
+
+    result.sort((a: any, b: any) => {
+      switch (sortOrder) {
+        case 'newest': return (b.createdAt?.seconds || 0) - (a.createdAt?.seconds || 0);
+        case 'oldest': return (a.createdAt?.seconds || 0) - (b.createdAt?.seconds || 0);
+        case 'az': return a.name.localeCompare(b.name);
+        case 'za': return b.name.localeCompare(a.name);
+        default: return 0;
+      }
+    });
+
+    return result;
+  }, [journals, searchFilter, sortOrder]);
 
   if (userLoading || !user) return null;
 
@@ -109,14 +177,25 @@ export default function ManageJournals() {
             <Button variant="ghost" size="icon" asChild className="rounded-full">
               <Link href="/admin/dashboard"><ArrowLeft className="h-6 w-6" /></Link>
             </Button>
-            <h1 className="text-4xl font-bold text-primary font-headline italic">Manage Journals</h1>
+            <h1 className="text-4xl font-bold text-primary font-headline italic">
+              {editingId ? 'Edit Journal' : 'Manage Journals'}
+            </h1>
           </div>
 
           <div className="grid lg:grid-cols-3 gap-12">
             <div className="lg:col-span-1" data-aos="fade-up">
               <Card className="rounded-funky border-none shadow-2xl p-8 sticky top-32">
-                <h2 className="text-xl font-bold text-primary mb-6 italic">Add New Source</h2>
-                <form onSubmit={handleAddJournal} className="space-y-6">
+                <div className="flex justify-between items-center mb-6">
+                  <h2 className="text-xl font-bold text-primary italic">
+                    {editingId ? 'Update Entry' : 'Add New Source'}
+                  </h2>
+                  {editingId && (
+                    <Button variant="ghost" size="sm" onClick={resetForm} className="text-primary/40 hover:text-primary">
+                      Cancel
+                    </Button>
+                  )}
+                </div>
+                <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="space-y-2">
                     <label className="text-[10px] font-black uppercase text-primary/40 tracking-widest">Journal Name</label>
                     <Input value={name} onChange={(e) => setName(e.target.value)} required placeholder="e.g. Journal of Tech" className="rounded-xl h-12" />
@@ -159,33 +238,60 @@ export default function ManageJournals() {
                     </div>
                   </div>
 
-                  <div className="space-y-2">
-                    <label className="text-[10px] font-black uppercase text-primary/40 tracking-widest">ISSN</label>
-                    <Input value={issn} onChange={(e) => setIssn(e.target.value)} required placeholder="2345-6789" className="rounded-xl h-12" />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-[10px] font-black uppercase text-primary/40 tracking-widest">Domain</label>
-                    <Input value={domain} onChange={(e) => setDomain(e.target.value)} required placeholder="Engineering" className="rounded-xl h-12" />
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <label className="text-[10px] font-black uppercase text-primary/40 tracking-widest">ISSN</label>
+                      <Input value={issn} onChange={(e) => setIssn(e.target.value)} required placeholder="2345-6789" className="rounded-xl h-12" />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-[10px] font-black uppercase text-primary/40 tracking-widest">Domain</label>
+                      <Input value={domain} onChange={(e) => setDomain(e.target.value)} required placeholder="Engineering" className="rounded-xl h-12" />
+                    </div>
                   </div>
                   <div className="space-y-2">
                     <label className="text-[10px] font-black uppercase text-primary/40 tracking-widest">Public URL</label>
                     <Input value={link} onChange={(e) => setLink(e.target.value)} required type="url" placeholder="https://..." className="rounded-xl h-12" />
                   </div>
                   <Button type="submit" className="w-full h-12 bg-accent text-accent-foreground font-bold rounded-funky shadow-lg hover:scale-105 transition-transform">
-                    <Plus className="mr-2 h-5 w-5" /> Publish Journal
+                    {editingId ? <><Edit3 className="mr-2 h-5 w-5" /> Update Journal</> : <><Plus className="mr-2 h-5 w-5" /> Publish Journal</>}
                   </Button>
                 </form>
               </Card>
             </div>
 
             <div className="lg:col-span-2 space-y-8" data-aos="fade-left">
-              <h2 className="text-xl font-bold text-primary italic">Live Catalog {journals && `(${journals.length})`}</h2>
+              <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                <h2 className="text-xl font-bold text-primary italic">Live Catalog {journals && `(${journals.length})`}</h2>
+                <div className="flex flex-wrap items-center gap-3 w-full md:w-auto">
+                   <div className="relative flex-1 md:w-64">
+                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-primary/40" />
+                    <Input 
+                      placeholder="Search name, uni, issn..." 
+                      className="pl-9 h-10 rounded-xl"
+                      value={searchFilter}
+                      onChange={(e) => setSearchFilter(e.target.value)}
+                    />
+                  </div>
+                  <Select value={sortOrder} onValueChange={(v: any) => setSortOrder(v)}>
+                    <SelectTrigger className="w-40 h-10 rounded-xl">
+                      <ArrowUpDown className="mr-2 h-4 w-4 text-primary/40" />
+                      <SelectValue placeholder="Sort by" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="newest">Newest First</SelectItem>
+                      <SelectItem value="oldest">Oldest First</SelectItem>
+                      <SelectItem value="az">Name A-Z</SelectItem>
+                      <SelectItem value="za">Name Z-A</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+              </div>
               
               {journalsLoading ? (
                 <div className="flex justify-center p-12"><div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div></div>
-              ) : journals && journals.length > 0 ? (
+              ) : filteredAndSortedJournals.length > 0 ? (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {journals.map((journal: any) => (
+                  {filteredAndSortedJournals.map((journal: any) => (
                     <Card key={journal.id} className="rounded-funky border-none shadow-xl group hover:shadow-2xl transition-all duration-300 overflow-hidden">
                       <div className="relative aspect-video w-full bg-secondary">
                         {journal.imageUrl ? (
@@ -195,9 +301,14 @@ export default function ManageJournals() {
                             <Building2 className="h-12 w-12 text-primary/10" />
                           </div>
                         )}
-                        <Button variant="destructive" size="icon" onClick={() => handleDelete(journal.id)} className="absolute top-4 right-4 rounded-full h-8 w-8 opacity-0 group-hover:opacity-100 transition-opacity z-10">
-                          <Trash2 className="h-4 w-4" />
-                        </Button>
+                        <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                          <Button variant="secondary" size="icon" onClick={() => handleEdit(journal)} className="rounded-full h-8 w-8 bg-white shadow-md">
+                            <Edit3 className="h-4 w-4 text-primary" />
+                          </Button>
+                          <Button variant="destructive" size="icon" onClick={() => handleDelete(journal.id)} className="rounded-full h-8 w-8 shadow-md">
+                            <Trash2 className="h-4 w-4" />
+                          </Button>
+                        </div>
                       </div>
                       <CardContent className="p-8">
                         <div className="flex justify-between items-start mb-6">
@@ -221,7 +332,8 @@ export default function ManageJournals() {
                 </div>
               ) : (
                 <Card className="rounded-funky border-dashed border-2 border-primary/10 p-20 text-center">
-                  <p className="text-foreground/40 font-bold uppercase tracking-widest">No journals added yet</p>
+                  <Filter className="h-12 w-12 text-primary/10 mx-auto mb-4" />
+                  <p className="text-foreground/40 font-bold uppercase tracking-widest">No matching journals found</p>
                 </Card>
               )}
             </div>
