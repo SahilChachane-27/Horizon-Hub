@@ -37,16 +37,7 @@ const navLinks = [
       { href: '/why-us', label: 'Our Philosophy' },
     ]
   },
-  {
-    label: 'Our Services',
-    items: [
-      { href: '/services#hosting', label: 'Journal Hosting Solutions' },
-      { href: '/services#partnership', label: 'University Partnership Program' },
-      { href: '/services#editorial', label: 'Editorial Management & Workflow' },
-      { href: '/services#doi', label: 'DOI & Indexing Support' },
-      { href: '/services#sdg', label: 'Sustainable Development Goals Integration' },
-    ]
-  },
+  { href: '/services', label: 'Our Services' },
   {
     label: 'Journals Hosted',
     items: [
