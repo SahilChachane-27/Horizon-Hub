@@ -40,22 +40,8 @@ const navLinks = [
   { href: '/services', label: 'Our Services' },
   { href: '/journals', label: 'Journals Hosted' },
   { href: '/contact', label: 'For Universities' },
-  {
-    label: 'Resources',
-    items: [
-      { href: '#', label: 'Author Guidelines Templates' },
-      { href: '#', label: 'Reviewer Guidelines' },
-      { href: '#', label: 'Publishing Ethics (COPE-aligned)' },
-      { href: '#', label: 'Scholar JMS Support Documentation' },
-    ]
-  },
-  {
-    label: 'Subscription Plans',
-    items: [
-      { href: '#', label: 'Annual Hosting Plans' },
-      { href: '#', label: 'Add-on Modules' },
-    ]
-  },
+  { href: '#', label: 'Resources' },
+  { href: '#', label: 'Subscription Plans' },
   { href: '/contact', label: 'Contact Us' },
 ];
 
