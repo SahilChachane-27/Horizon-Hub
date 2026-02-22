@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { Facebook, Twitter, Linkedin, Instagram, BookOpen } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -35,9 +35,12 @@ export function Footer() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           <div className="space-y-4" data-aos="fade-up">
-            <Link href="/" className="flex flex-col leading-tight font-headline transition-opacity hover:opacity-80">
-                <span className="text-2xl font-bold text-accent">Technical Journals</span>
-                <span className="text-[11px] font-medium text-accent/80 tracking-[0.2em] uppercase">University Journal Hosting</span>
+            <Link href="/" className="flex items-center gap-3 leading-tight font-headline transition-opacity hover:opacity-80">
+                <BookOpen className="h-8 w-8 text-accent" />
+                <div className="flex flex-col">
+                  <span className="text-2xl font-bold text-accent">Technical Journals</span>
+                  <span className="text-[11px] font-medium text-accent/80 tracking-[0.2em] uppercase">University Journal Hosting</span>
+                </div>
             </Link>
             <p className="text-sm">
               Empowering academic institutions with secure, scalable, and professional journal hosting since 2024.
