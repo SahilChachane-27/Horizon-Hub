@@ -1,30 +1,43 @@
 import { Card } from '@/components/ui/card';
-import { Award, Clock, FileText, ShieldCheck } from 'lucide-react';
+import { 
+  Zap, 
+  Wand2, 
+  ShieldCheck, 
+  Layers, 
+  Globe, 
+  Cpu 
+} from 'lucide-react';
 
 const features = [
   {
+    icon: Zap,
+    title: 'Quick Journal Setup',
+    description: 'Go live in minutes with our pre-configured architecture, optimized for academic institutional workflows.',
+  },
+  {
+    icon: Wand2,
+    title: 'No Technical Experience Needed',
+    description: 'Focus on your research and editorial work. We handle all the servers, coding, and technical stress.',
+  },
+  {
     icon: ShieldCheck,
-    title: 'Uncompromising Quality',
-    description:
-      'We adhere to the highest standards of construction and use premium materials to ensure lasting value.',
+    title: 'Modern, Scalable & Secure',
+    description: 'Built for reliability and data safety, our platform scales effortlessly as your institutional research grows.',
   },
   {
-    icon: Clock,
-    title: 'On-Time Delivery',
-    description:
-      'Our meticulous project management ensures that every project is completed within the agreed timeframe.',
+    icon: Layers,
+    title: 'All-in-One Platform',
+    description: 'A single, unified environment for manuscript submission, peer review, DOI registration, and final publishing.',
   },
   {
-    icon: FileText,
-    title: 'Transparent Process',
-    description:
-      'We maintain open communication and provide regular updates throughout the project lifecycle.',
+    icon: Globe,
+    title: 'For Solo to Institutional Use',
+    description: 'Flexible plans and modular workflows that grow with you, from single journals to university-wide catalogs.',
   },
   {
-    icon: Award,
-    title: '25+ Years Experience',
-    description:
-      'With over two decades in the industry, we bring extensive expertise to every project we undertake.',
+    icon: Cpu,
+    title: 'Superior, Cutting-Edge Tech',
+    description: 'Utilizing next-gen efficiency and bank-grade security to power the future of academic publishing.',
   },
 ];
 
@@ -34,15 +47,14 @@ export function WhyUs() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">
-            Why Choose Horizon Group
+            Why Choose Technical Journals?
           </h2>
           <div className="mt-4 w-24 h-1 bg-accent mx-auto"></div>
           <p className="mt-6 text-base md:text-lg text-foreground/80 max-w-2xl mx-auto">
-            Our commitment to excellence and client satisfaction sets us apart in
-            the industry.
+            Empowering universities with professional, secure, and institutionally-owned publishing solutions.
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <Card
               key={index}
