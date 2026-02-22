@@ -88,8 +88,9 @@ export function Header() {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <Link href="/" className="flex items-center text-2xl font-bold text-accent font-headline">
-            <span>Technical Journals</span>
+          <Link href="/" className="flex flex-col justify-center leading-tight font-headline transition-transform hover:scale-[1.02]">
+            <span className="text-xl md:text-2xl font-bold text-accent">Technical Journals</span>
+            <span className="text-[10px] md:text-[11px] font-medium text-white/80 tracking-[0.15em] uppercase">University Journal Hosting</span>
           </Link>
           
           <nav className="hidden md:flex items-center space-x-6">
@@ -106,9 +107,6 @@ export function Header() {
                   </Button>
                 </SheetTrigger>
                 <SheetContent side="right" className="bg-primary border-l-0 text-white w-64 p-6">
-                  <SheetHeader>
-                    <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-                  </SheetHeader>
                   <nav className="flex flex-col items-start space-y-6 mt-8">
                     <NavContent inSheet />
                   </nav>
