@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 'use client';
 
+=======
+import Image from 'next/image';
+>>>>>>> old-work
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { ArrowRight, Building2, Home } from 'lucide-react';
@@ -26,6 +30,7 @@ export function Hero() {
           <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-transparent" />
         </div>
       )}
+<<<<<<< HEAD
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20">
         <div className="max-w-4xl text-left" data-aos="fade-up">
@@ -64,6 +69,25 @@ export function Hero() {
                 </div>
               </div>
             </div>
+=======
+      <div className="absolute inset-0 bg-black/50" />
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 max-w-4xl" data-aos="fade-right">
+          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 drop-shadow-lg font-headline">
+            Secure and Reliable Journal Hosting for Universities Only
+          </h1>
+          <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl drop-shadow-md">
+            Technical Journals provides secure, scalable, ethical journal hosting exclusively for University-owned journals.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-start">
+            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground transition-transform duration-300 ease-in-out hover:scale-105 rounded-funky">
+              <a href="#contact">Start Your University Journal</a>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="border-accent text-white bg-transparent hover:bg-accent hover:text-accent-foreground transition-transform duration-300 ease-in-out hover:scale-105 rounded-funky">
+              <a href="#projects">Explore Journals</a>
+            </Button>
+          </div>
+>>>>>>> old-work
         </div>
       </div>
     </section>

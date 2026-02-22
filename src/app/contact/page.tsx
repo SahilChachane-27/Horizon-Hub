@@ -3,6 +3,7 @@
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { Contact } from '@/components/sections/contact';
+<<<<<<< HEAD
 import { Card, CardContent } from '@/components/ui/card';
 import { Mail, PhoneCall, MapPin, Building } from "lucide-react";
 
@@ -12,11 +13,15 @@ const contactOptions = [
   { icon: MapPin, title: "Our Headquarters", text: "123 Construction Plaza, Manhattan, NY" },
   { icon: Building, title: "Project Consult", text: "Schedule a site visit or office meeting" }
 ];
+=======
+import { ScrollToTop } from '@/components/layout/scroll-to-top';
+>>>>>>> old-work
 
 export default function ContactPage() {
   return (
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
+<<<<<<< HEAD
       <main className="flex-1 pt-16">
         <section className="relative flex flex-col items-center justify-center overflow-hidden bg-primary pt-32 pb-24">
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -69,6 +74,23 @@ export default function ContactPage() {
         </section>
       </main>
       <Footer />
+=======
+      <main className="flex-1 pt-20">
+        <section className="py-20 bg-primary text-primary-foreground">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 className="text-4xl md:text-5xl font-bold font-headline mb-4" data-aos="fade-up">
+              Contact Us
+            </h1>
+            <p className="text-xl opacity-90 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+              Ready to launch your university journal? Get in touch with our specialist academic hosting team.
+            </p>
+          </div>
+        </section>
+        <Contact />
+      </main>
+      <Footer />
+      <ScrollToTop />
+>>>>>>> old-work
     </div>
   );
 }
