@@ -38,14 +38,7 @@ const navLinks = [
     ]
   },
   { href: '/services', label: 'Our Services' },
-  {
-    label: 'Journals Hosted',
-    items: [
-      { href: '/journals', label: 'Browse All Journals' },
-      { href: '/journals', label: 'Search Journals' },
-      { href: '/journals', label: 'Subject-wise Categories' },
-    ]
-  },
+  { href: '/journals', label: 'Journals Hosted' },
   {
     label: 'For Universities',
     items: [
