@@ -257,7 +257,7 @@ export default function JournalsPage() {
                 <Button
                   key={cat.name}
                   variant={selectedCategory === cat.name ? "default" : "outline"}
-                  className={`h-auto py-8 flex flex-col gap-4 rounded-xl border-accent/20 transition-all hover:scale-105 ${selectedCategory === cat.name ? 'bg-accent text-accent-foreground shadow-lg' : 'bg-white hover:bg-secondary'}`}
+                  className={`h-auto py-8 flex flex-col gap-4 rounded-xl border-accent/20 transition-all hover:scale-105 ${selectedCategory === cat.name ? 'bg-accent text-accent-foreground shadow-lg' : 'bg-white hover:bg-accent hover:text-accent-foreground'}`}
                   onClick={() => setSelectedCategory(cat.name)}
                   data-aos="zoom-in"
                   data-aos-delay={idx * 50}
