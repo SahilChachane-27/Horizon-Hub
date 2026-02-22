@@ -10,6 +10,9 @@ import {
   SheetContent,
   SheetTrigger,
   SheetClose,
+  SheetHeader,
+  SheetTitle,
+  SheetDescription,
 } from '@/components/ui/sheet';
 import {
   DropdownMenu,
@@ -149,6 +152,12 @@ export function Header() {
                   </Button>
                 </SheetTrigger>
                 <SheetContent side="right" className="bg-primary border-l-0 text-white w-80 p-6 overflow-y-auto">
+                  <SheetHeader className="sr-only">
+                    <SheetTitle>Navigation Menu</SheetTitle>
+                    <SheetDescription>
+                      Access all pages and resources of Technical Journals.
+                    </SheetDescription>
+                  </SheetHeader>
                   <nav className="flex flex-col items-start space-y-4 mt-8">
                     <Accordion type="single" collapsible className="w-full text-white">
                       {navLinks.map((link, idx) => {
