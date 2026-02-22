@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -16,11 +15,11 @@ import {
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
-  { href: '/#services', label: 'Services' },
-  { href: '/#projects', label: 'Journals' },
-  { href: '/#why-us', label: 'Why Us' },
-  { href: '/#testimonials', label: 'Testimonials' },
-  { href: '/#contact', label: 'Contact' },
+  { href: '/services', label: 'Services' },
+  { href: '/journals', label: 'Journals' },
+  { href: '/why-us', label: 'Why Us' },
+  { href: '/testimonials', label: 'Testimonials' },
+  { href: '/contact', label: 'Contact' },
 ];
 
 export function Header() {
@@ -39,40 +38,21 @@ export function Header() {
   const NavContent = ({ inSheet }: { inSheet?: boolean }) => (
     <>
       {navLinks.map((link) => {
-        const isInternalPage = !link.href.includes('#');
         const className = "text-lg md:text-sm font-medium text-white/80 hover:text-white transition-colors";
 
-        if (isInternalPage) {
-          if (inSheet) {
-            return (
-              <SheetClose asChild key={link.href}>
-                <Link href={link.href} className={className}>
-                  {link.label}
-                </Link>
-              </SheetClose>
-            );
-          }
-          return (
-            <Link key={link.href} href={link.href} className={className}>
-              {link.label}
-            </Link>
-          );
-        }
-
-        // Anchor link or hash link
         if (inSheet) {
           return (
             <SheetClose asChild key={link.href}>
-              <a href={link.href} className={className}>
+              <Link href={link.href} className={className}>
                 {link.label}
-              </a>
+              </Link>
             </SheetClose>
           );
         }
         return (
-          <a key={link.href} href={link.href} className={className}>
+          <Link key={link.href} href={link.href} className={className}>
             {link.label}
-          </a>
+          </Link>
         );
       })}
     </>

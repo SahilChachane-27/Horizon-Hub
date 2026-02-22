@@ -1,4 +1,3 @@
-
 'use client';
 
 import Link from 'next/link';
@@ -17,9 +16,9 @@ const socialLinks = [
 const quickLinks = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About Us' },
-  { href: '/#services', label: 'Our Services' },
-  { href: '/#projects', label: 'Hosted Journals' },
-  { href: '/#contact', label: 'Inquiry' },
+  { href: '/services', label: 'Our Services' },
+  { href: '/journals', label: 'Hosted Journals' },
+  { href: '/contact', label: 'Inquiry' },
 ];
 
 export function Footer() {
