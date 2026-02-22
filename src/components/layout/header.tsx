@@ -29,14 +29,7 @@ import {
 
 const navLinks = [
   { href: '/', label: 'Home' },
-  { 
-    label: 'About Us',
-    items: [
-      { href: '/about', label: 'Who We Are' },
-      { href: '/testimonials', label: 'Academic Testimonials' },
-      { href: '/why-us', label: 'Our Philosophy' },
-    ]
-  },
+  { href: '/about', label: 'About Us' },
   { href: '/services', label: 'Our Services' },
   { href: '/journals', label: 'Journals Hosted' },
   { href: '/contact', label: 'For Universities' },
