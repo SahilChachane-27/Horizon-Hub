@@ -33,7 +33,7 @@ const navLinks = [
   { href: '/services', label: 'Our Services' },
   { href: '/journals', label: 'Journals Hosted' },
   { href: '/for-universities', label: 'For Universities' },
-  { href: '#', label: 'Resources' },
+  { href: '/resources', label: 'Resources' },
   { href: '#', label: 'Subscription Plans' },
   { href: '/contact', label: 'Contact Us' },
 ];
