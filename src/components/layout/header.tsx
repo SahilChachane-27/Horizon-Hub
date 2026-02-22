@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, BookOpen } from 'lucide-react';
+import { Menu, BookOpen, ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import {
@@ -11,15 +11,73 @@ import {
   SheetTrigger,
   SheetClose,
 } from '@/components/ui/sheet';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
-  { href: '/services', label: 'Services' },
-  { href: '/journals', label: 'Journals' },
-  { href: '/why-us', label: 'Why Us' },
-  { href: '/testimonials', label: 'Testimonials' },
-  { href: '/contact', label: 'Contact' },
+  { 
+    label: 'About Us',
+    items: [
+      { href: '/about', label: 'Who We Are' },
+      { href: '/testimonials', label: 'Academic Testimonials' },
+      { href: '/why-us', label: 'Our Philosophy' },
+    ]
+  },
+  {
+    label: 'Our Services',
+    items: [
+      { href: '/services#hosting', label: 'Journal Hosting Solutions' },
+      { href: '/services#partnership', label: 'University Partnership Program' },
+      { href: '/services#editorial', label: 'Editorial Management & Workflow' },
+      { href: '/services#doi', label: 'DOI & Indexing Support' },
+      { href: '/services#sdg', label: 'Sustainable Development Goals Integration' },
+    ]
+  },
+  {
+    label: 'Journals Hosted',
+    items: [
+      { href: '/journals', label: 'Browse All Journals' },
+      { href: '/journals', label: 'Search Journals' },
+      { href: '/journals', label: 'Subject-wise Categories' },
+    ]
+  },
+  {
+    label: 'For Universities',
+    items: [
+      { href: '/contact', label: 'Start Your Journal' },
+      { href: '/services', label: 'Hosting Packages' },
+      { href: '/services', label: 'Migration Support' },
+      { href: '/why-us', label: 'Partner Benefits' },
+    ]
+  },
+  {
+    label: 'Resources',
+    items: [
+      { href: '#', label: 'Author Guidelines Templates' },
+      { href: '#', label: 'Reviewer Guidelines' },
+      { href: '#', label: 'Publishing Ethics (COPE-aligned)' },
+      { href: '#', label: 'Scholar JMS Support Documentation' },
+    ]
+  },
+  {
+    label: 'Subscription Plans',
+    items: [
+      { href: '#', label: 'Annual Hosting Plans' },
+      { href: '#', label: 'Add-on Modules' },
+    ]
+  },
+  { href: '/contact', label: 'Contact Us' },
 ];
 
 export function Header() {
@@ -34,29 +92,6 @@ export function Header() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const NavContent = ({ inSheet }: { inSheet?: boolean }) => (
-    <>
-      {navLinks.map((link) => {
-        const className = "text-lg md:text-sm font-medium text-white/80 hover:text-white transition-colors";
-
-        if (inSheet) {
-          return (
-            <SheetClose asChild key={link.href}>
-              <Link href={link.href} className={className}>
-                {link.label}
-              </Link>
-            </SheetClose>
-          );
-        }
-        return (
-          <Link key={link.href} href={link.href} className={className}>
-            {link.label}
-          </Link>
-        );
-      })}
-    </>
-  );
 
   return (
     <header
@@ -75,11 +110,36 @@ export function Header() {
             </div>
           </Link>
           
-          <nav className="hidden md:flex items-center space-x-6">
-            <NavContent />
+          <nav className="hidden xl:flex items-center space-x-3">
+            {navLinks.map((link, idx) => {
+              if (link.items) {
+                return (
+                  <DropdownMenu key={idx}>
+                    <DropdownMenuTrigger className="flex items-center gap-1 text-xs 2xl:text-sm font-medium text-white/80 hover:text-white transition-colors outline-none">
+                      {link.label} <ChevronDown className="h-3 w-3" />
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent className="bg-primary border-white/10 text-white min-w-[220px]">
+                      {link.items.map((item, iIdx) => (
+                        <DropdownMenuItem key={iIdx} asChild className="focus:bg-accent focus:text-accent-foreground cursor-pointer">
+                          <Link href={item.href}>{item.label}</Link>
+                        </DropdownMenuItem>
+                      ))}
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                );
+              }
+              return (
+                <Link key={idx} href={link.href!} className="text-xs 2xl:text-sm font-medium text-white/80 hover:text-white transition-colors">
+                  {link.label}
+                </Link>
+              );
+            })}
+            <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold rounded-funky ml-2 text-xs">
+              <Link href="/contact">Begin your Research Journey</Link>
+            </Button>
           </nav>
 
-          <div className="md:hidden">
+          <div className="xl:hidden">
             {isClient && (
               <Sheet>
                 <SheetTrigger asChild>
@@ -88,9 +148,44 @@ export function Header() {
                     <span className="sr-only">Toggle navigation</span>
                   </Button>
                 </SheetTrigger>
-                <SheetContent side="right" className="bg-primary border-l-0 text-white w-64 p-6">
-                  <nav className="flex flex-col items-start space-y-6 mt-8">
-                    <NavContent inSheet />
+                <SheetContent side="right" className="bg-primary border-l-0 text-white w-80 p-6 overflow-y-auto">
+                  <nav className="flex flex-col items-start space-y-4 mt-8">
+                    <Accordion type="single" collapsible className="w-full text-white">
+                      {navLinks.map((link, idx) => {
+                        if (link.items) {
+                          return (
+                            <AccordionItem value={`item-${idx}`} key={idx} className="border-white/10">
+                              <AccordionTrigger className="text-white/80 hover:text-white hover:no-underline">
+                                {link.label}
+                              </AccordionTrigger>
+                              <AccordionContent className="flex flex-col gap-3 pl-4 pt-2">
+                                {link.items.map((item, iIdx) => (
+                                  <SheetClose asChild key={iIdx}>
+                                    <Link href={item.href} className="text-sm text-white/60 hover:text-white">
+                                      {item.label}
+                                    </Link>
+                                  </SheetClose>
+                                ))}
+                              </AccordionContent>
+                            </AccordionItem>
+                          );
+                        }
+                        return (
+                          <div key={idx} className="py-4 border-b border-white/10">
+                            <SheetClose asChild>
+                              <Link href={link.href!} className="text-white/80 hover:text-white font-medium">
+                                {link.label}
+                              </Link>
+                            </SheetClose>
+                          </div>
+                        );
+                      })}
+                    </Accordion>
+                    <SheetClose asChild>
+                      <Button asChild className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-bold rounded-funky mt-6">
+                        <Link href="/contact">Begin your Research Journey</Link>
+                      </Button>
+                    </SheetClose>
                   </nav>
                 </SheetContent>
               </Sheet>
