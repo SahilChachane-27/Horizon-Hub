@@ -25,15 +25,15 @@ export function About() {
           <div className="lg:col-span-3 space-y-6" data-aos="fade-left">
             <div data-aos="fade-up">
               <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">
-                About Horizon Group
+                About Technical Journals
               </h2>
               <div className="mt-4 w-24 h-1 bg-accent"></div>
             </div>
             <p className="text-base md:text-lg text-foreground/80">
-              Founded in 1998, Horizon Group has established itself as a premier real estate development and construction firm with a portfolio of landmark projects across the country.
+              Technical Journals is being developed as a global journal hosting platform exclusively for Universities and Academic Institutions. The platform will NOT host journals from private publishers.
             </p>
             <p className="text-base md:text-lg text-foreground/80">
-              Our integrated approach combines innovative design, sustainable practices, and meticulous craftsmanship to deliver exceptional value to our clients and communities.
+              The main objective is to provide a secure, scalable, and professional Scholar JMS based hosting environment where universities can launch, manage, and publish their research journals under their own institutional branding.
             </p>
             <Card className="bg-card border-0 border-l-4 border-accent shadow-lg rounded-funky">
               <CardHeader>
@@ -41,7 +41,7 @@ export function About() {
               </CardHeader>
               <CardContent>
                 <p className="text-foreground/80">
-                  To create enduring spaces that enrich lives and communities through innovative design, sustainable construction, and unwavering commitment to quality.
+                  To empower academic institutions with sovereign publishing tools that ensure their research remains accessible, professional, and firmly under institutional control.
                 </p>
               </CardContent>
             </Card>
