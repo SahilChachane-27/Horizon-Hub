@@ -4,13 +4,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { AOSInit } from '@/components/AOSInit';
 
 export const metadata: Metadata = {
-<<<<<<< HEAD
-  title: 'Horizon Group | Premier Real Estate & Construction',
-  description: 'Transforming visions into landmarks. Excellence in residential construction, commercial developments, and real estate innovation since 1998.',
-=======
   title: 'Technical Journals | Secure University Journal Hosting',
   description: 'Technical Journals - Providing secure, scalable, and ethical journal hosting exclusively for University-owned academic journals.',
->>>>>>> old-work
 };
 
 export default function RootLayout({
@@ -19,11 +14,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-<<<<<<< HEAD
-    <html lang="en" className="scroll-smooth">
-=======
     <html lang="en" suppressHydrationWarning>
->>>>>>> old-work
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

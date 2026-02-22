@@ -2,11 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-<<<<<<< HEAD
-import { Menu, X } from 'lucide-react';
-=======
 import { Menu, BookOpen } from 'lucide-react';
->>>>>>> old-work
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import {
@@ -21,15 +17,6 @@ import {
 
 const navLinks = [
   { href: '/', label: 'Home' },
-<<<<<<< HEAD
-  { href: '/residential-construction', label: 'Residential' },
-  { href: '/commercial-projects', label: 'Commercial' },
-  { href: '/real-estate-development', label: 'Development' },
-  { href: '/renovation-remodeling', label: 'Renovation' },
-  { href: '/about', label: 'About Us' },
-  { href: '/blog', label: 'Insights' },
-  { href: '/contact', label: 'Contact' },
-=======
   { href: '/about', label: 'About Us' },
   { href: '/services', label: 'Our Services' },
   { href: '/journals', label: 'Journals Hosted' },
@@ -37,7 +24,6 @@ const navLinks = [
   { href: '/resources', label: 'Resources' },
   { href: '/pricing', label: 'Subscription Plans' },
   { href: '/contact', label: 'Contact Us' },
->>>>>>> old-work
 ];
 
 export function Header() {
@@ -53,37 +39,6 @@ export function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-<<<<<<< HEAD
-  const NavContent = ({ inSheet }: { inSheet?: boolean }) => (
-    <>
-      {navLinks.map((link) => {
-        const className = cn(
-          "text-sm font-bold transition-all whitespace-nowrap uppercase tracking-wider",
-          inSheet 
-            ? "text-lg text-white/80 hover:text-accent py-2" 
-            : "text-white/80 hover:text-accent lg:text-[10px] xl:text-xs"
-        );
-
-        if (inSheet) {
-          return (
-            <SheetClose asChild key={link.label}>
-              <Link href={link.href} className={className}>
-                {link.label}
-              </Link>
-            </SheetClose>
-          );
-        }
-        return (
-          <Link key={link.label} href={link.href} className={className}>
-            {link.label}
-          </Link>
-        );
-      })}
-    </>
-  );
-
-=======
->>>>>>> old-work
   return (
     <header
       className={cn(
@@ -91,32 +46,6 @@ export function Header() {
         scrolled ? 'bg-primary shadow-xl py-2 border-b border-accent/10' : 'bg-primary/90 backdrop-blur-md py-4'
       )}
     >
-<<<<<<< HEAD
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <Link href="/" className="flex items-center gap-2 group shrink-0">
-            <div className="bg-white rounded-lg p-1.5 shadow-lg group-hover:scale-110 transition-transform duration-300">
-              <span className="text-primary font-black text-xl leading-none tracking-tighter">HG</span>
-            </div>
-            <div className="flex flex-col">
-              <div className="text-lg md:text-xl font-bold text-accent font-headline leading-none uppercase">
-                Horizon<span className="ml-0.5 text-white">Group</span>
-              </div>
-              <span className="text-[8px] text-white/60 tracking-widest uppercase font-bold">Construction & Development</span>
-            </div>
-          </Link>
-          
-          <div className="hidden lg:flex items-center space-x-4 xl:space-x-6">
-            <nav className="flex items-center space-x-3 xl:space-x-5">
-              <NavContent />
-            </nav>
-            <Button asChild className="bg-accent hover:bg-white hover:text-primary text-accent-foreground rounded-funky transition-all duration-300 hover:scale-105 shadow-lg h-10 px-6 font-bold text-[10px] xl:text-xs uppercase">
-              <Link href="/contact">Get a Quote</Link>
-            </Button>
-          </div>
-
-          <div className="lg:hidden">
-=======
       <div className="container mx-auto px-8 md:px-16 lg:px-32">
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="flex items-center gap-3 leading-tight font-headline transition-transform hover:scale-[1.02]">
@@ -141,7 +70,6 @@ export function Header() {
           </nav>
 
           <div className="xl:hidden">
->>>>>>> old-work
             {isClient && (
               <Sheet>
                 <SheetTrigger asChild>
@@ -150,17 +78,6 @@ export function Header() {
                     <span className="sr-only">Toggle navigation</span>
                   </Button>
                 </SheetTrigger>
-<<<<<<< HEAD
-                <SheetContent side="right" className="bg-primary border-l-accent/20 text-white w-[280px] sm:w-[350px] p-6 overflow-y-auto">
-                  <SheetHeader className="mb-8 border-b border-accent/10 pb-4">
-                    <SheetTitle className="text-accent text-left font-headline italic text-2xl uppercase">Navigation</SheetTitle>
-                  </SheetHeader>
-                  <nav className="flex flex-col items-start space-y-4">
-                    <NavContent inSheet />
-                    <SheetClose asChild>
-                      <Button asChild className="w-full bg-accent hover:bg-white hover:text-primary text-accent-foreground mt-6 rounded-funky transition-all font-bold uppercase">
-                        <Link href="/contact">Contact Us Today</Link>
-=======
                 <SheetContent side="right" className="bg-primary border-l-0 text-white w-80 p-6 overflow-y-auto">
                   <SheetHeader className="sr-only">
                     <SheetTitle>Navigation Menu</SheetTitle>
@@ -181,7 +98,6 @@ export function Header() {
                     <SheetClose asChild>
                       <Button asChild className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-bold rounded-funky mt-6">
                         <Link href="/contact">Begin your Research Journey</Link>
->>>>>>> old-work
                       </Button>
                     </SheetClose>
                   </nav>

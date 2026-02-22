@@ -1,37 +1,21 @@
 'use client';
 
-import { Cpu, Atom, Film, BookOpen, Globe, Landmark } from 'lucide-react';
+import { Landmark, Atom, Film, BookOpen, Globe } from 'lucide-react';
 
 const partners = [
-  {
-    name: 'SSIPMT RAIPUR',
-    icon: Landmark,
-  },
-  {
-    name: 'VIT PUNE',
-    icon: Atom,
-  },
-  {
-    name: 'AAFT UNIVERSITY RAIPUR',
-    icon: Film,
-  },
-  {
-    name: 'ARYA GROUP OF COLLEGES',
-    icon: BookOpen,
-  },
-  {
-    name: 'NOIDA INTERNATIONAL UNIVERSITY',
-    icon: Globe,
-  },
+  { name: 'SSIPMT RAIPUR', icon: Landmark },
+  { name: 'VIT PUNE', icon: Atom },
+  { name: 'AAFT UNIVERSITY RAIPUR', icon: Film },
+  { name: 'ARYA GROUP OF COLLEGES', icon: BookOpen },
+  { name: 'NOIDA INTERNATIONAL UNIVERSITY', icon: Globe },
 ];
 
 export function Partners() {
-  // Double the partners to create a seamless infinite scroll effect
   const displayPartners = [...partners, ...partners];
 
   return (
     <section className="py-20 bg-white overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+      <div className="container mx-auto px-8 md:px-16 lg:px-32 mb-16">
         <div className="text-center" data-aos="fade-up">
           <p className="text-[10px] md:text-xs font-medium text-foreground/40 tracking-[0.4em] uppercase mb-4">
             Institutional Network

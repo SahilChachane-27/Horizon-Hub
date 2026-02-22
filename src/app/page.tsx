@@ -7,9 +7,7 @@ import { Partners } from '@/components/sections/partners';
 import { About } from '@/components/sections/about';
 import { Services } from '@/components/sections/services';
 import { Projects } from '@/components/sections/projects';
-import { Testimonials } from '@/components/sections/testimonials';
 import { WhyUs } from '@/components/sections/why-us';
-import { Blog } from '@/components/sections/blog';
 import { ScrollToTop } from '@/components/layout/scroll-to-top';
 import { TrustBadges } from '@/components/sections/trust-badges';
 
@@ -22,15 +20,9 @@ export default function Home() {
         <Partners />
         <About />
         <Services />
-<<<<<<< HEAD
-=======
         <TrustBadges />
-        <Projects />
->>>>>>> old-work
         <WhyUs />
         <Projects />
-        <Testimonials />
-        <Blog />
       </main>
       <Footer />
       <ScrollToTop />

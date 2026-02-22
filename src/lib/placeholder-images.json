@@ -2,59 +2,6 @@
   "placeholderImages": [
     {
       "id": "hero-bg",
-<<<<<<< HEAD
-      "description": "A high-rise skyscraper construction site at sunset with city skyline background.",
-      "imageUrl": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1920",
-      "imageHint": "skyscraper construction"
-    },
-    {
-      "id": "about-img",
-      "description": "A professional architect and engineer discussing blueprints on a construction site.",
-      "imageUrl": "https://images.unsplash.com/photo-1503387762-592dee58c460?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "architect blueprints"
-    },
-    {
-      "id": "project-1",
-      "description": "Modern luxury apartment building with glass facade.",
-      "imageUrl": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=800",
-      "imageHint": "modern apartment"
-    },
-    {
-      "id": "project-2",
-      "description": "Sleek office tower in a financial district.",
-      "imageUrl": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=800",
-      "imageHint": "office tower"
-    },
-    {
-      "id": "project-3",
-      "description": "A large-scale commercial shopping center with modern architecture.",
-      "imageUrl": "https://images.unsplash.com/photo-1567449303078-57ad995bd301?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=800",
-      "imageHint": "commercial center"
-    },
-    {
-      "id": "testimonial-1",
-      "description": "Portrait of a professional businessman.",
-      "imageUrl": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=200",
-      "imageHint": "businessman portrait"
-    },
-    {
-      "id": "testimonial-2",
-      "description": "Portrait of a professional businesswoman.",
-      "imageUrl": "https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=200",
-      "imageHint": "businesswoman portrait"
-    },
-    {
-      "id": "residential-hero-bg",
-      "description": "Luxury modern home with swimming pool.",
-      "imageUrl": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1920",
-      "imageHint": "luxury home"
-    },
-    {
-      "id": "commercial-hero-bg",
-      "description": "Modern office building exterior.",
-      "imageUrl": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1920",
-      "imageHint": "commercial building"
-=======
       "description": "A panoramic view of a prestigious university campus at dawn.",
       "imageUrl": "https://images.unsplash.com/photo-1541339907198-e087563ef3b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
       "imageHint": "university campus"
@@ -124,7 +71,6 @@
       "description": "A map showing University tech hubs.",
       "imageUrl": "https://images.unsplash.com/photo-1619468129361-605ebea04b44?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
       "imageHint": "city map"
->>>>>>> old-work
     }
   ]
 }
