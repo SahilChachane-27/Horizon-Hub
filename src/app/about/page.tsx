@@ -8,11 +8,49 @@ import { ScrollToTop } from '@/components/layout/scroll-to-top';
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { CheckCircle2, Shield, Globe, Cpu, BookOpen } from 'lucide-react';
+import { 
+  CheckCircle2, 
+  Shield, 
+  Globe, 
+  Cpu, 
+  BookOpen, 
+  School, 
+  Landmark, 
+  Scale, 
+  Eye 
+} from 'lucide-react';
 
 export default function AboutPage() {
   const aboutImage = PlaceHolderImages.find(p => p.id === 'about-img');
   const heroImage = PlaceHolderImages.find(p => p.id === 'hero-bg');
+
+  const pillars = [
+    {
+      icon: School,
+      title: "100% University-only hosting",
+      desc: "Strictly limited to academic institutions to preserve research ownership."
+    },
+    {
+      icon: Landmark,
+      title: "Non-commercial model",
+      desc: "A system focused on academic value and research integrity rather than private profit."
+    },
+    {
+      icon: Scale,
+      title: "Transparent, ethical publishing",
+      desc: "Supporting international ethics standards and peer-review transparency."
+    },
+    {
+      icon: Cpu,
+      title: "ScholarJMS Powered",
+      desc: "Utilizing industry-grade ScholarJMS for professional journal management."
+    },
+    {
+      icon: Globe,
+      title: "Global Research Visibility",
+      desc: "Maximized dissemination and visibility through strategic indexing support."
+    }
+  ];
 
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground font-body">
@@ -123,6 +161,32 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* Key Pillars of Excellence */}
+        <section className="py-16 bg-background">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline mb-4" data-aos="fade-up">
+              Key Pillars of Excellence
+            </h2>
+            <div className="w-20 h-1 bg-accent mx-auto mb-12" data-aos="fade-up"></div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {pillars.map((pillar, idx) => (
+                <Card key={idx} className="border-none shadow-xl rounded-funky bg-secondary p-4 flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay={idx * 100}>
+                  <div className="mb-4 p-4 bg-primary rounded-full text-accent shadow-lg">
+                    <pillar.icon className="h-8 w-8" />
+                  </div>
+                  <CardHeader className="p-0 mb-2">
+                    <CardTitle className="text-xl text-primary font-bold">{pillar.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="p-0">
+                    <p className="text-foreground/70">{pillar.desc}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Detailed Objective */}
         <section className="py-16 md:py-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
@@ -156,3 +220,4 @@ export default function AboutPage() {
     </div>
   );
 }
+
