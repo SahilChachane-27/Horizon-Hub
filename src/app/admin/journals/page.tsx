@@ -1,7 +1,7 @@
 
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useUser, useFirestore, useCollection } from '@/firebase';
 import { collection, addDoc, deleteDoc, doc, serverTimestamp, query, orderBy } from 'firebase/firestore';
 import { useRouter } from 'next/navigation';
@@ -26,7 +26,12 @@ export default function ManageJournals() {
   const [domain, setDomain] = useState('');
   const [link, setLink] = useState('');
 
-  const journalsQuery = useFirestore() ? query(collection(useFirestore()!, 'journals'), orderBy('createdAt', 'desc')) : null;
+  // Memoize the query to prevent infinite re-renders
+  const journalsQuery = useMemo(() => {
+    if (!db) return null;
+    return query(collection(db, 'journals'), orderBy('createdAt', 'desc'));
+  }, [db]);
+
   const { data: journals, loading: journalsLoading } = useCollection(journalsQuery);
 
   useEffect(() => {

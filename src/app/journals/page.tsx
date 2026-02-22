@@ -43,11 +43,16 @@ export default function JournalsPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [universityQuery, setUniversityQuery] = useState('');
   const [issnQuery, setIssnQuery] = useState('');
-  const [countryQuery, setCountryQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
 
   const db = useFirestore();
-  const journalsQuery = db ? query(collection(db, 'journals'), orderBy('createdAt', 'desc')) : null;
+  
+  // Memoize the query to prevent infinite re-renders
+  const journalsQuery = useMemo(() => {
+    if (!db) return null;
+    return query(collection(db, 'journals'), orderBy('createdAt', 'desc'));
+  }, [db]);
+
   const { data: journals, loading } = useCollection(journalsQuery);
 
   useEffect(() => {
