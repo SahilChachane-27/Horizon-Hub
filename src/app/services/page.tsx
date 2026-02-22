@@ -4,6 +4,7 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { Services } from '@/components/sections/services';
 import { ScrollToTop } from '@/components/layout/scroll-to-top';
+import { TrustBadges } from '@/components/sections/trust-badges';
 
 export default function ServicesPage() {
   return (
@@ -21,6 +22,7 @@ export default function ServicesPage() {
           </div>
         </section>
         <Services />
+        <TrustBadges />
       </main>
       <Footer />
       <ScrollToTop />

@@ -9,6 +9,7 @@ import { WhyUs } from '@/components/sections/why-us';
 import { Testimonials } from '@/components/sections/testimonials';
 import { Contact } from '@/components/sections/contact';
 import { ScrollToTop } from '@/components/layout/scroll-to-top';
+import { TrustBadges } from '@/components/sections/trust-badges';
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <Partners />
         <About />
         <Services />
+        <TrustBadges />
         <Projects />
         <WhyUs />
         <Testimonials />
