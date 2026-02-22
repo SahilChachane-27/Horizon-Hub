@@ -1,0 +1,54 @@
+
+{
+  "entities": {
+    "Journal": {
+      "title": "Journal",
+      "description": "A scholarly journal hosted on the platform.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the journal."
+        },
+        "university": {
+          "type": "string",
+          "description": "The name of the university or institution owning the journal."
+        },
+        "issn": {
+          "type": "string",
+          "description": "The ISSN (International Standard Serial Number) of the journal."
+        },
+        "domain": {
+          "type": "string",
+          "description": "The academic field or domain (e.g., Engineering, Law)."
+        },
+        "country": {
+          "type": "string",
+          "description": "The country of origin for the journal."
+        },
+        "indexing": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "List of indexing services (e.g., Scopus, UGC CARE)."
+        },
+        "link": {
+          "type": "string",
+          "format": "uri",
+          "description": "The external URL for the journal."
+        }
+      },
+      "required": ["name", "university", "issn", "domain", "link"]
+    }
+  },
+  "auth": {
+    "providers": ["password"]
+  },
+  "firestore": {
+    "/journals/{journalId}": {
+      "schema": { "$ref": "#/backend/entities/Journal" },
+      "description": "Collection of university journals."
+    }
+  }
+}
