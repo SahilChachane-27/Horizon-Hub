@@ -32,7 +32,7 @@ const navLinks = [
   { href: '/about', label: 'About Us' },
   { href: '/services', label: 'Our Services' },
   { href: '/journals', label: 'Journals Hosted' },
-  { href: '/contact', label: 'For Universities' },
+  { href: '/for-universities', label: 'For Universities' },
   { href: '#', label: 'Resources' },
   { href: '#', label: 'Subscription Plans' },
   { href: '/contact', label: 'Contact Us' },
@@ -70,22 +70,6 @@ export function Header() {
           
           <nav className="hidden xl:flex items-center space-x-3">
             {navLinks.map((link, idx) => {
-              if (link.items) {
-                return (
-                  <DropdownMenu key={idx}>
-                    <DropdownMenuTrigger className="flex items-center gap-1 text-xs 2xl:text-sm font-medium text-white/80 hover:text-white transition-colors outline-none">
-                      {link.label} <ChevronDown className="h-3 w-3" />
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent className="bg-primary border-white/10 text-white min-w-[220px]">
-                      {link.items.map((item, iIdx) => (
-                        <DropdownMenuItem key={iIdx} asChild className="focus:bg-accent focus:text-accent-foreground cursor-pointer">
-                          <Link href={item.href}>{item.label}</Link>
-                        </DropdownMenuItem>
-                      ))}
-                    </DropdownMenuContent>
-                  </DropdownMenu>
-                );
-              }
               return (
                 <Link key={idx} href={link.href!} className="text-xs 2xl:text-sm font-medium text-white/80 hover:text-white transition-colors">
                   {link.label}
@@ -114,37 +98,15 @@ export function Header() {
                     </SheetDescription>
                   </SheetHeader>
                   <nav className="flex flex-col items-start space-y-4 mt-8">
-                    <Accordion type="single" collapsible className="w-full text-white">
-                      {navLinks.map((link, idx) => {
-                        if (link.items) {
-                          return (
-                            <AccordionItem value={`item-${idx}`} key={idx} className="border-white/10">
-                              <AccordionTrigger className="text-white/80 hover:text-white hover:no-underline">
-                                {link.label}
-                              </AccordionTrigger>
-                              <AccordionContent className="flex flex-col gap-3 pl-4 pt-2">
-                                {link.items.map((item, iIdx) => (
-                                  <SheetClose asChild key={iIdx}>
-                                    <Link href={item.href} className="text-sm text-white/60 hover:text-white">
-                                      {item.label}
-                                    </Link>
-                                  </SheetClose>
-                                ))}
-                              </AccordionContent>
-                            </AccordionItem>
-                          );
-                        }
-                        return (
-                          <div key={idx} className="py-4 border-b border-white/10">
-                            <SheetClose asChild>
-                              <Link href={link.href!} className="text-white/80 hover:text-white font-medium">
-                                {link.label}
-                              </Link>
-                            </SheetClose>
-                          </div>
-                        );
-                      })}
-                    </Accordion>
+                    {navLinks.map((link, idx) => (
+                      <div key={idx} className="py-4 border-b border-white/10 w-full text-left">
+                        <SheetClose asChild>
+                          <Link href={link.href!} className="text-white/80 hover:text-white font-medium block w-full">
+                            {link.label}
+                          </Link>
+                        </SheetClose>
+                      </div>
+                    ))}
                     <SheetClose asChild>
                       <Button asChild className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-bold rounded-funky mt-6">
                         <Link href="/contact">Begin your Research Journey</Link>
