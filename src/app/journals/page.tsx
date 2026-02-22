@@ -1,7 +1,6 @@
-
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { ScrollToTop } from '@/components/layout/scroll-to-top';
@@ -104,9 +103,14 @@ const journals = [
 ];
 
 export default function JournalsPage() {
+  const [isClient, setIsClient] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedIndexing, setSelectedIndexing] = useState('All');
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const filteredJournals = useMemo(() => {
     return journals.filter(j => {
@@ -142,47 +146,55 @@ export default function JournalsPage() {
         <section className="py-12 bg-secondary/30 border-b">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 items-end" data-aos="fade-up">
-              <div className="lg:col-span-2">
-                <label className="text-sm font-bold text-primary mb-2 block uppercase tracking-wider">Search Journals</label>
-                <div className="relative">
-                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-                  <Input 
-                    placeholder="Search by Journal Name, University or ISSN..." 
-                    className="pl-10 h-12 border-primary/20 focus:border-accent"
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                  />
+              {isClient ? (
+                <>
+                  <div className="lg:col-span-2">
+                    <label className="text-sm font-bold text-primary mb-2 block uppercase tracking-wider">Search Journals</label>
+                    <div className="relative">
+                      <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                      <Input 
+                        placeholder="Search by Journal Name, University or ISSN..." 
+                        className="pl-10 h-12 border-primary/20 focus:border-accent"
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="text-sm font-bold text-primary mb-2 block uppercase tracking-wider">Field of Study</label>
+                    <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+                      <SelectTrigger className="h-12 border-primary/20">
+                        <SelectValue placeholder="All Categories" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="All">All Categories</SelectItem>
+                        {categories.map(cat => (
+                          <SelectItem key={cat.name} value={cat.name}>{cat.name}</SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  <div>
+                    <label className="text-sm font-bold text-primary mb-2 block uppercase tracking-wider">Indexing Status</label>
+                    <Select value={selectedIndexing} onValueChange={setSelectedIndexing}>
+                      <SelectTrigger className="h-12 border-primary/20">
+                        <SelectValue placeholder="Any Indexing" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="All">Any Indexing</SelectItem>
+                        <SelectItem value="Scopus">Scopus</SelectItem>
+                        <SelectItem value="UGC CARE">UGC CARE</SelectItem>
+                        <SelectItem value="DOAJ">DOAJ</SelectItem>
+                        <SelectItem value="Web of Science">Web of Science</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </>
+              ) : (
+                <div className="lg:col-span-4 h-24 flex items-center justify-center">
+                  <p className="text-muted-foreground animate-pulse font-medium">Loading search options...</p>
                 </div>
-              </div>
-              <div>
-                <label className="text-sm font-bold text-primary mb-2 block uppercase tracking-wider">Field of Study</label>
-                <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-                  <SelectTrigger className="h-12 border-primary/20">
-                    <SelectValue placeholder="All Categories" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="All">All Categories</SelectItem>
-                    {categories.map(cat => (
-                      <SelectItem key={cat.name} value={cat.name}>{cat.name}</SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-              <div>
-                <label className="text-sm font-bold text-primary mb-2 block uppercase tracking-wider">Indexing Status</label>
-                <Select value={selectedIndexing} onValueChange={setSelectedIndexing}>
-                  <SelectTrigger className="h-12 border-primary/20">
-                    <SelectValue placeholder="Any Indexing" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="All">Any Indexing</SelectItem>
-                    <SelectItem value="Scopus">Scopus</SelectItem>
-                    <SelectItem value="UGC CARE">UGC CARE</SelectItem>
-                    <SelectItem value="DOAJ">DOAJ</SelectItem>
-                    <SelectItem value="Web of Science">Web of Science</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
+              )}
             </div>
           </div>
         </section>
@@ -214,7 +226,7 @@ export default function JournalsPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center mb-10">
               <p className="text-foreground/60 font-medium">Showing {filteredJournals.length} Journals</p>
-              { (selectedCategory !== 'All' || searchQuery !== '' || selectedIndexing !== 'All') && (
+              { isClient && (selectedCategory !== 'All' || searchQuery !== '' || selectedIndexing !== 'All') && (
                 <Button variant="ghost" className="text-accent font-bold" onClick={() => {
                   setSearchQuery('');
                   setSelectedCategory('All');
