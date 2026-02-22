@@ -46,7 +46,7 @@ export function Header() {
         scrolled ? 'bg-primary shadow-md' : 'bg-transparent md:bg-gradient-to-b md:from-black/50'
       )}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-8 md:px-16 lg:px-32">
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="flex items-center gap-3 leading-tight font-headline transition-transform hover:scale-[1.02]">
             <BookOpen className="h-8 w-8 text-accent" />
