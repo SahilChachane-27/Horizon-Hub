@@ -14,19 +14,19 @@
     },
     {
       "id": "project-1",
-      "description": "Journal of Engineering and Applied Sciences.",
+      "description": "A professional academic journal cover for engineering.",
       "imageUrl": "https://images.unsplash.com/photo-1532012197267-da84d127e765?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
       "imageHint": "academic journal"
     },
     {
       "id": "project-2",
-      "description": "Medical Research Quarterly.",
+      "description": "A clean medical research journal layout.",
       "imageUrl": "https://images.unsplash.com/photo-1576085898323-218337e3e43c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
       "imageHint": "medical research"
     },
     {
       "id": "project-3",
-      "description": "Journal of Arts and Media Studies.",
+      "description": "An artistic journal cover for media and arts studies.",
       "imageUrl": "https://images.unsplash.com/photo-1516280440614-37939bbacd81?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
       "imageHint": "arts media"
     },
