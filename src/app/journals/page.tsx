@@ -31,7 +31,7 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const categories = [
   { name: 'Engineering', icon: Cpu },
-  { name: 'Technology', icon: globe => globe || globe === undefined ? Globe : Globe }, // Fallback logic
+  { name: 'Technology', icon: Globe },
   { name: 'Management', icon: Landmark },
   { name: 'Medical & Paramedical', icon: Stethoscope },
   { name: 'Agriculture', icon: Sprout },
