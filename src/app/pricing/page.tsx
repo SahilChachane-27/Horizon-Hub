@@ -96,7 +96,6 @@ export default function PricingPage() {
     <div className="flex flex-col min-h-screen bg-background font-body">
       <Header />
       <main className="flex-1">
-        {/* Hero Section */}
         <section className="relative overflow-hidden bg-primary text-white pt-32 pb-24">
           <div className="absolute inset-0 pointer-events-none opacity-5">
             <Globe className="absolute top-1/4 left-[10%] w-64 h-64 animate-pulse" />
@@ -127,7 +126,6 @@ export default function PricingPage() {
           </div>
         </section>
 
-        {/* Pricing Cards Section */}
         <section className="py-24 -mt-16 bg-white rounded-t-[60px] shadow-2xl relative z-20 overflow-hidden">
           <div className="container mx-auto px-8 md:px-16 lg:px-32">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -170,7 +168,6 @@ export default function PricingPage() {
               ))}
             </div>
 
-            {/* Next Steps & Support Section */}
             <div className="mt-24">
               <div className="text-center mb-16" data-aos="fade-up">
                 <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline italic">Next Steps & Support</h2>
@@ -203,7 +200,6 @@ export default function PricingPage() {
               </div>
             </div>
 
-            {/* Guarantee Section */}
             <div className="mt-24">
               <div data-aos="fade-up" className="relative p-[2px] rounded-funky overflow-hidden group shadow-2xl">
                 <div className="absolute inset-0 bg-gradient-to-br from-accent via-primary to-accent animate-pulse"></div>

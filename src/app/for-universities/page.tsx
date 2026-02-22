@@ -77,7 +77,6 @@ export default function ForUniversitiesPage() {
     <div className="flex flex-col min-h-screen bg-background text-foreground font-body">
       <Header />
       <main className="flex-1 pt-20">
-        {/* Hero Section */}
         <section className="relative py-20 bg-primary text-primary-foreground overflow-hidden">
           <div className="container mx-auto px-8 md:px-16 lg:px-32 relative z-10">
             <div className="max-w-4xl mx-auto text-center" data-aos="fade-up">
@@ -110,7 +109,6 @@ export default function ForUniversitiesPage() {
           </div>
         </section>
 
-        {/* Steps to Start Your Journal */}
         <section className="py-20 bg-white">
           <div className="container mx-auto px-8 md:px-16 lg:px-32">
             <div className="text-center mb-16">
@@ -143,7 +141,6 @@ export default function ForUniversitiesPage() {
           </div>
         </section>
 
-        {/* CTA Section */}
         <section className="py-24 bg-secondary border-y border-border/50 relative overflow-hidden">
           <div className="container mx-auto px-8 md:px-16 lg:px-32 text-center relative z-10">
             <div className="max-w-4xl mx-auto" data-aos="zoom-in">

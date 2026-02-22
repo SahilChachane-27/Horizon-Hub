@@ -2,11 +2,11 @@
 
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
-<<<<<<< HEAD
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Check, Laptop, Users, Workflow, Database, ShieldCheck, Zap, Globe, BarChart } from 'lucide-react';
 import Link from 'next/link';
+import { ScrollToTop } from '@/components/layout/scroll-to-top';
 
 const categories = [
   {
@@ -58,19 +58,13 @@ const categories = [
     ]
   }
 ];
-=======
-import { Services } from '@/components/sections/services';
-import { ScrollToTop } from '@/components/layout/scroll-to-top';
-import { TrustBadges } from '@/components/sections/trust-badges';
->>>>>>> old-work
 
 export default function ServicesPage() {
   return (
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
-<<<<<<< HEAD
       <main className="flex-1 pt-32 pb-24">
-        <div className="container mx-auto px-4 sm:px-8 lg:px-16 xl:px-24">
+        <div className="container mx-auto px-8 md:px-16 lg:px-32">
           <div className="text-center mb-20" data-aos="fade-up">
             <h1 className="text-4xl md:text-6xl font-bold text-primary font-headline">Academic Solutions</h1>
             <div className="mt-4 w-24 h-1 bg-accent mx-auto"></div>
@@ -112,7 +106,6 @@ export default function ServicesPage() {
             ))}
           </div>
 
-          {/* Eye-catching Section */}
           <section className="mt-24 p-12 bg-primary rounded-funky shadow-2xl relative overflow-hidden text-center text-white" data-aos="zoom-in">
             <div className="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-full -mr-32 -mt-32" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-accent/10 rounded-full -ml-32 -mb-32" />
@@ -133,24 +126,7 @@ export default function ServicesPage() {
         </div>
       </main>
       <Footer />
-=======
-      <main className="flex-1 pt-20">
-        <section className="py-20 bg-primary text-primary-foreground">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold font-headline mb-4" data-aos="fade-up">
-              Comprehensive Journal Solutions
-            </h1>
-            <p className="text-xl opacity-90 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-              Expertly designed services to support the entire lifecycle of academic publishing for your university.
-            </p>
-          </div>
-        </section>
-        <Services />
-        <TrustBadges />
-      </main>
-      <Footer />
       <ScrollToTop />
->>>>>>> old-work
     </div>
   );
 }
