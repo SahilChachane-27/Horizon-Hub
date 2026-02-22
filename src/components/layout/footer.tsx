@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from 'next/link';
@@ -14,8 +15,8 @@ const socialLinks = [
 ];
 
 const quickLinks = [
-  { href: '/#hero', label: 'Home' },
-  { href: '/#about', label: 'About Us' },
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About Us' },
   { href: '/#services', label: 'Our Services' },
   { href: '/#projects', label: 'Hosted Journals' },
   { href: '/#contact', label: 'Inquiry' },
@@ -59,7 +60,9 @@ export function Footer() {
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.href}>
-                  <a href={link.href} className="hover:text-accent transition-colors">{link.label}</a>
+                  <Link href={link.href} className="hover:text-accent transition-colors">
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>

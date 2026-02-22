@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -13,8 +14,8 @@ import {
 } from '@/components/ui/sheet';
 
 const navLinks = [
-  { href: '/#hero', label: 'Home' },
-  { href: '/#about', label: 'About' },
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
   { href: '/#services', label: 'Services' },
   { href: '/#projects', label: 'Journals' },
   { href: '/#why-us', label: 'Why Us' },
@@ -38,10 +39,10 @@ export function Header() {
   const NavContent = ({ inSheet }: { inSheet?: boolean }) => (
     <>
       {navLinks.map((link) => {
-        const isPageLink = link.href.startsWith('/');
+        const isInternalPage = !link.href.includes('#');
         const className = "text-lg md:text-sm font-medium text-white/80 hover:text-white transition-colors";
 
-        if (isPageLink) {
+        if (isInternalPage) {
           if (inSheet) {
             return (
               <SheetClose asChild key={link.href}>
@@ -58,7 +59,7 @@ export function Header() {
           );
         }
 
-        // Anchor link
+        // Anchor link or hash link
         if (inSheet) {
           return (
             <SheetClose asChild key={link.href}>
@@ -90,7 +91,7 @@ export function Header() {
             <BookOpen className="h-8 w-8 text-accent" />
             <div className="flex flex-col">
               <span className="text-xl md:text-2xl font-bold text-accent">Technical Journals</span>
-              <span className="text-[10px] md:text-[11px] font-medium text-white/80 tracking-[0.15em] uppercase">University Journal Hosting</span>
+              <span className="text-[10px] md:text-[11px] font-medium text-white/80 tracking-[0.15em] uppercase leading-tight">University Journal Hosting</span>
             </div>
           </Link>
           
