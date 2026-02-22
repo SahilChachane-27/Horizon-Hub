@@ -31,6 +31,24 @@
       "imageHint": "arts media"
     },
     {
+      "id": "journal-4",
+      "description": "Legal scales representing justice and law studies.",
+      "imageUrl": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      "imageHint": "law justice"
+    },
+    {
+      "id": "journal-5",
+      "description": "A modern business management workspace.",
+      "imageUrl": "https://images.unsplash.com/photo-1454165833767-13a6ad0a1b61?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      "imageHint": "business management"
+    },
+    {
+      "id": "journal-6",
+      "description": "Lush agricultural fields representing research.",
+      "imageUrl": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      "imageHint": "agriculture fields"
+    },
+    {
       "id": "testimonial-1",
       "description": "Portrait of Dr. Robert Johnson.",
       "imageUrl": "https://images.unsplash.com/photo-1590086782792-42dd2350140d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=100",
