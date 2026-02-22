@@ -1,26 +1,26 @@
 'use client';
 
-import { Cpu, Atom, Film, BookOpen, Globe } from 'lucide-react';
+import { Cpu, Atom, Film, BookOpen, Globe, Landmark } from 'lucide-react';
 
 const partners = [
   {
-    name: 'SSIPMT Raipur',
-    icon: Cpu,
+    name: 'SSIPMT RAIPUR',
+    icon: Landmark,
   },
   {
-    name: 'VIT Pune',
+    name: 'VIT PUNE',
     icon: Atom,
   },
   {
-    name: 'AAFT University Raipur',
+    name: 'AAFT UNIVERSITY RAIPUR',
     icon: Film,
   },
   {
-    name: 'Arya Group of Colleges Jaipur',
+    name: 'ARYA GROUP OF COLLEGES',
     icon: BookOpen,
   },
   {
-    name: 'Noida International University',
+    name: 'NOIDA INTERNATIONAL UNIVERSITY',
     icon: Globe,
   },
 ];
@@ -30,27 +30,30 @@ export function Partners() {
   const displayPartners = [...partners, ...partners];
 
   return (
-    <section className="py-16 bg-secondary border-y border-border/50 overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+    <section className="py-20 bg-white overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 mb-16">
         <div className="text-center" data-aos="fade-up">
-          <h2 className="text-2xl md:text-3xl font-bold text-primary font-headline">
+          <p className="text-[10px] md:text-xs font-medium text-foreground/40 tracking-[0.4em] uppercase mb-4">
+            Institutional Network
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold italic text-primary font-headline mb-4">
             Global University Partners
           </h2>
-          <div className="mt-2 w-16 h-1 bg-accent mx-auto"></div>
+          <div className="w-12 h-1 bg-accent mx-auto"></div>
         </div>
       </div>
 
       <div className="relative">
-        <div className="flex animate-marquee whitespace-nowrap py-4">
+        <div className="flex animate-marquee whitespace-nowrap py-8 items-end">
           {displayPartners.map((partner, index) => (
             <div
               key={`${partner.name}-${index}`}
-              className="flex flex-col items-center mx-8 group cursor-default"
+              className="flex flex-col items-center mx-12 group cursor-default"
             >
-              <div className="w-24 h-24 flex items-center justify-center bg-card border-2 border-accent/40 rounded-xl shadow-[0_0_15px_rgba(var(--accent),0.2)] transition-all duration-300 group-hover:scale-110 group-hover:border-accent group-hover:shadow-[0_0_30px_rgba(251,191,36,0.4)]">
-                <partner.icon className="h-12 w-12 text-accent drop-shadow-[0_0_10px_rgba(251,191,36,0.5)]" />
+              <div className="w-28 h-28 flex items-center justify-center bg-white border-2 border-accent/40 rounded-[2rem] shadow-[0_0_20px_rgba(251,191,36,0.15)] transition-all duration-300 group-hover:scale-105 group-hover:border-accent group-hover:shadow-[0_0_30px_rgba(251,191,36,0.3)]">
+                <partner.icon className="h-12 w-12 text-accent" />
               </div>
-              <span className="mt-4 text-base font-semibold text-primary/80 group-hover:text-primary transition-colors text-center">
+              <span className="mt-6 text-[10px] md:text-[11px] font-bold text-primary tracking-wider text-center uppercase whitespace-normal max-w-[120px] leading-tight opacity-80 group-hover:opacity-100 transition-opacity">
                 {partner.name}
               </span>
             </div>
