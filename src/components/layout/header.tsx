@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, BookOpen, ChevronDown } from 'lucide-react';
+import { Menu, BookOpen } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import {
@@ -14,18 +14,6 @@ import {
   SheetTitle,
   SheetDescription,
 } from '@/components/ui/sheet';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -34,7 +22,7 @@ const navLinks = [
   { href: '/journals', label: 'Journals Hosted' },
   { href: '/for-universities', label: 'For Universities' },
   { href: '/resources', label: 'Resources' },
-  { href: '#', label: 'Subscription Plans' },
+  { href: '/pricing', label: 'Subscription Plans' },
   { href: '/contact', label: 'Contact Us' },
 ];
 

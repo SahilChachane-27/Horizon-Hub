@@ -15,8 +15,8 @@ const socialLinks = [
 
 const platformLinks = [
   { href: '/', label: 'Home' },
-  { href: '#', label: 'Pricing' },
-  { href: '#', label: 'Compare' },
+  { href: '/pricing', label: 'Pricing' },
+  { href: '/pricing#compare', label: 'Compare' },
   { href: '/journals', label: 'List of Journal' },
 ];
 
@@ -28,9 +28,9 @@ const companyLinks = [
 ];
 
 const supportLinks = [
-  { href: '#', label: 'Documentation' },
+  { href: '/resources', label: 'Documentation' },
   { href: '/blog', label: 'Blog' },
-  { href: '#', label: 'Help Center' },
+  { href: '/contact', label: 'Help Center' },
 ];
 
 export function Footer() {
