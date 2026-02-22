@@ -39,15 +39,7 @@ const navLinks = [
   },
   { href: '/services', label: 'Our Services' },
   { href: '/journals', label: 'Journals Hosted' },
-  {
-    label: 'For Universities',
-    items: [
-      { href: '/contact', label: 'Start Your Journal' },
-      { href: '/services', label: 'Hosting Packages' },
-      { href: '/services', label: 'Migration Support' },
-      { href: '/why-us', label: 'Partner Benefits' },
-    ]
-  },
+  { href: '/contact', label: 'For Universities' },
   {
     label: 'Resources',
     items: [
