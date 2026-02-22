@@ -11,16 +11,15 @@ import { Badge } from '@/components/ui/badge';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { 
   Search, 
-  Filter, 
+  Building2, 
+  Hash, 
+  Globe,
   BookOpen, 
-  GraduationCap, 
   ExternalLink, 
   Tag, 
-  Globe, 
-  Building2,
-  Stethoscope,
   Cpu,
   Landmark,
+  Stethoscope,
   Sprout,
   Scale,
   Leaf
@@ -105,6 +104,9 @@ const journals = [
 export default function JournalsPage() {
   const [isClient, setIsClient] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [universityQuery, setUniversityQuery] = useState('');
+  const [issnQuery, setIssnQuery] = useState('');
+  const [countryQuery, setCountryQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedIndexing, setSelectedIndexing] = useState('All');
 
@@ -114,84 +116,131 @@ export default function JournalsPage() {
 
   const filteredJournals = useMemo(() => {
     return journals.filter(j => {
-      const matchesSearch = 
-        j.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
-        j.university.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        j.issn.includes(searchQuery);
-      
+      const matchesName = j.name.toLowerCase().includes(searchQuery.toLowerCase());
+      const matchesUniversity = j.university.toLowerCase().includes(universityQuery.toLowerCase());
+      const matchesISSN = j.issn.includes(issnQuery);
+      const matchesCountry = j.country.toLowerCase().includes(countryQuery.toLowerCase());
       const matchesCategory = selectedCategory === 'All' || j.domain === selectedCategory;
       const matchesIndexing = selectedIndexing === 'All' || j.indexing.includes(selectedIndexing);
 
-      return matchesSearch && matchesCategory && matchesIndexing;
+      return matchesName && matchesUniversity && matchesISSN && matchesCountry && matchesCategory && matchesIndexing;
     });
-  }, [searchQuery, selectedCategory, selectedIndexing]);
+  }, [searchQuery, universityQuery, issnQuery, countryQuery, selectedCategory, selectedIndexing]);
+
+  const handleClearFilters = () => {
+    setSearchQuery('');
+    setUniversityQuery('');
+    setIssnQuery('');
+    setCountryQuery('');
+    setSelectedCategory('All');
+    setSelectedIndexing('All');
+  };
 
   return (
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
       <main className="flex-1 pt-20">
         {/* Hero Section */}
-        <section className="py-20 bg-primary text-primary-foreground">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <section className="py-24 bg-primary text-primary-foreground relative overflow-hidden">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <h1 className="text-4xl md:text-5xl font-bold font-headline mb-4" data-aos="fade-up">
               University Journal Catalog
             </h1>
             <p className="text-xl opacity-90 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-              Browse the prestigious academic publications hosted on our secure, institutionally branded ScholarJMS platform.
+              Browse prestigious academic publications hosted on our secure ScholarJMS platform.
             </p>
           </div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent opacity-30"></div>
         </section>
 
         {/* Search & Filters Section */}
-        <section className="py-12 bg-secondary/30 border-b">
+        <section className="py-12 bg-secondary/30 relative">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 items-end" data-aos="fade-up">
+            <div 
+              className="bg-white p-6 md:p-10 rounded-[40px] shadow-2xl border border-primary/5 -mt-32 relative z-20" 
+              data-aos="fade-up"
+            >
               {isClient ? (
-                <>
-                  <div className="lg:col-span-2">
-                    <label className="text-sm font-bold text-primary mb-2 block uppercase tracking-wider">Search Journals</label>
+                <div className="space-y-6">
+                  {/* Top Row: Search Bars */}
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div className="relative">
-                      <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                      <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
                       <Input 
-                        placeholder="Search by Journal Name, University or ISSN..." 
-                        className="pl-10 h-12 border-primary/20 focus:border-accent"
+                        placeholder="Search by Journal Name" 
+                        className="pl-12 h-14 border-primary/10 rounded-xl bg-secondary/5 focus-visible:ring-accent"
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                       />
                     </div>
+                    <div className="relative">
+                      <Building2 className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                      <Input 
+                        placeholder="University Name" 
+                        className="pl-12 h-14 border-primary/10 rounded-xl bg-secondary/5 focus-visible:ring-accent"
+                        value={universityQuery}
+                        onChange={(e) => setUniversityQuery(e.target.value)}
+                      />
+                    </div>
+                    <div className="relative">
+                      <Hash className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                      <Input 
+                        placeholder="ISSN Number" 
+                        className="pl-12 h-14 border-primary/10 rounded-xl bg-secondary/5 focus-visible:ring-accent"
+                        value={issnQuery}
+                        onChange={(e) => setIssnQuery(e.target.value)}
+                      />
+                    </div>
                   </div>
-                  <div>
-                    <label className="text-sm font-bold text-primary mb-2 block uppercase tracking-wider">Field of Study</label>
-                    <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-                      <SelectTrigger className="h-12 border-primary/20">
-                        <SelectValue placeholder="All Categories" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="All">All Categories</SelectItem>
-                        {categories.map(cat => (
-                          <SelectItem key={cat.name} value={cat.name}>{cat.name}</SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
+
+                  {/* Bottom Row: Selects and Button */}
+                  <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+                    <div className="relative">
+                      <Globe className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground z-10" />
+                      <Input 
+                        placeholder="Country" 
+                        className="pl-12 h-14 border-primary/10 rounded-xl bg-secondary/5 focus-visible:ring-accent"
+                        value={countryQuery}
+                        onChange={(e) => setCountryQuery(e.target.value)}
+                      />
+                    </div>
+                    <div>
+                      <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+                        <SelectTrigger className="h-14 border-primary/10 rounded-xl bg-secondary/5 focus:ring-accent">
+                          <SelectValue placeholder="Field of Study" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="All">All Fields of Study</SelectItem>
+                          {categories.map(cat => (
+                            <SelectItem key={cat.name} value={cat.name}>{cat.name}</SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                    </div>
+                    <div>
+                      <Select value={selectedIndexing} onValueChange={setSelectedIndexing}>
+                        <SelectTrigger className="h-14 border-primary/10 rounded-xl bg-secondary/5 focus:ring-accent">
+                          <SelectValue placeholder="Indexing Status" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="All">All Indexing Status</SelectItem>
+                          <SelectItem value="Scopus">Scopus</SelectItem>
+                          <SelectItem value="UGC CARE">UGC CARE</SelectItem>
+                          <SelectItem value="DOAJ">DOAJ</SelectItem>
+                          <SelectItem value="Web of Science">Web of Science</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+                    <Button 
+                      className="h-14 bg-primary text-white rounded-full font-bold hover:bg-primary/90 transition-all shadow-xl text-md"
+                      onClick={() => {}} // Could trigger a refresh or just rely on memo
+                    >
+                      Search Academic Sources
+                    </Button>
                   </div>
-                  <div>
-                    <label className="text-sm font-bold text-primary mb-2 block uppercase tracking-wider">Indexing Status</label>
-                    <Select value={selectedIndexing} onValueChange={setSelectedIndexing}>
-                      <SelectTrigger className="h-12 border-primary/20">
-                        <SelectValue placeholder="Any Indexing" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="All">Any Indexing</SelectItem>
-                        <SelectItem value="Scopus">Scopus</SelectItem>
-                        <SelectItem value="UGC CARE">UGC CARE</SelectItem>
-                        <SelectItem value="DOAJ">DOAJ</SelectItem>
-                        <SelectItem value="Web of Science">Web of Science</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                </>
+                </div>
               ) : (
-                <div className="lg:col-span-4 h-24 flex items-center justify-center">
+                <div className="h-40 flex items-center justify-center">
                   <p className="text-muted-foreground animate-pulse font-medium">Loading search options...</p>
                 </div>
               )}
@@ -199,7 +248,7 @@ export default function JournalsPage() {
           </div>
         </section>
 
-        {/* Categories Sidebar/Row */}
+        {/* Categories Section */}
         <section className="py-12 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-2xl font-bold text-primary font-headline mb-8 text-center" data-aos="fade-up">Explore by Subject</h2>
@@ -208,7 +257,7 @@ export default function JournalsPage() {
                 <Button
                   key={cat.name}
                   variant={selectedCategory === cat.name ? "default" : "outline"}
-                  className={`h-auto py-6 flex flex-col gap-3 rounded-funky border-accent/20 transition-all hover:scale-105 ${selectedCategory === cat.name ? 'bg-accent text-accent-foreground shadow-lg' : 'bg-white hover:bg-secondary'}`}
+                  className={`h-auto py-6 flex flex-col gap-3 rounded-xl border-accent/20 transition-all hover:scale-105 ${selectedCategory === cat.name ? 'bg-accent text-accent-foreground shadow-lg' : 'bg-white hover:bg-secondary'}`}
                   onClick={() => setSelectedCategory(cat.name)}
                   data-aos="zoom-in"
                   data-aos-delay={idx * 50}
@@ -222,16 +271,14 @@ export default function JournalsPage() {
         </section>
 
         {/* Journals Grid */}
-        <section className="py-16 bg-secondary/20">
+        <section className="py-16 bg-secondary/20 min-h-[400px]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center mb-10">
-              <p className="text-foreground/60 font-medium">Showing {filteredJournals.length} Journals</p>
-              { isClient && (selectedCategory !== 'All' || searchQuery !== '' || selectedIndexing !== 'All') && (
-                <Button variant="ghost" className="text-accent font-bold" onClick={() => {
-                  setSearchQuery('');
-                  setSelectedCategory('All');
-                  setSelectedIndexing('All');
-                }}>Clear Filters</Button>
+              <p className="text-foreground/60 font-medium">
+                Showing <span className="text-primary font-bold">{filteredJournals.length}</span> Journals
+              </p>
+              { isClient && (selectedCategory !== 'All' || searchQuery !== '' || universityQuery !== '' || issnQuery !== '' || countryQuery !== '' || selectedIndexing !== 'All') && (
+                <Button variant="ghost" className="text-accent font-bold" onClick={handleClearFilters}>Clear All Filters</Button>
               )}
             </div>
 
@@ -240,7 +287,7 @@ export default function JournalsPage() {
                 filteredJournals.map((journal, index) => {
                   const journalImage = PlaceHolderImages.find(p => p.id === journal.id) || PlaceHolderImages[2];
                   return (
-                    <Card key={journal.name} className="overflow-hidden bg-card border-none shadow-xl hover:shadow-2xl transition-all duration-300 group rounded-funky" data-aos="fade-up" data-aos-delay={index * 100}>
+                    <Card key={journal.name} className="overflow-hidden bg-card border-none shadow-xl hover:shadow-2xl transition-all duration-300 group rounded-2xl" data-aos="fade-up" data-aos-delay={index * 100}>
                       <div className="relative h-48 overflow-hidden">
                         <Image 
                           src={journalImage.imageUrl} 
@@ -286,7 +333,7 @@ export default function JournalsPage() {
                         </div>
                         
                         <div className="pt-6 border-t">
-                          <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-funky gap-2 transition-transform hover:scale-105">
+                          <Button asChild className="w-full bg-primary hover:bg-primary/90 text-white rounded-xl gap-2 transition-transform hover:scale-[1.02]">
                             <a href={journal.link} target="_blank" rel="noopener noreferrer">
                               View Journal <ExternalLink className="h-4 w-4" />
                             </a>
@@ -302,7 +349,7 @@ export default function JournalsPage() {
                     <Search className="h-12 w-12 text-muted-foreground opacity-20" />
                   </div>
                   <h3 className="text-2xl font-bold text-primary">No Journals Found</h3>
-                  <p className="text-foreground/60">Try adjusting your search or category filters.</p>
+                  <p className="text-foreground/60">Try adjusting your search criteria or filters.</p>
                 </div>
               )}
             </div>
@@ -317,10 +364,10 @@ export default function JournalsPage() {
               Join the growing network of academic institutions using Technical Journals for secure, ethical, and institutionally branded publishing.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="200">
-              <Button asChild size="lg" variant="secondary" className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-funky">
+              <Button asChild size="lg" variant="secondary" className="bg-primary text-white hover:bg-primary/90 rounded-xl">
                 <a href="/contact">Inquire Now</a>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-funky">
+              <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white rounded-xl">
                 <a href="/about">Learn More</a>
               </Button>
             </div>
