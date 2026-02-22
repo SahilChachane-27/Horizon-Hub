@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Header } from '@/components/layout/header';
@@ -8,19 +7,13 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { 
   Check, 
-  Zap, 
   ShieldCheck, 
-  Info, 
   Globe, 
   Database, 
-  Search, 
-  BookOpen,
-  Award,
-  Landmark,
-  ShieldAlert,
-  PenTool,
-  TrendingUp,
-  CreditCard
+  Mail,
+  FileText,
+  PlayCircle,
+  PhoneCall
 } from 'lucide-react';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
@@ -39,12 +32,12 @@ export default function PricingPage() {
       price: currency === 'INR' ? "₹25,000" : "$299",
       description: "Essential tools for launching a new journal.",
       features: [
-        "ScholarJMS Installation",
-        "Journal Website Hosting",
-        "Technical Support",
+        "Scholar JMS installation",
+        "Journal website hosting",
+        "Technical support",
         "Up to 4 issues/year",
-        "Unlimited Articles",
-        "HTTPS Security"
+        "Unlimited articles",
+        "HTTPS security"
       ],
       cta: "Get Started",
       highlight: false
@@ -54,12 +47,11 @@ export default function PricingPage() {
       price: currency === 'INR' ? "₹45,000" : "$549",
       description: "Optimized for automated editorial workflows.",
       features: [
-        "Everything in Basic",
-        "DOI Support (DigiIdentify/CrossRef)",
-        "Plagiarism Check (200 papers/year)",
+        "Everything in Basic +",
+        "DOI support (via DigiIdentify or Crossref)",
+        "Plagiarism Check Integration 200 papers yearly",
         "Automated Editorial Workflow",
-        "Institutional Branding",
-        "Custom Institutional Email"
+        "Institutional Branding"
       ],
       cta: "Get Started",
       highlight: true,
@@ -70,12 +62,12 @@ export default function PricingPage() {
       price: currency === 'INR' ? "₹75,000" : "$899",
       description: "Advanced growth and indexing optimization.",
       features: [
-        "Everything in Standard",
-        "Article Formatting Templates",
-        "Metadata Optimization for Indexing",
-        "Annual Analytics Dashboard",
-        "Google Scholar Optimization",
-        "Free Migration from existing systems"
+        "Everything in Standard +",
+        "Article formatting templates",
+        "Metadata optimization for indexing",
+        "Annual analytics dashboard",
+        "Google Scholar optimization",
+        "Free migration from existing system"
       ],
       cta: "Get Started",
       highlight: false
@@ -83,28 +75,18 @@ export default function PricingPage() {
     {
       name: "Enterprise Package",
       price: currency === 'INR' ? "₹1,80,000" : "$2,199",
-      description: "For universities hosting 3 to 5 journals.",
+      description: "For universities hosting 3+ journals (Up to 5 journals).",
       features: [
-        "Up to 5 Journals Included",
-        "Dedicated High-Speed Server",
-        "Dedicated Account Manager",
-        "Annual Compliance Audit Report",
-        "Priority Indexing Guidance",
-        "UGC CARE Readiness Support"
+        "Dedicated server",
+        "Dedicated manager",
+        "Annual audit report",
+        "Priority indexing guidance (DOAJ, Scopus-readiness, etc.)",
+        "Institutional Workflow Audit",
+        "Custom Compliance Support"
       ],
       cta: "Get Started",
       highlight: false
     }
-  ];
-
-  const addons = [
-    { name: "DOI Registration", price: currency === 'INR' ? "₹150 / article" : "$2 / article", icon: "#" },
-    { name: "DigiIdentify Registration", price: currency === 'INR' ? "₹25 / article" : "$0.5 / article", icon: Landmark },
-    { name: "Plagiarism Check", price: currency === 'INR' ? "₹50 / article" : "$1 / article", icon: ShieldAlert },
-    { name: "Article Copyediting", price: currency === 'INR' ? "₹500 / article" : "$7 / article", icon: PenTool },
-    { name: "Citation Improvisation", price: "Digital Marketing", icon: TrendingUp },
-    { name: "Scopus Ready Consult", price: "Custom Quote", icon: Search },
-    { name: "Payment Gateway", price: "Direct Integration", icon: CreditCard },
   ];
 
   return (
@@ -164,7 +146,7 @@ export default function PricingPage() {
                     <CardTitle className="text-xl font-bold text-primary font-headline italic">{plan.name}</CardTitle>
                     <div className="mt-6">
                       <span className="text-4xl font-black text-primary italic">{plan.price}</span>
-                      <span className="text-[10px] text-primary/40 uppercase font-black ml-1 tracking-widest">/ Annually</span>
+                      <span className="text-[10px] text-primary/40 uppercase font-black ml-1 tracking-widest">/ Per Journal/Year</span>
                     </div>
                     <p className="text-xs text-foreground/50 font-bold mt-4 leading-relaxed uppercase">{plan.description}</p>
                   </CardHeader>
@@ -187,57 +169,59 @@ export default function PricingPage() {
               ))}
             </div>
 
-            {/* Add-ons Section */}
-            <div className="grid lg:grid-cols-5 gap-12 mt-24">
-              <Card className="lg:col-span-3 rounded-funky shadow-2xl border-none bg-slate-50 overflow-hidden" data-aos="fade-right">
-                <div className="p-12">
-                  <h2 className="text-3xl font-bold text-primary mb-10 font-headline italic flex items-center gap-4">
-                    <Zap className="h-8 w-8 text-accent fill-accent" />
-                    <span>Add-On Modular Services</span>
-                  </h2>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    {addons.map((addon, i) => (
-                      <div key={i} className="bg-white p-6 rounded-2xl border border-accent/10 shadow-sm hover:shadow-xl transition-all group flex items-center justify-between">
-                        <div className="flex items-center gap-4">
-                          <div className="h-8 w-8 bg-accent/10 rounded-lg flex items-center justify-center group-hover:bg-accent transition-colors duration-300">
-                            {typeof addon.icon === 'string' ? (
-                              <div className="text-accent text-xs font-bold">#</div>
-                            ) : (
-                              <addon.icon className="h-4 w-4 text-accent" />
-                            )}
-                          </div>
-                          <p className="text-xs font-black text-primary/60 uppercase tracking-widest">{addon.name}</p>
-                        </div>
-                        <p className="text-primary font-black italic text-sm">{addon.price}</p>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="mt-10 flex items-center gap-3 text-red-600 font-black bg-red-50 p-4 rounded-2xl border border-red-100 italic shadow-inner">
-                    <Info className="h-5 w-5" />
-                    <span className="text-xs uppercase tracking-[0.2em]">18% GST will be applied to all annual plans</span>
-                  </div>
-                </div>
-              </Card>
+            {/* Next Steps & Support Section */}
+            <div className="mt-24">
+              <div className="text-center mb-16" data-aos="fade-up">
+                <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline italic">Next Steps & Support</h2>
+                <div className="mt-4 w-24 h-1 bg-accent mx-auto"></div>
+              </div>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                {[
+                  { title: "Contact Form", desc: "Submit your specific requirements through our official contact channel.", icon: Mail },
+                  { title: "University MoU Discussion", desc: "Discuss and formalize institutional partnerships and research agreements.", icon: FileText },
+                  { title: "Hosting Demo Request", desc: "Experience our professional ScholarJMS hosting setup with a live tour.", icon: PlayCircle },
+                  { title: "Support Email & Phone", desc: "Connect with our technical team directly for immediate assistance.", icon: PhoneCall },
+                ].map((item, i) => (
+                  <Card 
+                    key={i} 
+                    className="p-8 text-center rounded-funky border-none shadow-xl bg-slate-50 hover:bg-white transition-all duration-300 group hover:-translate-y-2"
+                    data-aos="fade-up"
+                    data-aos-delay={i * 100}
+                  >
+                    <div className="mb-6 flex justify-center text-accent group-hover:scale-110 transition-transform duration-300">
+                      <item.icon className="h-10 w-10" />
+                    </div>
+                    <h3 className="text-lg font-bold text-primary mb-3 font-headline italic">{item.title}</h3>
+                    <p className="text-xs text-foreground/60 mb-6 leading-relaxed uppercase font-bold tracking-tight">{item.desc}</p>
+                    <Button variant="link" asChild className="text-accent font-black uppercase text-[10px] tracking-widest p-0">
+                      <Link href="/contact">Inquire Now &rarr;</Link>
+                    </Button>
+                  </Card>
+                ))}
+              </div>
+            </div>
 
-              {/* Guarantee Section */}
-              <div data-aos="fade-left" className="lg:col-span-2 relative p-[2px] rounded-funky overflow-hidden group shadow-2xl">
+            {/* Guarantee Section */}
+            <div className="mt-24">
+              <div data-aos="fade-up" className="relative p-[2px] rounded-funky overflow-hidden group shadow-2xl">
                 <div className="absolute inset-0 bg-gradient-to-br from-accent via-primary to-accent animate-pulse"></div>
-                <div className="relative bg-white rounded-funky p-12 flex flex-col items-center justify-center text-center gap-8 h-full">
-                  <div className="h-24 w-24 bg-accent/10 rounded-full flex items-center justify-center animate-bounce">
+                <div className="relative bg-white rounded-funky p-12 flex flex-col md:flex-row items-center justify-between text-center md:text-left gap-12 h-full">
+                  <div className="h-24 w-24 bg-accent/10 rounded-full flex items-center justify-center shrink-0">
                     <ShieldCheck className="h-12 w-12 text-accent" />
                   </div>
-                  <div>
+                  <div className="flex-1">
                     <h3 className="text-3xl font-bold text-primary mb-4 font-headline italic">30-Day Research Guarantee</h3>
-                    <p className="text-foreground/60 leading-relaxed text-sm font-medium max-w-sm mx-auto">
+                    <p className="text-foreground/60 leading-relaxed text-sm font-medium max-w-xl">
                       Try our institutional hosting portal risk-free. If your editorial team isn't completely satisfied with the workflow in 30 days, we'll provide a full refund.
                     </p>
-                    <div className="flex flex-wrap justify-center gap-6 mt-10">
-                      <div className="flex items-center gap-2 text-[10px] font-black uppercase text-primary/40 tracking-[0.2em]">
-                        <Check className="h-4 w-4 text-accent" /> No Hidden Fees
-                      </div>
-                      <div className="flex items-center gap-2 text-[10px] font-black uppercase text-primary/40 tracking-[0.2em]">
-                        <Check className="h-4 w-4 text-accent" /> Verified Setup
-                      </div>
+                  </div>
+                  <div className="flex flex-col gap-4 shrink-0">
+                    <div className="flex items-center gap-2 text-[10px] font-black uppercase text-primary/40 tracking-[0.2em]">
+                      <Check className="h-4 w-4 text-accent" /> No Hidden Fees
+                    </div>
+                    <div className="flex items-center gap-2 text-[10px] font-black uppercase text-primary/40 tracking-[0.2em]">
+                      <Check className="h-4 w-4 text-accent" /> Verified Setup
                     </div>
                   </div>
                 </div>
@@ -245,8 +229,6 @@ export default function PricingPage() {
             </div>
           </div>
         </section>
-
-        {/* Compliance Footer section removed as per user instruction */}
       </main>
       <Footer />
       <ScrollToTop />
