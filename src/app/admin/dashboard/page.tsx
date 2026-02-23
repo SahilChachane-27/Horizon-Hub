@@ -106,11 +106,11 @@ export default function AdminDashboard() {
   return (
     <div className="flex flex-col min-h-screen bg-slate-50/50">
       <Header />
-      <main className="flex-1 pt-24 pb-12">
-        <div className="container mx-auto px-4 md:px-8">
+      <main className="flex-1 pt-32 pb-16">
+        <div className="container mx-auto px-4 md:px-8 space-y-12">
           
           {/* Header Actions */}
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
             <div>
               <h1 className="text-3xl font-black text-primary font-headline flex items-center gap-3">
                 <LayoutDashboard className="h-8 w-8 text-accent" />
@@ -120,44 +120,44 @@ export default function AdminDashboard() {
                 System Administrator: {user.email}
               </p>
             </div>
-            <div className="flex gap-3">
-              <Button asChild className="rounded-funky bg-primary hover:bg-primary/90 text-accent font-bold shadow-lg">
+            <div className="flex gap-4">
+              <Button asChild className="rounded-funky bg-primary hover:bg-primary/90 text-accent font-bold shadow-lg px-6 h-12">
                 <Link href="/admin/journals">
-                  <Plus className="mr-2 h-4 w-4" /> Add Journal
+                  <Plus className="mr-2 h-5 w-5" /> Add Journal
                 </Link>
               </Button>
               <Button 
                 variant="outline" 
                 onClick={handleLogout} 
-                className="rounded-funky border-primary/20 text-primary hover:bg-red-50 hover:text-red-500 hover:border-red-200"
+                className="rounded-funky border-primary/20 text-primary hover:bg-red-50 hover:text-red-500 hover:border-red-200 h-12 px-6"
               >
-                <LogOut className="mr-2 h-4 w-4" /> Sign Out
+                <LogOut className="mr-2 h-5 w-5" /> Sign Out
               </Button>
             </div>
           </div>
 
           {/* Stats Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {dynamicStats.map((stat, i) => (
-              <Card key={i} className="rounded-funky border-none shadow-sm hover:shadow-md transition-all overflow-hidden bg-white" data-aos="fade-up" data-aos-delay={i * 100}>
-                <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <Card key={i} className="rounded-funky border-none shadow-sm hover:shadow-md transition-all overflow-hidden bg-white p-2" data-aos="fade-up" data-aos-delay={i * 100}>
+                <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
                   <CardTitle className="text-xs font-black uppercase tracking-[0.2em] text-primary/40">
                     {stat.title}
                   </CardTitle>
-                  <div className={`p-2 rounded-xl ${stat.color}`}>
-                    <stat.icon className="h-4 w-4" />
+                  <div className={`p-3 rounded-xl ${stat.color}`}>
+                    <stat.icon className="h-5 w-5" />
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-black text-primary">{stat.count}</div>
-                  <p className="text-[10px] text-muted-foreground mt-1 font-bold uppercase tracking-wider">{stat.desc}</p>
+                  <div className="text-3xl font-black text-primary">{stat.count}</div>
+                  <p className="text-[10px] text-muted-foreground mt-2 font-bold uppercase tracking-wider">{stat.desc}</p>
                 </CardContent>
               </Card>
             ))}
           </div>
 
           {/* Main Dashboard Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             
             {/* Recent Activity List */}
             <Card className="lg:col-span-2 rounded-funky border-none shadow-xl bg-white overflow-hidden" data-aos="fade-up" data-aos-delay="400">
@@ -165,76 +165,76 @@ export default function AdminDashboard() {
                 <div className="flex justify-between items-center">
                   <div>
                     <CardTitle className="text-xl font-bold text-primary font-headline italic">Recent Publications</CardTitle>
-                    <CardDescription>Latest journals added to the platform</CardDescription>
+                    <CardDescription className="mt-1">Latest journals added to the platform</CardDescription>
                   </div>
-                  <Button variant="ghost" size="sm" asChild className="text-accent font-bold text-xs uppercase tracking-widest hover:text-primary">
-                    <Link href="/admin/journals">View All <ChevronRight className="ml-1 h-3 w-3" /></Link>
+                  <Button variant="ghost" size="sm" asChild className="text-accent font-bold text-xs uppercase tracking-widest hover:text-primary p-0 h-auto">
+                    <Link href="/admin/journals" className="flex items-center">View All <ChevronRight className="ml-1 h-3 w-3" /></Link>
                   </Button>
                 </div>
               </CardHeader>
               <CardContent className="p-0">
                 {recentLoading ? (
-                  <div className="p-12 text-center"><div className="animate-spin inline-block rounded-full h-8 w-8 border-b-2 border-primary"></div></div>
+                  <div className="p-16 text-center"><div className="animate-spin inline-block rounded-full h-8 w-8 border-b-2 border-primary"></div></div>
                 ) : (recentJournals && recentJournals.length > 0) ? (
                   <div className="divide-y divide-slate-50">
                     {recentJournals.map((journal: any) => (
-                      <div key={journal.id} className="p-6 flex items-center gap-4 hover:bg-slate-50/50 transition-colors group">
-                        <div className="h-12 w-12 rounded-xl bg-secondary flex items-center justify-center shrink-0 overflow-hidden relative">
+                      <div key={journal.id} className="p-8 flex items-center gap-6 hover:bg-slate-50/50 transition-colors group">
+                        <div className="h-14 w-14 rounded-xl bg-secondary flex items-center justify-center shrink-0 overflow-hidden relative shadow-sm">
                           {journal.imageUrl ? (
                             <Image src={journal.imageUrl} alt={journal.name} fill className="object-cover" />
                           ) : (
-                            <BookOpen className="h-6 w-6 text-primary/20" />
+                            <BookOpen className="h-7 w-7 text-primary/20" />
                           )}
                         </div>
                         <div className="flex-1 min-w-0">
-                          <h4 className="font-bold text-primary truncate text-sm">{journal.name}</h4>
-                          <p className="text-xs text-muted-foreground truncate">{journal.university}</p>
+                          <h4 className="font-bold text-primary truncate text-base mb-1">{journal.name}</h4>
+                          <p className="text-sm text-muted-foreground truncate">{journal.university}</p>
                         </div>
                         <div className="text-right shrink-0">
-                          <div className="flex items-center gap-1.5 text-[10px] font-bold text-primary/40 uppercase tracking-wider mb-1">
+                          <div className="flex items-center gap-1.5 text-[10px] font-bold text-primary/40 uppercase tracking-wider mb-2">
                             <Clock className="h-3 w-3" />
                             {journal.createdAt?.seconds ? new Date(journal.createdAt.seconds * 1000).toLocaleDateString() : 'Just now'}
                           </div>
                           <Link href={journal.link} target="_blank" className="text-[10px] text-accent font-black uppercase tracking-widest flex items-center justify-end gap-1 hover:text-primary transition-colors">
-                            Live <ExternalLink className="h-2 w-2" />
+                            Live <ExternalLink className="h-3 w-3" />
                           </Link>
                         </div>
                       </div>
                     ))}
                   </div>
                 ) : (
-                  <div className="p-12 text-center text-muted-foreground italic text-sm">No journals recorded yet.</div>
+                  <div className="p-20 text-center text-muted-foreground italic text-sm">No journals recorded yet.</div>
                 )}
               </CardContent>
             </Card>
 
             {/* Quick Management Section */}
-            <div className="space-y-6" data-aos="fade-up" data-aos-delay="600">
-              <Card className="rounded-funky border-none shadow-xl bg-primary text-white p-8 relative overflow-hidden group">
+            <div className="space-y-8" data-aos="fade-up" data-aos-delay="600">
+              <Card className="rounded-funky border-none shadow-xl bg-primary text-white p-10 relative overflow-hidden group">
                 <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
-                  <Settings className="h-24 w-24" />
+                  <Settings className="h-32 w-32" />
                 </div>
                 <div className="relative z-10">
-                  <h3 className="text-xl font-bold font-headline italic mb-4">Journal Management</h3>
-                  <p className="text-white/70 text-sm mb-8 leading-relaxed">
-                    Access the central management suite to update journal details, verify indexing, or remove records.
+                  <h3 className="text-2xl font-bold font-headline italic mb-6">Journal Management</h3>
+                  <p className="text-white/70 text-sm mb-10 leading-relaxed">
+                    Access the central management suite to update journal details, verify indexing, or remove records from the global catalog.
                   </p>
-                  <Button asChild className="w-full bg-accent text-accent-foreground font-black italic rounded-funky hover:scale-105 transition-transform shadow-xl">
-                    <Link href="/admin/journals">Launch Manager <ChevronRight className="ml-2 h-4 w-4" /></Link>
+                  <Button asChild className="w-full bg-accent text-accent-foreground font-black italic rounded-funky hover:scale-105 transition-transform shadow-xl h-14">
+                    <Link href="/admin/journals" className="flex items-center justify-center">Launch Manager <ChevronRight className="ml-2 h-5 w-5" /></Link>
                   </Button>
                 </div>
               </Card>
 
-              <Card className="rounded-funky border-none shadow-xl bg-white p-8">
-                <h3 className="text-lg font-bold text-primary font-headline italic mb-4">System Notifications</h3>
-                <div className="space-y-4">
-                  <div className="flex gap-3 items-start p-3 rounded-xl bg-blue-50/50 border border-blue-100">
-                    <div className="h-2 w-2 rounded-full bg-blue-500 mt-1.5 shrink-0"></div>
-                    <p className="text-xs text-blue-900 leading-snug">New university partner application pending review.</p>
+              <Card className="rounded-funky border-none shadow-xl bg-white p-10">
+                <h3 className="text-xl font-bold text-primary font-headline italic mb-6">System Notifications</h3>
+                <div className="space-y-6">
+                  <div className="flex gap-4 items-start p-4 rounded-xl bg-blue-50/50 border border-blue-100">
+                    <div className="h-2.5 w-2.5 rounded-full bg-blue-500 mt-2 shrink-0"></div>
+                    <p className="text-xs text-blue-900 leading-relaxed">New university partner application pending review for SSIPMT Raipur.</p>
                   </div>
-                  <div className="flex gap-3 items-start p-3 rounded-xl bg-green-50/50 border border-green-100">
-                    <div className="h-2 w-2 rounded-full bg-green-500 mt-1.5 shrink-0"></div>
-                    <p className="text-xs text-green-900 leading-snug">Indexing metadata for 12 journals updated successfully.</p>
+                  <div className="flex gap-4 items-start p-4 rounded-xl bg-green-50/50 border border-green-100">
+                    <div className="h-2.5 w-2.5 rounded-full bg-green-500 mt-2 shrink-0"></div>
+                    <p className="text-xs text-green-900 leading-relaxed">Indexing metadata for 12 journals updated successfully in Google Scholar.</p>
                   </div>
                 </div>
               </Card>
