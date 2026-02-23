@@ -1,19 +1,28 @@
 'use client';
 
-import { useUser, useAuth } from '@/firebase';
+import { useUser, useAuth, useFirestore, useCollection } from '@/firebase';
 import { useRouter } from 'next/navigation';
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { LayoutDashboard, BookOpen, Plus, Settings, LogOut, ExternalLink } from 'lucide-react';
+import { LayoutDashboard, BookOpen, Plus, Settings, LogOut, ExternalLink, Activity } from 'lucide-react';
 import Link from 'next/link';
+import { collection, query } from 'firebase/firestore';
 
 export default function AdminDashboard() {
   const { user, loading } = useUser();
   const auth = useAuth();
+  const db = useFirestore();
   const router = useRouter();
+
+  const journalsQuery = useMemo(() => {
+    if (!db) return null;
+    return query(collection(db, 'journals'));
+  }, [db]);
+
+  const { data: journals, loading: journalsLoading } = useCollection(journalsQuery);
 
   useEffect(() => {
     if (!loading && !user) {
@@ -28,6 +37,35 @@ export default function AdminDashboard() {
     }
   };
 
+  const dynamicStats = useMemo(() => {
+    const hostedCount = journals?.length || 0;
+    
+    // Calculate unique universities
+    const uniqueUniversities = new Set(journals?.map((j: any) => j.university?.toLowerCase().trim()).filter(Boolean));
+    const partnersCount = uniqueUniversities.size;
+
+    return [
+      { 
+        title: "Hosted Journals", 
+        count: journalsLoading ? "..." : hostedCount.toString(), 
+        icon: BookOpen, 
+        color: "text-blue-500" 
+      },
+      { 
+        title: "Active Partners", 
+        count: journalsLoading ? "..." : partnersCount.toString(), 
+        icon: ExternalLink, 
+        color: "text-green-500" 
+      },
+      { 
+        title: "System Health", 
+        count: "Optimal", 
+        icon: Activity, 
+        color: "text-purple-500" 
+      },
+    ];
+  }, [journals, journalsLoading]);
+
   if (loading || !user) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -35,12 +73,6 @@ export default function AdminDashboard() {
       </div>
     );
   }
-
-  const stats = [
-    { title: "Hosted Journals", count: "12", icon: BookOpen, color: "text-blue-500" },
-    { title: "Active Partners", count: "8", icon: ExternalLink, color: "text-green-500" },
-    { title: "System Health", count: "Optimal", icon: Settings, color: "text-purple-500" },
-  ];
 
   return (
     <div className="flex flex-col min-h-screen bg-background">
@@ -65,7 +97,7 @@ export default function AdminDashboard() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            {stats.map((stat, i) => (
+            {dynamicStats.map((stat, i) => (
               <Card key={i} className="rounded-funky border-none shadow-xl bg-secondary/50" data-aos="fade-up" data-aos-delay={i * 100}>
                 <CardHeader className="flex flex-row items-center justify-between pb-2">
                   <CardTitle className="text-sm font-bold text-primary/60 uppercase tracking-widest">{stat.title}</CardTitle>
@@ -86,10 +118,10 @@ export default function AdminDashboard() {
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button asChild className="bg-primary text-accent rounded-funky px-8 h-12 shadow-lg hover:scale-105 transition-transform">
-                  <Link href="/admin/journals"><Plus className="mr-2 h-5 w-5" /> Add New Journal</Link>
+                  <Link href="/admin/journals"><Plus className="mr-2 h-5 w-5" /> Manage Journals</Link>
                 </Button>
                 <Button variant="outline" asChild className="rounded-funky px-8 h-12 border-primary/20 hover:bg-secondary">
-                  <Link href="/journals">View Catalog</Link>
+                  <Link href="/journals">View Public Catalog</Link>
                 </Button>
               </div>
             </Card>
