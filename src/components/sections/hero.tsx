@@ -10,16 +10,14 @@ export function Hero() {
     <section id="hero" className="relative min-h-screen flex flex-col items-start justify-center overflow-hidden bg-primary pt-20">
       {/* Background Image Container */}
       <div className="absolute inset-0 z-0">
-        {heroImage && (
           <Image
-            src={heroImage.imageUrl}
-            alt={heroImage.description}
+            src="/Research Psychology.jpg"
+            alt="Hiep Nguyen"
             fill
             className="object-cover"
             priority
-            data-ai-hint={heroImage.imageHint}
+            data-ai-hint="Descriptive fallback text"
           />
-        )}
         {/* Overlay for text readability */}
         <div className="absolute inset-0 bg-black/60" />
       </div>
