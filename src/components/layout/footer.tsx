@@ -13,9 +13,16 @@ const socialLinks = [
   { icon: Instagram, href: '#' },
 ];
 
-const platformLinks = [
+const quickLinks = [
   { href: '/', label: 'Home' },
-  { href: '/pricing', label: 'Pricing' },
+  { href: '/about', label: 'About' },
+  { href: '/services', label: 'Services' },
+  { href: '/journals', label: 'Journals' },
+  { href: '/pricing', label: 'Subscription' },
+  { href: '/contact', label: 'Contact' },
+];
+
+const platformLinks = [
   { href: '/compare', label: 'Compare Plans' },
   { href: '/journals', label: 'Hosted Journals' },
   { href: '/admin/login', label: 'Admin Portal' },
@@ -77,11 +84,11 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Column 2: Platform */}
+          {/* Column 2: Quick Links */}
           <div data-aos="fade-up" data-aos-delay="100">
-            <h5 className="font-bold text-lg text-primary-foreground mb-4 font-headline">Platform</h5>
+            <h5 className="font-bold text-lg text-primary-foreground mb-4 font-headline">Quick Links</h5>
             <ul className="space-y-3 text-sm">
-              {platformLinks.map((link) => (
+              {quickLinks.map((link) => (
                 <li key={link.label}>
                   <Link href={link.href} className="hover:text-accent transition-colors">
                     {link.label}
