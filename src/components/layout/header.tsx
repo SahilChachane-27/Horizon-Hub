@@ -46,9 +46,9 @@ export function Header() {
         scrolled ? 'bg-primary shadow-xl py-2 border-b border-accent/10' : 'bg-primary/90 backdrop-blur-md py-4'
       )}
     >
-      <div className="container mx-auto px-8 md:px-16 lg:px-32">
+      <div className="w-full px-8 md:px-16 lg:px-32">
         <div className="flex items-center justify-between h-20">
-          <Link href="/" className="flex items-center gap-3 leading-tight font-headline transition-transform hover:scale-[1.02]">
+          <Link href="/" className="flex items-center gap-3 leading-tight font-headline transition-transform hover:scale-[1.02] shrink-0">
             <BookOpen className="h-8 w-8 text-accent" />
             <div className="flex flex-col">
               <span className="text-xl md:text-2xl font-bold text-accent">Technical Journals</span>
