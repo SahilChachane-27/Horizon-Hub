@@ -33,6 +33,17 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 
 const ITEMS_PER_PAGE = 6;
 
+const domains = [
+  'Engineering',
+  'Technology',
+  'Management',
+  'Medical & Paramedical',
+  'Agriculture',
+  'Humanities & Social Sciences',
+  'Law',
+  'Environment & Sustainability',
+];
+
 export default function ManageJournals() {
   const { user, loading: userLoading } = useUser();
   const db = useFirestore();
@@ -106,6 +117,15 @@ export default function ManageJournals() {
     e.preventDefault();
     if (!db) return;
 
+    if (!domain) {
+      toast({
+        variant: "destructive",
+        title: "Missing Field",
+        description: "Please select an academic domain."
+      });
+      return;
+    }
+
     try {
       const journalData = {
         name,
@@ -160,17 +180,17 @@ export default function ManageJournals() {
     if (!journals) return [];
     
     let result = [...journals].filter((j: any) => 
-      j.name.toLowerCase().includes(searchFilter.toLowerCase()) ||
-      j.university.toLowerCase().includes(searchFilter.toLowerCase()) ||
-      j.issn.includes(searchFilter)
+      (j.name || '').toLowerCase().includes(searchFilter.toLowerCase()) ||
+      (j.university || '').toLowerCase().includes(searchFilter.toLowerCase()) ||
+      (j.issn || '').includes(searchFilter)
     );
 
     result.sort((a: any, b: any) => {
       switch (sortOrder) {
         case 'newest': return (b.createdAt?.seconds || 0) - (a.createdAt?.seconds || 0);
         case 'oldest': return (a.createdAt?.seconds || 0) - (b.createdAt?.seconds || 0);
-        case 'az': return a.name.localeCompare(b.name);
-        case 'za': return b.name.localeCompare(a.name);
+        case 'az': return (a.name || '').localeCompare(b.name || '');
+        case 'za': return (b.name || '').localeCompare(a.name || '');
         default: return 0;
       }
     });
@@ -263,7 +283,16 @@ export default function ManageJournals() {
                     </div>
                     <div className="space-y-2">
                       <label className="text-[10px] font-black uppercase text-primary/40 tracking-widest">Domain</label>
-                      <Input value={domain} onChange={(e) => setDomain(e.target.value)} required placeholder="Engineering" className="rounded-xl h-12" />
+                      <Select value={domain} onValueChange={setDomain} required>
+                        <SelectTrigger className="rounded-xl h-12 border-input">
+                          <SelectValue placeholder="Select domain" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          {domains.map((d) => (
+                            <SelectItem key={d} value={d}>{d}</SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
                     </div>
                   </div>
                   <div className="space-y-2">
