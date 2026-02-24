@@ -10,7 +10,9 @@
 
 @layer base {
   html {
-    @apply !scroll-smooth overflow-x-hidden;
+    @apply !scroll-smooth;
+    overflow-x: hidden;
+    width: 100%;
   }
   :root {
     --background: 0 0% 100%;
@@ -63,7 +65,10 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-body overflow-x-hidden;
+    @apply bg-background text-foreground font-body;
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
   }
   h1,
   h2,

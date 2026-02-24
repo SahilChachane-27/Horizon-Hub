@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Header } from '@/components/layout/header';
@@ -14,9 +13,9 @@ import { TrustBadges } from '@/components/sections/trust-badges';
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-background">
+    <div className="flex flex-col min-h-screen bg-background overflow-x-hidden">
       <Header />
-      <main className="flex-1">
+      <main className="flex-1 overflow-x-hidden">
         <Hero />
         <WhyUs />
         <Projects />

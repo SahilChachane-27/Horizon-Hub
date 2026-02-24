@@ -6,7 +6,7 @@ export function About() {
   const aboutImage = PlaceHolderImages.find(p => p.id === 'about-img');
 
   return (
-    <section id="about" className="py-16 md:py-24">
+    <section id="about" className="py-16 md:py-24 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-5 gap-12 items-center">
           <div className="lg:col-span-2 relative aspect-[4/5] rounded-none overflow-hidden shadow-2xl" data-aos="fade-right">

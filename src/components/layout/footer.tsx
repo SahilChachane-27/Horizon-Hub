@@ -38,7 +38,7 @@ export function Footer() {
   }, []);
 
   return (
-    <footer className="bg-primary text-primary-foreground/80 pt-16 pb-8">
+    <footer className="bg-primary text-primary-foreground/80 pt-16 pb-8 overflow-hidden">
       <div className="container mx-auto px-8 md:px-16 lg:px-32">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
           {/* Column 1: Branding & Info */}
@@ -108,7 +108,7 @@ export function Footer() {
             <h5 className="font-bold text-lg text-primary-foreground font-headline mb-4">Get in Touch</h5>
             <div className="text-sm space-y-4 mb-6">
               <p className="leading-tight"><span className="text-accent font-bold">Email:</span><br/>support@technicaljournals.org</p>
-              <p className="leading-tight"><span className="text-accent font-bold">Mobile:</span><br/>+91 8200385143</p>
+              <p className="leading-tight"><span className="text-accent font-bold">Mobile:</span><br/>0000000000</p>
             </div>
           </div>
         </div>
