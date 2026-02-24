@@ -30,11 +30,11 @@ export function Hero() {
           <p className="text-base md:text-lg text-white/90 mb-10 max-w-2xl drop-shadow-lg leading-relaxed font-medium">
             Technical Journals provides secure, scalable, and ethical journal hosting exclusively for University-owned journals. Own your research output with professional institutional branding.
           </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-start">
-            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground transition-all duration-300 ease-in-out hover:scale-105 rounded-funky px-8 py-7 text-lg font-semibold shadow-xl">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-start">
+            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground transition-all duration-300 ease-in-out hover:scale-105 rounded-funky px-4 sm:px-8 py-4 sm:py-7 text-sm sm:text-lg font-semibold shadow-xl">
               <Link href="/contact">Start Your University Journal</Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-accent text-white bg-transparent hover:bg-accent hover:text-accent-foreground transition-all duration-300 ease-in-out hover:scale-105 rounded-funky px-8 py-7 text-lg font-semibold shadow-xl">
+            <Button asChild size="lg" variant="outline" className="border-accent text-white bg-transparent hover:bg-accent hover:text-accent-foreground transition-all duration-300 ease-in-out hover:scale-105 rounded-funky px-4 sm:px-8 py-4 sm:py-7 text-sm sm:text-lg font-semibold shadow-xl">
               <Link href="/journals">Explore Journals</Link>
             </Button>
           </div>

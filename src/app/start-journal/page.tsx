@@ -76,7 +76,7 @@ export default function StartJournalPage() {
               <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 sm:gap-8 text-white/90">
                 <a 
                   href="mailto:support@technicaljournals.org" 
-                  className="flex items-center gap-2 hover:text-white transition-colors sm:border-r sm:border-white/20 sm:pr-8"
+                  className="flex items-center gap-2 hover:text-white transition-colors sm:border-r sm:border-white/20 sm:pr-8 last:border-0"
                 >
                   <Mail className="h-4 w-4 sm:h-5 sm:w-5 text-accent" />
                   <span className="font-bold text-sm sm:text-base">Email:</span> 
@@ -204,7 +204,7 @@ export default function StartJournalPage() {
                   <Button 
                     type="submit" 
                     size="lg" 
-                    className="w-full bg-primary hover:bg-primary/90 text-accent rounded-funky py-4 md:py-6 text-lg md:text-xl font-bold shadow-xl transition-all hover:scale-[1.01]"
+                    className="w-full bg-primary hover:bg-primary/90 text-accent rounded-funky py-3 sm:py-4 md:py-6 text-sm sm:text-lg md:text-xl font-bold shadow-xl transition-all hover:scale-[1.01]"
                   >
                     Submit Inquiry
                   </Button>
