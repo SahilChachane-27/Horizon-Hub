@@ -39,13 +39,13 @@ export default function ContactPage() {
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
       <main className="flex-1 pt-16">
-        <section className="relative flex flex-col items-center justify-center overflow-hidden bg-primary pt-24 pb-16 md:pt-32 md:pb-24">
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 md:px-16 lg:px-32 text-center">
+        <section className="relative flex flex-col items-center justify-center overflow-hidden bg-primary pt-24 pb-16 md:pt-32 md:pb-24 text-center px-4">
+          <div className="relative z-10 max-w-7xl mx-auto">
             <div className="space-y-6 md:space-y-8" data-aos="fade-up">
-              <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold leading-tight text-white font-headline">
+              <h1 className="text-xl sm:text-3xl md:text-5xl font-bold leading-tight text-white font-headline">
                 Start Your Journal with Technical Journals
               </h1>
-              <p className="max-w-5xl mx-auto text-base sm:text-lg md:text-xl text-white/90 font-medium italic">
+              <p className="max-w-5xl mx-auto text-sm sm:text-lg md:text-xl text-white/90 font-medium italic">
                 Empowering your institution with secure and sovereign publishing tools.
               </p>
 
@@ -55,16 +55,16 @@ export default function ContactPage() {
                   className="flex items-center gap-2 hover:text-accent transition-colors sm:border-r sm:border-white/20 sm:pr-8 last:border-0"
                 >
                   <Mail className="h-4 w-4 sm:h-5 sm:w-5 text-accent" />
-                  <span className="font-bold text-sm sm:text-base">Email:</span> 
-                  <span className="text-xs sm:text-base break-all">support@technicaljournals.org</span>
+                  <span className="font-bold text-xs sm:text-base">Email:</span> 
+                  <span className="text-[10px] sm:text-base break-all">support@technicaljournals.org</span>
                 </a>
                 <a 
                   href="tel:0000000000" 
                   className="flex items-center gap-2 hover:text-accent transition-colors"
                 >
                   <PhoneCall className="h-4 w-4 sm:h-5 sm:w-5 text-accent" />
-                  <span className="font-bold text-sm sm:text-base">Mobile:</span> 
-                  <span className="text-xs sm:text-base">0000000000</span>
+                  <span className="font-bold text-xs sm:text-base">Mobile:</span> 
+                  <span className="text-[10px] sm:text-base">0000000000</span>
                 </a>
               </div>
             </div>

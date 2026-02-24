@@ -44,7 +44,7 @@ export function Footer() {
           {/* Column 1: Branding & Info */}
           <div className="space-y-6 lg:col-span-2" data-aos="fade-up">
             <Link href="/" className="flex items-center gap-3 leading-tight font-headline transition-opacity hover:opacity-80">
-                <div className="relative h-10 w-10 shrink-0">
+                <div className="relative h-12 w-12 shrink-0">
                   <Image 
                     src="https://picsum.photos/seed/tech-logo/200/200" 
                     alt="Technical Journals Logo" 
@@ -113,12 +113,11 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-primary-foreground/10 pt-8 text-center text-[10px] tracking-widest text-primary-foreground/40 uppercase" data-aos="fade-up">
+        <div className="border-t border-primary-foreground/10 pt-8 text-center">
           {isClient && (
-            <div className="space-y-4">
-              <p>© {year} Technical Journals. All Rights Reserved. Built for Academic Sovereignty.</p>
-              <p className="text-[11px] font-bold text-accent/80 tracking-normal opacity-90">Copyright © {year} Technical Journals. All Rights Reserved.</p>
-            </div>
+            <p className="text-[11px] font-bold tracking-widest text-primary-foreground/80 uppercase">
+              Copyright © {year} Technical Journals. All Rights Reserved. Built for Academic Sovereignty.
+            </p>
           )}
         </div>
       </div>
