@@ -106,20 +106,20 @@ export default function ServicesPage() {
             ))}
           </div>
 
-          <section className="mt-24 p-12 bg-primary rounded-funky shadow-2xl relative overflow-hidden text-center text-white" data-aos="zoom-in">
+          <section className="mt-24 p-8 md:p-16 bg-primary rounded-funky shadow-2xl relative overflow-hidden text-center text-white" data-aos="zoom-in">
             <div className="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-full -mr-32 -mt-32" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-accent/10 rounded-full -ml-32 -mb-32" />
             
-            <h2 className="text-3xl md:text-4xl font-bold font-headline mb-6">Scalable Hosting for Academic Excellence</h2>
-            <p className="text-white/80 max-w-2xl mx-auto mb-10 font-medium">
+            <h2 className="text-2xl md:text-4xl font-bold font-headline mb-6">Scalable Hosting for Academic Excellence</h2>
+            <p className="text-white/80 max-w-2xl mx-auto mb-10 font-medium text-sm md:text-base">
               Technical Journals provides more than just hosting; we provide a complete ecosystem for institutional research visibility and global dissemination.
             </p>
-            <div className="flex flex-wrap justify-center gap-10 opacity-60">
-              <div className="flex flex-col items-center gap-2"><Globe className="h-8 w-8" /><span className="text-[10px] font-bold uppercase tracking-widest">Global Indexing</span></div>
-              <div className="flex flex-col items-center gap-2"><ShieldCheck className="h-8 w-8" /><span className="text-[10px] font-bold uppercase tracking-widest">Secure Servers</span></div>
-              <div className="flex flex-col items-center gap-2"><BarChart className="h-8 w-8" /><span className="text-[10px] font-bold uppercase tracking-widest">Growth Analytics</span></div>
+            <div className="flex flex-wrap justify-center gap-6 md:gap-10 opacity-60">
+              <div className="flex flex-col items-center gap-2"><Globe className="h-6 w-6 md:h-8 md:w-8" /><span className="text-[8px] md:text-[10px] font-bold uppercase tracking-widest">Global Indexing</span></div>
+              <div className="flex flex-col items-center gap-2"><ShieldCheck className="h-6 w-6 md:h-8 md:w-8" /><span className="text-[8px] md:text-[10px] font-bold uppercase tracking-widest">Secure Servers</span></div>
+              <div className="flex flex-col items-center gap-2"><BarChart className="h-6 w-6 md:h-8 md:w-8" /><span className="text-[8px] md:text-[10px] font-bold uppercase tracking-widest">Growth Analytics</span></div>
             </div>
-            <Button asChild className="mt-12 bg-accent hover:bg-white hover:text-primary text-accent-foreground px-12 py-8 text-lg font-bold rounded-funky shadow-2xl">
+            <Button asChild className="mt-8 md:mt-12 bg-accent hover:bg-white hover:text-primary text-accent-foreground px-8 md:px-12 py-6 md:py-8 text-base md:text-lg font-bold rounded-funky shadow-2xl w-full sm:w-auto h-auto transition-all">
               <Link href="/contact">Inquire About Services</Link>
             </Button>
           </section>
