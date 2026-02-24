@@ -53,9 +53,6 @@ export function Footer() {
                     data-ai-hint="technical journal logo"
                   />
                 </div>
-                <div className="flex flex-col">
-                  <span className="text-[11px] font-medium text-accent/80 tracking-[0.2em] uppercase">University Journal Hosting</span>
-                </div>
             </Link>
             <div className="text-sm leading-relaxed max-w-sm">
               <p>Empowering academic institutions with secure, scalable, and professional journal hosting since 2024.</p>

@@ -59,9 +59,6 @@ export function Header() {
                 data-ai-hint="technical journal logo"
               />
             </div>
-            <div className="flex flex-col">
-              <span className="text-[10px] md:text-[11px] font-medium text-white/80 tracking-[0.1em] uppercase leading-tight">University Journal Hosting</span>
-            </div>
           </Link>
           
           <div className="hidden xl:flex items-center gap-6">
