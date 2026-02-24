@@ -78,15 +78,15 @@ export default function StartJournalPage() {
                   href="mailto:support@technicaljournals.org" 
                   className="flex items-center gap-2 hover:text-white transition-colors border-r border-white/20 pr-8"
                 >
-                  <Mail className="h-5 w-5" />
+                  <Mail className="h-5 w-5 text-accent" />
                   <span className="font-bold">Email:</span> support@technicaljournals.org
                 </a>
                 <a 
-                  href="tel:+918200385143" 
+                  href="tel:+919876543210" 
                   className="flex items-center gap-2 hover:text-white transition-colors"
                 >
-                  <PhoneCall className="h-5 w-5" />
-                  <span className="font-bold">Mobile:</span> +91 8200385143
+                  <PhoneCall className="h-5 w-5 text-accent" />
+                  <span className="font-bold">Mobile:</span> +91 98765 43210
                 </a>
               </div>
             </div>

@@ -103,7 +103,7 @@ export function Footer() {
             <h5 className="font-bold text-lg text-primary-foreground font-headline mb-4">Get in Touch</h5>
             <div className="text-sm space-y-4 mb-6">
               <p className="leading-tight"><span className="text-accent font-bold">Email:</span><br/>support@technicaljournals.org</p>
-              <p className="leading-tight"><span className="text-accent font-bold">Mobile:</span><br/>+91 8200385143</p>
+              <p className="leading-tight"><span className="text-accent font-bold">Mobile:</span><br/>+91 98765 43210</p>
             </div>
           </div>
         </div>

@@ -17,8 +17,8 @@ const contactOptions = [
   { 
     icon: PhoneCall, 
     title: "Project Hotline", 
-    text: "+91 8200385143",
-    link: "tel:+918200385143"
+    text: "+91 98765 43210",
+    link: "tel:+919876543210"
   },
   { 
     icon: MapPin, 
@@ -58,11 +58,11 @@ export default function ContactPage() {
                   <span className="font-bold">Email:</span> support@technicaljournals.org
                 </a>
                 <a 
-                  href="tel:+918200385143" 
+                  href="tel:+919876543210" 
                   className="flex items-center gap-2 hover:text-accent transition-colors"
                 >
                   <PhoneCall className="h-5 w-5 text-accent" />
-                  <span className="font-bold">Mobile:</span> +91 8200385143
+                  <span className="font-bold">Mobile:</span> +91 98765 43210
                 </a>
               </div>
             </div>
