@@ -6,7 +6,7 @@ const partners = [
   { name: 'SSIPMT RAIPUR', logo: 'https://picsum.photos/seed/univ1/200/200' },
   { name: 'VIT PUNE', logo: 'https://picsum.photos/seed/univ2/200/200' },
   { name: 'AAFT UNIVERSITY RAIPUR', logo: 'https://picsum.photos/seed/univ3/200/200' },
-  { name: 'ARYA GROUP OF COLLEGES', logo: 'https://scholar9.com/wp-content/uploads/2023/05/Arya-College-Logo.png' },
+  { name: 'ARYA GROUP OF COLLEGES', logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgIW1dqaZj_X0Ae1y5VFr_4Rq2xHVqcO3T4Q&s' },
   { name: 'NOIDA INTERNATIONAL UNIVERSITY', logo: 'https://picsum.photos/seed/univ5/200/200' },
 ];
 
