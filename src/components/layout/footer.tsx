@@ -54,7 +54,6 @@ export function Footer() {
                   />
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-2xl font-bold text-accent">Technical Journals</span>
                   <span className="text-[11px] font-medium text-accent/80 tracking-[0.2em] uppercase">University Journal Hosting</span>
                 </div>
             </Link>

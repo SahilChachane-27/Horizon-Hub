@@ -60,7 +60,6 @@ export function Header() {
               />
             </div>
             <div className="flex flex-col">
-              <span className="text-xl md:text-2xl font-bold text-accent">Technical Journals</span>
               <span className="text-[10px] md:text-[11px] font-medium text-white/80 tracking-[0.1em] uppercase leading-tight">University Journal Hosting</span>
             </div>
           </Link>
