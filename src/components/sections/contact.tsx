@@ -16,7 +16,7 @@ const formSchema = z.object({
   email: z.string().email("Please enter a valid email address."),
   phone: z.string().min(10, "Phone number must be at least 10 digits."),
   projectType: z.string({
-    required_error: "Please select a project type.",
+    required_error: "Please select an inquiry type.",
   }),
   message: z.string().min(10, "Message must be at least 10 characters."),
 });
@@ -38,7 +38,7 @@ export function Contact() {
     console.log(values);
     toast({
       title: "Inquiry Submitted!",
-      description: "Our construction management team will contact you within 24 hours.",
+      description: "Our technical team will contact you within 24 hours.",
     });
     form.reset();
   }
@@ -47,9 +47,9 @@ export function Contact() {
     <div className="max-w-4xl mx-auto">
       <div className="bg-white p-8 md:p-12 rounded-funky shadow-2xl border border-border/50" data-aos="fade-up">
         <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold text-primary font-headline">Project Inquiry</h2>
+          <h2 className="text-3xl font-bold text-primary font-headline italic">Institutional Inquiry</h2>
           <div className="mt-2 w-16 h-1 bg-accent mx-auto"></div>
-          <p className="text-sm text-foreground/60 mt-4">Tell us about your upcoming project and our experts will get back to you with a tailored consultation.</p>
+          <p className="text-sm text-foreground/60 mt-4">Tell us about your requirements and our experts will get back to you with a tailored consultation.</p>
         </div>
         
         {isClient && (
@@ -61,7 +61,7 @@ export function Contact() {
                   name="name"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-base font-bold">Full Name</FormLabel>
+                      <FormLabel className="text-base font-bold text-primary">Full Name</FormLabel>
                       <FormControl>
                         <Input placeholder="Enter your full name" {...field} className="rounded-xl h-12 border-input focus:ring-primary/50" />
                       </FormControl>
@@ -74,7 +74,7 @@ export function Contact() {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-base font-bold">Email Address</FormLabel>
+                      <FormLabel className="text-base font-bold text-primary">Email Address</FormLabel>
                       <FormControl>
                         <Input placeholder="Enter your email address" {...field} className="rounded-xl h-12 border-input focus:ring-primary/50" />
                       </FormControl>
@@ -90,7 +90,7 @@ export function Contact() {
                   name="phone"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-base font-bold">Phone Number</FormLabel>
+                      <FormLabel className="text-base font-bold text-primary">Phone Number</FormLabel>
                       <FormControl>
                         <Input placeholder="Enter your phone number" {...field} className="rounded-xl h-12 border-input focus:ring-primary/50" />
                       </FormControl>
@@ -103,18 +103,19 @@ export function Contact() {
                   name="projectType"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-base font-bold">Project Category</FormLabel>
+                      <FormLabel className="text-base font-bold text-primary">Service Category</FormLabel>
                       <Select onValueChange={field.onChange} defaultValue={field.value}>
                         <FormControl>
                           <SelectTrigger className="rounded-xl h-12 border-input focus:ring-primary/50">
-                            <SelectValue placeholder="Select a project type" />
+                            <SelectValue placeholder="Select a service type" />
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent>
-                          <SelectItem value="residential">Residential Construction</SelectItem>
-                          <SelectItem value="commercial">Commercial Development</SelectItem>
-                          <SelectItem value="renovation">Renovation & Remodeling</SelectItem>
-                          <SelectItem value="real-estate">Real Estate Development</SelectItem>
+                          <SelectItem value="hosting">Journal Hosting Services</SelectItem>
+                          <SelectItem value="partnership">University Partnership</SelectItem>
+                          <SelectItem value="workflow">Editorial Workflow Management</SelectItem>
+                          <SelectItem value="migration">Migration & Legacy Services</SelectItem>
+                          <SelectItem value="indexing">Indexing & DOI Support</SelectItem>
                         </SelectContent>
                       </Select>
                       <FormMessage />
@@ -128,10 +129,10 @@ export function Contact() {
                 name="message"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-base font-bold">Project Details</FormLabel>
+                    <FormLabel className="text-base font-bold text-primary">Additional Details</FormLabel>
                     <FormControl>
                       <Textarea 
-                        placeholder="Tell us about your requirements, timeline, and project goals..." 
+                        placeholder="Tell us about your institutional requirements, journal scope, or migration needs..." 
                         className="rounded-xl min-h-[150px] border-input focus:ring-primary/50" 
                         {...field} 
                       />
@@ -142,7 +143,7 @@ export function Contact() {
               />
 
               <Button type="submit" size="lg" className="w-full bg-primary hover:bg-primary/90 text-accent rounded-funky py-8 text-xl font-bold shadow-xl transition-all hover:scale-[1.01]">
-                Request Project Consultation
+                Request Technical Consultation
               </Button>
             </form>
           </Form>
