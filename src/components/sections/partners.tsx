@@ -28,11 +28,11 @@ export function Partners() {
       </div>
 
       <div className="relative">
-        <div className="flex animate-marquee whitespace-nowrap py-8 items-end">
+        <div className="flex animate-marquee whitespace-nowrap py-8 items-center">
           {displayPartners.map((partner, index) => (
             <div
               key={`${partner.name}-${index}`}
-              className="flex flex-col items-center mx-12 group cursor-default"
+              className="mx-12 group cursor-default"
             >
               <div className="w-28 h-28 flex items-center justify-center bg-white border-2 border-accent/40 rounded-[2rem] shadow-[0_0_20px_rgba(251,191,36,0.15)] transition-all duration-300 group-hover:scale-105 group-hover:border-accent group-hover:shadow-[0_0_30px_rgba(251,191,36,0.3)] relative overflow-hidden p-4">
                 <Image
@@ -43,9 +43,6 @@ export function Partners() {
                   data-ai-hint="university logo"
                 />
               </div>
-              <span className="mt-6 text-[10px] md:text-[11px] font-bold text-primary tracking-wider text-center uppercase whitespace-normal max-w-[120px] leading-tight opacity-80 group-hover:opacity-100 transition-opacity">
-                {partner.name}
-              </span>
             </div>
           ))}
         </div>
