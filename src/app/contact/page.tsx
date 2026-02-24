@@ -39,30 +39,32 @@ export default function ContactPage() {
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
       <main className="flex-1 pt-16">
-        <section className="relative flex flex-col items-center justify-center overflow-hidden bg-primary pt-32 pb-24">
-          <div className="relative z-10 max-w-7xl mx-auto px-8 md:px-16 lg:px-32 text-center">
-            <div className="space-y-8" data-aos="fade-up">
-              <h1 className="text-3xl sm:text-5xl font-bold leading-tight text-white font-headline">
+        <section className="relative flex flex-col items-center justify-center overflow-hidden bg-primary pt-24 pb-16 md:pt-32 md:pb-24">
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 md:px-16 lg:px-32 text-center">
+            <div className="space-y-6 md:space-y-8" data-aos="fade-up">
+              <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold leading-tight text-white font-headline">
                 Start Your Journal with Technical Journals
               </h1>
-              <p className="max-w-5xl mx-auto text-lg sm:text-xl text-white/90 font-medium italic">
+              <p className="max-w-5xl mx-auto text-base sm:text-lg md:text-xl text-white/90 font-medium italic">
                 Empowering your institution with secure and sovereign publishing tools.
               </p>
 
-              <div className="flex flex-wrap items-center justify-center gap-8 text-white/90">
+              <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 sm:gap-8 text-white/90">
                 <a 
                   href="mailto:support@technicaljournals.org" 
-                  className="flex items-center gap-2 hover:text-accent transition-colors border-r border-white/20 pr-8 last:border-0"
+                  className="flex items-center gap-2 hover:text-accent transition-colors sm:border-r sm:border-white/20 sm:pr-8 last:border-0"
                 >
-                  <Mail className="h-5 w-5 text-accent" />
-                  <span className="font-bold">Email:</span> support@technicaljournals.org
+                  <Mail className="h-4 w-4 sm:h-5 sm:w-5 text-accent" />
+                  <span className="font-bold text-sm sm:text-base">Email:</span> 
+                  <span className="text-xs sm:text-base break-all">support@technicaljournals.org</span>
                 </a>
                 <a 
                   href="tel:+919876543210" 
                   className="flex items-center gap-2 hover:text-accent transition-colors"
                 >
-                  <PhoneCall className="h-5 w-5 text-accent" />
-                  <span className="font-bold">Mobile:</span> +91 98765 43210
+                  <PhoneCall className="h-4 w-4 sm:h-5 sm:w-5 text-accent" />
+                  <span className="font-bold text-sm sm:text-base">Mobile:</span> 
+                  <span className="text-xs sm:text-base">+91 98765 43210</span>
                 </a>
               </div>
             </div>
