@@ -3,11 +3,11 @@
 import Image from 'next/image';
 
 const partners = [
-  { name: 'SSIPMT RAIPUR', logo: 'https://picsum.photos/seed/univ1/200/200' },
-  { name: 'VIT PUNE', logo: 'https://picsum.photos/seed/univ2/200/200' },
-  { name: 'AAFT UNIVERSITY RAIPUR', logo: 'https://picsum.photos/seed/univ3/200/200' },
+  { name: 'SSIPMT RAIPUR', logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9hwPg2dxvrGva6_moqR6xBuraowESQQvL_g&s' },
+  { name: 'VIT PUNE', logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZ7aLOs6sABaL_2tryB5lDE0TM798E61qvpg&s' },
+  { name: 'AAFT UNIVERSITY RAIPUR', logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_bK1Pbv9jDF155Egga260hkdqTyZ7QQ4cGw&s' },
   { name: 'ARYA GROUP OF COLLEGES', logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgIW1dqaZj_X0Ae1y5VFr_4Rq2xHVqcO3T4Q&s' },
-  { name: 'NOIDA INTERNATIONAL UNIVERSITY', logo: 'https://picsum.photos/seed/univ5/200/200' },
+  { name: 'NOIDA INTERNATIONAL UNIVERSITY', logo: 'https://vectorseek.com/wp-content/uploads/2023/11/Noida-International-University-Logo-Vector.svg-.png' },
 ];
 
 export function Partners() {
