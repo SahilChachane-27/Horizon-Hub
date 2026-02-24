@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useMemo, useEffect } from 'react';
@@ -22,7 +21,9 @@ import {
   Stethoscope,
   Sprout,
   Scale,
-  Leaf
+  Leaf,
+  Filter,
+  RefreshCw
 } from 'lucide-react';
 import { useCollection, useFirestore } from '@/firebase';
 import { collection, query, orderBy } from 'firebase/firestore';
@@ -71,93 +72,199 @@ export default function JournalsPage() {
     });
   }, [journals, searchQuery, universityQuery, issnQuery, selectedCategory]);
 
+  const resetFilters = () => {
+    setSearchQuery('');
+    setUniversityQuery('');
+    setIssnQuery('');
+    setSelectedCategory('All');
+  };
+
   return (
-    <div className="flex flex-col min-h-screen bg-background">
+    <div className="flex flex-col min-h-screen bg-slate-50/50">
       <Header />
       <main className="flex-1 pt-20">
-        <section className="py-20 bg-primary text-primary-foreground relative overflow-hidden">
-          <div className="container mx-auto px-8 md:px-16 lg:px-32 text-center relative z-10">
-            <h1 className="text-4xl md:text-5xl font-bold font-headline mb-4" data-aos="fade-up">
+        {/* Simplified Hero */}
+        <section className="py-12 bg-primary text-primary-foreground relative overflow-hidden">
+          <div className="container mx-auto px-8 md:px-16 lg:px-32 relative z-10">
+            <h1 className="text-3xl md:text-4xl font-bold font-headline mb-2" data-aos="fade-right">
               University Journal Catalog
             </h1>
-            <p className="text-lg opacity-90 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+            <p className="text-base opacity-80 max-w-xl" data-aos="fade-right" data-aos-delay="100">
               Browse prestigious academic publications hosted on our secure ScholarJMS platform.
             </p>
           </div>
         </section>
 
-        <section className="py-10 bg-secondary/30 relative">
-          <div className="container ml-0 mr-auto px-8 md:px-16 lg:px-32 max-w-5xl">
-            <div className="bg-white p-6 md:p-8 rounded-xl shadow-2xl border border-primary/5 relative z-20" data-aos="fade-up">
-              {isClient ? (
-                <div className="space-y-4">
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <section className="py-12">
+          <div className="container mx-auto px-8 md:px-16 lg:px-32">
+            <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 items-start">
+              
+              {/* Left Side: Filter Sidebar */}
+              <aside className="lg:col-span-1 space-y-8 sticky top-32" data-aos="fade-right">
+                <div className="flex items-center justify-between mb-4">
+                  <h2 className="text-xs font-black uppercase tracking-[0.2em] text-primary/40 flex items-center gap-2">
+                    <Filter className="h-3 w-3" /> Filter Catalog
+                  </h2>
+                  <Button 
+                    variant="ghost" 
+                    size="sm" 
+                    onClick={resetFilters}
+                    className="text-[10px] font-bold uppercase tracking-widest text-accent hover:text-primary h-auto p-0"
+                  >
+                    Reset All
+                  </Button>
+                </div>
+
+                <div className="space-y-6">
+                  {/* Journal Name */}
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-black uppercase text-primary/60 tracking-widest">Journal Name</label>
                     <div className="relative">
-                      <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                      <Input placeholder="Search Journal Name" className="pl-10 h-10 border-primary/10 rounded-xl bg-secondary/5" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
-                    </div>
-                    <div className="relative">
-                      <Building2 className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                      <Input placeholder="University" className="pl-10 h-10 border-primary/10 rounded-xl bg-secondary/5" value={universityQuery} onChange={(e) => setUniversityQuery(e.target.value)} />
-                    </div>
-                    <div className="relative">
-                      <Hash className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                      <Input placeholder="ISSN" className="pl-10 h-10 border-primary/10 rounded-xl bg-secondary/5" value={issnQuery} onChange={(e) => setIssnQuery(e.target.value)} />
+                      <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground" />
+                      <Input 
+                        placeholder="e.g. Technology Review" 
+                        className="pl-9 h-10 border-slate-200 rounded-xl bg-white shadow-sm focus:ring-accent/50" 
+                        value={searchQuery} 
+                        onChange={(e) => setSearchQuery(e.target.value)} 
+                      />
                     </div>
                   </div>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+                  {/* University */}
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-black uppercase text-primary/60 tracking-widest">University</label>
+                    <div className="relative">
+                      <Building2 className="absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground" />
+                      <Input 
+                        placeholder="University name..." 
+                        className="pl-9 h-10 border-slate-200 rounded-xl bg-white shadow-sm focus:ring-accent/50" 
+                        value={universityQuery} 
+                        onChange={(e) => setUniversityQuery(e.target.value)} 
+                      />
+                    </div>
+                  </div>
+
+                  {/* ISSN */}
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-black uppercase text-primary/60 tracking-widest">ISSN</label>
+                    <div className="relative">
+                      <Hash className="absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground" />
+                      <Input 
+                        placeholder="2345-6789" 
+                        className="pl-9 h-10 border-slate-200 rounded-xl bg-white shadow-sm focus:ring-accent/50" 
+                        value={issnQuery} 
+                        onChange={(e) => setIssnQuery(e.target.value)} 
+                      />
+                    </div>
+                  </div>
+
+                  {/* Field of Study */}
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-black uppercase text-primary/60 tracking-widest">Field of Study</label>
                     <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-                      <SelectTrigger className="h-10 border-primary/10 rounded-xl bg-secondary/5"><SelectValue placeholder="Field of Study" /></SelectTrigger>
+                      <SelectTrigger className="h-10 border-slate-200 rounded-xl bg-white shadow-sm">
+                        <SelectValue placeholder="All Fields" />
+                      </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="All">All Fields</SelectItem>
                         {categories.map(cat => <SelectItem key={cat.name} value={cat.name}>{cat.name}</SelectItem>)}
                       </SelectContent>
                     </Select>
-                    <Button className="h-10 bg-primary text-white rounded-xl font-bold shadow-xl md:col-span-1 md:w-max px-10 uppercase tracking-widest text-[10px]">Search Catalog</Button>
                   </div>
                 </div>
-              ) : <div className="h-32 flex items-center justify-center font-bold text-primary/40 tracking-widest uppercase">Initializing Sources...</div>}
-            </div>
-          </div>
-        </section>
 
-        <section className="py-16 min-h-[400px]">
-          <div className="container mx-auto px-8 md:px-16 lg:px-32">
-            {loading ? (
-              <div className="flex justify-center p-20"><div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div></div>
-            ) : filteredJournals.length > 0 ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                {filteredJournals.map((journal: any, index: number) => (
-                  <Card key={index} className="overflow-hidden bg-card border-none shadow-xl hover:shadow-2xl transition-all duration-300 rounded-2xl group" data-aos="fade-up" data-aos-delay={index * 100}>
-                    <div className="relative aspect-video w-full bg-secondary">
-                      {journal.imageUrl ? (
-                        <Image src={journal.imageUrl} alt={journal.name} fill className="object-cover" />
-                      ) : (
-                        <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/5 to-accent/5">
-                          <Building2 className="h-16 w-16 text-primary/10" />
-                        </div>
-                      )}
+                <div className="pt-6 border-t border-slate-200">
+                  <div className="p-6 bg-primary rounded-xl text-white relative overflow-hidden group">
+                    <div className="relative z-10">
+                      <h4 className="text-sm font-bold mb-2">Need Help?</h4>
+                      <p className="text-[10px] text-white/70 mb-4 leading-relaxed">Can't find a specific publication? Contact our support desk for assistance.</p>
+                      <Button variant="outline" size="sm" className="w-full text-[10px] font-bold uppercase tracking-widest border-white/20 text-white hover:bg-white/10 h-8 rounded-lg">
+                        Contact Desk
+                      </Button>
                     </div>
-                    <CardHeader className="p-8">
-                      <CardTitle className="text-xl font-bold text-primary font-headline leading-tight italic">{journal.name}</CardTitle>
-                    </CardHeader>
-                    <CardContent className="p-8 pt-0 space-y-4">
-                      <div className="flex items-center gap-3"><Building2 className="h-4 w-4 text-accent" /><p className="text-sm font-bold text-primary/80">{journal.university}</p></div>
-                      <div className="flex items-center gap-3"><Tag className="h-4 w-4 text-accent" /><p className="text-sm font-medium">{journal.issn}</p></div>
-                      <div className="pt-6 border-t border-secondary">
-                        <Button asChild className="w-full bg-primary hover:bg-accent text-white hover:text-primary transition-all rounded-funky h-12">
-                          <a href={journal.link} target="_blank">View Public Portal <ExternalLink className="ml-2 h-4 w-4" /></a>
-                        </Button>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
+                    <BookOpen className="absolute -bottom-4 -right-4 h-20 w-20 text-white opacity-5 group-hover:scale-110 transition-transform duration-500" />
+                  </div>
+                </div>
+              </aside>
+
+              {/* Right Side: Card Grid */}
+              <div className="lg:col-span-3 min-h-[600px]" data-aos="fade-left">
+                <div className="flex items-center justify-between mb-8">
+                  <h3 className="text-sm font-bold text-primary/60">
+                    Showing {filteredJournals.length} Results
+                  </h3>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[10px] font-bold text-primary/40 uppercase tracking-widest">Sort:</span>
+                    <span className="text-[10px] font-black text-primary uppercase tracking-widest">Latest First</span>
+                  </div>
+                </div>
+
+                {loading ? (
+                  <div className="flex flex-col items-center justify-center p-32 space-y-4">
+                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-accent"></div>
+                    <p className="text-xs font-bold text-primary/40 uppercase tracking-[0.2em]">Synchronizing Repository...</p>
+                  </div>
+                ) : filteredJournals.length > 0 ? (
+                  <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-10">
+                    {filteredJournals.map((journal: any, index: number) => (
+                      <Card key={index} className="overflow-hidden bg-white border-none shadow-sm hover:shadow-xl transition-all duration-500 rounded-2xl group flex flex-col h-full border border-slate-100">
+                        <div className="relative aspect-video w-full bg-secondary shrink-0">
+                          {journal.imageUrl ? (
+                            <Image src={journal.imageUrl} alt={journal.name} fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
+                          ) : (
+                            <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/5 to-accent/5">
+                              <Building2 className="h-12 w-12 text-primary/10" />
+                            </div>
+                          )}
+                          <div className="absolute top-4 left-4">
+                            <div className="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-widest shadow-sm text-primary">
+                              {journal.domain}
+                            </div>
+                          </div>
+                        </div>
+                        <CardHeader className="p-8 flex-grow">
+                          <CardTitle className="text-xl font-bold text-primary font-headline leading-tight italic group-hover:text-accent transition-colors duration-300">
+                            {journal.name}
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent className="p-8 pt-0 space-y-4">
+                          <div className="space-y-2">
+                            <div className="flex items-center gap-3">
+                              <div className="h-8 w-8 rounded-lg bg-slate-50 flex items-center justify-center shrink-0">
+                                <Building2 className="h-4 w-4 text-accent" />
+                              </div>
+                              <p className="text-sm font-bold text-primary/80">{journal.university}</p>
+                            </div>
+                            <div className="flex items-center gap-3">
+                              <div className="h-8 w-8 rounded-lg bg-slate-50 flex items-center justify-center shrink-0">
+                                <Tag className="h-4 w-4 text-accent" />
+                              </div>
+                              <p className="text-sm font-medium text-slate-500">{journal.issn}</p>
+                            </div>
+                          </div>
+                          <div className="pt-6 border-t border-slate-50">
+                            <Button asChild className="w-full bg-primary hover:bg-accent text-white hover:text-primary transition-all duration-300 rounded-xl h-12 font-bold shadow-lg shadow-primary/5">
+                              <a href={journal.link} target="_blank">
+                                Open Journal Portal <ExternalLink className="ml-2 h-4 w-4" />
+                              </a>
+                            </Button>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="flex flex-col items-center justify-center py-32 bg-white rounded-3xl border-2 border-dashed border-slate-200">
+                    <RefreshCw className="h-12 w-12 text-slate-200 mb-4 animate-reverse-spin" />
+                    <p className="text-lg font-bold text-primary/40 uppercase tracking-widest italic">No matching journals found</p>
+                    <Button variant="link" onClick={resetFilters} className="text-accent font-bold uppercase text-[10px] tracking-[0.2em] mt-2">
+                      Clear Search Parameters
+                    </Button>
+                  </div>
+                )}
               </div>
-            ) : (
-              <div className="text-center py-20 bg-secondary/20 rounded-[40px] border-2 border-dashed border-primary/5">
-                <p className="text-xl font-bold text-primary/40 uppercase tracking-widest italic">No matching journals found</p>
-              </div>
-            )}
+
+            </div>
           </div>
         </section>
       </main>
