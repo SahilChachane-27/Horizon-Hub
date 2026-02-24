@@ -1,4 +1,3 @@
-
 {
   "entities": {
     "Journal": {
@@ -41,6 +40,10 @@
         "imageUrl": {
           "type": "string",
           "description": "The data URI or URL of the journal cover image."
+        },
+        "isFeatured": {
+          "type": "boolean",
+          "description": "Whether the journal is featured on the home page."
         }
       },
       "required": ["name", "university", "issn", "domain", "link"]

@@ -5,11 +5,11 @@ import { useUser, useFirestore, useCollection } from '@/firebase';
 import { collection, addDoc, deleteDoc, doc, updateDoc, serverTimestamp, query, orderBy } from 'firebase/firestore';
 import { useRouter } from 'next/navigation';
 import { Header } from '@/components/layout/header';
-import { Footer } from '@/components/layout/footer';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
+import { Checkbox } from '@/components/ui/checkbox';
 import { 
   Plus, 
   Trash2, 
@@ -25,7 +25,8 @@ import {
   ArrowUpDown,
   Filter,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  Star
 } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -60,6 +61,7 @@ export default function ManageJournals() {
   const [domain, setDomain] = useState('');
   const [link, setLink] = useState('');
   const [imageUrl, setImageUrl] = useState<string | null>(null);
+  const [isFeatured, setIsFeatured] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   // Filter & Sort State
@@ -112,6 +114,7 @@ export default function ManageJournals() {
     setDomain(''); 
     setLink('');
     setImageUrl(null);
+    setIsFeatured(false);
     if (fileInputRef.current) fileInputRef.current.value = '';
   };
 
@@ -135,6 +138,7 @@ export default function ManageJournals() {
       domain,
       link,
       imageUrl,
+      isFeatured,
       updatedAt: serverTimestamp(),
     };
 
@@ -183,10 +187,12 @@ export default function ManageJournals() {
     setDomain(journal.domain);
     setLink(journal.link);
     setImageUrl(journal.imageUrl || null);
+    setIsFeatured(journal.isFeatured || false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleDelete = (id: string) => {
+  const handleDelete = (e: React.MouseEvent, id: string) => {
+    e.stopPropagation();
     if (!db || !id) return;
     if (!window.confirm("Are you sure you want to permanently delete this journal record?")) return;
     
@@ -327,6 +333,22 @@ export default function ManageJournals() {
                     <label className="text-[10px] font-black uppercase text-primary/40 tracking-widest">Public URL</label>
                     <Input value={link} onChange={(e) => setLink(e.target.value)} required type="url" placeholder="https://..." className="rounded-xl h-12" />
                   </div>
+
+                  <div className="flex items-center space-x-3 py-2 bg-secondary/30 p-4 rounded-xl border border-primary/5">
+                    <Checkbox 
+                      id="isFeatured" 
+                      checked={isFeatured} 
+                      onCheckedChange={(checked) => setIsFeatured(checked as boolean)}
+                      className="border-primary/20 data-[state=checked]:bg-accent data-[state=checked]:border-accent"
+                    />
+                    <label 
+                      htmlFor="isFeatured" 
+                      className="text-xs font-bold text-primary uppercase tracking-wider cursor-pointer"
+                    >
+                      Mark as Featured (Home Page)
+                    </label>
+                  </div>
+
                   <Button type="submit" className="w-full h-12 bg-accent text-accent-foreground font-bold rounded-funky shadow-lg hover:scale-105 transition-transform">
                     {editingId ? <><Edit3 className="mr-2 h-5 w-5" /> Update Journal</> : <><Plus className="mr-2 h-5 w-5" /> Publish Journal</>}
                   </Button>
@@ -377,6 +399,13 @@ export default function ManageJournals() {
                               <Building2 className="h-12 w-12 text-primary/10" />
                             </div>
                           )}
+                          
+                          {journal.isFeatured && (
+                            <div className="absolute top-4 left-4 bg-accent text-accent-foreground px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg flex items-center gap-1.5 z-20">
+                              <Star className="h-3 w-3 fill-current" /> Featured
+                            </div>
+                          )}
+
                           <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity z-20">
                             <Button 
                               type="button"
@@ -394,10 +423,7 @@ export default function ManageJournals() {
                               type="button"
                               variant="destructive" 
                               size="icon" 
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                handleDelete(journal.id);
-                              }} 
+                              onClick={(e) => handleDelete(e, journal.id)} 
                               className="rounded-full h-8 w-8 shadow-md"
                             >
                               <Trash2 className="h-4 w-4" />
@@ -474,7 +500,6 @@ export default function ManageJournals() {
           </div>
         </div>
       </main>
-      <Footer />
     </div>
   );
 }
