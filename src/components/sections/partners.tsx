@@ -6,7 +6,7 @@ const partners = [
   { name: 'SSIPMT RAIPUR', logo: 'https://picsum.photos/seed/univ1/200/200' },
   { name: 'VIT PUNE', logo: 'https://picsum.photos/seed/univ2/200/200' },
   { name: 'AAFT UNIVERSITY RAIPUR', logo: 'https://picsum.photos/seed/univ3/200/200' },
-  { name: 'ARYA GROUP OF COLLEGES', logo: 'https://picsum.photos/seed/univ4/200/200' },
+  { name: 'ARYA GROUP OF COLLEGES', logo: 'https://scholar9.com/wp-content/uploads/2023/05/Arya-College-Logo.png' },
   { name: 'NOIDA INTERNATIONAL UNIVERSITY', logo: 'https://picsum.photos/seed/univ5/200/200' },
 ];
 
@@ -39,7 +39,7 @@ export function Partners() {
                   src={partner.logo}
                   alt={`${partner.name} logo`}
                   fill
-                  className="object-contain p-6"
+                  className="object-contain p-4"
                   data-ai-hint="university logo"
                 />
               </div>
