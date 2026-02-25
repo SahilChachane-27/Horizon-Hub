@@ -2,42 +2,78 @@ import { Card } from '@/components/ui/card';
 import { 
   Zap, 
   Wand2, 
+  Settings,
   ShieldCheck, 
+  BarChart,
   Layers, 
+  Workflow,
+  BookOpen,
   Globe, 
-  Cpu 
+  Maximize,
+  Cpu,
+  Lightbulb
 } from 'lucide-react';
 
 const features = [
   {
     icon: Zap,
     title: 'Quick Journal Setup',
-    description: 'Go live in minutes with our pre-configured architecture, optimized for academic institutional workflows.',
+    description: 'Launch your journal in no time with our optimized, ready-to-use publishing framework.',
   },
   {
     icon: Wand2,
     title: 'No Technical Experience Needed',
-    description: 'Focus on your research and editorial work. We handle all the servers, coding, and technical stress.',
+    description: 'Concentrate fully on scholarship while we manage the servers, updates, and backend complexity.',
+  },
+  {
+    icon: Settings,
+    title: 'Tech-Free Management',
+    description: 'You handle the research—we handle all configuration, security, and maintenance.',
   },
   {
     icon: ShieldCheck,
-    title: 'Modern, Scalable & Secure',
-    description: 'Built for reliability and data safety, our platform scales effortlessly as your institutional research grows.',
+    title: 'Future-Ready Infrastructure',
+    description: 'Engineered with robust security and automatic scalability to support growing academic ecosystems.',
+  },
+  {
+    icon: BarChart,
+    title: 'Enterprise-Grade Performance',
+    description: 'A dependable and secure platform built to expand seamlessly with your institution’s publishing needs.',
   },
   {
     icon: Layers,
-    title: 'All-in-One Platform',
-    description: 'A single, unified environment for manuscript submission, peer review, DOI registration, and final publishing.',
+    title: 'Complete Publishing Ecosystem',
+    description: 'From submission to publication—everything you need is under one integrated system.',
+  },
+  {
+    icon: Workflow,
+    title: 'Unified Workflow Hub',
+    description: 'Manage manuscripts, peer review, DOIs, issues, and archives through one connected platform.',
+  },
+  {
+    icon: BookOpen,
+    title: 'End-to-End Journal Management',
+    description: 'All editorial, review, and publishing functions in a single, streamlined environment.',
   },
   {
     icon: Globe,
-    title: 'For Solo to Institutional Use',
-    description: 'Flexible plans and modular workflows that grow with you, from single journals to university-wide catalogs.',
+    title: 'Works for Individuals to Universities',
+    description: 'Whether managing one title or an entire university portfolio, our system adapts to your scale.',
+  },
+  {
+    icon: Maximize,
+    title: 'Flexible & Expandable',
+    description: 'Designed to support independent editors, departments, and full institutional publishing houses.',
   },
   {
     icon: Cpu,
-    title: 'Superior, Cutting-Edge Tech',
-    description: 'Utilizing next-gen efficiency and bank-grade security to power the future of academic publishing.',
+    title: 'Powered by Advanced Technology',
+    description: 'Harness next-generation tools, automation, and security trusted by global academic publishers.',
+  },
+  {
+    icon: Lightbulb,
+    title: 'Innovation-Driven Platform',
+    description: 'High-performance architecture and encrypted systems built for the future of research publishing.',
   },
 ];
 
