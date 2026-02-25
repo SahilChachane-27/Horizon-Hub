@@ -42,11 +42,11 @@ export function Footer() {
       <div className="container mx-auto px-8 md:px-16 lg:px-32">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
           {/* Column 1: Branding & Info */}
-          <div className="space-y-6 lg:col-span-2" data-aos="fade-up">
+          <div className="space-y-6 lg:col-span-2">
             <Link href="/" className="flex items-center gap-3 leading-tight font-headline transition-opacity hover:opacity-80">
-                <div className="relative h-20 w-20 shrink-0">
+                <div className="relative h-24 w-24 shrink-0">
                   <Image 
-                    src="/JTlogo.png" 
+                    src="https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&q=80&w=200" 
                     alt="Technical Journals Logo" 
                     fill 
                     className="object-contain"
@@ -60,7 +60,7 @@ export function Footer() {
                 <p className="font-bold text-accent mb-1 uppercase text-xs tracking-widest">Platform Info:</p>
                 <ul className="text-xs space-y-1 opacity-80">
                   <li>• Exclusively for Universities</li>
-                  <li>• Secure ScholarJMS Hosting</li>
+                  <li>• Secure Hosting</li>
                   <li>• Institutional Branding</li>
                   <li>• No Private Publishers</li>
                 </ul>
@@ -76,7 +76,7 @@ export function Footer() {
           </div>
 
           {/* Column 2: Quick Links */}
-          <div data-aos="fade-up" data-aos-delay="100">
+          <div>
             <h5 className="font-bold text-lg text-primary-foreground mb-4 font-headline">Quick Links</h5>
             <ul className="space-y-3 text-sm">
               {quickLinks.map((link) => (
@@ -90,7 +90,7 @@ export function Footer() {
           </div>
 
           {/* Column 3: Policies */}
-          <div data-aos="fade-up" data-aos-delay="200">
+          <div>
             <h5 className="font-bold text-lg text-primary-foreground mb-4 font-headline">Policies</h5>
             <ul className="space-y-3 text-sm">
               {policiesLinks.map((link) => (
@@ -104,7 +104,7 @@ export function Footer() {
           </div>
 
           {/* Column 4: Contact */}
-          <div data-aos="fade-up" data-aos-delay="300" className="lg:col-span-1">
+          <div className="lg:col-span-1">
             <h5 className="font-bold text-lg text-primary-foreground font-headline mb-4">Get in Touch</h5>
             <div className="text-sm space-y-4 mb-6">
               <p className="leading-tight"><span className="text-accent font-bold">Email:</span><br/>support@technicaljournals.org</p>
@@ -115,7 +115,7 @@ export function Footer() {
 
         <div className="border-t border-primary-foreground/10 pt-8 text-center">
           {isClient && (
-            <p className="text-[11px] font-bold tracking-widest text-primary-foreground/80 uppercase">
+            <p className="text-xs font-bold tracking-widest text-primary-foreground uppercase">
               Copyright © {year} Technical Journals. All Rights Reserved. Built for Academic Sovereignty.
             </p>
           )}

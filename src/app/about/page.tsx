@@ -7,7 +7,6 @@ import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { 
-  CheckCircle2, 
   Shield, 
   Globe, 
   Cpu, 
@@ -104,6 +103,14 @@ export default function AboutPage() {
                   We believe that research belongs to the institutions that foster it. Our objective is to provide a high-performance environment where universities can manage and publish journals under their own unique institutional branding.
                 </p>
                 
+                {/* Vision Statement Section */}
+                <div className="p-6 bg-secondary/50 rounded-2xl border-l-4 border-accent shadow-sm">
+                  <h3 className="text-xl font-bold text-primary font-headline mb-3 italic">Our Vision</h3>
+                  <p className="text-lg text-foreground/80 leading-relaxed font-medium italic">
+                    "To build the world’s most trusted, university-exclusive journal hosting ecosystem that empowers institutions to publish, preserve, and elevate their scholarly research through secure, scalable, and future-ready technologies."
+                  </p>
+                </div>
+
                 <div className="grid sm:grid-cols-2 gap-4 mt-8">
                   {[
                     { icon: Shield, text: "Sovereign Ownership" },

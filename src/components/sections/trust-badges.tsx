@@ -73,7 +73,7 @@ export function TrustBadges() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">
-            Trusted & Certified by Leading Organizations
+              What makes us different?
           </h2>
           <div className="mt-4 w-24 h-1 bg-accent mx-auto"></div>
         </div>
