@@ -52,7 +52,7 @@ export function Header() {
           <Link href="/" className="flex items-center gap-3 leading-tight font-headline transition-transform hover:scale-[1.02] shrink-0">
             <div className="relative h-20 w-20 flex-shrink-0">
               <Image 
-                src="https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&q=80&w=200" 
+                src="/JTlogo.png" 
                 alt="Technical Journals Logo" 
                 fill 
                 className="object-contain"
