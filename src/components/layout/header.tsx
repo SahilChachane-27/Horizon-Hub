@@ -44,15 +44,15 @@ export function Header() {
     <header
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-        scrolled ? 'bg-primary shadow-xl py-2 border-b border-accent/10' : 'bg-primary/90 backdrop-blur-md py-4'
+        scrolled ? 'bg-primary shadow-xl py-1 border-b border-accent/10' : 'bg-primary/90 backdrop-blur-md py-2'
       )}
     >
       <div className="w-full px-4 md:px-8 max-w-[1600px] mx-auto">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-3 leading-tight font-headline transition-transform hover:scale-[1.02] shrink-0">
-            <div className="relative h-20 w-48 sm:h-24 sm:w-56 flex-shrink-0">
+            <div className="relative h-12 w-32 sm:h-14 sm:w-44 flex-shrink-0">
               <Image 
-                src="/JTlogo.png" 
+                src="https://placehold.co/400x120/1e293b/facc15?text=OJS+PLATFORM" 
                 alt="Technical Journals Logo" 
                 fill 
                 className="object-contain"
@@ -65,14 +65,14 @@ export function Header() {
             <nav className="flex items-center gap-5">
               {navLinks.map((link, idx) => {
                 return (
-                  <Link key={idx} href={link.href!} className="text-[13px] font-medium text-white/80 hover:text-white transition-colors uppercase tracking-wider whitespace-nowrap">
+                  <Link key={idx} href={link.href!} className="text-[12px] font-medium text-white/80 hover:text-white transition-colors uppercase tracking-wider whitespace-nowrap">
                     {link.label}
                   </Link>
                 );
               })}
             </nav>
-            <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold rounded-funky text-[10px] h-8 px-4 shrink-0">
-              <Link href="/contact">Begin your Research Journey</Link>
+            <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold rounded-funky text-[9px] h-7 px-3 shrink-0">
+              <Link href="/contact">Begin Research</Link>
             </Button>
           </div>
 
@@ -80,8 +80,8 @@ export function Header() {
             {isClient && (
               <Sheet>
                 <SheetTrigger asChild>
-                  <Button variant="ghost" size="icon" className="text-white hover:bg-white/10 h-12 w-12">
-                    <Menu className="h-7 w-7" />
+                  <Button variant="ghost" size="icon" className="text-white hover:bg-white/10 h-10 w-10">
+                    <Menu className="h-6 w-6" />
                     <span className="sr-only">Toggle navigation</span>
                   </Button>
                 </SheetTrigger>
@@ -104,7 +104,7 @@ export function Header() {
                     ))}
                     <div className="pt-6 w-full">
                       <SheetClose asChild>
-                        <Button asChild className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-bold rounded-funky h-14 text-lg">
+                        <Button asChild className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-bold rounded-funky h-12 text-base">
                           <Link href="/contact">Begin Journey</Link>
                         </Button>
                       </SheetClose>

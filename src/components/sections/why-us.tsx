@@ -79,34 +79,34 @@ const features = [
 
 export function WhyUs() {
   return (
-    <section id="why-us" className="py-16 md:py-24 bg-white overflow-hidden">
+    <section id="why-us" className="py-10 md:py-16 bg-white overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12" data-aos="fade-up">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">
+        <div className="text-center mb-8" data-aos="fade-up">
+          <h2 className="text-2xl md:text-3xl font-bold text-primary font-headline">
             Why Choose Technical Journals?
           </h2>
-          <div className="mt-4 w-24 h-1 bg-accent mx-auto"></div>
-          <p className="mt-6 text-base md:text-lg text-foreground/80 max-w-2xl mx-auto">
+          <div className="mt-2 w-16 h-1 bg-accent mx-auto"></div>
+          <p className="mt-4 text-sm md:text-base text-foreground/80 max-w-2xl mx-auto">
             Empowering universities with professional, secure, and institutionally-owned publishing solutions on the OJS Platform.
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
             <Card
               key={index}
-              className="text-center p-8 bg-card shadow-lg rounded-funky transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border-border/50"
+              className="text-center p-6 bg-card shadow-lg rounded-funky transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border-border/50"
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
-              <div className="flex justify-center mb-6">
-                <div className="h-20 w-20 bg-muted rounded-full flex items-center justify-center">
-                  <feature.icon className="h-8 w-8 text-accent" />
+              <div className="flex justify-center mb-4">
+                <div className="h-14 w-14 bg-muted rounded-full flex items-center justify-center">
+                  <feature.icon className="h-6 w-6 text-accent" />
                 </div>
               </div>
-              <h3 className="text-xl font-bold text-primary mb-4">
+              <h3 className="text-base font-bold text-primary mb-2">
                 {feature.title}
               </h3>
-              <p className="text-foreground/70 text-sm leading-relaxed">{feature.description}</p>
+              <p className="text-foreground/70 text-xs leading-relaxed">{feature.description}</p>
             </Card>
           ))}
         </div>

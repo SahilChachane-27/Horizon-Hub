@@ -81,27 +81,27 @@ const badges = [
 
 export function TrustBadges() {
   return (
-    <section className="py-16 bg-secondary/40 overflow-hidden">
+    <section className="py-10 md:py-14 bg-secondary/40 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12" data-aos="fade-up">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">
+        <div className="text-center mb-8" data-aos="fade-up">
+          <h2 className="text-2xl md:text-3xl font-bold text-primary font-headline">
               What makes us different?
           </h2>
-          <div className="mt-4 w-24 h-1 bg-accent mx-auto"></div>
+          <div className="mt-2 w-16 h-1 bg-accent mx-auto"></div>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
           {badges.map((badge, index) => (
             <Card 
               key={index} 
-              className="p-6 flex flex-col items-center text-center bg-card hover:shadow-xl transition-all duration-300 border-none rounded-funky group"
+              className="p-4 md:p-5 flex flex-col items-center text-center bg-card hover:shadow-xl transition-all duration-300 border-none rounded-funky group"
               data-aos="zoom-in"
               data-aos-delay={index * 50}
             >
-              <div className="mb-4 p-3 bg-primary/5 rounded-full group-hover:bg-accent/20 transition-colors">
-                <badge.icon className="h-8 w-8 text-accent" />
+              <div className="mb-3 p-2.5 bg-primary/5 rounded-full group-hover:bg-accent/20 transition-colors">
+                <badge.icon className="h-6 w-6 text-accent" />
               </div>
-              <h3 className="font-bold text-primary text-sm mb-1">{badge.title}</h3>
-              <p className="text-[10px] text-foreground/60 leading-tight">{badge.desc}</p>
+              <h3 className="font-bold text-primary text-xs mb-1">{badge.title}</h3>
+              <p className="text-[9px] text-foreground/60 leading-tight">{badge.desc}</p>
             </Card>
           ))}
         </div>
