@@ -20,8 +20,6 @@ import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export default function ResourcesPage() {
-  const heroImage = PlaceHolderImages.find(p => p.id === 'hero-bg');
-
   const resourceCategories = [
     {
       title: "For Authors",
@@ -56,44 +54,44 @@ export default function ResourcesPage() {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen bg-background text-foreground font-body">
+    <div className="flex flex-col min-h-screen bg-background text-foreground font-body overflow-x-hidden">
       <Header />
       <main className="flex-1 pt-20">
         {/* Hero Section */}
-        <section className="relative py-20 bg-primary text-primary-foreground overflow-hidden">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="max-w-3xl" data-aos="fade-up">
+        <section className="relative py-24 bg-primary text-primary-foreground overflow-hidden">
+          <div className="container mx-auto px-8 md:px-16 lg:px-32 relative z-10">
+            <div className="max-w-3xl" data-aos="fade-right">
               <h1 className="text-4xl md:text-5xl font-extrabold font-headline mb-6">
                 Academic Resources & Guidelines
               </h1>
-              <p className="text-xl opacity-90 leading-relaxed">
+              <div className="w-20 h-1 bg-accent mb-6"></div>
+              <p className="text-xl opacity-90 leading-relaxed font-medium">
                 Empowering authors, reviewers, and editors with the tools and information needed for high-quality academic publishing.
               </p>
             </div>
           </div>
-          <div className="absolute inset-0 opacity-10 pointer-events-none">
-            {heroImage && (
-              <Image
-                src={heroImage.imageUrl}
-                alt="Background"
-                fill
-                className="object-cover"
-              />
-            )}
+          <div className="absolute inset-0 opacity-10">
+            <Image
+              src="/ResearchPsychology.jpg"
+              alt="Academic Research"
+              fill
+              className="object-cover"
+              priority
+            />
           </div>
         </section>
 
         {/* Main Resource Categories */}
         <section className="py-16 md:py-24 bg-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="container mx-auto px-8 md:px-16 lg:px-32">
             <div className="grid md:grid-cols-3 gap-8">
               {resourceCategories.map((cat, idx) => (
-                <Card key={idx} className="border-none shadow-xl rounded-[30px] overflow-hidden bg-secondary/30" data-aos="fade-up" data-aos-delay={idx * 100}>
+                <Card key={idx} className="border-none shadow-xl rounded-[30px] overflow-hidden bg-secondary/30 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 group hover:bg-white border border-transparent hover:border-accent/10" data-aos="fade-up" data-aos-delay={idx * 100}>
                   <CardHeader className="flex flex-col items-center pb-2">
-                    <div className="p-4 bg-primary/5 rounded-full mb-4">
-                      <cat.icon className="h-10 w-10 text-primary" />
+                    <div className="p-4 bg-primary/5 rounded-full mb-4 group-hover:bg-accent/10 transition-colors">
+                      <cat.icon className="h-10 w-10 text-primary group-hover:text-accent transition-colors" />
                     </div>
-                    <CardTitle className="text-2xl text-primary font-bold">{cat.title}</CardTitle>
+                    <CardTitle className="text-2xl text-primary font-bold group-hover:text-accent transition-colors">{cat.title}</CardTitle>
                   </CardHeader>
                   <CardContent className="px-8 pb-8">
                     <ul className="space-y-4">
@@ -112,8 +110,8 @@ export default function ResourcesPage() {
         </section>
 
         {/* Downloadable Templates Section */}
-        <section className="py-20 bg-secondary">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-20 bg-secondary/30 border-y border-border/50">
+          <div className="container mx-auto px-8 md:px-16 lg:px-32">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline" data-aos="fade-up">
                 Downloadable Templates
@@ -133,7 +131,7 @@ export default function ResourcesPage() {
                     <Download className="h-6 w-6 text-accent" />
                   </div>
                   <h3 className="font-bold text-primary mb-1">{template.title}</h3>
-                  <p className="text-xs text-foreground/40 font-bold mb-4 uppercase tracking-widest">{template.type} • {template.size}</p>
+                  <p className="text-[10px] text-foreground/40 font-black mb-4 uppercase tracking-widest">{template.type} • {template.size}</p>
                   <Button variant="outline" size="sm" className="w-full border-primary/20 text-primary font-bold hover:bg-primary hover:text-white rounded-xl">
                     Download
                   </Button>
@@ -145,8 +143,8 @@ export default function ResourcesPage() {
 
         {/* OJS Platform Documentation Section */}
         <section className="py-24">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <Card className="bg-primary text-primary-foreground p-8 md:p-16 rounded-[40px] overflow-hidden relative shadow-2xl" data-aos="fade-up">
+          <div className="container mx-auto px-8 md:px-16 lg:px-32">
+            <Card className="bg-primary text-primary-foreground p-8 md:p-16 rounded-[40px] overflow-hidden relative shadow-2xl border-none" data-aos="fade-up">
               <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
                 <div className="space-y-6">
                   <div className="inline-flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full text-accent font-bold text-xs uppercase tracking-widest">
@@ -156,27 +154,25 @@ export default function ResourcesPage() {
                   <h2 className="text-3xl md:text-4xl font-extrabold font-headline leading-tight">
                     Technical Guide for OJS Platform
                   </h2>
-                  <p className="text-lg opacity-80 leading-relaxed">
+                  <p className="text-lg opacity-80 leading-relaxed font-medium">
                     Need help navigating our Journal Management System? Access comprehensive guides on manuscript tracking, reviewer assignment, and production workflows.
                   </p>
                   <div className="flex flex-wrap gap-4 pt-4">
-                    <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-extrabold rounded-funky px-10 shadow-xl shadow-accent/20">
+                    <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-extrabold rounded-funky px-14 py-8 text-lg shadow-xl shadow-accent/20 transition-all hover:scale-105">
                       Access Documentation
                     </Button>
-                    <Button variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10 rounded-funky px-10">
+                    <Button variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10 rounded-funky px-14 py-8 text-lg font-bold transition-all hover:scale-105">
                       Video Tutorials
                     </Button>
                   </div>
                 </div>
                 <div className="relative aspect-video rounded-3xl overflow-hidden border-8 border-white/5 shadow-2xl">
-                  {heroImage && (
-                    <Image
-                      src={heroImage.imageUrl}
-                      alt="Technical Support"
-                      fill
-                      className="object-cover"
-                    />
-                  )}
+                  <Image
+                    src="/ResearchPsychology.jpg"
+                    alt="Technical Support"
+                    fill
+                    className="object-cover"
+                  />
                   <div className="absolute inset-0 bg-primary/20 backdrop-blur-[2px] flex items-center justify-center">
                     <div className="w-20 h-20 bg-accent rounded-full flex items-center justify-center shadow-2xl cursor-pointer hover:scale-110 transition-transform">
                       <div className="w-0 h-0 border-t-[12px] border-t-transparent border-l-[20px] border-l-primary border-b-[12px] border-b-transparent ml-2"></div>
