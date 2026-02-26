@@ -78,24 +78,16 @@ export default function ForUniversitiesPage() {
       <Header />
       <main className="flex-1 pt-20">
         {/* Hero Section */}
-        <section className="relative py-20 bg-primary text-primary-foreground overflow-hidden">
+        <section className="relative py-24 bg-primary text-primary-foreground overflow-hidden">
           <div className="container mx-auto px-8 md:px-16 lg:px-32 relative z-10">
-            <div className="max-w-4xl mx-auto text-center" data-aos="fade-up">
+            <div className="max-w-3xl" data-aos="fade-right">
               <h1 className="text-4xl md:text-5xl font-extrabold font-headline mb-6">
                 For Universities
               </h1>
-              <p className="text-xl opacity-90 leading-relaxed max-w-3xl mx-auto mb-12">
+              <div className="w-20 h-1 bg-accent mb-6"></div>
+              <p className="text-xl opacity-90 leading-relaxed font-medium">
                 Empowering academic institutions to own their research output and enhance global scholarly standing through professional journal management.
               </p>
-              
-              <div className="grid md:grid-cols-2 gap-6 text-left max-w-4xl mx-auto">
-                {benefits.map((benefit, idx) => (
-                  <div key={idx} className="flex items-start gap-4 p-5 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/15 transition-colors">
-                    <benefit.icon className="h-6 w-6 text-accent shrink-0" />
-                    <span className="text-lg font-medium leading-tight">{benefit.text}</span>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
           <div className="absolute inset-0 opacity-10 pointer-events-none">
@@ -105,8 +97,30 @@ export default function ForUniversitiesPage() {
                 alt="Background"
                 fill
                 className="object-cover"
+                priority
               />
             )}
+          </div>
+        </section>
+
+        {/* Institutional Impact Section (Moved from Hero) */}
+        <section className="py-12 bg-secondary/30 border-b border-border/50">
+          <div className="container mx-auto px-8 md:px-16 lg:px-32">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {benefits.map((benefit, idx) => (
+                <div 
+                  key={idx} 
+                  className="flex items-start gap-4 p-6 bg-white rounded-2xl border border-primary/5 shadow-sm hover:shadow-md transition-all group"
+                  data-aos="fade-up"
+                  data-aos-delay={idx * 100}
+                >
+                  <div className="h-10 w-10 rounded-xl bg-accent/10 flex items-center justify-center shrink-0 group-hover:bg-accent transition-colors">
+                    <benefit.icon className="h-5 w-5 text-accent group-hover:text-white" />
+                  </div>
+                  <span className="text-sm font-bold text-primary leading-tight">{benefit.text}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
