@@ -90,14 +90,26 @@ export default function JournalsPage() {
     <div className="flex flex-col min-h-screen bg-slate-50/50 overflow-x-hidden">
       <Header />
       <main className="flex-1 pt-20">
-        <section className="py-12 bg-primary text-primary-foreground relative overflow-hidden px-4 md:px-0">
-          <div className="container mx-auto px-4 md:px-16 lg:px-32 relative z-10">
-            <h1 className="text-3xl md:text-4xl font-bold font-headline mb-2" data-aos="fade-right">
-              University Journal Catalog
-            </h1>
-            <p className="text-base opacity-80 max-w-xl" data-aos="fade-right" data-aos-delay="100">
-              Browse prestigious academic publications hosted on our secure OJS Platform.
-            </p>
+        <section className="relative py-24 bg-primary text-primary-foreground overflow-hidden">
+          <div className="container mx-auto px-8 md:px-16 lg:px-32 relative z-10">
+            <div className="max-w-3xl" data-aos="fade-right">
+              <h1 className="text-4xl md:text-5xl font-extrabold font-headline mb-6">
+                University Journal Catalog
+              </h1>
+              <div className="w-20 h-1 bg-accent mb-6"></div>
+              <p className="text-xl opacity-90 leading-relaxed font-medium">
+                Browse prestigious academic publications hosted on our secure OJS Platform.
+              </p>
+            </div>
+          </div>
+          <div className="absolute inset-0 opacity-10">
+            <Image
+              src="/ResearchPsychology.jpg"
+              alt="Academic Research"
+              fill
+              className="object-cover"
+              priority
+            />
           </div>
         </section>
 
@@ -110,14 +122,12 @@ export default function JournalsPage() {
                   <h2 className="text-xs font-black uppercase tracking-[0.2em] text-primary/40 flex items-center gap-2">
                     <Filter className="h-3 w-3" /> Filter Catalog
                   </h2>
-                  <Button 
-                    variant="ghost" 
-                    size="sm" 
+                  <button 
                     onClick={resetFilters}
-                    className="text-[10px] font-bold uppercase tracking-widest text-accent hover:text-primary h-auto p-0"
+                    className="text-[10px] font-bold uppercase tracking-widest text-accent hover:text-primary h-auto p-0 transition-colors"
                   >
                     Reset All
-                  </Button>
+                  </button>
                 </div>
 
                 <div className="space-y-6">
@@ -251,9 +261,12 @@ export default function JournalsPage() {
                   <div className="flex flex-col items-center justify-center py-32 bg-white rounded-3xl border-2 border-dashed border-slate-200 px-4 text-center">
                     <RefreshCw className="h-12 w-12 text-slate-200 mb-4 animate-reverse-spin" />
                     <p className="text-lg font-bold text-primary/40 uppercase tracking-widest italic">No matching journals found</p>
-                    <Button variant="link" onClick={resetFilters} className="text-accent font-bold uppercase text-[10px] tracking-[0.2em] mt-2">
+                    <button 
+                      onClick={resetFilters} 
+                      className="text-accent font-bold uppercase text-[10px] tracking-[0.2em] mt-2 hover:text-primary transition-colors"
+                    >
                       Clear Search Parameters
-                    </Button>
+                    </button>
                   </div>
                 )}
               </div>
