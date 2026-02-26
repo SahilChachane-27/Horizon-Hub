@@ -67,13 +67,13 @@ export default function ServicesPage() {
       <main className="flex-1 pt-20">
         {/* Hero Section */}
         <section className="relative py-24 bg-primary text-primary-foreground overflow-hidden">
-          <div className="container mx-auto px-8 md:px-16 lg:px-32 relative z-10 text-center">
-            <div className="max-w-4xl mx-auto" data-aos="fade-up">
+          <div className="container mx-auto px-8 md:px-16 lg:px-32 relative z-10">
+            <div className="max-w-3xl" data-aos="fade-up">
               <h1 className="text-4xl md:text-6xl font-extrabold font-headline mb-6">
                 Academic Solutions
               </h1>
-              <div className="mt-2 w-24 h-1 bg-accent mx-auto mb-6"></div>
-              <p className="text-xl opacity-90 leading-relaxed max-w-2xl mx-auto italic font-medium">
+              <div className="w-20 h-1 bg-accent mb-6"></div>
+              <p className="text-xl opacity-90 leading-relaxed italic font-medium">
                 Empowering universities with end-to-end publishing technology and strategic indexing support.
               </p>
             </div>
