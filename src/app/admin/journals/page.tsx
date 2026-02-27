@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useEffect, useMemo, useRef, Suspense } from 'react';
@@ -489,7 +488,7 @@ function JournalManagementContent() {
                             <div className="pt-2 border-t border-white/10">
                               <Button variant="link" asChild className="p-0 h-auto text-accent font-black italic text-[8px] hover:text-white">
                                 <a href={journal.link} target="_blank" className="flex items-center gap-1.5 uppercase tracking-[0.2em]">
-                                  Portal <ExternalLink className="h-2 w-2" />
+                                  View Journal <ExternalLink className="h-2 w-2" />
                                 </a>
                               </Button>
                             </div>

@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useMemo, useEffect } from 'react';
@@ -284,7 +283,7 @@ export default function JournalsPage() {
                               )}
                               <Button asChild className="w-full bg-accent hover:bg-white text-primary font-black uppercase text-[10px] tracking-widest h-9 rounded-xl transition-all duration-300">
                                 <a href={journal.link} target="_blank">
-                                  Open Portal <ExternalLink className="ml-1.5 h-3 w-3" />
+                                  View Journal <ExternalLink className="ml-1.5 h-3 w-3" />
                                 </a>
                               </Button>
                             </div>
