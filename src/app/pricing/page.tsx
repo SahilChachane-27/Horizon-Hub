@@ -29,14 +29,13 @@ export default function PricingPage() {
   const plans = [
     {
       name: "Basic Hosting Plan",
-      price: currency === 'INR' ? "₹25,000" : "$299",
+      price: currency === 'INR' ? "₹45,000" : "$549",
       description: "Essential tools for launching a new journal.",
       features: [
         "OJS Platform installation",
         "Journal website hosting",
         "Technical support",
         "Up to 4 issues/year",
-        "Unlimited articles",
         "HTTPS security"
       ],
       cta: "Get Started",
