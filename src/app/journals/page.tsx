@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useMemo, useEffect } from 'react';
@@ -8,6 +9,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Badge } from '@/components/ui/badge';
 import { 
   Search, 
   Building2, 
@@ -23,7 +25,9 @@ import {
   Scale,
   Leaf,
   Filter,
-  RefreshCw
+  RefreshCw,
+  Flag,
+  ListChecks
 } from 'lucide-react';
 import { useCollection, useFirestore } from '@/firebase';
 import { collection, query, orderBy } from 'firebase/firestore';
@@ -226,13 +230,13 @@ export default function JournalsPage() {
                             </div>
                           </div>
                         </div>
-                        <CardHeader className="p-4 md:p-5 flex-grow">
+                        <CardHeader className="p-4 md:p-5 pb-2">
                           <CardTitle className="text-base font-bold text-primary font-headline leading-tight italic group-hover:text-accent transition-colors duration-300 line-clamp-2 h-12">
                             {journal.name}
                           </CardTitle>
                         </CardHeader>
-                        <CardContent className="p-4 md:p-5 pt-0 space-y-3">
-                          <div className="space-y-1.5">
+                        <CardContent className="p-4 md:p-5 pt-0 flex flex-col flex-1 space-y-3">
+                          <div className="space-y-1.5 flex-1">
                             <div className="flex items-center gap-2">
                               <div className="h-6 w-6 rounded-lg bg-slate-50 flex items-center justify-center shrink-0">
                                 <Building2 className="h-3 w-3 text-accent" />
@@ -245,6 +249,28 @@ export default function JournalsPage() {
                               </div>
                               <p className="text-[11px] font-medium text-slate-500">{journal.issn}</p>
                             </div>
+                            {journal.country && (
+                              <div className="flex items-center gap-2">
+                                <div className="h-6 w-6 rounded-lg bg-slate-50 flex items-center justify-center shrink-0">
+                                  <Flag className="h-3 w-3 text-accent" />
+                                </div>
+                                <p className="text-[11px] font-medium text-slate-500">{journal.country}</p>
+                              </div>
+                            )}
+                            {journal.description && (
+                              <p className="text-[10px] text-foreground/60 italic line-clamp-2 mt-2 leading-relaxed">
+                                {journal.description}
+                              </p>
+                            )}
+                            {journal.indexing && journal.indexing.length > 0 && (
+                              <div className="flex flex-wrap gap-1.5 mt-3 pt-3 border-t border-slate-50">
+                                {journal.indexing.map((idxName: string, i: number) => (
+                                  <Badge key={i} variant="secondary" className="bg-accent/5 text-primary/60 border-none text-[8px] font-bold uppercase tracking-tight py-0 px-2 h-4">
+                                    {idxName}
+                                  </Badge>
+                                ))}
+                              </div>
+                            )}
                           </div>
                           <div className="pt-4 border-t border-slate-50">
                             <Button asChild className="w-full bg-primary hover:bg-accent text-white hover:text-primary transition-all duration-300 rounded-xl h-10 font-bold shadow-lg shadow-primary/5 text-xs">

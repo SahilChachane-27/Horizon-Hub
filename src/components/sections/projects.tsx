@@ -1,3 +1,4 @@
+
 'use client';
 
 import Image from 'next/image';
@@ -58,7 +59,9 @@ export function Projects() {
                   <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
                     <h3 className="text-xl font-bold text-white font-headline leading-tight italic">{journal.name}</h3>
                     <p className="text-accent font-black uppercase text-[8px] tracking-widest mt-1">{journal.university}</p>
-                    <p className="text-white/80 text-xs mt-3 line-clamp-2">Peer-reviewed, OA compliant, and institutionally branded research source.</p>
+                    <p className="text-white/80 text-xs mt-3 line-clamp-2">
+                      {journal.description || "Peer-reviewed, OA compliant, and institutionally branded research source."}
+                    </p>
                     <a 
                       href={journal.link} 
                       target="_blank" 

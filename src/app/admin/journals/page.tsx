@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect, useMemo, useRef } from 'react';
@@ -7,6 +8,7 @@ import { useRouter } from 'next/navigation';
 import { Header } from '@/components/layout/header';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
 import { Checkbox } from '@/components/ui/checkbox';
@@ -26,7 +28,9 @@ import {
   Filter,
   ChevronLeft,
   ChevronRight,
-  Star
+  Star,
+  Flag,
+  ListChecks
 } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -56,8 +60,11 @@ export default function ManageJournals() {
   const [editingId, setEditingId] = useState<string | null>(null);
   const [name, setName] = useState('');
   const [university, setUniversity] = useState('');
+  const [description, setDescription] = useState('');
   const [issn, setIssn] = useState('');
   const [domain, setDomain] = useState('');
+  const [country, setCountry] = useState('India');
+  const [indexing, setIndexing] = useState('');
   const [link, setLink] = useState('');
   const [imageUrl, setImageUrl] = useState<string | null>(null);
   const [isFeatured, setIsFeatured] = useState(false);
@@ -105,8 +112,11 @@ export default function ManageJournals() {
     setEditingId(null);
     setName(''); 
     setUniversity(''); 
+    setDescription('');
     setIssn(''); 
     setDomain(''); 
+    setCountry('India');
+    setIndexing('');
     setLink('');
     setImageUrl(null);
     setIsFeatured(false);
@@ -129,8 +139,11 @@ export default function ManageJournals() {
     const journalData = {
       name,
       university,
+      description,
       issn,
       domain,
+      country,
+      indexing: indexing.split(',').map(i => i.trim()).filter(Boolean),
       link,
       imageUrl,
       isFeatured,
@@ -178,8 +191,11 @@ export default function ManageJournals() {
     setEditingId(journal.id);
     setName(journal.name);
     setUniversity(journal.university);
+    setDescription(journal.description || '');
     setIssn(journal.issn);
     setDomain(journal.domain);
+    setCountry(journal.country || 'India');
+    setIndexing(Array.isArray(journal.indexing) ? journal.indexing.join(', ') : '');
     setLink(journal.link);
     setImageUrl(journal.imageUrl || null);
     setIsFeatured(journal.isFeatured || false);
@@ -271,6 +287,11 @@ export default function ManageJournals() {
                     <label className="text-[10px] font-black uppercase text-primary/40 tracking-widest">University</label>
                     <Input value={university} onChange={(e) => setUniversity(e.target.value)} required placeholder="e.g. VIT PUNE" className="rounded-xl h-12" />
                   </div>
+
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-black uppercase text-primary/40 tracking-widest">Description</label>
+                    <Textarea value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Brief summary of the journal's focus..." className="rounded-xl min-h-[100px]" />
+                  </div>
                   
                   <div className="space-y-2">
                     <label className="text-[10px] font-black uppercase text-primary/40 tracking-widest">Journal Cover Image</label>
@@ -324,6 +345,17 @@ export default function ManageJournals() {
                       </Select>
                     </div>
                   </div>
+
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-black uppercase text-primary/40 tracking-widest">Country</label>
+                    <Input value={country} onChange={(e) => setCountry(e.target.value)} placeholder="e.g. India" className="rounded-xl h-12" />
+                  </div>
+
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-black uppercase text-primary/40 tracking-widest">Indexing (Comma separated)</label>
+                    <Input value={indexing} onChange={(e) => setIndexing(e.target.value)} placeholder="e.g. Scopus, UGC CARE, Google Scholar" className="rounded-xl h-12" />
+                  </div>
+
                   <div className="space-y-2">
                     <label className="text-[10px] font-black uppercase text-primary/40 tracking-widest">Public URL</label>
                     <Input value={link} onChange={(e) => setLink(e.target.value)} required type="url" placeholder="https://..." className="rounded-xl h-12" />
@@ -385,8 +417,8 @@ export default function ManageJournals() {
                 <>
                   <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
                     {paginatedJournals.map((journal: any) => (
-                      <Card key={journal.id} className="rounded-funky border-none shadow-md group hover:shadow-xl transition-all duration-300 overflow-hidden relative bg-white">
-                        <div className="relative aspect-[3/4] w-full bg-secondary/10 flex items-center justify-center p-2">
+                      <Card key={journal.id} className="rounded-funky border-none shadow-md group hover:shadow-xl transition-all duration-300 overflow-hidden relative bg-white flex flex-col h-full">
+                        <div className="relative aspect-[3/4] w-full bg-secondary/10 flex items-center justify-center p-2 shrink-0">
                           {journal.imageUrl ? (
                             <Image src={journal.imageUrl} alt={journal.name} fill className="object-contain p-1" />
                           ) : (
@@ -425,12 +457,18 @@ export default function ManageJournals() {
                             </Button>
                           </div>
                         </div>
-                        <CardContent className="p-4 md:p-5">
+                        <CardContent className="p-4 md:p-5 flex flex-col flex-1">
                           <h3 className="text-sm font-bold text-primary font-headline leading-tight line-clamp-2 h-10 mb-2">{journal.name}</h3>
-                          <div className="space-y-1.5">
+                          <div className="space-y-1.5 flex-1">
                             <div className="flex items-center gap-2 text-[10px] font-bold text-primary/60 truncate"><Building2 className="h-3 w-3 text-accent" /> {journal.university}</div>
                             <div className="flex items-center gap-2 text-[10px] text-foreground/70"><Tag className="h-3 w-3 text-accent" /> {journal.issn}</div>
                             <div className="flex items-center gap-2 text-[10px] text-foreground/70"><Globe className="h-3 w-3 text-accent" /> {journal.domain}</div>
+                            {journal.country && (
+                              <div className="flex items-center gap-2 text-[10px] text-foreground/70"><Flag className="h-3 w-3 text-accent" /> {journal.country}</div>
+                            )}
+                            {journal.indexing && journal.indexing.length > 0 && (
+                              <div className="flex items-start gap-2 text-[10px] text-foreground/70"><ListChecks className="h-3 w-3 text-accent mt-0.5" /> <span className="line-clamp-1">{journal.indexing.join(', ')}</span></div>
+                            )}
                           </div>
                           <div className="mt-4 pt-3 border-t border-secondary">
                             <Button variant="link" asChild className="p-0 h-auto text-primary font-black italic text-[10px] group-hover:text-accent">
