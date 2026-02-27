@@ -52,6 +52,53 @@
         }
       },
       "required": ["name", "university", "issn", "domain", "link"]
+    },
+    "PricingPlan": {
+      "title": "Pricing Plan",
+      "description": "A dynamic pricing plan for journal hosting.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the pricing plan."
+        },
+        "priceINR": {
+          "type": "string",
+          "description": "Price formatted in INR (e.g. ₹45,000)."
+        },
+        "priceUSD": {
+          "type": "string",
+          "description": "Price formatted in USD (e.g. $494)."
+        },
+        "description": {
+          "type": "string",
+          "description": "A brief summary of the plan's purpose."
+        },
+        "features": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "List of features included in the plan."
+        },
+        "cta": {
+          "type": "string",
+          "description": "The text for the call-to-action button."
+        },
+        "highlight": {
+          "type": "boolean",
+          "description": "Whether this plan should be visually highlighted as recommended."
+        },
+        "tag": {
+          "type": "string",
+          "description": "An optional badge text (e.g. Recommended, Popular)."
+        },
+        "order": {
+          "type": "number",
+          "description": "Display order of the plan."
+        }
+      },
+      "required": ["name", "priceINR", "priceUSD", "features"]
     }
   },
   "auth": {
@@ -61,6 +108,10 @@
     "/journals/{journalId}": {
       "schema": { "$ref": "#/backend/entities/Journal" },
       "description": "Collection of university journals."
+    },
+    "/pricingPlans/{planId}": {
+      "schema": { "$ref": "#/backend/entities/PricingPlan" },
+      "description": "Collection of dynamic pricing plans."
     }
   }
 }

@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useUser, useAuth, useFirestore, useCollection } from '@/firebase';
@@ -18,7 +19,8 @@ import {
   ChevronRight,
   Clock,
   Globe,
-  Edit3
+  Edit3,
+  CreditCard
 } from 'lucide-react';
 import Link from 'next/link';
 import { collection, query, orderBy, limit } from 'firebase/firestore';
@@ -227,6 +229,21 @@ export default function AdminDashboard() {
                   </p>
                   <Button asChild className="w-full bg-accent text-accent-foreground font-black italic rounded-funky hover:scale-105 transition-transform shadow-xl h-14">
                     <Link href="/admin/journals" className="flex items-center justify-center">Launch Manager <ChevronRight className="ml-2 h-5 w-5" /></Link>
+                  </Button>
+                </div>
+              </Card>
+
+              <Card className="rounded-funky border-none shadow-xl bg-white p-10 group relative overflow-hidden">
+                <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+                  <CreditCard className="h-24 w-24 text-primary" />
+                </div>
+                <div className="relative z-10">
+                  <h3 className="text-xl font-bold text-primary font-headline italic mb-4">Pricing Plans</h3>
+                  <p className="text-muted-foreground text-xs mb-8 leading-relaxed">
+                    Configure institutional hosting packages, update prices, and highlight premium tiers for your partners.
+                  </p>
+                  <Button asChild variant="outline" className="w-full border-primary/20 text-primary font-black italic rounded-funky hover:bg-primary hover:text-white transition-all shadow-sm">
+                    <Link href="/admin/pricing" className="flex items-center justify-center">Manage Pricing <ChevronRight className="ml-2 h-4 w-4" /></Link>
                   </Button>
                 </div>
               </Card>

@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Header } from '@/components/layout/header';
@@ -13,87 +14,35 @@ import {
   Mail,
   FileText,
   PlayCircle,
-  PhoneCall
+  PhoneCall,
+  RefreshCw,
+  CreditCard
 } from 'lucide-react';
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
+import { useFirestore, useCollection } from '@/firebase';
+import { collection, query, orderBy } from 'firebase/firestore';
 
 export default function PricingPage() {
   const [currency, setCurrency] = useState<'INR' | 'USD'>('INR');
   const [isClient, setIsClient] = useState(false);
+  const db = useFirestore();
 
   useEffect(() => {
     setIsClient(true);
   }, []);
 
-  const plans = [
-    {
-      name: "Basic Hosting Plan",
-      price: currency === 'INR' ? "₹45,000" : "$494",
-      description: "Essential tools for launching a new journal.",
-      features: [
-        "OJS Platform installation",
-        "Journal website hosting",
-        "Technical support",
-        "Up to 4 issues/year",
-        "Up to 100 articles/year",
-        "HTTPS security"
-      ],
-      cta: "Get Started",
-      highlight: false
-    },
-    {
-      name: "Standard Plan",
-      price: currency === 'INR' ? "₹80,000" : "$878",
-      description: "Optimized for automated editorial workflows.",
-      features: [
-        "Everything in Basic +",
-        "DOI support (via DigiIdentify or Crossref)",
-        "Plagiarism Check Integration 200 papers yearly",
-        "Automated Editorial Workflow",
-        "Institutional Branding"
-      ],
-      cta: "Get Started",
-      highlight: true,
-      tag: "Recommended"
-    },
-    {
-      name: "Premium University Plan",
-      price: currency === 'INR' ? "₹1,25,000" : "$1,372",
-      description: "Advanced growth and indexing optimization.",
-      features: [
-        "Everything in Standard +",
-        "Article formatting templates",
-        "Metadata optimization for indexing",
-        "Annual analytics dashboard",
-        "Google Scholar optimization",
-        "Free migration from existing system"
-      ],
-      cta: "Get Started",
-      highlight: false
-    },
-    {
-      name: "Enterprise Package",
-      price: currency === 'INR' ? "₹2,50,000" : "$2,745",
-      description: "For universities hosting 3+ journals (Up to 5 journals).",
-      features: [
-        "Up to 5 Journals Included",
-        "Dedicated server",
-        "Dedicated manager",
-        "Annual audit report",
-        "Priority indexing guidance (DOAJ, Scopus-readiness, etc.)",
-        "Institutional Workflow Audit",
-        "Custom Compliance Support"
-      ],
-      cta: "Get Started",
-      highlight: false
-    }
-  ];
+  const plansQuery = useMemo(() => {
+    if (!db) return null;
+    return query(collection(db, 'pricingPlans'), orderBy('order', 'asc'));
+  }, [db]);
+
+  const { data: plans, loading } = useCollection(plansQuery);
 
   if (!isClient) return null;
 
   return (
-    <div className="flex flex-col min-h-screen bg-background font-body">
+    <div className="flex flex-col min-h-screen bg-background font-body overflow-x-hidden">
       <Header />
       <main className="flex-1">
         <section className="relative overflow-hidden bg-primary text-white pt-32 pb-24">
@@ -128,45 +77,60 @@ export default function PricingPage() {
 
         <section className="py-16 md:py-24 -mt-8 md:-mt-16 bg-white rounded-t-[30px] md:rounded-t-[60px] shadow-2xl relative z-20 overflow-hidden">
           <div className="container mx-auto px-4 md:px-8 lg:px-12">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {plans.map((plan, idx) => (
-                <Card 
-                  key={idx} 
-                  className={`flex flex-col rounded-funky shadow-xl transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl relative overflow-hidden group ${plan.highlight ? 'ring-2 ring-accent border-accent/20 bg-white' : 'bg-slate-50 hover:bg-white border-accent/10'}`}
-                  data-aos="fade-up"
-                  data-aos-delay={idx * 100}
-                >
-                  {plan.tag && (
-                    <div className="absolute top-0 right-0 bg-accent text-accent-foreground text-[10px] font-black px-4 py-1.5 rounded-bl-xl uppercase tracking-tighter z-30">
-                      {plan.tag}
-                    </div>
-                  )}
-                  <CardHeader className="flex flex-col space-y-1.5 text-center border-b border-accent/5 p-6 md:p-8">
-                    <CardTitle className="text-xl font-bold text-primary font-headline italic">{plan.name}</CardTitle>
-                    <div className="mt-6">
-                      <span className="text-3xl md:text-4xl font-black text-primary italic">{plan.price}</span>
-                      <div className="text-[10px] text-primary/40 uppercase font-black tracking-widest mt-1">/ Per Journal/Year</div>
-                    </div>
-                    <p className="text-[10px] text-foreground/50 font-bold mt-4 leading-relaxed uppercase">{plan.description}</p>
-                  </CardHeader>
-                  <CardContent className="flex-1 p-6 md:p-8">
-                    <ul className="space-y-4 mb-8">
-                      {plan.features.map((feature, i) => (
-                        <li key={i} className="flex items-start gap-3 text-xs font-bold text-primary/70">
-                          <div className="mt-0.5 h-4 w-4 rounded-full bg-accent/20 flex items-center justify-center shrink-0">
-                            <Check className="h-2.5 w-2.5 text-accent" />
-                          </div>
-                          <span>{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <Button asChild className={`w-full rounded-funky h-12 md:h-14 text-sm md:text-base font-black italic tracking-tighter shadow-lg group-hover:scale-105 transition-transform duration-300 ${plan.highlight ? 'bg-accent text-accent-foreground hover:bg-primary hover:text-white' : 'bg-primary text-white hover:bg-accent hover:text-primary'}`}>
-                      <Link href="/contact">{plan.cta}</Link>
-                    </Button>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+            
+            {loading ? (
+              <div className="flex flex-col items-center justify-center py-20 gap-4">
+                <RefreshCw className="h-10 w-10 text-accent animate-spin" />
+                <p className="text-xs font-black uppercase text-primary/40 tracking-[0.2em]">Retrieving Service Tiers...</p>
+              </div>
+            ) : (plans && plans.length > 0) ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {plans.map((plan: any, idx: number) => (
+                  <Card 
+                    key={idx} 
+                    className={`flex flex-col rounded-funky shadow-xl transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl relative overflow-hidden group ${plan.highlight ? 'ring-2 ring-accent border-accent/20 bg-white' : 'bg-slate-50 hover:bg-white border-accent/10'}`}
+                    data-aos="fade-up"
+                    data-aos-delay={idx * 100}
+                  >
+                    {plan.tag && (
+                      <div className="absolute top-0 right-0 bg-accent text-accent-foreground text-[10px] font-black px-4 py-1.5 rounded-bl-xl uppercase tracking-tighter z-30">
+                        {plan.tag}
+                      </div>
+                    )}
+                    <CardHeader className="flex flex-col space-y-1.5 text-center border-b border-accent/5 p-6 md:p-8">
+                      <CardTitle className="text-xl font-bold text-primary font-headline italic">{plan.name}</CardTitle>
+                      <div className="mt-6">
+                        <span className="text-3xl md:text-4xl font-black text-primary italic">
+                          {currency === 'INR' ? plan.priceINR : plan.priceUSD}
+                        </span>
+                        <div className="text-[10px] text-primary/40 uppercase font-black tracking-widest mt-1">/ Per Journal/Year</div>
+                      </div>
+                      <p className="text-[10px] text-foreground/50 font-bold mt-4 leading-relaxed uppercase">{plan.description}</p>
+                    </CardHeader>
+                    <CardContent className="flex-1 p-6 md:p-8">
+                      <ul className="space-y-4 mb-8">
+                        {plan.features.map((feature: string, i: number) => (
+                          <li key={i} className="flex items-start gap-3 text-xs font-bold text-primary/70">
+                            <div className="mt-0.5 h-4 w-4 rounded-full bg-accent/20 flex items-center justify-center shrink-0">
+                              <Check className="h-2.5 w-2.5 text-accent" />
+                            </div>
+                            <span>{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      <Button asChild className={`w-full rounded-funky h-12 md:h-14 text-sm md:text-base font-black italic tracking-tighter shadow-lg group-hover:scale-105 transition-transform duration-300 ${plan.highlight ? 'bg-accent text-accent-foreground hover:bg-primary hover:text-white' : 'bg-primary text-white hover:bg-accent hover:text-primary'}`}>
+                        <Link href="/contact">{plan.cta || 'Get Started'}</Link>
+                      </Button>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            ) : (
+              <div className="text-center py-20 bg-secondary/30 rounded-[30px] border-2 border-dashed border-primary/5">
+                <CreditCard className="h-12 w-12 text-primary/10 mx-auto mb-4" />
+                <p className="text-base font-bold text-primary/40 uppercase tracking-widest italic">Plans are currently being updated. Contact us for direct quotes.</p>
+              </div>
+            )}
 
             <div className="mt-20 md:mt-24">
               <div className="text-center mb-12 md:mb-16" data-aos="fade-up">
