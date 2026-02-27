@@ -17,7 +17,8 @@ import {
   Users,
   ChevronRight,
   Clock,
-  Globe
+  Globe,
+  Edit3
 } from 'lucide-react';
 import Link from 'next/link';
 import { collection, query, orderBy, limit } from 'firebase/firestore';
@@ -191,13 +192,18 @@ export default function AdminDashboard() {
                           <p className="text-sm text-muted-foreground truncate">{journal.university}</p>
                         </div>
                         <div className="text-right shrink-0">
-                          <div className="flex items-center gap-1.5 text-[10px] font-bold text-primary/40 uppercase tracking-wider mb-2">
+                          <div className="flex items-center gap-1.5 text-[10px] font-bold text-primary/40 uppercase tracking-wider mb-2 justify-end">
                             <Clock className="h-3 w-3" />
                             {journal.createdAt?.seconds ? new Date(journal.createdAt.seconds * 1000).toLocaleDateString() : 'Just now'}
                           </div>
-                          <Link href={journal.link} target="_blank" className="text-[10px] text-accent font-black uppercase tracking-widest flex items-center justify-end gap-1 hover:text-primary transition-colors">
-                            Live <ExternalLink className="h-3 w-3" />
-                          </Link>
+                          <div className="flex items-center justify-end gap-4">
+                            <Link href={`/admin/journals?edit=${journal.id}`} className="text-[10px] text-primary font-black uppercase tracking-widest flex items-center gap-1 hover:text-accent transition-colors">
+                              Edit <Edit3 className="h-3 w-3" />
+                            </Link>
+                            <Link href={journal.link} target="_blank" className="text-[10px] text-accent font-black uppercase tracking-widest flex items-center gap-1 hover:text-primary transition-colors">
+                              Live <ExternalLink className="h-3 w-3" />
+                            </Link>
+                          </div>
                         </div>
                       </div>
                     ))}

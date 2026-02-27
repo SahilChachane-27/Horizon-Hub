@@ -1,10 +1,9 @@
-
 'use client';
 
-import { useState, useEffect, useMemo, useRef } from 'react';
+import { useState, useEffect, useMemo, useRef, Suspense } from 'react';
 import { useUser, useFirestore, useCollection } from '@/firebase';
 import { collection, addDoc, deleteDoc, doc, updateDoc, serverTimestamp, query, orderBy } from 'firebase/firestore';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { Header } from '@/components/layout/header';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -51,10 +50,11 @@ const domains = [
   'Environment & Sustainability',
 ];
 
-export default function ManageJournals() {
+function JournalManagementContent() {
   const { user, loading: userLoading } = useUser();
   const db = useFirestore();
   const router = useRouter();
+  const searchParams = useSearchParams();
   const { toast } = useToast();
 
   const [editingId, setEditingId] = useState<string | null>(null);
@@ -89,6 +89,17 @@ export default function ManageJournals() {
     setCurrentPage(1);
   }, [searchFilter, sortOrder]);
 
+  // Handle direct edit from dashboard
+  useEffect(() => {
+    const editId = searchParams.get('edit');
+    if (editId && journals && journals.length > 0) {
+      const journalToEdit = journals.find((j: any) => j.id === editId);
+      if (journalToEdit) {
+        handleEdit(journalToEdit);
+      }
+    }
+  }, [searchParams, journals]);
+
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
@@ -121,6 +132,8 @@ export default function ManageJournals() {
     setImageUrl(null);
     setIsFeatured(false);
     if (fileInputRef.current) fileInputRef.current.value = '';
+    // Clear query param
+    router.replace('/admin/journals');
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -531,5 +544,13 @@ export default function ManageJournals() {
         </div>
       </main>
     </div>
+  );
+}
+
+export default function ManageJournals() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div></div>}>
+      <JournalManagementContent />
+    </Suspense>
   );
 }
