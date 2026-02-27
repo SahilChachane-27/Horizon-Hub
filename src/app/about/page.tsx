@@ -92,17 +92,31 @@ export default function AboutPage() {
                   We believe that research belongs to the institutions that foster it. Our objective is to provide a high-performance environment where universities can manage and publish journals under their own unique institutional branding.
                 </p>
                 
-                {/* Vision Statement Section */}
-                <Card className="bg-card border-0 border-l-4 border-accent shadow-lg rounded-funky overflow-hidden">
-                  <CardHeader className="py-4">
-                    <CardTitle className="text-primary text-xl font-headline">Our Vision</CardTitle>
-                  </CardHeader>
-                  <CardContent className="pb-6">
-                    <p className="text-lg text-foreground/80 leading-relaxed font-medium">
-                      "To build the world’s most trusted, university-exclusive journal hosting ecosystem that empowers institutions to publish, preserve, and elevate their scholarly research through secure, scalable, and future-ready technologies."
-                    </p>
-                  </CardContent>
-                </Card>
+                <div className="grid gap-6">
+                  {/* Vision Statement Section */}
+                  <Card className="bg-card border-0 border-l-4 border-accent shadow-lg rounded-funky overflow-hidden">
+                    <CardHeader className="py-4">
+                      <CardTitle className="text-primary text-xl font-headline">Our Vision</CardTitle>
+                    </CardHeader>
+                    <CardContent className="pb-6">
+                      <p className="text-lg text-foreground/80 leading-relaxed font-medium">
+                        "To build the world’s most trusted, university-exclusive journal hosting ecosystem that empowers institutions to publish, preserve, and elevate their scholarly research through secure, scalable, and future-ready technologies."
+                      </p>
+                    </CardContent>
+                  </Card>
+
+                  {/* Mission Statement Section */}
+                  <Card className="bg-card border-0 border-l-4 border-accent shadow-lg rounded-funky overflow-hidden">
+                    <CardHeader className="py-4">
+                      <CardTitle className="text-primary text-xl font-headline">Our Mission</CardTitle>
+                    </CardHeader>
+                    <CardContent className="pb-6">
+                      <p className="text-lg text-foreground/80 leading-relaxed font-medium">
+                        To empower academic institutions with sovereign publishing tools that ensure their research remains accessible, professional, and firmly under institutional control.
+                      </p>
+                    </CardContent>
+                  </Card>
+                </div>
               </div>
             </div>
           </div>
