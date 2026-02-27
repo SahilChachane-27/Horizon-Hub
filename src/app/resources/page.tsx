@@ -142,31 +142,31 @@ export default function ResourcesPage() {
         </section>
 
         {/* OJS Platform Documentation Section */}
-        <section className="py-24">
-          <div className="container mx-auto px-8 md:px-16 lg:px-32">
-            <Card className="bg-primary text-primary-foreground p-8 md:p-16 rounded-[40px] overflow-hidden relative shadow-2xl border-none" data-aos="fade-up">
-              <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+        <section className="py-12 md:py-24">
+          <div className="container mx-auto px-4 md:px-16 lg:px-32">
+            <Card className="bg-primary text-primary-foreground p-6 md:p-12 lg:p-16 rounded-[30px] md:rounded-[40px] overflow-hidden relative shadow-2xl border-none" data-aos="fade-up">
+              <div className="relative z-10 grid lg:grid-cols-2 gap-10 md:gap-12 items-center">
                 <div className="space-y-6">
                   <div className="inline-flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full text-accent font-bold text-xs uppercase tracking-widest">
                     <LifeBuoy className="h-4 w-4" />
                     Support Documentation
                   </div>
-                  <h2 className="text-3xl md:text-4xl font-extrabold font-headline leading-tight">
+                  <h2 className="text-2xl md:text-4xl font-extrabold font-headline leading-tight">
                     Technical Guide for OJS Platform
                   </h2>
-                  <p className="text-lg opacity-80 leading-relaxed font-medium">
+                  <p className="text-base md:text-lg opacity-80 leading-relaxed font-medium">
                     Need help navigating our Journal Management System? Access comprehensive guides on manuscript tracking, reviewer assignment, and production workflows.
                   </p>
-                  <div className="flex flex-wrap gap-4 pt-4">
-                    <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-extrabold rounded-funky px-14 py-8 text-lg shadow-xl shadow-accent/20 transition-all hover:scale-105">
+                  <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                    <Button size="lg" className="w-full sm:w-auto bg-accent hover:bg-accent/90 text-accent-foreground font-extrabold rounded-funky px-8 md:px-14 py-4 md:py-8 text-sm md:text-lg shadow-xl shadow-accent/20 transition-all hover:scale-105 h-auto">
                       Access Documentation
                     </Button>
-                    <Button variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10 rounded-funky px-14 py-8 text-lg font-bold transition-all hover:scale-105">
+                    <Button variant="outline" size="lg" className="w-full sm:w-auto border-white/20 text-white hover:bg-white/10 rounded-funky px-8 md:px-14 py-4 md:py-8 text-sm md:text-lg font-bold transition-all hover:scale-105 h-auto">
                       Video Tutorials
                     </Button>
                   </div>
                 </div>
-                <div className="relative aspect-video rounded-3xl overflow-hidden border-8 border-white/5 shadow-2xl">
+                <div className="relative aspect-video rounded-2xl md:rounded-3xl overflow-hidden border-4 md:border-8 border-white/5 shadow-2xl">
                   <Image
                     src="/ResearchPsychology.jpg"
                     alt="Technical Support"
@@ -174,13 +174,13 @@ export default function ResourcesPage() {
                     className="object-cover"
                   />
                   <div className="absolute inset-0 bg-primary/20 backdrop-blur-[2px] flex items-center justify-center">
-                    <div className="w-20 h-20 bg-accent rounded-full flex items-center justify-center shadow-2xl cursor-pointer hover:scale-110 transition-transform">
-                      <div className="w-0 h-0 border-t-[12px] border-t-transparent border-l-[20px] border-l-primary border-b-[12px] border-b-transparent ml-2"></div>
+                    <div className="w-14 h-14 md:w-20 md:h-20 bg-accent rounded-full flex items-center justify-center shadow-2xl cursor-pointer hover:scale-110 transition-transform">
+                      <div className="w-0 h-0 border-t-[8px] md:border-t-[12px] border-t-transparent border-l-[14px] md:border-l-[20px] border-l-primary border-b-[8px] md:border-b-[12px] border-b-transparent ml-1 md:ml-2"></div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full -mr-48 -mt-48 blur-3xl"></div>
+              <div className="absolute top-0 right-0 w-64 md:w-96 h-64 md:h-96 bg-accent/5 rounded-full -mr-32 md:-mr-48 -mt-32 md:-mt-48 blur-2xl md:blur-3xl"></div>
             </Card>
           </div>
         </section>
