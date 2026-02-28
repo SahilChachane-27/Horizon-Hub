@@ -87,15 +87,15 @@
   
   @media (max-width: 450px) {
     .btn-responsive {
-      @apply text-[10px] px-4 py-2 h-auto;
+      @apply text-[10px] px-4 py-3 h-auto leading-normal;
     }
     
     .hero-title-responsive {
-      @apply text-2xl leading-tight;
+      @apply text-2xl leading-tight mb-4;
     }
     
     .hero-text-responsive {
-      @apply text-sm;
+      @apply text-xs mb-6;
     }
   }
 }

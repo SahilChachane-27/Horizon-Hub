@@ -88,7 +88,7 @@ export function Header() {
                 <SheetContent side="right" className="bg-primary border-l-0 text-white w-[85%] sm:w-80 p-6 overflow-y-auto">
                   <SheetHeader className="text-left mb-8 pr-8">
                     <SheetTitle className="sr-only">Technical Journals</SheetTitle>
-                    <div className="relative h-12 w-48 mb-2">
+                    <div className="relative h-12 w-48 mb-4">
                       <Image 
                         src="/JTlogoUpdated.png" 
                         alt="Technical Journals Logo" 
