@@ -92,14 +92,15 @@ export default function JournalsPage() {
     <div className="flex flex-col min-h-screen bg-slate-50/50 overflow-x-hidden">
       <Header />
       <main className="flex-1">
-        <section className="relative pt-32 pb-20 md:pt-44 md:pb-24 bg-primary text-primary-foreground overflow-hidden">
-          <div className="container mx-auto px-6 md:px-16 lg:px-32 relative z-10">
-            <div className="max-w-3xl" data-aos="fade-right">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-headline mb-6">
+        {/* Hero Section */}
+        <section className="relative pt-32 pb-24 md:pt-44 md:pb-28 bg-primary text-primary-foreground overflow-hidden">
+          <div className="container mx-auto px-6 md:px-16 lg:px-32 relative z-10 text-center">
+            <div className="max-w-4xl mx-auto" data-aos="fade-up">
+              <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold font-headline italic leading-tight mb-6">
                 University Journal Catalog
               </h1>
-              <div className="w-20 h-1 bg-accent mb-6"></div>
-              <p className="text-lg md:text-xl opacity-90 leading-relaxed font-medium">
+              <div className="w-20 h-1 bg-accent mx-auto mb-6"></div>
+              <p className="text-sm sm:text-base md:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed font-medium">
                 Browse prestigious academic publications hosted on our secure OJS Platform.
               </p>
             </div>
