@@ -44,7 +44,7 @@ export default function AboutPage() {
     <div className="flex flex-col min-h-screen bg-background text-foreground font-body overflow-x-hidden">
       <Header />
       <main className="flex-1">
-        {/* Hero Section */}
+        {/* Hero Section - Standardized Banner */}
         <section className="relative pt-32 pb-24 md:pt-44 md:pb-28 bg-primary text-primary-foreground overflow-hidden">
           <div className="container mx-auto px-6 md:px-16 lg:px-32 relative z-10 text-center">
             <div className="max-w-4xl mx-auto" data-aos="fade-up">
@@ -59,11 +59,12 @@ export default function AboutPage() {
           </div>
           <div className="absolute inset-0 opacity-10">
             <Image
-              src="/ResearchPsychology.jpg"
+              src="https://images.unsplash.com/photo-1541339907198-e087563ef3b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
               alt="Academic Research"
               fill
               className="object-cover"
               priority
+              data-ai-hint="university campus"
             />
           </div>
         </section>
@@ -78,13 +79,16 @@ export default function AboutPage() {
                   alt="University Publishing"
                   fill
                   className="object-cover"
+                  data-ai-hint="academic publishing"
                 />
               </div>
               <div className="space-y-8" data-aos="fade-left">
-                <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">
-                  Our Academic Mission
-                </h2>
-                <div className="w-20 h-1 bg-accent"></div>
+                <div>
+                  <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">
+                    Our Academic Mission
+                  </h2>
+                  <div className="w-20 h-1 bg-accent mt-2"></div>
+                </div>
                 <p className="text-lg text-foreground/80 leading-relaxed font-medium">
                   Technical Journals is a global platform exclusively developed for Universities and Academic Institutions. Unlike traditional hosting providers, we do not serve private publishers. 
                 </p>
@@ -115,7 +119,7 @@ export default function AboutPage() {
                         To empower academic institutions with sovereign publishing tools that ensure their research remains accessible, professional, and firmly under institutional control.
                       </p>
                     </CardContent>
-                  </div>
+                  </Card>
                 </div>
               </div>
             </div>
@@ -137,7 +141,7 @@ export default function AboutPage() {
                     <pillar.icon className="h-8 w-8" />
                   </div>
                   <CardHeader className="p-0 mb-4">
-                    <CardTitle className="text-2xl text-primary font-bold">{pillar.title}</CardTitle>
+                    <CardTitle className="text-2xl text-primary font-bold leading-tight">{pillar.title}</CardTitle>
                   </CardHeader>
                   <CardContent className="p-0">
                     <p className="text-foreground/70 leading-relaxed font-medium">{pillar.desc}</p>
