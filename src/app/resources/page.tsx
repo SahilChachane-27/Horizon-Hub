@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Header } from '@/components/layout/header';
@@ -11,8 +10,7 @@ import {
   FileText,
   CheckCircle2,
   Scale,
-  BookOpen,
-  ArrowRight
+  BookOpen
 } from 'lucide-react';
 import Image from 'next/image';
 
@@ -81,9 +79,6 @@ export default function ResourcesPage() {
                     <div className="space-y-3">
                       <h3 className="text-xl font-bold text-primary font-headline italic">{item.title}</h3>
                       <p className="text-sm text-foreground/70 leading-relaxed font-medium">{item.description}</p>
-                      <Button variant="link" className="p-0 h-auto text-accent font-bold uppercase text-[10px] tracking-widest hover:text-primary">
-                        Access Now <ArrowRight className="ml-1.5 h-3 w-3" />
-                      </Button>
                     </div>
                   </CardContent>
                 </Card>
