@@ -67,7 +67,7 @@ export default function JournalsPage() {
     return journals.filter((j: any) => {
       const matchesName = (j.name || '').toLowerCase().includes(searchQuery.toLowerCase());
       const matchesUniversity = (j.university || '').toLowerCase().includes(universityQuery.toLowerCase());
-      const matchesISSN = (j.issn || '').includes(issnQuery);
+      const matchesISSN = (j.issn || '').toLowerCase().includes(issnQuery.toLowerCase());
       const matchesCategory = selectedCategory === 'All' || j.domain === selectedCategory;
 
       return matchesName && matchesUniversity && matchesISSN && matchesCategory;
@@ -156,6 +156,16 @@ export default function JournalsPage() {
                     </div>
 
                     <div className="space-y-2">
+                      <label className="text-[10px] font-black uppercase text-primary/60 tracking-widest">ISSN Number</label>
+                      <Input 
+                        placeholder="Search ISSN..." 
+                        className="h-10 border-slate-200 rounded-xl bg-slate-50 focus:bg-white" 
+                        value={issnQuery} 
+                        onChange={(e) => setIssnQuery(e.target.value)} 
+                      />
+                    </div>
+
+                    <div className="space-y-2">
                       <label className="text-[10px] font-black uppercase text-primary/60 tracking-widest">Field of Study</label>
                       <Select value={selectedCategory} onValueChange={setSelectedCategory}>
                         <SelectTrigger className="h-10 border-slate-200 rounded-xl bg-slate-50 focus:bg-white">
@@ -191,7 +201,7 @@ export default function JournalsPage() {
 
                 {loading ? (
                   <div className="flex flex-col items-center justify-center py-20 space-y-4">
-                    <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-accent"></div>
+                    <div className="animate-spin rounded-full h-10 i w-10 border-b-2 border-accent"></div>
                     <p className="text-[10px] font-bold text-primary/40 uppercase tracking-[0.2em]">Synchronizing...</p>
                   </div>
                 ) : filteredJournals.length > 0 ? (
