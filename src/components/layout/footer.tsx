@@ -55,13 +55,6 @@ export function Footer() {
             <div className="text-xs leading-relaxed max-w-sm">
               <p>Empowering academic institutions with secure, scalable, and professional journal hosting since 2024.</p>
             </div>
-            <div className="flex space-x-3">
-              {socialLinks.map((social, index) => (
-                <a key={index} href={social.href} className="text-primary-foreground/60 hover:text-accent transition-colors">
-                  <social.icon className="h-4 w-4" />
-                </a>
-              ))}
-            </div>
           </div>
 
           {/* Column 2: Quick Links */}
@@ -98,6 +91,13 @@ export function Footer() {
             <div className="text-xs space-y-3 mb-4">
               <p className="leading-tight"><span className="text-accent font-bold">Email:</span><br/>support@technicaljournals.org</p>
               <p className="leading-tight"><span className="text-accent font-bold">Mobile:</span><br/>0000000000</p>
+            </div>
+            <div className="flex space-x-3">
+              {socialLinks.map((social, index) => (
+                <a key={index} href={social.href} className="text-primary-foreground/60 hover:text-accent transition-colors">
+                  <social.icon className="h-4 w-4" />
+                </a>
+              ))}
             </div>
           </div>
         </div>
