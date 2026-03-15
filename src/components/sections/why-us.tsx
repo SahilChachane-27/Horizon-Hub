@@ -106,7 +106,7 @@ export function WhyUs() {
               <h3 className="text-base font-bold text-primary mb-2">
                 {feature.title}
               </h3>
-              <p className="text-foreground/70 text-xs leading-relaxed">{feature.description}</p>
+              <p className="text-foreground/70 text-sm leading-relaxed">{feature.description}</p>
             </Card>
           ))}
         </div>
