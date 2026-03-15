@@ -3,21 +3,12 @@
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { ScrollToTop } from '@/components/layout/scroll-to-top';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { 
-  FileText, 
-  Users, 
-  ShieldCheck, 
-  BookOpen, 
-  Download, 
-  Search,
-  CheckCircle2,
-  ExternalLink,
   LifeBuoy
 } from 'lucide-react';
 import Image from 'next/image';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export default function ResourcesPage() {
   return (
@@ -48,39 +39,7 @@ export default function ResourcesPage() {
           </div>
         </section>
 
-        {/* Downloadable Templates Section */}
-        <section className="py-20 bg-white border-b border-border/50">
-          <div className="container mx-auto px-8 md:px-16 lg:px-32">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline" data-aos="fade-up">
-                Downloadable Templates
-              </h2>
-              <div className="mt-4 w-24 h-1 bg-accent mx-auto" data-aos="fade-up"></div>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                { title: "Word Template", type: "DOCX", size: "1.2 MB" },
-                { title: "LaTeX Template", type: "ZIP", size: "4.5 MB" },
-                { title: "Reviewer Guide", type: "PDF", size: "0.8 MB" },
-                { title: "Ethics Policy", type: "PDF", size: "1.5 MB" }
-              ].map((template, idx) => (
-                <div key={idx} className="bg-slate-50 p-6 rounded-2xl shadow-md border border-border/50 flex flex-col items-center text-center transition-all hover:shadow-lg hover:-translate-y-1" data-aos="zoom-in" data-aos-delay={idx * 50}>
-                  <div className="h-12 w-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
-                    <Download className="h-6 w-6 text-accent" />
-                  </div>
-                  <h3 className="font-bold text-primary mb-1">{template.title}</h3>
-                  <p className="text-[10px] text-foreground/40 font-black mb-4 uppercase tracking-widest">{template.type} • {template.size}</p>
-                  <Button variant="outline" size="sm" className="w-full border-primary/20 text-primary font-bold hover:bg-primary hover:text-white rounded-xl">
-                    Download
-                  </Button>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* OJS Platform Documentation Section */}
+        {/* Technical Documentation Section */}
         <section className="py-12 md:py-24">
           <div className="container mx-auto px-4 md:px-16 lg:px-32">
             <Card className="bg-primary text-primary-foreground p-6 md:p-12 lg:p-16 rounded-[30px] md:rounded-[40px] overflow-hidden relative shadow-2xl border-none" data-aos="fade-up">
