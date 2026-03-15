@@ -8,7 +8,7 @@ export function About() {
         <div className="grid lg:grid-cols-5 gap-12 items-center">
           <div className="lg:col-span-2 relative aspect-[4/5] rounded-funky overflow-hidden shadow-2xl" data-aos="fade-right">
             <Image
-              src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+              src="/aboutUs.jpeg"
               alt="University Academic Publishing"
               fill
               className="object-cover"
