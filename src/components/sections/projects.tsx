@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { Card } from '@/components/ui/card';
 import { useFirestore, useCollection } from '@/firebase';
-import { collection, query, where, limit, orderBy } from 'firebase/firestore';
+import { collection, query, where, limit } from 'firebase/firestore';
 import { useMemo } from 'react';
 import { Building2, Star, ExternalLink, ArrowRight, Tag, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -78,36 +78,36 @@ export function Projects() {
                   </div>
                 </div>
 
-                {/* Hover Overlay - Shows data when cursor/arrow comes */}
-                <div className="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-primary/95 via-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out z-20">
+                {/* Hover Overlay - Reduced padding and tighter spacing */}
+                <div className="absolute inset-0 flex flex-col justify-end p-5 bg-gradient-to-t from-primary/95 via-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out z-20">
                   <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
-                    <h3 className="text-xl font-bold text-white font-headline leading-tight italic mb-2 line-clamp-2">
+                    <h3 className="text-lg font-bold text-white font-headline leading-tight italic mb-1.5 line-clamp-2">
                       {journal.name}
                     </h3>
-                    <div className="flex items-center gap-2 mb-4">
-                      <div className="h-4 w-1 bg-accent"></div>
-                      <p className="text-accent font-black uppercase text-[10px] tracking-widest truncate">
+                    <div className="flex items-center gap-2 mb-3">
+                      <div className="h-3 w-0.5 bg-accent"></div>
+                      <p className="text-accent font-black uppercase text-[9px] tracking-widest truncate">
                         {journal.university}
                       </p>
                     </div>
                     
-                    <div className="space-y-2 mb-6">
-                      <div className="flex items-center gap-2 text-[10px] text-white/80">
-                        <Tag className="h-3 w-3 text-accent" /> {journal.issn}
+                    <div className="space-y-1.5 mb-4">
+                      <div className="flex items-center gap-2 text-[9px] text-white/80">
+                        <Tag className="h-2.5 w-2.5 text-accent" /> {journal.issn}
                       </div>
-                      <div className="flex items-center gap-2 text-[10px] text-white/80">
-                        <Globe className="h-3 w-3 text-accent" /> {journal.domain}
+                      <div className="flex items-center gap-2 text-[9px] text-white/80">
+                        <Globe className="h-2.5 w-2.5 text-accent" /> {journal.domain}
                       </div>
                     </div>
 
-                    <p className="text-white/70 text-xs mb-8 line-clamp-3 italic leading-relaxed">
-                      {journal.description || "Peer-reviewed, Open Access compliant, and institutionally branded research publication providing high-impact scholarly content."}
+                    <p className="text-white/70 text-[10px] mb-5 line-clamp-2 italic leading-relaxed">
+                      {journal.description || "Peer-reviewed, Open Access compliant research publication providing high-impact scholarly content."}
                     </p>
 
-                    <div className="pt-6 border-t border-white/10">
-                      <Button asChild className="w-full bg-accent hover:bg-white text-primary font-black uppercase text-xs tracking-widest h-12 rounded-xl transition-all duration-300 shadow-lg">
+                    <div className="pt-3 border-t border-white/10">
+                      <Button asChild className="w-full bg-accent hover:bg-white text-primary font-black uppercase text-[10px] tracking-widest h-10 rounded-xl transition-all duration-300 shadow-lg">
                         <a href={journal.link} target="_blank" className="flex items-center justify-center gap-2">
-                          View Publication <ExternalLink className="h-4 w-4" />
+                          View Publication <ExternalLink className="h-3 w-3" />
                         </a>
                       </Button>
                     </div>

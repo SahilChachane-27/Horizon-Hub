@@ -59,7 +59,7 @@ export default function AboutPage() {
           </div>
           <div className="absolute inset-0 opacity-10">
             <Image
-              src="https://images.unsplash.com/photo-1541339907198-e087563ef3b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+              src="/aboutUs.jpeg"
               alt="Academic Research"
               fill
               className="object-cover"
