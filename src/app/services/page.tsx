@@ -15,7 +15,7 @@ const categories = [
     icon: Laptop,
     description: "Robust, secure infrastructure tailored for academic journals.",
     features: [
-      "OJS Platform complete installation & setup",
+      "Platform complete installation & setup",
       "Enterprise server maintenance & monitoring",
       "DOI registration (DigiIdentify/CrossRef)",
       "Article-level indexing metadata management",
@@ -51,7 +51,7 @@ const categories = [
     icon: Database,
     description: "Transitioning legacy research to modern standards.",
     features: [
-      "Migration from OJS 2.x / other legacy systems",
+      "Migration from legacy systems",
       "Full retention of back issues & metadata",
       "Preservation of Persistent URLs (PIDs)",
       "Data integrity auditing & historical cleanup",
