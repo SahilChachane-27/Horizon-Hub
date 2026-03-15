@@ -28,7 +28,7 @@ export function Projects() {
     <section id="projects" className="py-16 md:py-24 bg-slate-50/50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1600px]">
         <div className="flex flex-col items-center text-center gap-6 mb-12" data-aos="fade-up">
-          <div className="max-w-3xl">
+          <div className="max-w-3xl text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline italic">Featured Journals</h2>
             <div className="mt-2 w-20 h-1 bg-accent mx-auto"></div>
             <p className="mt-6 text-base md:text-lg text-foreground/70 font-medium leading-relaxed">
@@ -51,13 +51,13 @@ export function Projects() {
             {featuredJournals.map((journal: any, index: number) => (
               <Card key={journal.id} className="overflow-hidden group relative rounded-none shadow-lg border-none flex flex-col h-full bg-white transition-all duration-500" data-aos="fade-up" data-aos-delay={index * 100}>
                 {/* Image Container - 4:3 Aspect Ratio */}
-                <div className="relative aspect-[4/3] w-full shrink-0 flex items-center justify-center p-4 bg-secondary/5 overflow-hidden">
+                <div className="relative aspect-[4/3] w-full shrink-0 flex items-center justify-center p-2 bg-secondary/5 overflow-hidden">
                   {journal.imageUrl ? (
                      <Image
                       src={journal.imageUrl}
                       alt={journal.name}
                       fill
-                      className="object-contain p-4 transition-transform duration-700 group-hover:scale-110"
+                      className="object-contain transition-transform duration-700 group-hover:scale-110"
                     />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/5 to-accent/5">
@@ -78,7 +78,7 @@ export function Projects() {
                   </div>
                 </div>
 
-                {/* Hover Overlay - Consistent with Journals Page */}
+                {/* Hover Overlay - Compact version */}
                 <div className="absolute inset-0 flex flex-col justify-end p-4 bg-gradient-to-t from-primary/95 via-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out z-20">
                   <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
                     <h3 className="text-sm font-bold text-white font-headline leading-tight italic mb-1 line-clamp-2">

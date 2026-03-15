@@ -208,14 +208,14 @@ export default function JournalsPage() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
                     {filteredJournals.map((journal: any, index: number) => (
                       <Card key={index} className="overflow-hidden group relative rounded-none shadow-lg border-none flex flex-col h-full bg-white transition-all duration-500">
-                        {/* Image Container - Changed to 4:3 */}
-                        <div className="relative aspect-[4/3] w-full shrink-0 flex items-center justify-center p-4 bg-secondary/5">
+                        {/* Image Container - Aspect ratio adjusted and padding fixed */}
+                        <div className="relative aspect-[4/3] w-full shrink-0 flex items-center justify-center p-2 bg-secondary/5">
                           {journal.imageUrl ? (
                             <Image 
                               src={journal.imageUrl} 
                               alt={journal.name} 
                               fill 
-                              className="object-contain p-4 transition-transform duration-700 group-hover:scale-110" 
+                              className="object-contain transition-transform duration-700 group-hover:scale-110" 
                             />
                           ) : (
                             <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/5 to-accent/5">
@@ -230,7 +230,7 @@ export default function JournalsPage() {
                           </div>
                         </div>
 
-                        <div className="absolute inset-0 flex flex-col justify-end p-5 bg-gradient-to-t from-primary/95 via-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out z-20">
+                        <div className="absolute inset-0 flex flex-col justify-end p-4 bg-gradient-to-t from-primary/95 via-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out z-20">
                           <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
                             <h3 className="text-base font-bold text-white font-headline leading-tight italic mb-1 line-clamp-2">
                               {journal.name}
