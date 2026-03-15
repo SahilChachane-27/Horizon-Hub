@@ -7,9 +7,9 @@ const services = [
   {
     href: '#contact',
     title: 'Journal Hosting Services',
-    description: 'Complete OJS Platform setup, secure server maintenance, DOI registration, Digiidentify, and article-level metadata indexing with anti-plagiarism integration.',
+    description: 'Complete platform setup, secure server maintenance, DOI registration, Digiidentify, and article-level metadata indexing with anti-plagiarism integration.',
     icon: BookOpen,
-    features: ['OJS Platform Setup', 'DOI Registration', 'Plagiarism Checks']
+    features: ['Platform Setup', 'DOI Registration', 'Plagiarism Checks']
   },
   {
     href: '#contact',
@@ -28,9 +28,9 @@ const services = [
   {
     href: '#contact',
     title: 'Migration Services',
-    description: 'Expert migration of journals from OJS 2.x or other platforms while ensuring all back issues and persistent URLs are fully preserved.',
+    description: 'Expert migration of journals from legacy or other platforms while ensuring all back issues and persistent URLs are fully preserved.',
     icon: RefreshCw,
-    features: ['OJS 2.x Migration', 'Back Issue Retention', 'URL Preservation']
+    features: ['Legacy Migration', 'Back Issue Retention', 'URL Preservation']
   },
 ];
 
@@ -64,11 +64,11 @@ export function Services() {
                     </div>
                   </div>
                   <h3 className="text-lg font-bold font-headline mt-1 mb-3 h-12 flex items-center">{service.title}</h3>
-                  <p className="text-xs text-foreground/70 mb-4 flex-grow">{service.description}</p>
+                  <p className="text-sm text-foreground/70 mb-4 flex-grow">{service.description}</p>
                   
                   <ul className="w-full text-left space-y-1.5 mb-5">
                     {service.features.map((feature, fIdx) => (
-                      <li key={fIdx} className="flex items-center gap-2 text-[10px] text-foreground/60">
+                      <li key={fIdx} className="flex items-center gap-2 text-xs text-foreground/60">
                         <CheckCircle2 className="h-2.5 w-2.5 text-accent" />
                         <span>{feature}</span>
                       </li>
