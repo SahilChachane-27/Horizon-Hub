@@ -48,25 +48,6 @@ export default function ContactPage() {
               <p className="max-w-2xl mx-auto text-xs sm:text-sm md:text-lg text-white/90 font-medium italic px-4 leading-relaxed">
                 Empowering your institution with secure and sovereign publishing tools.
               </p>
-
-              <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-6 text-white/90">
-                <a 
-                  href="mailto:support@technicaljournals.org" 
-                  className="flex items-center gap-2 hover:text-accent transition-colors md:border-r md:border-white/20 md:pr-8 last:border-0"
-                >
-                  <Mail className="h-4 w-4 sm:h-5 sm:w-5 text-accent" />
-                  <span className="font-bold text-xs sm:text-sm">Email:</span> 
-                  <span className="text-[10px] sm:text-sm break-all">support@technicaljournals.org</span>
-                </a>
-                <a 
-                  href="tel:+917020892896" 
-                  className="flex items-center gap-2 hover:text-accent transition-colors"
-                >
-                  <PhoneCall className="h-4 w-4 sm:h-5 sm:w-5 text-accent" />
-                  <span className="font-bold text-xs sm:text-sm">Mobile:</span> 
-                  <span className="text-[10px] sm:text-sm">+91 70208 92896</span>
-                </a>
-              </div>
             </div>
           </div>
         </section>
