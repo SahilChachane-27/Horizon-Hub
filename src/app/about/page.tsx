@@ -52,8 +52,8 @@ export default function AboutPage() {
                 About Technical Journals
               </h1>
               <div className="w-20 h-1 bg-accent mx-auto mb-6"></div>
-              <p className="text-sm sm:text-base md:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed font-medium">
-                Empowering academic institutions with secure, scalable, and sovereign journal hosting solutions built on the OJS Platform.
+              <p className="text-xs sm:text-sm md:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed font-medium">
+                Empowering academic institutions with secure, scalable, and sovereign journal hosting solutions built on the secure Platform.
               </p>
             </div>
           </div>
