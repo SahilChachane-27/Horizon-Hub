@@ -2,7 +2,6 @@
 
 import { Card } from '@/components/ui/card';
 import { 
-  ShieldCheck, 
   Lock, 
   Hash, 
   IdCard, 
@@ -17,11 +16,6 @@ import {
 } from 'lucide-react';
 
 const badges = [
-  {
-    title: 'Strong OJS LTS Platform',
-    desc: 'Stable Long-Term Support Architecture',
-    icon: ShieldCheck,
-  },
   {
     title: 'SSL Encrypted',
     desc: 'Bank-Grade Data Security Standards',
