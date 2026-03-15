@@ -27,7 +27,7 @@ export function Hero() {
             Secure and Reliable Journal Hosting for Universities
           </h1>
           <p className="text-sm md:text-base lg:text-xl text-white/90 mb-10 max-w-2xl drop-shadow-lg leading-relaxed font-medium hero-text-responsive">
-            Technical Journals provides secure, scalable, and ethical journal hosting exclusively for University-owned journals. Own your research output with professional institutional branding on the OJS Platform.
+            Technical Journals provides secure, scalable, and ethical journal hosting exclusively for University-owned journals. Own your research output with professional institutional branding on the Hosting services.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-start">
             <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground transition-all duration-300 ease-in-out hover:scale-105 rounded-funky px-8 py-6 text-sm md:text-base font-bold shadow-xl w-full sm:w-auto btn-responsive">
