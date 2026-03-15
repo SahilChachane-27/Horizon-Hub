@@ -17,8 +17,8 @@ const contactOptions = [
   { 
     icon: PhoneCall, 
     title: "Project Hotline", 
-    text: "0000000000",
-    link: "tel:0000000000"
+    text: "+91 70208 92896",
+    link: "tel:+917020892896"
   },
   { 
     icon: MapPin, 
@@ -59,12 +59,12 @@ export default function ContactPage() {
                   <span className="text-[10px] sm:text-sm break-all">support@technicaljournals.org</span>
                 </a>
                 <a 
-                  href="tel:0000000000" 
+                  href="tel:+917020892896" 
                   className="flex items-center gap-2 hover:text-accent transition-colors"
                 >
                   <PhoneCall className="h-4 w-4 sm:h-5 sm:w-5 text-accent" />
                   <span className="font-bold text-xs sm:text-sm">Mobile:</span> 
-                  <span className="text-[10px] sm:text-sm">0000000000</span>
+                  <span className="text-[10px] sm:text-sm">+91 70208 92896</span>
                 </a>
               </div>
             </div>

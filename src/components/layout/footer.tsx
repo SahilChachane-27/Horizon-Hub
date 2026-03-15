@@ -88,9 +88,9 @@ export function Footer() {
           {/* Column 4: Contact */}
           <div className="lg:col-span-1">
             <h5 className="font-bold text-base text-primary-foreground font-headline mb-3">Get in Touch</h5>
-            <div className="text-xs space-y-3 mb-4">
+            <div className="text-xs space-y-3 mb-6">
               <p className="leading-tight"><span className="text-accent font-bold">Email:</span><br/>support@technicaljournals.org</p>
-              <p className="leading-tight"><span className="text-accent font-bold">Mobile:</span><br/>0000000000</p>
+              <p className="leading-tight"><span className="text-accent font-bold">Mobile:</span><br/>+91 70208 92896</p>
             </div>
             <div className="flex space-x-3">
               {socialLinks.map((social, index) => (

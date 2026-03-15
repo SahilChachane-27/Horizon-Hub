@@ -83,12 +83,12 @@ export default function StartJournalPage() {
                   <span className="text-[10px] sm:text-base break-all">support@technicaljournals.org</span>
                 </a>
                 <a 
-                  href="tel:0000000000" 
+                  href="tel:+917020892896" 
                   className="flex items-center gap-2 hover:text-white transition-colors"
                 >
                   <PhoneCall className="h-4 w-4 sm:h-5 sm:w-5 text-accent" />
                   <span className="font-bold text-xs sm:text-base">Mobile:</span> 
-                  <span className="text-[10px] sm:text-base">0000000000</span>
+                  <span className="text-[10px] sm:text-base">+91 70208 92896</span>
                 </a>
               </div>
             </div>
