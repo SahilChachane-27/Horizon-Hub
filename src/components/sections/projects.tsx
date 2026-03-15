@@ -1,10 +1,9 @@
-
 'use client';
 
 import Image from 'next/image';
 import { Card } from '@/components/ui/card';
 import { useFirestore, useCollection } from '@/firebase';
-import { collection, query, where, limit, orderBy } from 'firebase/firestore';
+import { collection, query, where, limit } from 'firebase/firestore';
 import { useMemo } from 'react';
 import { Building2, Star, ExternalLink, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -13,6 +12,7 @@ import Link from 'next/link';
 export function Projects() {
   const db = useFirestore();
 
+  // Fetch journals where isFeatured is explicitly true
   const featuredQuery = useMemo(() => {
     if (!db) return null;
     return query(
