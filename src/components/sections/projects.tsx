@@ -43,15 +43,15 @@ export function Projects() {
         {loading ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[1, 2, 3].map((i) => (
-              <div key={i} className="aspect-[3/4] rounded-none bg-slate-200 animate-pulse shadow-sm" />
+              <div key={i} className="aspect-[4/3] rounded-none bg-slate-200 animate-pulse shadow-sm" />
             ))}
           </div>
         ) : featuredJournals && featuredJournals.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredJournals.map((journal: any, index: number) => (
               <Card key={journal.id} className="overflow-hidden group relative rounded-none shadow-2xl border-none flex flex-col h-full bg-white transition-all duration-500" data-aos="fade-up" data-aos-delay={index * 100}>
-                {/* Image Container */}
-                <div className="relative aspect-[3/4] w-full shrink-0 flex items-center justify-center p-6 bg-secondary/5 overflow-hidden">
+                {/* Image Container - Changed to 4:3 */}
+                <div className="relative aspect-[4/3] w-full shrink-0 flex items-center justify-center p-6 bg-secondary/5 overflow-hidden">
                   {journal.imageUrl ? (
                      <Image
                       src={journal.imageUrl}
@@ -78,7 +78,7 @@ export function Projects() {
                   </div>
                 </div>
 
-                {/* Hover Overlay - Reduced padding and tighter spacing */}
+                {/* Hover Overlay */}
                 <div className="absolute inset-0 flex flex-col justify-end p-5 bg-gradient-to-t from-primary/95 via-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out z-20">
                   <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
                     <h3 className="text-lg font-bold text-white font-headline leading-tight italic mb-1.5 line-clamp-2">

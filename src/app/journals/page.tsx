@@ -208,7 +208,8 @@ export default function JournalsPage() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
                     {filteredJournals.map((journal: any, index: number) => (
                       <Card key={index} className="overflow-hidden group relative rounded-none shadow-lg border-none flex flex-col h-full bg-white transition-all duration-500">
-                        <div className="relative aspect-[3/4] w-full shrink-0 flex items-center justify-center p-4 bg-secondary/5">
+                        {/* Image Container - Changed to 4:3 */}
+                        <div className="relative aspect-[4/3] w-full shrink-0 flex items-center justify-center p-4 bg-secondary/5">
                           {journal.imageUrl ? (
                             <Image 
                               src={journal.imageUrl} 
