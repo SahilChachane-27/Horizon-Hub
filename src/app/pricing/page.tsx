@@ -50,10 +50,10 @@ export default function PricingPage() {
             <Database className="absolute bottom-1/4 right-[10%] w-64 h-64 animate-pulse" />
           </div>
           <div className="container mx-auto px-6 md:px-16 lg:px-32 relative z-10 text-center">
-            <h1 data-aos="fade-up" className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 font-headline italic leading-tight">
+            <h1 data-aos="fade-up" className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 font-headline italic leading-tight">
               Institutional Hosting Plans
             </h1>
-            <p data-aos="fade-up" data-aos-delay="100" className="text-sm sm:text-base md:text-xl text-white/80 max-w-2xl mx-auto mb-12 px-4">
+            <p data-aos="fade-up" data-aos-delay="100" className="text-xs sm:text-sm md:text-lg text-white/80 max-w-2xl mx-auto mb-12 px-4 leading-relaxed font-medium">
               Scalable annual plans designed exclusively for University research ownership.
             </p>
             
@@ -126,7 +126,7 @@ export default function PricingPage() {
               </div>
             ) : (
               <div className="text-center py-20 bg-secondary/30 rounded-[30px] border-2 border-dashed border-primary/5">
-                <CreditCard className="h-12 w-12 text-primary/10 mx-auto mb-4" />
+                <RefreshCw className="h-12 w-12 text-primary/10 mx-auto mb-4" />
                 <p className="text-sm font-bold text-primary/40 uppercase tracking-widest italic">Plans are currently being updated.</p>
               </div>
             )}
@@ -141,7 +141,7 @@ export default function PricingPage() {
                 {[
                   { title: "Contact Form", desc: "Submit requirements through our official channel.", icon: Mail },
                   { title: "University MoU", desc: "Formalize institutional partnership agreements.", icon: FileText },
-                  { title: "Hosting Demo", desc: "Experience our professional OJS setup live.", icon: PlayCircle },
+                  { title: "Hosting Demo", desc: "Experience our professional Hosting setup live.", icon: PlayCircle },
                   { title: "Direct Support", desc: "Connect with our technical team directly.", icon: PhoneCall },
                 ].map((item, i) => (
                   <Card 

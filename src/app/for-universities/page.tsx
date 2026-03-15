@@ -52,7 +52,7 @@ export default function ForUniversitiesPage() {
     {
       num: "03",
       title: "Workflow Setup",
-      desc: "Configuration of Journal Website & end-to-end OJS Platform workflow."
+      desc: "Configuration of Journal Website & end-to-end secure workflow."
     },
     {
       num: "04",
@@ -79,11 +79,11 @@ export default function ForUniversitiesPage() {
         <section className="relative pt-32 pb-24 md:pt-44 md:pb-28 bg-primary text-primary-foreground overflow-hidden">
           <div className="container mx-auto px-6 md:px-16 lg:px-32 relative z-10 text-center">
             <div className="max-w-4xl mx-auto" data-aos="fade-up">
-              <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold font-headline italic leading-tight mb-6">
+              <h1 className="text-xl sm:text-2xl md:text-3xl font-bold font-headline italic leading-tight mb-6">
                 For Universities
               </h1>
               <div className="w-20 h-1 bg-accent mx-auto mb-6"></div>
-              <p className="text-sm sm:text-base md:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed font-medium">
+              <p className="text-xs sm:text-sm md:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed font-medium">
                 Empowering academic institutions to own their research output and enhance global scholarly standing through professional journal management.
               </p>
             </div>
@@ -177,7 +177,7 @@ export default function ForUniversitiesPage() {
 
               <div className="flex flex-wrap justify-center gap-10">
                 {[
-                  { label: "OJS Migration", icon: Rocket },
+                  { label: "Platform Migration", icon: Rocket },
                   { label: "Institutional Ownership", icon: ShieldCheck },
                   { label: "Compliance Setup", icon: CheckCircle2 }
                 ].map((tag, i) => (

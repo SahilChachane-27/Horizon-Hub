@@ -12,10 +12,10 @@ export default function TestimonialsPage() {
       <main className="flex-1 pt-20">
         <section className="py-20 bg-primary text-primary-foreground">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold font-headline mb-4" data-aos="fade-up">
+            <h1 className="text-xl sm:text-2xl md:text-3xl font-bold font-headline mb-4 leading-tight italic" data-aos="fade-up">
               Academic Community Feedback
             </h1>
-            <p className="text-xl opacity-90 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+            <p className="text-xs sm:text-sm md:text-lg opacity-90 max-w-2xl mx-auto leading-relaxed font-medium italic" data-aos="fade-up" data-aos-delay="100">
               Hear from university leadership and research directors who trust our platform for their institutional journals.
             </p>
           </div>

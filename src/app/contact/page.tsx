@@ -42,10 +42,10 @@ export default function ContactPage() {
         <section className="relative flex flex-col items-center justify-center overflow-hidden bg-primary pt-32 pb-16 md:pt-44 md:pb-24 text-center px-6">
           <div className="relative z-10 max-w-7xl mx-auto">
             <div className="space-y-6 md:space-y-8" data-aos="fade-up">
-              <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold leading-tight text-white font-headline max-w-4xl mx-auto">
+              <h1 className="text-xl sm:text-2xl md:text-3xl font-bold leading-tight text-white font-headline max-w-4xl mx-auto">
                 Start Your Journal with Technical Journals
               </h1>
-              <p className="max-w-2xl mx-auto text-sm sm:text-lg md:text-xl text-white/90 font-medium italic px-4">
+              <p className="max-w-2xl mx-auto text-xs sm:text-sm md:text-lg text-white/90 font-medium italic px-4 leading-relaxed">
                 Empowering your institution with secure and sovereign publishing tools.
               </p>
 

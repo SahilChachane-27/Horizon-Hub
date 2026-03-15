@@ -96,12 +96,12 @@ export default function JournalsPage() {
         <section className="relative pt-32 pb-24 md:pt-44 md:pb-28 bg-primary text-primary-foreground overflow-hidden">
           <div className="container mx-auto px-6 md:px-16 lg:px-32 relative z-10 text-center">
             <div className="max-w-4xl mx-auto" data-aos="fade-up">
-              <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold font-headline italic leading-tight mb-6">
+              <h1 className="text-xl sm:text-2xl md:text-3xl font-bold font-headline italic leading-tight mb-6">
                 University Journal Catalog
               </h1>
               <div className="w-20 h-1 bg-accent mx-auto mb-6"></div>
-              <p className="text-sm sm:text-base md:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed font-medium">
-                Browse prestigious academic publications hosted on our secure OJS Platform.
+              <p className="text-xs sm:text-sm md:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed font-medium">
+                Browse prestigious academic publications hosted on our secure Hosting services.
               </p>
             </div>
           </div>

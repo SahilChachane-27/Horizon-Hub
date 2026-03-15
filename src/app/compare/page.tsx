@@ -58,8 +58,8 @@ export default function ComparePage() {
       <main className="flex-1">
         <section className="bg-primary text-white pt-32 pb-16 md:pb-20 text-center relative overflow-hidden">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <h1 className="text-3xl md:text-5xl font-bold mb-6 font-headline italic" data-aos="fade-up">Plan Comparison</h1>
-            <p className="text-base md:text-lg text-white/80 max-w-2xl mx-auto mb-10 font-medium" data-aos="fade-up" data-aos-delay="100">
+            <h1 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 font-headline italic leading-tight" data-aos="fade-up">Plan Comparison</h1>
+            <p className="text-xs sm:text-sm md:text-lg text-white/80 max-w-2xl mx-auto mb-10 font-medium leading-relaxed" data-aos="fade-up" data-aos-delay="100">
               A detailed technical breakdown of our university hosting solutions to help you find the perfect fit.
             </p>
           </div>

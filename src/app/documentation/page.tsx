@@ -28,8 +28,8 @@ export default function DocsPage() {
       <main className="flex-1">
         <section className="bg-primary text-white pt-32 pb-24 text-center">
           <div className="container mx-auto px-4">
-            <h1 className="text-4xl md:text-5xl font-bold font-headline mb-6" data-aos="fade-up">Documentation Hub</h1>
-            <p className="text-xl text-white/80 max-w-2xl mx-auto italic font-medium" data-aos="fade-up" data-aos-delay="100">
+            <h1 className="text-xl sm:text-2xl md:text-3xl font-bold font-headline mb-6 leading-tight italic" data-aos="fade-up">Documentation Hub</h1>
+            <p className="text-xs sm:text-sm md:text-lg text-white/80 max-w-2xl mx-auto italic font-medium leading-relaxed" data-aos="fade-up" data-aos-delay="100">
               Everything you need to know about setting up and running your university journal.
             </p>
           </div>
