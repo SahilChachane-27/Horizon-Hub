@@ -6,14 +6,14 @@ import Link from 'next/link';
 
 export function Hero() {
   return (
-    <section id="hero" className="relative min-h-[80vh] md:min-h-screen flex flex-col items-start justify-center overflow-hidden bg-primary pt-20 md:pt-32">
+    <section id="hero" className="relative min-h-[85vh] md:min-h-screen flex flex-col items-start justify-center overflow-hidden bg-primary pt-20 md:pt-32">
       {/* Background Image Container */}
       <div className="absolute inset-0 z-0">
         <Image
           src="/laptop.jpeg"
           alt="Hero Background"
           fill
-          className="object-cover object-center md:object-right-top"
+          className="object-center md:object-right-top max-[750px]:object-contain min-[751px]:object-cover"
           priority
           data-ai-hint="university research"
         />
@@ -23,8 +23,8 @@ export function Hero() {
 
       <div className="container mx-auto px-6 md:px-16 lg:px-32 relative z-10">
         <div className="relative z-10 max-w-4xl" data-aos="fade-right">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight mb-6 drop-shadow-2xl font-headline text-white leading-tight hero-title-responsive">
-            Secure and Reliable Journal Hosting for Universities.
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight mb-6 drop-shadow-2xl font-headline text-white leading-tight hero-title-responsive">
+            Secure and Reliable Journal Hosting for Universities
           </h1>
           <p className="text-sm md:text-base lg:text-xl text-white/90 mb-10 max-w-2xl drop-shadow-lg leading-relaxed font-medium hero-text-responsive">
             Technical Journals provides secure, scalable, and ethical journal hosting exclusively for University-owned journals. Own your research output with professional institutional branding on the OJS Platform.
