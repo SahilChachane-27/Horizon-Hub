@@ -30,8 +30,8 @@ export default function AboutPage() {
     },
     {
       icon: Cpu,
-      title: "OJS Platform Powered",
-      desc: "Utilizing industry-grade OJS Platform for professional journal management."
+      title: "Platform Powered",
+      desc: "Utilizing industry-grade professional platforms for journal management."
     },
     {
       icon: Globe,
@@ -89,10 +89,10 @@ export default function AboutPage() {
                   </h2>
                   <div className="w-20 h-1 bg-accent mt-2"></div>
                 </div>
-                <p className="text-base text-foreground/80 leading-relaxed font-medium">
+                <p className="text-sm text-foreground/80 leading-relaxed font-medium">
                   Technical Journals is a global platform exclusively developed for Universities and Academic Institutions. Unlike traditional hosting providers, we do not serve private publishers. 
                 </p>
-                <p className="text-base text-foreground/80 leading-relaxed font-medium">
+                <p className="text-sm text-foreground/80 leading-relaxed font-medium">
                   We believe that research belongs to the institutions that foster it. Our objective is to provide a high-performance environment where universities can manage and publish journals under their own unique institutional branding.
                 </p>
                 
@@ -103,7 +103,7 @@ export default function AboutPage() {
                       <CardTitle className="text-primary text-lg font-headline">Our Vision</CardTitle>
                     </CardHeader>
                     <CardContent className="pb-6">
-                      <p className="text-base text-foreground/80 leading-relaxed font-medium">
+                      <p className="text-xs text-foreground/80 leading-relaxed font-medium">
                         To build the world’s most trusted, university-exclusive journal hosting ecosystem that empowers institutions to publish, preserve, and elevate their scholarly research through secure, scalable, and future-ready technologies.
                       </p>
                     </CardContent>
@@ -115,7 +115,7 @@ export default function AboutPage() {
                       <CardTitle className="text-primary text-lg font-headline">Our Mission</CardTitle>
                     </CardHeader>
                     <CardContent className="pb-6">
-                      <p className="text-base text-foreground/80 leading-relaxed font-medium">
+                      <p className="text-xs text-foreground/80 leading-relaxed font-medium">
                         To empower academic institutions with sovereign publishing tools that ensure their research remains accessible, professional, and firmly under institutional control.
                       </p>
                     </CardContent>
