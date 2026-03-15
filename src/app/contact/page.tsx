@@ -23,7 +23,7 @@ const contactOptions = [
   { 
     icon: MapPin, 
     title: "Our Headquarters", 
-    text: "Global Research Hub, India",
+    text: "Nagpur",
     link: null
   },
   { 
