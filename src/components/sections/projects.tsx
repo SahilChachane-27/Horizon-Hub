@@ -27,10 +27,10 @@ export function Projects() {
   return (
     <section id="projects" className="py-16 md:py-24 bg-slate-50/50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-12" data-aos="fade-up">
-          <div className="max-w-2xl">
+        <div className="flex flex-col items-center text-center gap-6 mb-12" data-aos="fade-up">
+          <div className="max-w-3xl">
             <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline italic">Featured Journals</h2>
-            <div className="mt-2 w-20 h-1 bg-accent"></div>
+            <div className="mt-2 w-20 h-1 bg-accent mx-auto"></div>
             <p className="mt-6 text-base md:text-lg text-foreground/70 font-medium leading-relaxed">
               Explore our selection of prestigious, university-owned academic journals hosted on our professional and secure platform.
             </p>
