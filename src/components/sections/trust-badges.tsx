@@ -100,8 +100,8 @@ export function TrustBadges() {
               <div className="mb-3 p-2.5 bg-primary/5 rounded-full group-hover:bg-accent/20 transition-colors">
                 <badge.icon className="h-6 w-6 text-accent" />
               </div>
-              <h3 className="font-bold text-primary text-xs mb-1">{badge.title}</h3>
-              <p className="text-[9px] text-foreground/60 leading-tight">{badge.desc}</p>
+              <h3 className="font-bold text-primary text-sm mb-1">{badge.title}</h3>
+              <p className="text-xs text-foreground/60 leading-tight">{badge.desc}</p>
             </Card>
           ))}
         </div>
