@@ -19,7 +19,7 @@ import {
 const badges = [
   {
     title: 'SSL Encrypted',
-    desc: 'Bank-Grade Data Security Standards',
+    desc: 'Data Security via SSL',
     icon: Lock,
   },
   {
