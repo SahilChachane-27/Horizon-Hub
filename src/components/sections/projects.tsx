@@ -49,65 +49,63 @@ export function Projects() {
         ) : featuredJournals && featuredJournals.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredJournals.map((journal: any, index: number) => (
-              <Card key={journal.id} className="overflow-hidden group relative rounded-none shadow-2xl border-none flex flex-col h-full bg-white transition-all duration-500" data-aos="fade-up" data-aos-delay={index * 100}>
-                {/* Image Container - Changed to 4:3 */}
-                <div className="relative aspect-[4/3] w-full shrink-0 flex items-center justify-center p-6 bg-secondary/5 overflow-hidden">
+              <Card key={journal.id} className="overflow-hidden group relative rounded-none shadow-lg border-none flex flex-col h-full bg-white transition-all duration-500" data-aos="fade-up" data-aos-delay={index * 100}>
+                {/* Image Container - 4:3 Aspect Ratio */}
+                <div className="relative aspect-[4/3] w-full shrink-0 flex items-center justify-center p-4 bg-secondary/5 overflow-hidden">
                   {journal.imageUrl ? (
                      <Image
                       src={journal.imageUrl}
                       alt={journal.name}
                       fill
-                      className="object-contain p-6 transition-transform duration-700 group-hover:scale-110"
+                      className="object-contain p-4 transition-transform duration-700 group-hover:scale-110"
                     />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/5 to-accent/5">
-                      <Building2 className="h-16 w-16 text-primary/10" />
+                      <Building2 className="h-12 w-12 text-primary/10" />
                     </div>
                   )}
                   
                   {/* Static category label (visible when not hovered) */}
-                  <div className="absolute top-4 left-4 z-10 group-hover:opacity-0 transition-opacity duration-300">
-                    <div className="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest shadow-sm text-primary border border-accent/10">
+                  <div className="absolute top-3 left-3 z-10 group-hover:opacity-0 transition-opacity duration-300">
+                    <div className="bg-white/90 backdrop-blur-sm px-2 py-0.5 rounded-full text-[8px] font-black uppercase tracking-widest shadow-sm text-primary">
                       {journal.domain}
                     </div>
                   </div>
 
                   {/* Featured Ribbon */}
-                  <div className="absolute top-4 right-4 bg-accent text-accent-foreground px-3 py-1 text-[10px] font-black rounded-full shadow-lg uppercase tracking-widest flex items-center gap-1.5 z-10">
-                    <Star className="h-3 w-3 fill-current" /> Featured
+                  <div className="absolute top-3 right-3 bg-accent text-accent-foreground px-2 py-0.5 text-[8px] font-black rounded-full shadow-lg uppercase tracking-widest flex items-center gap-1 z-10">
+                    <Star className="h-2 w-2 fill-current" /> Featured
                   </div>
                 </div>
 
-                {/* Hover Overlay */}
+                {/* Hover Overlay - Similar to Journals Page */}
                 <div className="absolute inset-0 flex flex-col justify-end p-5 bg-gradient-to-t from-primary/95 via-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out z-20">
                   <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
-                    <h3 className="text-lg font-bold text-white font-headline leading-tight italic mb-1.5 line-clamp-2">
+                    <h3 className="text-base font-bold text-white font-headline leading-tight italic mb-1 line-clamp-2">
                       {journal.name}
                     </h3>
                     <div className="flex items-center gap-2 mb-3">
-                      <div className="h-3 w-0.5 bg-accent"></div>
+                      <div className="h-4 w-0.5 bg-accent"></div>
                       <p className="text-accent font-black uppercase text-[9px] tracking-widest truncate">
                         {journal.university}
                       </p>
                     </div>
                     
-                    <div className="space-y-1.5 mb-4">
-                      <div className="flex items-center gap-2 text-[9px] text-white/80">
-                        <Tag className="h-2.5 w-2.5 text-accent" /> {journal.issn}
+                    <div className="space-y-1.5 mb-4 opacity-90">
+                      <div className="flex items-center gap-2">
+                        <Tag className="h-2.5 w-2.5 text-accent" />
+                        <p className="text-[9px] font-medium text-white/80">{journal.issn}</p>
                       </div>
-                      <div className="flex items-center gap-2 text-[9px] text-white/80">
-                        <Globe className="h-2.5 w-2.5 text-accent" /> {journal.domain}
+                      <div className="flex items-center gap-2">
+                        <Globe className="h-2.5 w-2.5 text-accent" />
+                        <p className="text-[9px] font-medium text-white/80">{journal.domain}</p>
                       </div>
                     </div>
 
-                    <p className="text-white/70 text-[10px] mb-5 line-clamp-2 italic leading-relaxed">
-                      {journal.description || "Peer-reviewed, Open Access compliant research publication providing high-impact scholarly content."}
-                    </p>
-
                     <div className="pt-3 border-t border-white/10">
-                      <Button asChild className="w-full bg-accent hover:bg-white text-primary font-black uppercase text-[10px] tracking-widest h-10 rounded-xl transition-all duration-300 shadow-lg">
-                        <a href={journal.link} target="_blank" className="flex items-center justify-center gap-2">
-                          View Publication <ExternalLink className="h-3 w-3" />
+                      <Button asChild className="w-full bg-accent hover:bg-white text-primary font-black uppercase text-[10px] tracking-widest h-9 rounded-xl transition-all duration-300">
+                        <a href={journal.link} target="_blank">
+                          View Publication <ExternalLink className="ml-1.5 h-3 w-3" />
                         </a>
                       </Button>
                     </div>
