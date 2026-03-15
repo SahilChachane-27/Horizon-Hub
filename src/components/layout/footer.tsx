@@ -55,15 +55,6 @@ export function Footer() {
             </Link>
             <div className="text-xs leading-relaxed max-w-sm">
               <p>Empowering academic institutions with secure, scalable, and professional journal hosting since 2024.</p>
-              <div className="pt-2">
-                <p className="font-bold text-accent mb-1 uppercase text-[10px] tracking-widest">Platform Info:</p>
-                <ul className="text-[10px] space-y-0.5 opacity-80">
-                  <li>• Exclusively for Universities</li>
-                  <li>• Secure OJS Platform Hosting</li>
-                  <li>• Institutional Branding</li>
-                  <li>• No Private Publishers</li>
-                </ul>
-              </div>
             </div>
             <div className="flex space-x-3">
               {socialLinks.map((social, index) => (
