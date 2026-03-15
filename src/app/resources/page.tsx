@@ -20,39 +20,6 @@ import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export default function ResourcesPage() {
-  const resourceCategories = [
-    {
-      title: "For Authors",
-      icon: FileText,
-      items: [
-        "Manuscript Preparation Guidelines",
-        "Author Agreement Form",
-        "Article Processing Charge (APC) Info",
-        "Submission Checklist"
-      ]
-    },
-    {
-      title: "For Reviewers",
-      icon: Users,
-      items: [
-        "Peer Review Policy",
-        "Reviewer Evaluation Form",
-        "Ethical Guidelines for Reviewers",
-        "Recognition & Certificates"
-      ]
-    },
-    {
-      title: "Editorial Standards",
-      icon: ShieldCheck,
-      items: [
-        "COPE Compliance Guidelines",
-        "Plagiarism Policy (iThenticate)",
-        "Conflict of Interest Policy",
-        "Retraction & Correction Policy"
-      ]
-    }
-  ];
-
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground font-body overflow-x-hidden">
       <Header />
@@ -81,36 +48,8 @@ export default function ResourcesPage() {
           </div>
         </section>
 
-        {/* Main Resource Categories */}
-        <section className="py-16 md:py-24 bg-white">
-          <div className="container mx-auto px-8 md:px-16 lg:px-32">
-            <div className="grid md:grid-cols-3 gap-8">
-              {resourceCategories.map((cat, idx) => (
-                <Card key={idx} className="border-none shadow-xl rounded-[30px] overflow-hidden bg-secondary/30 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 group hover:bg-white border border-transparent hover:border-accent/10" data-aos="fade-up" data-aos-delay={idx * 100}>
-                  <CardHeader className="flex flex-col items-center pb-2">
-                    <div className="p-4 bg-primary/5 rounded-full mb-4 group-hover:bg-accent/10 transition-colors">
-                      <cat.icon className="h-10 w-10 text-primary group-hover:text-accent transition-colors" />
-                    </div>
-                    <CardTitle className="text-2xl text-primary font-bold group-hover:text-accent transition-colors">{cat.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="px-8 pb-8">
-                    <ul className="space-y-4">
-                      {cat.items.map((item, i) => (
-                        <li key={i} className="flex items-start gap-3 group cursor-pointer">
-                          <CheckCircle2 className="h-5 w-5 text-accent shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
-                          <span className="text-foreground/70 text-sm font-medium hover:text-primary transition-colors">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* Downloadable Templates Section */}
-        <section className="py-20 bg-secondary/30 border-y border-border/50">
+        <section className="py-20 bg-white border-b border-border/50">
           <div className="container mx-auto px-8 md:px-16 lg:px-32">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline" data-aos="fade-up">
@@ -126,7 +65,7 @@ export default function ResourcesPage() {
                 { title: "Reviewer Guide", type: "PDF", size: "0.8 MB" },
                 { title: "Ethics Policy", type: "PDF", size: "1.5 MB" }
               ].map((template, idx) => (
-                <div key={idx} className="bg-white p-6 rounded-2xl shadow-md border border-border/50 flex flex-col items-center text-center transition-all hover:shadow-lg hover:-translate-y-1" data-aos="zoom-in" data-aos-delay={idx * 50}>
+                <div key={idx} className="bg-slate-50 p-6 rounded-2xl shadow-md border border-border/50 flex flex-col items-center text-center transition-all hover:shadow-lg hover:-translate-y-1" data-aos="zoom-in" data-aos-delay={idx * 50}>
                   <div className="h-12 w-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
                     <Download className="h-6 w-6 text-accent" />
                   </div>
@@ -152,7 +91,7 @@ export default function ResourcesPage() {
                     Support Documentation
                   </div>
                   <h2 className="text-2xl md:text-4xl font-extrabold font-headline leading-tight">
-                    Technical Guide for OJS Platform
+                    Technical Guide for Journal Platform
                   </h2>
                   <p className="text-base md:text-lg opacity-80 leading-relaxed font-medium">
                     Need help navigating our Journal Management System? Access comprehensive guides on manuscript tracking, reviewer assignment, and production workflows.
