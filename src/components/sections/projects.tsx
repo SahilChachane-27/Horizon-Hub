@@ -12,13 +12,13 @@ import Link from 'next/link';
 export function Projects() {
   const db = useFirestore();
 
-  // Fetch journals where isFeatured is explicitly true, limited to 5 for a single row
+  // Fetch journals where isFeatured is explicitly true, limited to 4 for a more prominent single row
   const featuredQuery = useMemo(() => {
     if (!db) return null;
     return query(
       collection(db, 'journals'), 
       where('isFeatured', '==', true), 
-      limit(5)
+      limit(4)
     );
   }, [db]);
 
@@ -41,71 +41,71 @@ export function Projects() {
         </div>
 
         {loading ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-            {[1, 2, 3, 4, 5].map((i) => (
-              <div key={i} className="aspect-[4/3] rounded-none bg-slate-200 animate-pulse shadow-sm" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[1, 2, 3, 4].map((i) => (
+              <div key={i} className="aspect-[3/4] rounded-none bg-slate-200 animate-pulse shadow-sm" />
             ))}
           </div>
         ) : featuredJournals && featuredJournals.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {featuredJournals.map((journal: any, index: number) => (
               <Card key={journal.id} className="overflow-hidden group relative rounded-none shadow-lg border-none flex flex-col h-full bg-white transition-all duration-500" data-aos="fade-up" data-aos-delay={index * 100}>
-                {/* Image Container - Aspect ratio and styling matched to /journals page */}
-                <div className="relative aspect-[4/3] w-full shrink-0 flex items-center justify-center bg-secondary/5 overflow-hidden">
+                {/* Image Container - Taller and wider for increased presence */}
+                <div className="relative aspect-[3/4] w-full shrink-0 flex items-center justify-center bg-secondary/5 overflow-hidden">
                   {journal.imageUrl ? (
                      <Image
                       src={journal.imageUrl}
                       alt={journal.name}
                       fill
-                      className="object-contain p-2 transition-transform duration-700 group-hover:scale-110"
+                      className="object-contain p-4 transition-transform duration-700 group-hover:scale-110"
                     />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/5 to-accent/5">
-                      <Building2 className="h-12 w-12 text-primary/10" />
+                      <Building2 className="h-16 w-16 text-primary/10" />
                     </div>
                   )}
                   
-                  {/* Category label styling matched to /journals */}
-                  <div className="absolute top-3 left-3 z-10 group-hover:opacity-0 transition-opacity duration-300">
-                    <div className="bg-white/90 backdrop-blur-sm px-2 py-0.5 rounded-full text-[8px] font-black uppercase tracking-widest shadow-sm text-primary">
+                  {/* Category label styling */}
+                  <div className="absolute top-4 left-4 z-10 group-hover:opacity-0 transition-opacity duration-300">
+                    <div className="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest shadow-sm text-primary">
                       {journal.domain}
                     </div>
                   </div>
 
-                  {/* Featured Ribbon styling matched to /journals */}
-                  <div className="absolute top-3 right-3 bg-accent text-accent-foreground px-2 py-0.5 text-[8px] font-black rounded-full shadow-lg uppercase tracking-widest flex items-center gap-1 z-10">
-                    <Star className="h-2 w-2 fill-current" /> Featured
+                  {/* Featured Ribbon styling */}
+                  <div className="absolute top-4 right-4 bg-accent text-accent-foreground px-3 py-1 text-[10px] font-black rounded-full shadow-lg uppercase tracking-widest flex items-center gap-1 z-10">
+                    <Star className="h-2.5 w-2.5 fill-current" /> Featured
                   </div>
                 </div>
 
-                {/* Hover Overlay - Exact typography and spacing from /journals page */}
-                <div className="absolute inset-0 flex flex-col justify-end p-4 bg-gradient-to-t from-primary/95 via-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out z-20">
+                {/* Hover Overlay - Enhanced dimensions and spacing */}
+                <div className="absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-primary/95 via-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out z-20">
                   <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
-                    <h3 className="text-base font-bold text-white font-headline leading-tight italic mb-1 line-clamp-2">
+                    <h3 className="text-lg font-bold text-white font-headline leading-tight italic mb-2 line-clamp-2">
                       {journal.name}
                     </h3>
-                    <div className="flex items-center gap-2 mb-3">
-                      <div className="h-4 w-0.5 bg-accent"></div>
-                      <p className="text-accent font-black uppercase text-[9px] tracking-widest truncate">
+                    <div className="flex items-center gap-2 mb-4">
+                      <div className="h-5 w-0.5 bg-accent"></div>
+                      <p className="text-accent font-black uppercase text-[10px] tracking-widest truncate">
                         {journal.university}
                       </p>
                     </div>
                     
-                    <div className="space-y-1.5 mb-4 opacity-90">
+                    <div className="space-y-2 mb-6 opacity-90">
                       <div className="flex items-center gap-2">
-                        <Tag className="h-2.5 w-2.5 text-accent" />
-                        <p className="text-[9px] font-medium text-white/80">{journal.issn}</p>
+                        <Tag className="h-3 w-3 text-accent" />
+                        <p className="text-[10px] font-medium text-white/80">{journal.issn}</p>
                       </div>
                       <div className="flex items-center gap-2">
-                        <Globe className="h-2.5 w-2.5 text-accent" />
-                        <p className="text-[9px] font-medium text-white/80">{journal.domain}</p>
+                        <Globe className="h-3 w-3 text-accent" />
+                        <p className="text-[10px] font-medium text-white/80">{journal.domain}</p>
                       </div>
                     </div>
 
-                    <div className="pt-3 border-t border-white/10">
-                      <Button asChild className="w-full bg-accent hover:bg-white text-primary font-black uppercase text-[10px] tracking-widest h-9 rounded-xl transition-all duration-300">
-                        <a href={journal.link} target="_blank" className="flex items-center justify-center gap-1.5">
-                          View Journal <ExternalLink className="h-3 w-3" />
+                    <div className="pt-4 border-t border-white/10">
+                      <Button asChild className="w-full bg-accent hover:bg-white text-primary font-black uppercase text-[11px] tracking-widest h-11 rounded-xl transition-all duration-300">
+                        <a href={journal.link} target="_blank" className="flex items-center justify-center gap-2">
+                          View Journal <ExternalLink className="h-4 w-4" />
                         </a>
                       </Button>
                     </div>
