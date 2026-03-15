@@ -12,13 +12,13 @@ import Link from 'next/link';
 export function Projects() {
   const db = useFirestore();
 
-  // Fetch journals where isFeatured is explicitly true
+  // Fetch journals where isFeatured is explicitly true, limited to 5 for a single row
   const featuredQuery = useMemo(() => {
     if (!db) return null;
     return query(
       collection(db, 'journals'), 
       where('isFeatured', '==', true), 
-      limit(6)
+      limit(5)
     );
   }, [db]);
 
@@ -26,7 +26,7 @@ export function Projects() {
 
   return (
     <section id="projects" className="py-16 md:py-24 bg-slate-50/50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1600px]">
         <div className="flex flex-col items-center text-center gap-6 mb-12" data-aos="fade-up">
           <div className="max-w-3xl">
             <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline italic">Featured Journals</h2>
@@ -41,13 +41,13 @@ export function Projects() {
         </div>
 
         {loading ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[1, 2, 3].map((i) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            {[1, 2, 3, 4, 5].map((i) => (
               <div key={i} className="aspect-[4/3] rounded-none bg-slate-200 animate-pulse shadow-sm" />
             ))}
           </div>
         ) : featuredJournals && featuredJournals.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {featuredJournals.map((journal: any, index: number) => (
               <Card key={journal.id} className="overflow-hidden group relative rounded-none shadow-lg border-none flex flex-col h-full bg-white transition-all duration-500" data-aos="fade-up" data-aos-delay={index * 100}>
                 {/* Image Container - 4:3 Aspect Ratio */}
@@ -78,34 +78,34 @@ export function Projects() {
                   </div>
                 </div>
 
-                {/* Hover Overlay - Similar to Journals Page */}
-                <div className="absolute inset-0 flex flex-col justify-end p-5 bg-gradient-to-t from-primary/95 via-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out z-20">
+                {/* Hover Overlay - Consistent with Journals Page */}
+                <div className="absolute inset-0 flex flex-col justify-end p-4 bg-gradient-to-t from-primary/95 via-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out z-20">
                   <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
-                    <h3 className="text-base font-bold text-white font-headline leading-tight italic mb-1 line-clamp-2">
+                    <h3 className="text-sm font-bold text-white font-headline leading-tight italic mb-1 line-clamp-2">
                       {journal.name}
                     </h3>
-                    <div className="flex items-center gap-2 mb-3">
-                      <div className="h-4 w-0.5 bg-accent"></div>
-                      <p className="text-accent font-black uppercase text-[9px] tracking-widest truncate">
+                    <div className="flex items-center gap-2 mb-2">
+                      <div className="h-3 w-0.5 bg-accent"></div>
+                      <p className="text-accent font-black uppercase text-[8px] tracking-widest truncate">
                         {journal.university}
                       </p>
                     </div>
                     
-                    <div className="space-y-1.5 mb-4 opacity-90">
+                    <div className="space-y-1 mb-3 opacity-90">
                       <div className="flex items-center gap-2">
-                        <Tag className="h-2.5 w-2.5 text-accent" />
-                        <p className="text-[9px] font-medium text-white/80">{journal.issn}</p>
+                        <Tag className="h-2 w-2 text-accent" />
+                        <p className="text-[8px] font-medium text-white/80">{journal.issn}</p>
                       </div>
                       <div className="flex items-center gap-2">
-                        <Globe className="h-2.5 w-2.5 text-accent" />
-                        <p className="text-[9px] font-medium text-white/80">{journal.domain}</p>
+                        <Globe className="h-2 w-2 text-accent" />
+                        <p className="text-[8px] font-medium text-white/80">{journal.domain}</p>
                       </div>
                     </div>
 
-                    <div className="pt-3 border-t border-white/10">
-                      <Button asChild className="w-full bg-accent hover:bg-white text-primary font-black uppercase text-[10px] tracking-widest h-9 rounded-xl transition-all duration-300">
+                    <div className="pt-2 border-t border-white/10">
+                      <Button asChild className="w-full bg-accent hover:bg-white text-primary font-black uppercase text-[8px] tracking-widest h-8 rounded-xl transition-all duration-300">
                         <a href={journal.link} target="_blank">
-                          View Publication <ExternalLink className="ml-1.5 h-3 w-3" />
+                          View Publication <ExternalLink className="ml-1 h-2 w-2" />
                         </a>
                       </Button>
                     </div>
