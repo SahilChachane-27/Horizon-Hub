@@ -12,7 +12,8 @@ import {
   Megaphone, 
   BarChart, 
   Library, 
-  Archive 
+  Archive,
+  Presentation
 } from 'lucide-react';
 
 const badges = [
@@ -70,6 +71,11 @@ const badges = [
     title: 'Manuscript Repository',
     desc: 'Professional Archival Services',
     icon: Archive,
+  },
+  {
+    title: 'Integrated Conference Module',
+    desc: 'Easy conference publication',
+    icon: Presentation,
   },
 ];
 
