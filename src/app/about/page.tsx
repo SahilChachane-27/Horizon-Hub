@@ -84,15 +84,15 @@ export default function AboutPage() {
               </div>
               <div className="space-y-8" data-aos="fade-left">
                 <div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">
+                  <h2 className="text-2xl md:text-3xl font-bold text-primary font-headline">
                     Our Academic Mission
                   </h2>
                   <div className="w-20 h-1 bg-accent mt-2"></div>
                 </div>
-                <p className="text-lg text-foreground/80 leading-relaxed font-medium">
+                <p className="text-base text-foreground/80 leading-relaxed font-medium">
                   Technical Journals is a global platform exclusively developed for Universities and Academic Institutions. Unlike traditional hosting providers, we do not serve private publishers. 
                 </p>
-                <p className="text-lg text-foreground/80 leading-relaxed font-medium">
+                <p className="text-base text-foreground/80 leading-relaxed font-medium">
                   We believe that research belongs to the institutions that foster it. Our objective is to provide a high-performance environment where universities can manage and publish journals under their own unique institutional branding.
                 </p>
                 
@@ -100,10 +100,10 @@ export default function AboutPage() {
                   {/* Vision Statement Section */}
                   <Card className="bg-card border-0 border-l-4 border-accent shadow-lg rounded-funky overflow-hidden">
                     <CardHeader className="py-4">
-                      <CardTitle className="text-primary text-xl font-headline">Our Vision</CardTitle>
+                      <CardTitle className="text-primary text-lg font-headline">Our Vision</CardTitle>
                     </CardHeader>
                     <CardContent className="pb-6">
-                      <p className="text-lg text-foreground/80 leading-relaxed font-medium">
+                      <p className="text-base text-foreground/80 leading-relaxed font-medium">
                         To build the world’s most trusted, university-exclusive journal hosting ecosystem that empowers institutions to publish, preserve, and elevate their scholarly research through secure, scalable, and future-ready technologies.
                       </p>
                     </CardContent>
@@ -112,10 +112,10 @@ export default function AboutPage() {
                   {/* Mission Statement Section */}
                   <Card className="bg-card border-0 border-l-4 border-accent shadow-lg rounded-funky overflow-hidden">
                     <CardHeader className="py-4">
-                      <CardTitle className="text-primary text-xl font-headline">Our Mission</CardTitle>
+                      <CardTitle className="text-primary text-lg font-headline">Our Mission</CardTitle>
                     </CardHeader>
                     <CardContent className="pb-6">
-                      <p className="text-lg text-foreground/80 leading-relaxed font-medium">
+                      <p className="text-base text-foreground/80 leading-relaxed font-medium">
                         To empower academic institutions with sovereign publishing tools that ensure their research remains accessible, professional, and firmly under institutional control.
                       </p>
                     </CardContent>
@@ -129,7 +129,7 @@ export default function AboutPage() {
         {/* Key Pillars */}
         <section className="py-20 bg-slate-50">
           <div className="container mx-auto px-8 md:px-16 lg:px-32 text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline mb-4" data-aos="fade-up">
+            <h2 className="text-2xl md:text-3xl font-bold text-primary font-headline mb-4" data-aos="fade-up">
               Key Pillars of Excellence
             </h2>
             <div className="w-20 h-1 bg-accent mx-auto mb-12" data-aos="fade-up"></div>
@@ -141,10 +141,10 @@ export default function AboutPage() {
                     <pillar.icon className="h-8 w-8" />
                   </div>
                   <CardHeader className="p-0 mb-4">
-                    <CardTitle className="text-2xl text-primary font-bold leading-tight">{pillar.title}</CardTitle>
+                    <CardTitle className="text-xl text-primary font-bold leading-tight">{pillar.title}</CardTitle>
                   </CardHeader>
                   <CardContent className="p-0">
-                    <p className="text-foreground/70 leading-relaxed font-medium">{pillar.desc}</p>
+                    <p className="text-foreground/70 text-sm leading-relaxed font-medium">{pillar.desc}</p>
                   </CardContent>
                 </Card>
               ))}
