@@ -3,10 +3,10 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export function About() {
   return (
-    <section id="about" className="py-10 md:py-16 overflow-hidden bg-white">
+    <section id="about" className="py-6 md:py-12 overflow-hidden bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-5 gap-12 items-center">
-          <div className="lg:col-span-2 relative aspect-[4/5] rounded-funky overflow-hidden shadow-2xl" data-aos="fade-right">
+        <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-center">
+          <div className="lg:col-span-2 relative aspect-square rounded-funky overflow-hidden shadow-xl" data-aos="fade-right">
             <Image
               src="/aboutUs.jpeg"
               alt="University Academic Publishing"
@@ -16,41 +16,45 @@ export function About() {
               data-ai-hint="academic publishing"
             />
           </div>
-          <div className="lg:col-span-3 space-y-6" data-aos="fade-left">
+          <div className="lg:col-span-3 space-y-4 md:space-y-6" data-aos="fade-left">
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold text-primary font-headline">
+              <h2 className="text-xl md:text-3xl font-bold text-primary font-headline">
                 About Technical Journals
               </h2>
-              <div className="mt-2 w-20 h-1 bg-accent"></div>
+              <div className="mt-1 md:mt-2 w-16 md:w-20 h-1 bg-accent"></div>
             </div>
-            <p className="text-sm md:text-base text-foreground/80 leading-relaxed font-medium">
-              Technical Journals is a global journal hosting platform exclusively developed for Universities and Academic Institutions. The platform does NOT host journals from private publishers.
-            </p>
-            <p className="text-sm md:text-base text-foreground/80 leading-relaxed font-medium">
-              Our objective is to provide a secure, scalable, and professional OJS Platform based hosting environment where universities can launch, manage, and publish their research journals under their own unique institutional branding.
-            </p>
+            <div className="space-y-3 md:space-y-4">
+              <p className="text-xs md:text-base text-foreground/80 leading-relaxed font-medium">
+                Technical Journals is a global journal hosting platform exclusively developed for Universities and Academic Institutions. The platform does NOT host journals from private publishers.
+              </p>
+              <p className="text-xs md:text-base text-foreground/80 leading-relaxed font-medium">
+                Our objective is to provide a secure, scalable, and professional OJS Platform based hosting environment where universities can launch, manage, and publish research under their own institutional branding.
+              </p>
+            </div>
             
-            <Card className="bg-card border-0 border-l-4 border-accent shadow-lg rounded-funky">
-              <CardHeader className="py-4">
-                <CardTitle className="text-primary text-lg md:text-xl font-headline">Our Vision</CardTitle>
-              </CardHeader>
-              <CardContent className="pb-6">
-                <p className="text-sm text-foreground/80 leading-relaxed font-medium">
-                  To build the world’s most trusted, university-exclusive journal hosting ecosystem that empowers institutions to publish, preserve, and elevate their scholarly research through secure, scalable, and future-ready technologies.
-                </p>
-              </CardContent>
-            </Card>
+            <div className="grid sm:grid-cols-2 gap-4">
+              <Card className="bg-card border-0 border-l-4 border-accent shadow-md rounded-funky overflow-hidden">
+                <CardHeader className="py-2 md:py-3 px-4">
+                  <CardTitle className="text-primary text-base md:text-lg font-headline">Our Vision</CardTitle>
+                </CardHeader>
+                <CardContent className="pb-3 md:pb-4 px-4">
+                  <p className="text-[11px] md:text-sm text-foreground/70 leading-relaxed font-medium">
+                    To build the world’s most trusted, university-exclusive journal hosting ecosystem that empowers institutions to elevate scholarly research.
+                  </p>
+                </CardContent>
+              </Card>
 
-            <Card className="bg-card border-0 border-l-4 border-accent shadow-lg rounded-funky">
-              <CardHeader className="py-4">
-                <CardTitle className="text-primary text-lg md:text-xl font-headline">Our Mission</CardTitle>
-              </CardHeader>
-              <CardContent className="pb-6">
-                <p className="text-sm text-foreground/80 leading-relaxed font-medium">
-                  To empower academic institutions with sovereign publishing tools that ensure their research remains accessible, professional, and firmly under institutional control.
-                </p>
-              </CardContent>
-            </Card>
+              <Card className="bg-card border-0 border-l-4 border-accent shadow-md rounded-funky overflow-hidden">
+                <CardHeader className="py-2 md:py-3 px-4">
+                  <CardTitle className="text-primary text-base md:text-lg font-headline">Our Mission</CardTitle>
+                </CardHeader>
+                <CardContent className="pb-3 md:pb-4 px-4">
+                  <p className="text-[11px] md:text-sm text-foreground/70 leading-relaxed font-medium">
+                    To empower academic institutions with sovereign publishing tools that ensure research remains firmly under institutional control.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </div>
