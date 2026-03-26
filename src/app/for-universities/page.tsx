@@ -57,17 +57,17 @@ export default function ForUniversitiesPage() {
       items: [
         {
           title: "Archive Management",
-          desc: "Organized storage and easy retrieval of past issues to maintain long-term accessibility. We provide structured archiving solutions to preserve valuable research.",
+          desc: "Organized storage and easy retrieval of past issues to maintain long-term accessibility. We provide structured archiving solutions to preserve valuable research for future reference.",
           icon: ShieldCheck
         },
         {
           title: "Journal Promotion",
-          desc: "Tailored sales and marketing strategies to increase subscriptions, readership and citations. Digital campaigns and social media engagement to boost visibility.",
+          desc: "Tailored sales and marketing strategies to increase subscriptions, readership and citations. Digital campaigns, email outreach, and social media engagement to boost visibility.",
           icon: Zap
         },
         {
           title: "Usage Tracking",
-          desc: "Data-driven insights into readership patterns and article performance. Our analytics tools help publishers understand their audience and refine strategies.",
+          desc: "Data-driven insights into readership patterns and article performance. Our analytics tools help publishers understand their audience and refine content strategies.",
           icon: BarChart3
         }
       ]
@@ -79,17 +79,17 @@ export default function ForUniversitiesPage() {
       items: [
         {
           title: "Article Submission",
-          desc: "Streamlined submission process to manage and track manuscripts efficiently. Our platform simplifies workflows, reducing administrative burden.",
+          desc: "Streamlined submission process to manage and track manuscripts efficiently. Our platform simplifies workflows, reducing administrative burden for authors and editors.",
           icon: Rocket
         },
         {
           title: "Peer Review",
-          desc: "Robust peer review management to ensure rigorous evaluation and quality control. Our system facilitates smooth communication between reviewers and authors.",
+          desc: "Robust peer review management to ensure rigorous evaluation and quality control. Our system facilitates smooth communication between reviewers, authors, and editors.",
           icon: Users2
         },
         {
           title: "Plagiarism Check",
-          desc: "Advanced plagiarism detection tools to uphold research integrity. We use industry-standard software to detect overlaps before publication.",
+          desc: "Advanced plagiarism detection tools to uphold research integrity. We use industry-standard software to detect and address potential overlaps before publication.",
           icon: CheckCircle2
         }
       ]
@@ -106,12 +106,12 @@ export default function ForUniversitiesPage() {
         },
         {
           title: "Digital Object Identifiers (DOI)",
-          desc: "Assigning unique identifiers to articles for easy citation and long-term accessibility. DOIs provide permanent links for global discovery.",
+          desc: "Assigning unique identifiers to articles for easy citation and long-term accessibility. DOIs provide permanent links, ensuring research remains easily discoverable.",
           icon: Hash
         },
         {
           title: "Pagination",
-          desc: "Structuring articles for optimal presentation in both print and digital formats. We maintain a professional layout that aligns with academic standards.",
+          desc: "Structuring articles for optimal presentation in both print and digital formats. We maintain a professional layout that aligns with academic publishing standards.",
           icon: Layout
         }
       ]
