@@ -44,28 +44,28 @@ export function Contact() {
   }
 
   return (
-    <div className="max-w-4xl mx-auto overflow-hidden">
-      <div className="bg-white p-8 md:p-12 rounded-funky shadow-2xl border border-border/50" data-aos="fade-up">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold text-primary font-headline italic">Institutional Inquiry</h2>
-          <div className="mt-2 w-16 h-1 bg-accent mx-auto"></div>
-          <p className="text-sm text-foreground/60 mt-4">Tell us about your requirements and our experts will get back to you with a tailored consultation.</p>
+    <div className="max-w-3xl mx-auto overflow-hidden">
+      <div className="bg-white p-6 md:p-8 rounded-funky shadow-2xl border border-border/50" data-aos="fade-up">
+        <div className="text-center mb-6">
+          <h2 className="text-2xl font-bold text-primary font-headline italic">Institutional Inquiry</h2>
+          <div className="mt-1 w-12 h-1 bg-accent mx-auto"></div>
+          <p className="text-[11px] md:text-xs text-foreground/60 mt-3 max-w-lg mx-auto">Tell us about your requirements and our experts will get back to you with a tailored consultation.</p>
         </div>
         
         {isClient && (
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-              <div className="grid md:grid-cols-2 gap-8">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+              <div className="grid md:grid-cols-2 gap-4">
                 <FormField
                   control={form.control}
                   name="name"
                   render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-base font-bold text-primary">Full Name</FormLabel>
+                    <FormItem className="space-y-1">
+                      <FormLabel className="text-[10px] font-black uppercase text-primary/60 tracking-widest">Full Name</FormLabel>
                       <FormControl>
-                        <Input placeholder="Enter your full name" {...field} className="rounded-xl h-12 border-input focus:ring-primary/50" />
+                        <Input placeholder="Enter name" {...field} className="rounded-xl h-10 border-input focus:ring-primary/50" />
                       </FormControl>
-                      <FormMessage />
+                      <FormMessage className="text-[10px]" />
                     </FormItem>
                   )}
                 />
@@ -73,28 +73,28 @@ export function Contact() {
                   control={form.control}
                   name="email"
                   render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-base font-bold text-primary">Email Address</FormLabel>
+                    <FormItem className="space-y-1">
+                      <FormLabel className="text-[10px] font-black uppercase text-primary/60 tracking-widest">Email Address</FormLabel>
                       <FormControl>
-                        <Input placeholder="Enter your email address" {...field} className="rounded-xl h-12 border-input focus:ring-primary/50" />
+                        <Input placeholder="Enter email" {...field} className="rounded-xl h-10 border-input focus:ring-primary/50" />
                       </FormControl>
-                      <FormMessage />
+                      <FormMessage className="text-[10px]" />
                     </FormItem>
                   )}
                 />
               </div>
 
-              <div className="grid md:grid-cols-2 gap-8">
+              <div className="grid md:grid-cols-2 gap-4">
                 <FormField
                   control={form.control}
                   name="phone"
                   render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-base font-bold text-primary">Phone Number</FormLabel>
+                    <FormItem className="space-y-1">
+                      <FormLabel className="text-[10px] font-black uppercase text-primary/60 tracking-widest">Phone Number</FormLabel>
                       <FormControl>
-                        <Input placeholder="Enter your phone number" {...field} className="rounded-xl h-12 border-input focus:ring-primary/50" />
+                        <Input placeholder="Enter phone" {...field} className="rounded-xl h-10 border-input focus:ring-primary/50" />
                       </FormControl>
-                      <FormMessage />
+                      <FormMessage className="text-[10px]" />
                     </FormItem>
                   )}
                 />
@@ -102,12 +102,12 @@ export function Contact() {
                   control={form.control}
                   name="projectType"
                   render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-base font-bold text-primary">Service Category</FormLabel>
+                    <FormItem className="space-y-1">
+                      <FormLabel className="text-[10px] font-black uppercase text-primary/60 tracking-widest">Service Category</FormLabel>
                       <Select onValueChange={field.onChange} defaultValue={field.value}>
                         <FormControl>
-                          <SelectTrigger className="rounded-xl h-12 border-input focus:ring-primary/50">
-                            <SelectValue placeholder="Select a service type" />
+                          <SelectTrigger className="rounded-xl h-10 border-input focus:ring-primary/50">
+                            <SelectValue placeholder="Select type" />
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent>
@@ -118,7 +118,7 @@ export function Contact() {
                           <SelectItem value="indexing">Indexing & DOI Support</SelectItem>
                         </SelectContent>
                       </Select>
-                      <FormMessage />
+                      <FormMessage className="text-[10px]" />
                     </FormItem>
                   )}
                 />
@@ -128,16 +128,16 @@ export function Contact() {
                 control={form.control}
                 name="message"
                 render={({ field }) => (
-                  <FormItem>
-                    <FormLabel className="text-base font-bold text-primary">Additional Details</FormLabel>
+                  <FormItem className="space-y-1">
+                    <FormLabel className="text-[10px] font-black uppercase text-primary/60 tracking-widest">Additional Details</FormLabel>
                     <FormControl>
                       <Textarea 
-                        placeholder="Tell us about your institutional requirements, journal scope, or migration needs..." 
-                        className="rounded-xl min-h-[150px] border-input focus:ring-primary/50" 
+                        placeholder="Institutional requirements, journal scope, or migration needs..." 
+                        className="rounded-xl min-h-[80px] border-input focus:ring-primary/50" 
                         {...field} 
                       />
                     </FormControl>
-                    <FormMessage />
+                    <FormMessage className="text-[10px]" />
                   </FormItem>
                 )}
               />
@@ -145,7 +145,7 @@ export function Contact() {
               <Button 
                 type="submit" 
                 size="lg" 
-                className="w-full bg-primary hover:bg-primary/90 text-accent rounded-funky py-2 sm:py-3 md:py-6 text-sm sm:text-base md:text-xl font-bold shadow-xl transition-all hover:scale-[1.01]"
+                className="w-full bg-primary hover:bg-primary/90 text-accent rounded-funky py-3 text-xs md:text-sm font-bold shadow-xl transition-all hover:scale-[1.01]"
               >
                 Request Technical Consultation
               </Button>
