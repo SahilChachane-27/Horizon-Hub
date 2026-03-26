@@ -28,11 +28,11 @@ export function About() {
                 Technical Journals is a global journal hosting platform exclusively developed for Universities and Academic Institutions. The platform does NOT host journals from private publishers.
               </p>
               <p className="text-xs md:text-base text-foreground/80 leading-relaxed font-medium">
-                Our objective is to provide a secure, scalable, and professional OJS Platform based hosting environment where universities can launch, manage, and publish research under their own institutional branding.
+                Our objective is to provide a secure, scalable, and professional OJS Platform based hosting environment where universities can launch, manage, and publish research under their own unique institutional branding.
               </p>
             </div>
             
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="flex flex-col gap-4">
               <Card className="bg-card border-0 border-l-4 border-accent shadow-md rounded-funky overflow-hidden">
                 <CardHeader className="py-2 md:py-3 px-4">
                   <CardTitle className="text-primary text-base md:text-lg font-headline">Our Vision</CardTitle>
