@@ -191,7 +191,7 @@ export default function ForUniversitiesPage() {
               </p>
               <div className="mt-4 w-24 h-1 bg-accent mx-auto mb-8" data-aos="fade-up"></div>
               <p className="text-foreground/70 text-sm md:text-base leading-relaxed font-medium" data-aos="fade-up">
-                At Technical Journals, we are committed to supporting publishers in improving the quality, visibility, and accessibility of their academic and scholarly content. By offering a comprehensive suite of services, we ensure that journals meet the highest publishing standards while reaching the widest possible audience. Our expertise spans the entire publishing lifecycle—from manuscript submission to global discoverability—helping publishers enhance their impact in the academic community.
+                At IndianJournals.com, we are committed to supporting publishers in improving the quality, visibility, and accessibility of their academic and scholarly content. By offering a comprehensive suite of services, we ensure that journals meet the highest publishing standards while reaching the widest possible audience. Our expertise spans the entire publishing lifecycle—from manuscript submission to global discoverability—helping publishers enhance their impact in the academic community.
               </p>
             </div>
 
@@ -231,7 +231,7 @@ export default function ForUniversitiesPage() {
 
             <div className="mt-20 p-10 bg-secondary/30 rounded-funky border border-primary/5 text-center max-w-4xl mx-auto" data-aos="fade-up">
               <p className="text-sm md:text-base text-foreground/80 leading-relaxed italic">
-                By partnering with Technical Journals, publishers can focus on producing quality research while we take care of the technical, editorial, and promotional aspects of journal management. Together, we can advance the reach and impact of scholarship on a global scale.
+                By partnering with IndianJournals.com, publishers can focus on producing quality research while we take care of the technical, editorial, and promotional aspects of journal management. Together, we can advance the reach and impact of Indian scholarship on a global scale.
               </p>
             </div>
           </div>
@@ -289,7 +289,7 @@ export default function ForUniversitiesPage() {
                 <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-extrabold rounded-funky px-14 py-8 text-lg shadow-xl shadow-accent/20 transition-all hover:scale-105">
                   <Link href="/contact">Inquire Now</Link>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="border-white/20 text-white hover:bg-white hover:text-primary rounded-funky px-14 py-8 text-lg font-bold transition-all hover:scale-105">
+                <Button asChild size="lg" variant="outline" className="border-white/20 text-white rounded-funky px-14 py-8 text-lg font-bold transition-all">
                   <Link href="/pricing">View Packages</Link>
                 </Button>
               </div>
