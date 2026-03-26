@@ -87,46 +87,46 @@ export default function ResourcesPage() {
           </div>
         </section>
 
-        {/* Technical Documentation Section */}
-        <section className="py-12 md:py-24 bg-white">
+        {/* Technical Documentation Section - Reduced Size */}
+        <section className="py-10 md:py-16 bg-white">
           <div className="container mx-auto px-4 md:px-16 lg:px-32">
-            <Card className="bg-primary text-primary-foreground p-6 md:p-12 lg:p-16 rounded-[30px] md:rounded-[40px] overflow-hidden relative shadow-2xl border-none" data-aos="fade-up">
-              <div className="relative z-10 grid lg:grid-cols-2 gap-10 md:gap-12 items-center">
-                <div className="space-y-6">
-                  <div className="inline-flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full text-accent font-bold text-xs uppercase tracking-widest">
-                    <LifeBuoy className="h-4 w-4" />
+            <Card className="bg-primary text-primary-foreground p-6 md:p-10 lg:p-12 rounded-[30px] md:rounded-[40px] overflow-hidden relative shadow-2xl border-none" data-aos="fade-up">
+              <div className="relative z-10 grid lg:grid-cols-2 gap-8 md:gap-10 items-center">
+                <div className="space-y-4 md:space-y-6">
+                  <div className="inline-flex items-center gap-2 bg-white/10 px-3 py-1.5 rounded-full text-accent font-bold text-[10px] md:text-xs uppercase tracking-widest">
+                    <LifeBuoy className="h-3.5 w-3.5" />
                     Support Documentation
                   </div>
-                  <h2 className="text-2xl md:text-4xl font-extrabold font-headline leading-tight italic">
+                  <h2 className="text-xl md:text-3xl font-extrabold font-headline leading-tight italic">
                     Technical Guide for Scholar JMS
                   </h2>
-                  <p className="text-base md:text-lg opacity-80 leading-relaxed font-medium italic">
+                  <p className="text-sm md:text-base opacity-80 leading-relaxed font-medium italic">
                     Need help navigating our Journal Management System? Access comprehensive guides on manuscript tracking, reviewer assignment, and production workflows.
                   </p>
-                  <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                    <Button size="lg" className="w-full sm:w-auto bg-accent hover:bg-accent/90 text-accent-foreground font-extrabold rounded-funky px-8 md:px-14 py-4 md:py-8 text-sm md:text-lg shadow-xl shadow-accent/20 transition-all hover:scale-105 h-auto">
+                  <div className="flex flex-col sm:flex-row gap-3 pt-2">
+                    <Button size="lg" className="w-full sm:w-auto bg-accent hover:bg-accent/90 text-accent-foreground font-extrabold rounded-funky px-6 md:px-10 py-3 md:py-5 text-xs md:text-sm shadow-xl shadow-accent/20 transition-all hover:scale-105 h-auto">
                       Technical Guides
                     </Button>
-                    <Button variant="outline" size="lg" className="w-full sm:w-auto border-white/20 text-white rounded-funky px-8 md:px-14 py-4 md:py-8 text-sm md:text-lg font-bold h-auto hover:bg-transparent hover:text-white">
+                    <Button variant="outline" size="lg" className="w-full sm:w-auto border-white/20 text-white rounded-funky px-6 md:px-10 py-3 md:py-5 text-xs md:text-sm font-bold h-auto hover:bg-transparent hover:text-white">
                       Video Tutorials
                     </Button>
                   </div>
                 </div>
-                <div className="relative aspect-video rounded-2xl md:rounded-3xl overflow-hidden border-4 md:border-8 border-white/5 shadow-2xl">
+                <div className="relative aspect-video rounded-xl md:rounded-2xl overflow-hidden border-2 md:border-4 border-white/5 shadow-2xl">
                   <Image
                     src="/ResearchPsychology.jpg"
                     alt="Technical Support"
                     fill
                     className="object-cover"
                   />
-                  <div className="absolute inset-0 bg-primary/20 backdrop-blur-[2px] flex items-center justify-center">
-                    <div className="w-14 h-14 md:w-20 md:h-20 bg-accent rounded-full flex items-center justify-center shadow-2xl cursor-pointer hover:scale-110 transition-transform">
-                      <div className="w-0 h-0 border-t-[8px] md:border-t-[12px] border-t-transparent border-l-[14px] md:border-l-[20px] border-l-primary border-b-[8px] md:border-b-[12px] border-b-transparent ml-1 md:ml-2"></div>
+                  <div className="absolute inset-0 bg-primary/20 backdrop-blur-[1px] flex items-center justify-center">
+                    <div className="w-12 h-12 md:w-16 md:h-16 bg-accent rounded-full flex items-center justify-center shadow-2xl cursor-pointer hover:scale-110 transition-transform">
+                      <div className="w-0 h-0 border-t-[6px] md:border-t-[10px] border-t-transparent border-l-[10px] md:border-l-[16px] border-l-primary border-b-[6px] md:border-b-[10px] border-b-transparent ml-1"></div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="absolute top-0 right-0 w-64 md:w-96 h-64 md:h-96 bg-accent/5 rounded-full -mr-32 md:-mr-48 -mt-32 md:-mt-48 blur-2xl md:blur-3xl"></div>
+              <div className="absolute top-0 right-0 w-48 md:w-64 h-48 md:h-64 bg-accent/5 rounded-full -mr-24 md:-mr-32 -mt-24 md:-mt-32 blur-xl md:blur-2xl"></div>
             </Card>
           </div>
         </section>
