@@ -275,33 +275,33 @@ export default function ForUniversitiesPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-24 bg-primary text-white border-y border-border/50 relative overflow-hidden">
+        <section className="py-12 md:py-16 bg-primary text-white border-y border-border/50 relative overflow-hidden">
           <div className="container mx-auto px-8 md:px-16 lg:px-32 text-center relative z-10">
             <div className="max-w-4xl mx-auto" data-aos="zoom-in">
-              <h2 className="text-3xl md:text-5xl font-bold font-headline mb-6">
+              <h2 className="text-2xl md:text-3xl font-bold font-headline mb-4">
                 Start Your Research Journal Today
               </h2>
-              <p className="text-xl text-white/70 mb-12 font-medium">
+              <p className="text-sm md:text-base text-white/70 mb-8 font-medium">
                 Contact our institutional partnership team to discuss MoU formalities and technical demo setup for your university.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
-                <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-extrabold rounded-funky px-14 py-8 text-lg shadow-xl shadow-accent/20 transition-all hover:scale-105">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+                <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-extrabold rounded-funky px-8 py-4 text-base shadow-lg shadow-accent/20 transition-all hover:scale-105 h-auto">
                   <Link href="/contact">Inquire Now</Link>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="border-white/20 text-white rounded-funky px-14 py-8 text-lg font-bold transition-all">
+                <Button asChild size="lg" variant="outline" className="border-white/20 text-white rounded-funky px-8 py-4 text-base font-bold transition-all h-auto">
                   <Link href="/pricing">View Packages</Link>
                 </Button>
               </div>
 
-              <div className="flex flex-wrap justify-center gap-10">
+              <div className="flex flex-wrap justify-center gap-6 md:gap-10">
                 {[
                   { label: "Platform Migration", icon: Rocket },
                   { label: "Institutional Ownership", icon: ShieldCheck },
                   { label: "Compliance Setup", icon: CheckCircle2 }
                 ].map((tag, i) => (
-                  <div key={i} className="flex items-center gap-3 text-sm font-black text-white/40 uppercase tracking-[0.2em]">
-                    <tag.icon className="h-5 w-5 text-accent" />
+                  <div key={i} className="flex items-center gap-2 text-[10px] md:text-xs font-black text-white/40 uppercase tracking-[0.2em]">
+                    <tag.icon className="h-4 w-4 text-accent" />
                     <span>{tag.label}</span>
                   </div>
                 ))}
