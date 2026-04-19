@@ -78,7 +78,7 @@ export function Header() {
           <div className="xl:hidden flex items-center gap-4">
             {isClient && (
               <>
-                <Button asChild variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground h-10 px-4 rounded-funky sm:flex hidden">
+                <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90 h-10 px-4 rounded-funky sm:flex hidden font-bold border-none">
                   <Link href="/contact">Contact</Link>
                 </Button>
                 <Sheet>
