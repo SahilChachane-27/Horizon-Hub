@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Mail } from 'lucide-react';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
@@ -24,7 +24,6 @@ const navLinks = [
   { href: '/for-universities', label: 'For Universities' },
   { href: '/resources', label: 'Resources' },
   { href: '/pricing', label: 'Subscription Plans' },
-  { href: '/contact', label: 'Contact Us' },
 ];
 
 export function Header() {
@@ -61,7 +60,7 @@ export function Header() {
             </div>
           </Link>
           
-          <div className="hidden xl:flex items-center">
+          <div className="hidden xl:flex items-center gap-8">
             <nav className="flex items-center gap-6">
               {navLinks.map((link, idx) => {
                 return (
@@ -71,46 +70,59 @@ export function Header() {
                 );
               })}
             </nav>
+            <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-funky font-bold px-6 h-10 transition-transform hover:scale-105">
+              <Link href="/contact">Contact Us</Link>
+            </Button>
           </div>
 
-          <div className="xl:hidden flex items-center">
+          <div className="xl:hidden flex items-center gap-4">
             {isClient && (
-              <Sheet>
-                <SheetTrigger asChild>
-                  <Button variant="ghost" size="icon" className="text-white hover:bg-white/10 h-12 w-12">
-                    <Menu className="h-8 w-8" />
-                    <span className="sr-only">Toggle navigation</span>
-                  </Button>
-                </SheetTrigger>
-                <SheetContent side="right" className="bg-primary border-l-0 text-white w-[85%] sm:w-80 p-6 overflow-y-auto">
-                  <SheetHeader className="text-left mb-8 pr-8">
-                    <SheetTitle className="sr-only">Technical Journals</SheetTitle>
-                    <div className="relative h-12 w-48 mb-4">
-                      <Image 
-                        src="/JTlogoUpdated.png" 
-                        alt="Technical Journals Logo" 
-                        fill 
-                        className="object-contain object-left"
-                      />
-                    </div>
-                    <SheetDescription className="sr-only">
-                      Technical Journals Portal Navigation
-                    </SheetDescription>
-                  </SheetHeader>
-                  <nav className="flex flex-col items-start space-y-1">
-                    {navLinks.map((link, idx) => (
-                      <SheetClose asChild key={idx}>
-                        <Link 
-                          href={link.href!} 
-                          className="text-white/80 hover:text-accent font-medium py-4 border-b border-white/5 w-full transition-colors"
-                        >
-                          {link.label}
-                        </Link>
-                      </SheetClose>
-                    ))}
-                  </nav>
-                </SheetContent>
-              </Sheet>
+              <>
+                <Button asChild variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground h-10 px-4 rounded-funky sm:flex hidden">
+                  <Link href="/contact">Contact</Link>
+                </Button>
+                <Sheet>
+                  <SheetTrigger asChild>
+                    <Button variant="ghost" size="icon" className="text-white hover:bg-white/10 h-12 w-12">
+                      <Menu className="h-8 w-8" />
+                      <span className="sr-only">Toggle navigation</span>
+                    </Button>
+                  </SheetTrigger>
+                  <SheetContent side="right" className="bg-primary border-l-0 text-white w-[85%] sm:w-80 p-6 overflow-y-auto">
+                    <SheetHeader className="text-left mb-8 pr-8">
+                      <SheetTitle className="sr-only">Technical Journals</SheetTitle>
+                      <div className="relative h-12 w-48 mb-4">
+                        <Image 
+                          src="/JTlogoUpdated.png" 
+                          alt="Technical Journals Logo" 
+                          fill 
+                          className="object-contain object-left"
+                        />
+                      </div>
+                      <SheetDescription className="sr-only">
+                        Technical Journals Portal Navigation
+                      </SheetDescription>
+                    </SheetHeader>
+                    <nav className="flex flex-col items-start space-y-1 mb-8">
+                      {navLinks.map((link, idx) => (
+                        <SheetClose asChild key={idx}>
+                          <Link 
+                            href={link.href!} 
+                            className="text-white/80 hover:text-accent font-medium py-4 border-b border-white/5 w-full transition-colors"
+                          >
+                            {link.label}
+                          </Link>
+                        </SheetClose>
+                      ))}
+                    </nav>
+                    <SheetClose asChild>
+                      <Button asChild className="w-full bg-accent text-accent-foreground font-bold h-14 rounded-funky">
+                        <Link href="/contact">Get in Touch</Link>
+                      </Button>
+                    </SheetClose>
+                  </SheetContent>
+                </Sheet>
+              </>
             )}
           </div>
         </div>
