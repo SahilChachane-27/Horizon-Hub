@@ -6,12 +6,9 @@ import { ScrollToTop } from '@/components/layout/scroll-to-top';
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { 
-  Shield, 
   Globe, 
   Cpu, 
-  BookOpen, 
   School, 
-  Landmark, 
   Scale
 } from 'lucide-react';
 
@@ -44,7 +41,7 @@ export default function AboutPage() {
     <div className="flex flex-col min-h-screen bg-background text-foreground font-body overflow-x-hidden">
       <Header />
       <main className="flex-1">
-        {/* Hero Section - Standardized Banner */}
+        {/* Hero Section */}
         <section className="relative pt-24 pb-16 md:pt-32 md:pb-20 bg-primary text-primary-foreground overflow-hidden">
           <div className="container mx-auto px-6 md:px-16 lg:px-32 relative z-10 text-center">
             <div className="max-w-4xl mx-auto" data-aos="fade-up">
@@ -97,7 +94,6 @@ export default function AboutPage() {
                 </p>
                 
                 <div className="grid gap-6">
-                  {/* Vision Statement Section */}
                   <Card className="bg-card border-0 border-l-4 border-accent shadow-lg rounded-funky overflow-hidden">
                     <CardHeader className="py-4">
                       <CardTitle className="text-primary text-lg font-headline">Our Vision</CardTitle>
@@ -109,7 +105,6 @@ export default function AboutPage() {
                     </CardContent>
                   </Card>
 
-                  {/* Mission Statement Section */}
                   <Card className="bg-card border-0 border-l-4 border-accent shadow-lg rounded-funky overflow-hidden">
                     <CardHeader className="py-4">
                       <CardTitle className="text-primary text-lg font-headline">Our Mission</CardTitle>

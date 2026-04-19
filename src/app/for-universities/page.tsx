@@ -13,7 +13,6 @@ import {
   BookOpen,
   Rocket,
   ShieldCheck,
-  Check,
   Zap,
   Globe,
   Database,
@@ -156,7 +155,7 @@ export default function ForUniversitiesPage() {
       <Header />
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative pt-32 pb-24 md:pt-44 md:pb-28 bg-primary text-primary-foreground overflow-hidden">
+        <section className="relative pt-32 pb-24 md:pt-40 md:pb-28 bg-primary text-primary-foreground overflow-hidden">
           <div className="container mx-auto px-6 md:px-16 lg:px-32 relative z-10 text-center">
             <div className="max-w-4xl mx-auto" data-aos="fade-up">
               <h1 className="text-xl sm:text-2xl md:text-3xl font-bold font-headline italic leading-tight mb-6">
@@ -164,7 +163,7 @@ export default function ForUniversitiesPage() {
               </h1>
               <div className="w-20 h-1 bg-accent mx-auto mb-6"></div>
               <p className="text-xs sm:text-sm md:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed font-medium">
-                Empowering academic institutions to own their research output and enhance global scholarly standing through professional journal management.
+                Empowering academic institutions to own their research output and enhance global scholarly standing through Technical Journals platform technology.
               </p>
             </div>
           </div>
@@ -180,45 +179,45 @@ export default function ForUniversitiesPage() {
         </section>
 
         {/* Publisher Services Section */}
-        <section className="py-20 bg-white">
+        <section className="py-16 bg-white">
           <div className="container mx-auto px-8 md:px-16 lg:px-32">
-            <div className="text-center mb-16 max-w-4xl mx-auto">
+            <div className="text-center mb-12 max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline" data-aos="fade-up">
                 Publisher Services
               </h2>
-              <p className="text-accent font-bold uppercase tracking-widest text-xs mt-2 mb-6" data-aos="fade-up">
+              <p className="text-accent font-bold uppercase tracking-widest text-[10px] mt-2 mb-4" data-aos="fade-up">
                 Enhancing the Quality and Reach of Global Research
               </p>
-              <div className="mt-4 w-24 h-1 bg-accent mx-auto mb-8" data-aos="fade-up"></div>
-              <p className="text-foreground/70 text-sm md:text-base leading-relaxed font-medium" data-aos="fade-up">
-                At Technical Journals, we are committed to supporting publishers in improving the quality, visibility, and accessibility of their academic and scholarly content. By offering a comprehensive suite of services, we ensure that journals meet the highest publishing standards while reaching the widest possible audience. Our expertise spans the entire publishing lifecycle—from manuscript submission to global discoverability—helping publishers enhance their impact in the academic community.
+              <div className="mt-2 w-20 h-1 bg-accent mx-auto mb-6" data-aos="fade-up"></div>
+              <p className="text-foreground/70 text-xs md:text-sm leading-relaxed font-medium" data-aos="fade-up">
+                At Technical Journals, we are committed to supporting publishers in improving the quality and accessibility of academic content. By offering a comprehensive suite of services, we ensure that journals meet the highest standards while reaching a global audience. Our expertise spans the entire publishing lifecycle—from manuscript submission to discoverability.
               </p>
             </div>
 
-            <div className="space-y-24">
+            <div className="space-y-16">
               {serviceCategories.map((category, catIdx) => (
                 <div key={catIdx} data-aos="fade-up">
-                  <div className="flex items-center gap-4 mb-10 border-b border-slate-100 pb-6">
-                    <div className="h-12 w-12 rounded-xl bg-primary flex items-center justify-center shrink-0 shadow-lg">
-                      <category.icon className="h-6 w-6 text-accent" />
+                  <div className="flex items-center gap-3 mb-8 border-b border-slate-100 pb-4">
+                    <div className="h-10 w-10 rounded-xl bg-primary flex items-center justify-center shrink-0 shadow-lg">
+                      <category.icon className="h-5 w-5 text-accent" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-primary font-headline italic">{category.title}</h3>
-                      <p className="text-xs text-muted-foreground font-bold uppercase tracking-wider">{category.description}</p>
+                      <h3 className="text-xl font-bold text-primary font-headline italic">{category.title}</h3>
+                      <p className="text-[9px] text-muted-foreground font-bold uppercase tracking-wider">{category.description}</p>
                     </div>
                   </div>
                   
-                  <div className="grid md:grid-cols-3 gap-8">
+                  <div className="grid md:grid-cols-3 gap-6">
                     {category.items.map((item, itemIdx) => (
                       <Card key={itemIdx} className="border-none shadow-xl rounded-funky bg-slate-50 hover:bg-white transition-all duration-500 group">
                         <CardHeader className="pb-2">
-                          <div className="h-10 w-10 rounded-lg bg-white shadow-sm flex items-center justify-center mb-4 group-hover:bg-accent transition-colors">
-                            <item.icon className="h-5 w-5 text-accent group-hover:text-white" />
+                          <div className="h-8 w-8 rounded-lg bg-white shadow-sm flex items-center justify-center mb-3 group-hover:bg-accent transition-colors">
+                            <item.icon className="h-4 w-4 text-accent group-hover:text-white" />
                           </div>
-                          <CardTitle className="text-lg font-bold text-primary italic leading-tight">{item.title}</CardTitle>
+                          <CardTitle className="text-base font-bold text-primary italic leading-tight">{item.title}</CardTitle>
                         </CardHeader>
                         <CardContent>
-                          <p className="text-xs text-foreground/70 leading-relaxed font-medium">
+                          <p className="text-[11px] text-foreground/70 leading-relaxed font-medium">
                             {item.desc}
                           </p>
                         </CardContent>
@@ -229,42 +228,42 @@ export default function ForUniversitiesPage() {
               ))}
             </div>
 
-            <div className="mt-20 p-10 bg-secondary/30 rounded-funky border border-primary/5 text-center max-w-4xl mx-auto" data-aos="fade-up">
-              <p className="text-sm md:text-base text-foreground/80 leading-relaxed italic">
-                By partnering with Technical Journals, publishers can focus on producing quality research while we take care of the technical, editorial, and promotional aspects of journal management. Together, we can advance the reach and impact of institutional scholarship on a global scale.
+            <div className="mt-16 p-8 bg-secondary/30 rounded-funky border border-primary/5 text-center max-w-4xl mx-auto" data-aos="fade-up">
+              <p className="text-xs md:text-sm text-foreground/80 leading-relaxed italic">
+                By partnering with Technical Journals, publishers can focus on producing quality research while we take care of the technical, editorial, and promotional aspects of journal management.
               </p>
             </div>
           </div>
         </section>
 
         {/* Steps Section */}
-        <section className="py-20 bg-slate-50">
+        <section className="py-16 bg-slate-50">
           <div className="container mx-auto px-8 md:px-16 lg:px-32">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline" data-aos="fade-up">
+            <div className="text-center mb-12">
+              <h2 className="text-2xl md:text-3xl font-bold text-primary font-headline" data-aos="fade-up">
                 Steps to Start Your Journal
               </h2>
-              <div className="mt-4 w-24 h-1 bg-accent mx-auto" data-aos="fade-up"></div>
+              <div className="mt-2 w-16 h-1 bg-accent mx-auto" data-aos="fade-up"></div>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {steps.map((step, idx) => (
                 <Card 
                   key={idx} 
-                  className="border-none shadow-xl rounded-[30px] overflow-hidden bg-white transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 group border border-transparent hover:border-accent/10" 
+                  className="border-none shadow-xl rounded-[30px] overflow-hidden bg-white transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 group border border-transparent hover:border-accent/10" 
                   data-aos="fade-up" 
                   data-aos-delay={idx * 100}
                 >
-                  <CardHeader className="flex flex-col items-start gap-2 pb-2">
-                    <span className="text-6xl font-black text-accent/10 font-headline select-none group-hover:text-accent transition-colors duration-500">
+                  <CardHeader className="flex flex-col items-start gap-1 pb-2">
+                    <span className="text-5xl font-black text-accent/10 font-headline select-none group-hover:text-accent transition-colors duration-500">
                       {step.num}
                     </span>
-                    <CardTitle className="text-xl text-primary font-bold leading-tight group-hover:text-accent transition-colors duration-500">
+                    <CardTitle className="text-lg text-primary font-bold leading-tight group-hover:text-accent transition-colors duration-500">
                       {step.title}
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-foreground/70 text-sm leading-relaxed font-medium">
+                    <p className="text-foreground/70 text-xs leading-relaxed font-medium">
                       {step.desc}
                     </p>
                   </CardContent>
@@ -274,11 +273,11 @@ export default function ForUniversitiesPage() {
           </div>
         </section>
 
-        {/* CTA Section - Reduced Size */}
+        {/* CTA Section - Compact */}
         <section className="py-12 md:py-16 bg-primary text-white border-y border-border/50 relative overflow-hidden">
           <div className="container mx-auto px-8 md:px-16 lg:px-32 text-center relative z-10">
             <div className="max-w-4xl mx-auto" data-aos="zoom-in">
-              <h2 className="text-xl md:text-2xl font-bold font-headline mb-4 italic">
+              <h2 className="text-xl md:text-2xl font-bold font-headline mb-3 italic">
                 Start Your Research Journal Today
               </h2>
               <p className="text-xs md:text-sm text-white/70 mb-8 font-medium max-w-2xl mx-auto">
@@ -286,10 +285,10 @@ export default function ForUniversitiesPage() {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-extrabold rounded-funky px-8 py-3 text-sm shadow-lg shadow-accent/20 transition-all hover:scale-105 h-auto">
+                <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-extrabold rounded-funky px-8 py-3 text-xs shadow-xl shadow-accent/20 transition-all hover:scale-105 h-auto">
                   <Link href="/contact">Inquire Now</Link>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="border-white/20 text-white rounded-funky px-8 py-3 text-sm font-bold h-auto cursor-default transition-none">
+                <Button asChild size="lg" variant="outline" className="border-white/20 text-white rounded-funky px-8 py-3 text-xs font-bold h-auto cursor-default">
                   <Link href="/pricing">View Packages</Link>
                 </Button>
               </div>
@@ -300,8 +299,8 @@ export default function ForUniversitiesPage() {
                   { label: "Institutional Ownership", icon: ShieldCheck },
                   { label: "Compliance Setup", icon: CheckCircle2 }
                 ].map((tag, i) => (
-                  <div key={i} className="flex items-center gap-2 text-[8px] md:text-[10px] font-black uppercase tracking-[0.2em]">
-                    <tag.icon className="h-3.5 w-3.5 text-accent" />
+                  <div key={i} className="flex items-center gap-2 text-[7px] md:text-[9px] font-black uppercase tracking-[0.2em]">
+                    <tag.icon className="h-3 w-3 text-accent" />
                     <span>{tag.label}</span>
                   </div>
                 ))}
