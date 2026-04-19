@@ -289,7 +289,7 @@ export default function ForUniversitiesPage() {
                 <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-extrabold rounded-funky px-8 py-4 text-base shadow-lg shadow-accent/20 transition-all hover:scale-105 h-auto">
                   <Link href="/contact">Inquire Now</Link>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="border-white/20 text-white rounded-funky px-8 py-4 text-base font-bold transition-all h-auto cursor-default hover:bg-transparent">
+                <Button asChild size="lg" variant="outline" className="border-white/20 text-black rounded-funky px-8 py-4 text-base font-bold transition-all h-auto cursor-default">
                   <Link href="/pricing">View Packages</Link>
                 </Button>
               </div>

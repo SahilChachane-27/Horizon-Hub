@@ -72,7 +72,7 @@ export function Header() {
               })}
             </nav>
             <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold rounded-funky text-[11px] h-10 px-6 shrink-0 transition-all hover:scale-105 active:scale-95">
-              <Link href="/contact">Begin Research</Link>
+              <Link href="/contact">Contact Us</Link>
             </Button>
           </div>
 
@@ -114,7 +114,7 @@ export function Header() {
                     <div className="pt-8 w-full">
                       <SheetClose asChild>
                         <Button asChild className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-bold rounded-funky h-14 text-base">
-                          <Link href="/contact">Contact US</Link>
+                          <Link href="/contact">Contact Us</Link>
                         </Button>
                       </SheetClose>
                     </div>
