@@ -187,7 +187,7 @@ export default function ForUniversitiesPage() {
                 Publisher Services
               </h2>
               <p className="text-accent font-bold uppercase tracking-widest text-xs mt-2 mb-6" data-aos="fade-up">
-                Enhancing the Quality and Reach of Indian Research
+                Enhancing the Quality and Reach of Global Research
               </p>
               <div className="mt-4 w-24 h-1 bg-accent mx-auto mb-8" data-aos="fade-up"></div>
               <p className="text-foreground/70 text-sm md:text-base leading-relaxed font-medium" data-aos="fade-up">
@@ -231,7 +231,7 @@ export default function ForUniversitiesPage() {
 
             <div className="mt-20 p-10 bg-secondary/30 rounded-funky border border-primary/5 text-center max-w-4xl mx-auto" data-aos="fade-up">
               <p className="text-sm md:text-base text-foreground/80 leading-relaxed italic">
-                By partnering with Technical Journals, publishers can focus on producing quality research while we take care of the technical, editorial, and promotional aspects of journal management. Together, we can advance the reach and impact of Indian scholarship on a global scale.
+                By partnering with Technical Journals, publishers can focus on producing quality research while we take care of the technical, editorial, and promotional aspects of journal management. Together, we can advance the reach and impact of institutional scholarship on a global scale.
               </p>
             </div>
           </div>
@@ -274,34 +274,34 @@ export default function ForUniversitiesPage() {
           </div>
         </section>
 
-        {/* CTA Section */}
+        {/* CTA Section - Reduced Size */}
         <section className="py-12 md:py-16 bg-primary text-white border-y border-border/50 relative overflow-hidden">
           <div className="container mx-auto px-8 md:px-16 lg:px-32 text-center relative z-10">
             <div className="max-w-4xl mx-auto" data-aos="zoom-in">
-              <h2 className="text-2xl md:text-3xl font-bold font-headline mb-4">
+              <h2 className="text-xl md:text-2xl font-bold font-headline mb-4 italic">
                 Start Your Research Journal Today
               </h2>
-              <p className="text-sm md:text-base text-white/70 mb-8 font-medium">
-                Contact our institutional partnership team to discuss MoU formalities and technical demo setup for your university.
+              <p className="text-xs md:text-sm text-white/70 mb-8 font-medium max-w-2xl mx-auto">
+                Contact our institutional partnership team to discuss MoU formalities and technical setup for your university.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-                <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-extrabold rounded-funky px-8 py-4 text-base shadow-lg shadow-accent/20 transition-all hover:scale-105 h-auto">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-extrabold rounded-funky px-8 py-3 text-sm shadow-lg shadow-accent/20 transition-all hover:scale-105 h-auto">
                   <Link href="/contact">Inquire Now</Link>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="border-white/20 text-black rounded-funky px-8 py-4 text-base font-bold transition-all h-auto cursor-default">
+                <Button asChild size="lg" variant="outline" className="border-white/20 text-white rounded-funky px-8 py-3 text-sm font-bold h-auto cursor-default transition-none">
                   <Link href="/pricing">View Packages</Link>
                 </Button>
               </div>
 
-              <div className="flex flex-wrap justify-center gap-6 md:gap-10">
+              <div className="flex flex-wrap justify-center gap-6 md:gap-10 opacity-40">
                 {[
                   { label: "Platform Migration", icon: Rocket },
                   { label: "Institutional Ownership", icon: ShieldCheck },
                   { label: "Compliance Setup", icon: CheckCircle2 }
                 ].map((tag, i) => (
-                  <div key={i} className="flex items-center gap-2 text-[10px] md:text-xs font-black text-white/40 uppercase tracking-[0.2em]">
-                    <tag.icon className="h-4 w-4 text-accent" />
+                  <div key={i} className="flex items-center gap-2 text-[8px] md:text-[10px] font-black uppercase tracking-[0.2em]">
+                    <tag.icon className="h-3.5 w-3.5 text-accent" />
                     <span>{tag.label}</span>
                   </div>
                 ))}

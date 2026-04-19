@@ -97,17 +97,17 @@ export default function ResourcesPage() {
                     <LifeBuoy className="h-3.5 w-3.5" />
                     Support Documentation
                   </div>
-                  <h2 className="text-xl md:text-3xl font-extrabold font-headline leading-tight italic">
+                  <h2 className="text-xl md:text-2xl font-extrabold font-headline leading-tight italic">
                     Technical Guide for Technical Journals
                   </h2>
-                  <p className="text-sm md:text-base opacity-80 leading-relaxed font-medium italic">
+                  <p className="text-xs md:text-sm opacity-80 leading-relaxed font-medium italic max-w-lg">
                     Need help navigating our Journal Management System? Access comprehensive guides on manuscript tracking, reviewer assignment, and production workflows.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                    <Button size="lg" className="w-full sm:w-auto bg-accent hover:bg-accent/90 text-accent-foreground font-extrabold rounded-funky px-6 md:px-10 py-3 md:py-5 text-xs md:text-sm shadow-xl shadow-accent/20 transition-all hover:scale-105 h-auto">
+                    <Button size="lg" className="w-full sm:w-auto bg-accent hover:bg-accent/90 text-accent-foreground font-extrabold rounded-funky px-6 md:px-10 py-2.5 md:py-4 text-xs shadow-xl shadow-accent/20 transition-all hover:scale-105 h-auto">
                       Technical Guides
                     </Button>
-                    <Button variant="outline" size="lg" className="w-full sm:w-auto border-white/20 text-black rounded-funky px-6 md:px-10 py-3 md:py-5 text-xs md:text-sm font-bold h-auto hover:bg-transparent hover:text-white">
+                    <Button variant="outline" size="lg" className="w-full sm:w-auto border-white/20 text-white rounded-funky px-6 md:px-10 py-2.5 md:py-4 text-xs font-bold h-auto hover:bg-white hover:text-primary transition-all">
                       Video Tutorials
                     </Button>
                   </div>

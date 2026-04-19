@@ -70,8 +70,8 @@ export function Header() {
                 );
               })}
             </nav>
-            <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-funky font-bold px-6 h-10 transition-transform hover:scale-105">
-              <Link href="/contact">Contact Us</Link>
+            <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-funky font-bold px-6 h-10 transition-transform hover:scale-105 border-none">
+              <Link href="/contact">CONTACT US</Link>
             </Button>
           </div>
 
@@ -79,7 +79,7 @@ export function Header() {
             {isClient && (
               <>
                 <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90 h-10 px-4 rounded-funky sm:flex hidden font-bold border-none">
-                  <Link href="/contact">Contact</Link>
+                  <Link href="/contact">CONTACT US</Link>
                 </Button>
                 <Sheet>
                   <SheetTrigger asChild>
@@ -116,7 +116,7 @@ export function Header() {
                       ))}
                     </nav>
                     <SheetClose asChild>
-                      <Button asChild className="w-full bg-accent text-accent-foreground font-bold h-14 rounded-funky">
+                      <Button asChild className="w-full bg-accent text-accent-foreground font-bold h-14 rounded-funky border-none">
                         <Link href="/contact">Get in Touch</Link>
                       </Button>
                     </SheetClose>
