@@ -31,9 +31,9 @@ const resourceCategories = [
     description: "Guidelines aligned with the Committee on Publication Ethics (COPE) to ensure institutional research integrity."
   },
   {
-    title: "Scholar JMS Documentation",
+    title: "Technical Journals Documentation",
     icon: BookOpen,
-    description: "Comprehensive technical manuals and user guides for the Scholar Journal Management System (JMS)."
+    description: "Comprehensive technical manuals and user guides for the Technical Journals Management System (JMS)."
   }
 ];
 
@@ -98,7 +98,7 @@ export default function ResourcesPage() {
                     Support Documentation
                   </div>
                   <h2 className="text-xl md:text-3xl font-extrabold font-headline leading-tight italic">
-                    Technical Guide for Scholar JMS
+                    Technical Guide for Technical Journals
                   </h2>
                   <p className="text-sm md:text-base opacity-80 leading-relaxed font-medium italic">
                     Need help navigating our Journal Management System? Access comprehensive guides on manuscript tracking, reviewer assignment, and production workflows.
