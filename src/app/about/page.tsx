@@ -31,7 +31,7 @@ export default function AboutPage() {
     {
       icon: Cpu,
       title: "Platform Powered",
-      desc: "Utilizing industry-grade professional platforms for journal management."
+      desc: "Utilizing industry-grade professional systems for journal management."
     },
     {
       icon: Globe,
@@ -45,15 +45,15 @@ export default function AboutPage() {
       <Header />
       <main className="flex-1">
         {/* Hero Section - Standardized Banner */}
-        <section className="relative pt-32 pb-24 md:pt-44 md:pb-28 bg-primary text-primary-foreground overflow-hidden">
+        <section className="relative pt-24 pb-16 md:pt-32 md:pb-20 bg-primary text-primary-foreground overflow-hidden">
           <div className="container mx-auto px-6 md:px-16 lg:px-32 relative z-10 text-center">
             <div className="max-w-4xl mx-auto" data-aos="fade-up">
-              <h1 className="text-xl sm:text-2xl md:text-3xl font-bold font-headline italic leading-tight mb-6">
+              <h1 className="text-xl sm:text-2xl md:text-3xl font-bold font-headline italic leading-tight mb-4">
                 About Technical Journals
               </h1>
-              <div className="w-20 h-1 bg-accent mx-auto mb-6"></div>
+              <div className="w-16 h-1 bg-accent mx-auto mb-4"></div>
               <p className="text-xs sm:text-sm md:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed font-medium">
-                Empowering academic institutions with secure, scalable, and sovereign journal hosting solutions built on the secure Platform.
+                Empowering academic institutions with secure, scalable, and sovereign journal hosting solutions built on the Technical Journals platform.
               </p>
             </div>
           </div>
@@ -70,10 +70,10 @@ export default function AboutPage() {
         </section>
 
         {/* Core Content */}
-        <section className="py-16 md:py-24 bg-white">
+        <section className="py-12 md:py-16 bg-white">
           <div className="container mx-auto px-8 md:px-16 lg:px-32">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <div className="relative aspect-square rounded-funky overflow-hidden shadow-2xl" data-aos="fade-right">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="relative aspect-square rounded-funky overflow-hidden shadow-xl" data-aos="fade-right">
                 <Image
                   src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
                   alt="University Publishing"
@@ -82,7 +82,7 @@ export default function AboutPage() {
                   data-ai-hint="academic publishing"
                 />
               </div>
-              <div className="space-y-8" data-aos="fade-left">
+              <div className="space-y-6" data-aos="fade-left">
                 <div>
                   <h2 className="text-2xl md:text-3xl font-bold text-primary font-headline">
                     Our Academic Mission
@@ -127,24 +127,24 @@ export default function AboutPage() {
         </section>
 
         {/* Key Pillars */}
-        <section className="py-20 bg-slate-50">
-          <div className="container mx-auto px-8 md:px-16 lg:px-32 text-center mb-16">
-            <h2 className="text-2xl md:text-3xl font-bold text-primary font-headline mb-4" data-aos="fade-up">
+        <section className="py-16 bg-slate-50">
+          <div className="container mx-auto px-8 md:px-16 lg:px-32 text-center mb-12">
+            <h2 className="text-2xl md:text-3xl font-bold text-primary font-headline mb-3" data-aos="fade-up">
               Key Pillars of Excellence
             </h2>
-            <div className="w-20 h-1 bg-accent mx-auto mb-12" data-aos="fade-up"></div>
+            <div className="w-16 h-1 bg-accent mx-auto mb-10" data-aos="fade-up"></div>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {pillars.map((pillar, idx) => (
-                <Card key={idx} className="border-none shadow-xl rounded-funky bg-white p-8 flex flex-col items-center text-center transition-all hover:shadow-2xl hover:-translate-y-2" data-aos="fade-up" data-aos-delay={idx * 100}>
-                  <div className="mb-6 p-5 bg-primary rounded-full text-accent shadow-lg">
-                    <pillar.icon className="h-8 w-8" />
+                <Card key={idx} className="border-none shadow-xl rounded-funky bg-white p-6 flex flex-col items-center text-center transition-all hover:shadow-2xl hover:-translate-y-1" data-aos="fade-up" data-aos-delay={idx * 100}>
+                  <div className="mb-4 p-4 bg-primary rounded-full text-accent shadow-lg">
+                    <pillar.icon className="h-6 w-6" />
                   </div>
-                  <CardHeader className="p-0 mb-4">
-                    <CardTitle className="text-xl text-primary font-bold leading-tight">{pillar.title}</CardTitle>
+                  <CardHeader className="p-0 mb-3">
+                    <CardTitle className="text-lg text-primary font-bold leading-tight">{pillar.title}</CardTitle>
                   </CardHeader>
                   <CardContent className="p-0">
-                    <p className="text-foreground/70 text-sm leading-relaxed font-medium">{pillar.desc}</p>
+                    <p className="text-foreground/70 text-xs leading-relaxed font-medium">{pillar.desc}</p>
                   </CardContent>
                 </Card>
               ))}

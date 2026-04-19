@@ -6,7 +6,7 @@ import { ScrollToTop } from '@/components/layout/scroll-to-top';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Calendar, Clock, ChevronRight } from 'lucide-react';
+import { Calendar, Clock } from 'lucide-react';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
@@ -14,35 +14,35 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 const blogPosts = [
   { 
     id: 'blog-post-1', 
-    category: 'Sustainability', 
-    title: 'The Future of Eco-Friendly Construction Materials', 
+    category: 'Innovation', 
+    title: 'The Future of Open Access Publishing', 
     date: 'Jan 15, 2026', 
     readTime: '8 min read', 
-    excerpt: 'Exploring the latest innovations in sustainable building materials and how they are transforming the industry for a greener future.' 
+    excerpt: 'Exploring the latest innovations in academic publishing and how open access is transforming research visibility.' 
   },
   { 
     id: 'blog-post-2', 
-    category: 'Interior Design', 
-    title: 'Minimalist Trends in Modern Luxury Residential Projects', 
+    category: 'Research Ethics', 
+    title: 'Maintaining Integrity in Peer Review Systems', 
     date: 'Feb 02, 2026', 
     readTime: '6 min read', 
-    excerpt: 'How high-end developments are embracing minimalism to create sophisticated, open-concept living spaces that breathe.' 
+    excerpt: 'How academic institutions are implementing rigorous peer-review standards to ensure research quality and transparency.' 
   },
   { 
     id: 'blog-post-3', 
-    category: 'Urban Planning', 
-    title: 'The Impact of Mixed-Use Developments on City Life', 
+    category: 'Digital Archiving', 
+    title: 'The Importance of Long-term Research Preservation', 
     date: 'Feb 10, 2026', 
     readTime: '10 min read', 
-    excerpt: 'Analyzing how combining commercial, residential, and retail spaces creates more vibrant and sustainable urban centers.' 
+    excerpt: 'Analyzing the role of structured archiving and PIDs in maintaining the accessibility of scholarly work over time.' 
   },
   { 
     id: 'blog-post-4', 
-    category: 'Technology', 
-    title: 'Smart Buildings: Integrating IoT into Commercial Architecture', 
+    category: 'Institutional Growth', 
+    title: 'Elevating University Rankings through Scholarly Output', 
     date: 'Mar 05, 2026', 
     readTime: '12 min read', 
-    excerpt: 'From energy efficiency to occupant comfort, see how the Internet of Things is revolutionizing modern office towers.' 
+    excerpt: 'How owning a branded journal portfolio directly impacts institutional prestige and global academic standing.' 
   }
 ];
 
@@ -59,22 +59,22 @@ export default function BlogPage() {
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
       <main className="flex-1">
-        <section className="bg-primary text-white pt-32 pb-16 md:pb-24">
+        <section className="bg-primary text-white pt-24 pb-12 md:pb-16">
           <div className="container mx-auto px-4 text-left">
-            <h1 className="text-4xl md:text-6xl font-bold font-headline italic mb-6 leading-tight">
-              Horizon <span className="text-accent">Insights</span>
+            <h1 className="text-3xl md:text-5xl font-bold font-headline italic mb-4 leading-tight">
+              Technical Journals <span className="text-accent">Insights</span>
             </h1>
-            <p className="text-lg md:text-xl text-white/80 max-w-2xl font-medium italic">
-              Latest trends, news, and deep dives from the world of premium real estate and construction.
+            <p className="text-base md:text-lg text-white/80 max-w-2xl font-medium italic">
+              Latest trends, news, and deep dives from the world of academic publishing and institutional research.
             </p>
           </div>
         </section>
 
-        <section className="py-16 md:py-24">
+        <section className="py-12 md:py-16">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {blogPosts.map((post, index) => (
-                <Card key={post.id} className="overflow-hidden shadow-lg border-none bg-slate-50 flex flex-col rounded-funky transition-all duration-500 hover:bg-white hover:shadow-2xl hover:-translate-y-2 group" data-aos="fade-up" data-aos-delay={index * 50}>
+                <Card key={post.id} className="overflow-hidden shadow-lg border-none bg-slate-50 flex flex-col rounded-funky transition-all duration-500 hover:bg-white hover:shadow-2xl hover:-translate-y-1 group" data-aos="fade-up" data-aos-delay={index * 50}>
                   <div className="relative aspect-video overflow-hidden">
                     <Image 
                       src={PlaceHolderImages.find(p => p.id === `project-${(index % 3) + 1}`)?.imageUrl || ''} 

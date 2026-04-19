@@ -1,4 +1,3 @@
-
 'use client';
 
 import Image from 'next/image';
@@ -16,55 +15,55 @@ const testimonials = [
   {
     id: 'testimonial-1',
     quote:
-      'Horizon Group transformed our vision into reality with exceptional attention to detail. The quality of construction and their professional approach throughout the project was outstanding.',
-    name: 'Robert Johnson',
-    title: 'CEO, Johnson Enterprises',
+      'Technical Journals transformed our vision into reality with exceptional attention to detail. The quality of hosting and their professional approach throughout the project was outstanding.',
+    name: 'Dr. Robert Johnson',
+    title: 'Director of Research, Academic Excellence Univ.',
   },
   {
     id: 'testimonial-2',
     quote:
-      'Working with Horizon Group was a seamless experience. They delivered our commercial complex ahead of schedule without compromising on quality. Highly recommended!',
-    name: 'Sarah Williams',
-    title: 'Director, Urban Developments Inc.',
+      'Working with Technical Journals was a seamless experience. They delivered our institutional portal ahead of schedule without compromising on quality. Highly recommended!',
+    name: 'Prof. Sarah Williams',
+    title: 'Dean of Engineering, Global Tech Institute',
   },
   {
     id: 'testimonial-3',
     quote:
-      "The renovation of our corporate headquarters exceeded all expectations. Horizon Group's team was professional, innovative, and delivered exceptional results.",
-    name: 'Michael Chen',
-    title: 'CFO, TechVantage Solutions',
+      "The setup of our university research journals exceeded all expectations. Technical Journals' team was professional, innovative, and delivered exceptional results.",
+    name: 'Dr. Michael Chen',
+    title: 'Chief Editor, Innovation & Science Journal',
   },
   {
     id: 'testimonial-4',
     quote:
-      'The custom home they built for my family is a masterpiece. The craftsmanship is impeccable, and they brought our dream to life perfectly.',
-    name: 'Emily Davis',
-    title: 'Homeowner',
+      'The custom hosting portal they built for my department is a masterpiece. The workflow integration is impeccable, and they brought our dream to life perfectly.',
+    name: 'Dr. Emily Davis',
+    title: 'Journal Administrator',
   },
   {
     id: 'testimonial-5',
     quote:
-      "From land acquisition to final sales, Horizon Group's development expertise is unparalleled. They delivered a highly profitable and beautifully designed community.",
-    name: 'David Rodriguez',
-    title: 'Real Estate Investor',
+      "From platform setup to indexing support, Technical Journals' academic expertise is unparalleled. They delivered a highly professional and beautifully designed ecosystem.",
+    name: 'Dr. David Rodriguez',
+    title: 'Dean, Medical Sciences Faculty',
   },
 ];
 
 export function Testimonials() {
   const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true })
+    Autoplay({ delay: 3000, stopOnInteraction: true })
   );
 
   return (
-    <section id="testimonials" className="py-16 md:py-24">
+    <section id="testimonials" className="py-12 md:py-16 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12" data-aos="fade-up">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">
-            Client Testimonials
+        <div className="text-center mb-10" data-aos="fade-up">
+          <h2 className="text-2xl md:text-3xl font-bold text-primary font-headline">
+            Academic Community Feedback
           </h2>
-          <div className="mt-4 w-24 h-1 bg-accent mx-auto"></div>
-          <p className="mt-6 text-base md:text-lg text-foreground/80 max-w-2xl mx-auto">
-            What our clients say about working with Horizon Group.
+          <div className="mt-2 w-16 h-1 bg-accent mx-auto"></div>
+          <p className="mt-4 text-sm md:text-base text-foreground/80 max-w-2xl mx-auto">
+            Hear from university leadership and research directors who trust Technical Journals for their institutional publications.
           </p>
         </div>
         <Carousel
@@ -88,25 +87,26 @@ export function Testimonials() {
                   <div className="p-1 flex-1">
                     <Card className="bg-card shadow-lg rounded-funky h-full flex flex-col border-border/50">
                       <CardContent className="p-8 md:p-12 flex flex-col flex-1">
-                        <p className="text-lg md:text-xl text-center text-foreground/80 mb-6 italic flex-grow">
+                        <p className="text-lg md:text-xl text-center text-foreground/80 mb-8 italic flex-grow leading-relaxed">
                           "{testimonial.quote}"
                         </p>
-                        <div className="flex items-center gap-4">
-                          {testimonialImage && (
-                            <Image
-                              src={testimonialImage.imageUrl}
-                              alt={`Portrait of ${testimonial.name}`}
-                              width={64}
-                              height={64}
-                              className="rounded-full"
-                              data-ai-hint={testimonialImage.imageHint}
-                            />
-                          )}
+                        <div className="flex items-center gap-4 border-t border-slate-100 pt-6">
+                          <div className="relative h-14 w-14 shrink-0">
+                            {testimonialImage && (
+                              <Image
+                                src={testimonialImage.imageUrl}
+                                alt={`Portrait of ${testimonial.name}`}
+                                fill
+                                className="rounded-full object-cover border-2 border-accent/20"
+                                data-ai-hint={testimonialImage.imageHint}
+                              />
+                            )}
+                          </div>
                           <div className="text-left">
                             <p className="font-bold text-lg text-primary">
                               {testimonial.name}
                             </p>
-                            <p className="text-foreground/70">
+                            <p className="text-xs font-black text-accent uppercase tracking-widest">
                               {testimonial.title}
                             </p>
                           </div>

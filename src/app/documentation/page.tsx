@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react';
 const docs = [
   { icon: Book, title: "User Guide", desc: "Learn how to manage your journal from start to finish." },
   { icon: Terminal, title: "API Reference", desc: "Integration guides for advanced indexing and tools." },
-  { icon: Shield, title: "Security Protocols", desc: "Understanding OJS Platform data protection measures." },
+  { icon: Shield, title: "Security Protocols", desc: "Understanding Technical Journals platform data protection measures." },
   { icon: Code, title: "Customization", desc: "Branding and workflow configuration documentation." },
 ];
 
@@ -26,22 +26,22 @@ export default function DocsPage() {
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
       <main className="flex-1">
-        <section className="bg-primary text-white pt-32 pb-24 text-center">
+        <section className="bg-primary text-white pt-24 pb-16 text-center">
           <div className="container mx-auto px-4">
-            <h1 className="text-xl sm:text-2xl md:text-3xl font-bold font-headline mb-6 leading-tight italic" data-aos="fade-up">Documentation Hub</h1>
+            <h1 className="text-xl sm:text-2xl md:text-3xl font-bold font-headline mb-4 leading-tight italic" data-aos="fade-up">Documentation Hub</h1>
             <p className="text-xs sm:text-sm md:text-lg text-white/80 max-w-2xl mx-auto italic font-medium leading-relaxed" data-aos="fade-up" data-aos-delay="100">
               Everything you need to know about setting up and running your university journal.
             </p>
           </div>
         </section>
 
-        <div className="container mx-auto px-4 py-20">
+        <div className="container mx-auto px-4 py-12 md:py-16">
           <div className="grid md:grid-cols-2 gap-8">
             {docs.map((doc, i) => (
               <Card key={i} className="rounded-funky border border-border/50 shadow-md hover:shadow-xl transition-all cursor-pointer group" data-aos="fade-up" data-aos-delay={i * 100}>
-                <CardContent className="p-10 flex gap-6 items-center">
-                  <div className="h-16 w-16 rounded-funky bg-secondary flex items-center justify-center group-hover:bg-accent transition-colors">
-                    <doc.icon className="h-8 w-8 text-primary group-hover:text-accent-foreground" />
+                <CardContent className="p-8 md:p-10 flex gap-6 items-center">
+                  <div className="h-14 w-14 rounded-funky bg-secondary flex items-center justify-center group-hover:bg-accent transition-colors">
+                    <doc.icon className="h-7 w-7 text-primary group-hover:text-accent-foreground" />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-primary mb-2">{doc.title}</h3>

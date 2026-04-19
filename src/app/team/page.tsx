@@ -4,35 +4,35 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Users, HardHat, Compass, Building, Ruler, Pencil } from 'lucide-react';
+import { Users, HardHat, Compass, Building, Ruler, Pencil, BookOpen, Database, ShieldCheck } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
 const leadership = [
   {
     name: "Robert Henderson",
     role: "CEO & Founder",
-    bio: "With over 30 years in construction management, Robert has led Horizon Group from a small boutique builder to a national leader in luxury residential and commercial developments.",
-    specialties: ["Strategic Planning", "Project Management", "Stakeholder Relations"]
+    bio: "With over 30 years in academic technology management, Robert has led Technical Journals from a specialized startup to a global leader in university-exclusive journal hosting and digital archiving.",
+    specialties: ["Strategic Planning", "Academic Partnerships", "Institutional Sovereignty"]
   },
   {
     name: "Sarah Chen",
-    role: "Chief Architect",
-    bio: "An award-winning architect specialized in sustainable urban design. Sarah ensures that every Horizon project balances modern aesthetics with environmental responsibility.",
-    specialties: ["Sustainable Design", "Urban Planning", "Architectural Innovation"]
+    role: "Chief Technology Officer",
+    bio: "An expert in digital preservation and scholarly workflows. Sarah ensures that the Technical Journals platform balances performance with international indexing standards and security.",
+    specialties: ["Platform Architecture", "Indexing Compliance", "Metadata Standards"]
   },
   {
     name: "Michael Rossi",
     role: "Director of Operations",
-    bio: "Michael oversees all field operations, ensuring projects are delivered on time and within budget while maintaining our strict quality and safety protocols.",
-    specialties: ["Field Operations", "Budgeting", "Safety Management"]
+    bio: "Michael oversees all hosting operations, ensuring that institutional journals maintain 99.9% uptime while adhering to strict publication ethics and technical protocols.",
+    specialties: ["Hosting Operations", "Support Systems", "Quality Assurance"]
   }
 ];
 
 const experts = [
-  { icon: HardHat, name: "David Miller", role: "Senior Project Manager" },
-  { icon: Ruler, name: "Jessica Lane", role: "Structural Engineer" },
-  { icon: Pencil, name: "Tom Wilson", role: "Interior Designer" },
-  { icon: Compass, name: "Elena Martinez", role: "Development Strategist" }
+  { icon: BookOpen, name: "David Miller", role: "Editorial Workflow Lead" },
+  { icon: Database, name: "Jessica Lane", role: "Indexing Strategist" },
+  { icon: ShieldCheck, name: "Tom Wilson", role: "Security & Ethics Compliance" },
+  { icon: Compass, name: "Elena Martinez", role: "Institutional Growth Specialist" }
 ];
 
 export default function TeamPage() {
@@ -52,7 +52,7 @@ export default function TeamPage() {
           <div className="container mx-auto px-4">
             <h1 className="text-4xl md:text-6xl font-bold font-headline mb-6" data-aos="fade-up">Our Expert Team</h1>
             <p className="text-xl text-white/80 max-w-2xl mx-auto italic font-medium" data-aos="fade-up" data-aos-delay="100">
-              Meet the visionary architects, skilled engineers, and dedicated managers building the landmarks of tomorrow.
+              Meet the visionary technologists, skilled engineers, and dedicated specialists powering the future of academic publishing.
             </p>
           </div>
         </section>
@@ -84,7 +84,7 @@ export default function TeamPage() {
           </div>
 
           <div className="text-center mb-16" data-aos="fade-up">
-            <h2 className="text-3xl font-bold text-primary font-headline italic">Project Specialists</h2>
+            <h2 className="text-3xl font-bold text-primary font-headline italic">Specialized Leads</h2>
             <div className="mt-4 w-12 h-1 bg-accent mx-auto"></div>
           </div>
 

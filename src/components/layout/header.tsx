@@ -116,7 +116,7 @@ export function Header() {
                       ))}
                     </nav>
                     <SheetClose asChild>
-                      <Button asChild className="w-full bg-accent text-accent-foreground font-bold h-14 rounded-funky border-none">
+                      <Button asChild className="w-full bg-accent text-accent-foreground font-bold h-14 rounded-funky border-none shadow-lg">
                         <Link href="/contact">Get in Touch</Link>
                       </Button>
                     </SheetClose>

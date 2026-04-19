@@ -70,7 +70,7 @@ export default function StartJournalPage() {
                 Start Your Journal with Technical Journals
               </h1>
               <p className="max-w-5xl mx-auto text-sm sm:text-lg md:text-xl text-white/90 font-medium italic">
-                Empowering your institution with OJS Platform technology.
+                Empowering your institution with Technical Journals platform technology.
               </p>
 
               <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 sm:gap-8 text-white/90">
@@ -95,42 +95,40 @@ export default function StartJournalPage() {
           </div>
         </section>
 
-        <section className="bg-slate-50 py-20 px-4">
+        <section className="bg-slate-50 py-16 px-4">
           <div className="container mx-auto max-w-4xl">
-            <div className="bg-white p-6 md:p-12 rounded-funky shadow-2xl border border-border/50">
-              <div className="text-center mb-10">
+            <div className="bg-white p-6 md:p-10 rounded-funky shadow-2xl border border-border/50">
+              <div className="text-center mb-8">
                 <h2 className="text-2xl sm:text-3xl font-bold text-primary font-headline italic">Institutional Inquiry Form</h2>
-                <div className="mt-2 w-16 h-1 bg-accent mx-auto"></div>
+                <div className="mt-2 w-12 h-1 bg-accent mx-auto"></div>
               </div>
 
               <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                   <FormField
                     control={form.control}
                     name="name"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-base font-bold text-primary">Full Name <span className="text-destructive">*</span></FormLabel>
+                        <FormLabel className="text-sm font-bold text-primary">Full Name <span className="text-destructive">*</span></FormLabel>
                         <FormControl>
-                          <Input placeholder="Enter your full name" {...field} className="rounded-xl h-12 border-input focus:ring-primary/50" />
+                          <Input placeholder="Enter your full name" {...field} className="rounded-xl h-11 border-input focus:ring-primary/50" />
                         </FormControl>
-                        <p className="text-xs text-muted-foreground mt-1">{(watchValues.name || "").length}/255 characters</p>
                         <FormMessage />
                       </FormItem>
                     )}
                   />
 
-                  <div className="grid md:grid-cols-2 gap-8">
+                  <div className="grid md:grid-cols-2 gap-6">
                     <FormField
                       control={form.control}
                       name="email"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-base font-bold text-primary">Email Address <span className="text-destructive">*</span></FormLabel>
+                          <FormLabel className="text-sm font-bold text-primary">Email Address <span className="text-destructive">*</span></FormLabel>
                           <FormControl>
-                            <Input placeholder="Enter your email address" {...field} className="rounded-xl h-12 border-input focus:ring-primary/50" />
+                            <Input placeholder="Enter your email address" {...field} className="rounded-xl h-11 border-input focus:ring-primary/50" />
                           </FormControl>
-                          <p className="text-xs text-muted-foreground mt-1">{(watchValues.email || "").length}/255 characters</p>
                           <FormMessage />
                         </FormItem>
                       )}
@@ -140,11 +138,10 @@ export default function StartJournalPage() {
                       name="mobile"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-base font-bold text-primary">Mobile Number <span className="text-destructive">*</span></FormLabel>
+                          <FormLabel className="text-sm font-bold text-primary">Mobile Number <span className="text-destructive">*</span></FormLabel>
                           <FormControl>
-                            <Input placeholder="Enter your mobile number" {...field} className="rounded-xl h-12 border-input focus:ring-primary/50" />
+                            <Input placeholder="Enter your mobile number" {...field} className="rounded-xl h-11 border-input focus:ring-primary/50" />
                           </FormControl>
-                          <p className="text-xs text-muted-foreground mt-1">{(watchValues.mobile || "").length}/20 characters</p>
                           <FormMessage />
                         </FormItem>
                       )}
@@ -156,7 +153,7 @@ export default function StartJournalPage() {
                     name="hasIssn"
                     render={({ field }) => (
                       <FormItem className="space-y-3">
-                        <FormLabel className="text-base font-bold text-primary">Do you have ISSN for your journal? <span className="text-destructive">*</span></FormLabel>
+                        <FormLabel className="text-sm font-bold text-primary">Do you have ISSN for your journal? <span className="text-destructive">*</span></FormLabel>
                         <FormControl>
                           <RadioGroup
                             onValueChange={field.onChange}
@@ -187,15 +184,14 @@ export default function StartJournalPage() {
                     name="message"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-base font-bold text-primary">Additional Message (Optional)</FormLabel>
+                        <FormLabel className="text-sm font-bold text-primary">Additional Message (Optional)</FormLabel>
                         <FormControl>
                           <Textarea 
                             placeholder="Tell us more about your requirements..." 
-                            className="rounded-xl min-h-[120px] border-input focus:ring-primary/50" 
+                            className="rounded-xl min-h-[100px] border-input focus:ring-primary/50" 
                             {...field} 
                           />
                         </FormControl>
-                        <p className="text-xs text-muted-foreground mt-1">{(watchValues.message || "").length}/2000 characters</p>
                         <FormMessage />
                       </FormItem>
                     )}
@@ -204,14 +200,13 @@ export default function StartJournalPage() {
                   <Button 
                     type="submit" 
                     size="lg" 
-                    className="w-full bg-primary hover:bg-primary/90 text-accent rounded-funky py-2 sm:py-3 md:py-6 text-sm sm:text-base md:text-xl font-bold shadow-xl transition-all hover:scale-[1.01]"
+                    className="w-full bg-primary hover:bg-primary/90 text-accent rounded-funky py-4 text-base font-bold shadow-xl transition-all hover:scale-[1.01]"
                   >
                     Submit Inquiry
                   </Button>
                   
-                  <p className="text-xs sm:text-sm text-center text-muted-foreground mt-4">
-                    By submitting this form, you agree to our Terms of Service and Privacy Policy. 
-                    We respect your privacy and will never share your information.
+                  <p className="text-xs text-center text-muted-foreground mt-2">
+                    By submitting this form, you agree to our Terms of Service and Privacy Policy.
                   </p>
                 </form>
               </Form>
