@@ -274,7 +274,7 @@ export default function ForUniversitiesPage() {
         </section>
 
         {/* CTA Section - Compact */}
-        <section className="py-12 md:py-16 bg-primary text-white border-y border-border/50 relative overflow-hidden">
+        <section className="py-12 bg-primary text-white border-y border-border/50 relative overflow-hidden">
           <div className="container mx-auto px-8 md:px-16 lg:px-32 text-center relative z-10">
             <div className="max-w-4xl mx-auto" data-aos="zoom-in">
               <h2 className="text-xl md:text-2xl font-bold font-headline mb-3 italic">
@@ -288,7 +288,7 @@ export default function ForUniversitiesPage() {
                 <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-extrabold rounded-funky px-8 py-3 text-xs shadow-xl shadow-accent/20 transition-all hover:scale-105 h-auto">
                   <Link href="/contact">Inquire Now</Link>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="border-white/20 text-white rounded-funky px-8 py-3 text-xs font-bold h-auto cursor-default">
+                <Button asChild size="lg" variant="outline" className="border-white text-white bg-transparent rounded-funky px-8 py-3 text-xs font-bold h-auto hover:bg-white/10 transition-colors">
                   <Link href="/pricing">View Packages</Link>
                 </Button>
               </div>

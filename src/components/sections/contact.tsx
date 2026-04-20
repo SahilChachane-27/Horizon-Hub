@@ -45,11 +45,11 @@ export function Contact() {
 
   return (
     <div className="max-w-3xl mx-auto overflow-hidden">
-      <div className="bg-white p-6 md:p-8 rounded-funky shadow-2xl border border-border/50" data-aos="fade-up">
+      <div className="bg-white p-6 rounded-funky shadow-2xl border border-border/50" data-aos="fade-up">
         <div className="text-center mb-6">
-          <h2 className="text-2xl font-bold text-primary font-headline italic">Institutional Inquiry</h2>
+          <h2 className="text-xl md:text-2xl font-bold text-primary font-headline italic">Institutional Inquiry</h2>
           <div className="mt-1 w-12 h-1 bg-accent mx-auto"></div>
-          <p className="text-[11px] md:text-xs text-foreground/60 mt-3 max-w-lg mx-auto">Tell us about your requirements and our experts will get back to you with a tailored consultation.</p>
+          <p className="text-[10px] md:text-[11px] text-foreground/60 mt-3 max-w-lg mx-auto">Tell us about your requirements and our experts will get back to you with a tailored consultation.</p>
         </div>
         
         {isClient && (

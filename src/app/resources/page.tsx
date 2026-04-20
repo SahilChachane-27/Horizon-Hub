@@ -33,7 +33,7 @@ const resourceCategories = [
   {
     title: "Technical Journals Documentation",
     icon: BookOpen,
-    description: "Comprehensive technical manuals and user guides for the Technical Journals Management System (JMS)."
+    description: "Comprehensive technical manuals and user guides for the Technical Journals management system."
   }
 ];
 
@@ -88,7 +88,7 @@ export default function ResourcesPage() {
         </section>
 
         {/* Technical Documentation Section - Compact */}
-        <section className="py-10 md:py-16 bg-white">
+        <section className="py-8 bg-white">
           <div className="container mx-auto px-4 md:px-16 lg:px-32">
             <Card className="bg-primary text-primary-foreground p-6 md:p-8 lg:p-10 rounded-[30px] md:rounded-[40px] overflow-hidden relative shadow-2xl border-none" data-aos="fade-up">
               <div className="relative z-10 grid lg:grid-cols-2 gap-8 items-center">

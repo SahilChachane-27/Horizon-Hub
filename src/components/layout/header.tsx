@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, Mail } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
@@ -62,13 +62,11 @@ export function Header() {
           
           <div className="hidden xl:flex items-center gap-8">
             <nav className="flex items-center gap-6">
-              {navLinks.map((link, idx) => {
-                return (
-                  <Link key={idx} href={link.href!} className="text-[13px] font-medium text-white/80 hover:text-white transition-colors uppercase tracking-wider whitespace-nowrap">
-                    {link.label}
-                  </Link>
-                );
-              })}
+              {navLinks.map((link, idx) => (
+                <Link key={idx} href={link.href} className="text-[13px] font-medium text-white/80 hover:text-white transition-colors uppercase tracking-wider whitespace-nowrap">
+                  {link.label}
+                </Link>
+              ))}
             </nav>
             <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-funky font-bold px-6 h-10 transition-transform hover:scale-105 border-none">
               <Link href="/contact">CONTACT US</Link>
@@ -107,7 +105,7 @@ export function Header() {
                       {navLinks.map((link, idx) => (
                         <SheetClose asChild key={idx}>
                           <Link 
-                            href={link.href!} 
+                            href={link.href} 
                             className="text-white/80 hover:text-accent font-medium py-4 border-b border-white/5 w-full transition-colors"
                           >
                             {link.label}
