@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Header } from '@/components/layout/header';
@@ -16,7 +17,7 @@ export default function WhyUsPage() {
               Why Choose Technical Journals?
             </h1>
             <p className="text-xs sm:text-sm md:text-lg opacity-90 max-w-2xl mx-auto leading-relaxed font-medium italic" data-aos="fade-up" data-aos-delay="100">
-              Discover our commitment to academic integrity and the unique advantages we offer to universities.
+              Discover our commitment to academic integrity and the unique advantages we offer exclusively to universities.
             </p>
           </div>
         </section>

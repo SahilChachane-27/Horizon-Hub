@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Header } from '@/components/layout/header';
@@ -49,7 +50,7 @@ export default function AboutPage() {
                 About Technical Journals
               </h1>
               <div className="w-16 h-1 bg-accent mx-auto mb-4"></div>
-              <p className="text-xs sm:text-sm md:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed font-medium">
+              <p className="text-xs sm:text-sm md:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed font-medium italic">
                 Empowering academic institutions with secure, scalable, and sovereign journal hosting solutions built on the Technical Journals platform.
               </p>
             </div>
@@ -81,7 +82,7 @@ export default function AboutPage() {
               </div>
               <div className="space-y-6" data-aos="fade-left">
                 <div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-primary font-headline">
+                  <h2 className="text-2xl md:text-3xl font-bold text-primary font-headline italic">
                     Our Academic Mission
                   </h2>
                   <div className="w-20 h-1 bg-accent mt-2"></div>
@@ -96,7 +97,7 @@ export default function AboutPage() {
                 <div className="grid gap-6">
                   <Card className="bg-card border-0 border-l-4 border-accent shadow-lg rounded-funky overflow-hidden">
                     <CardHeader className="py-4">
-                      <CardTitle className="text-primary text-lg font-headline">Our Vision</CardTitle>
+                      <CardTitle className="text-primary text-lg font-headline italic">Our Vision</CardTitle>
                     </CardHeader>
                     <CardContent className="pb-6">
                       <p className="text-xs text-foreground/80 leading-relaxed font-medium">
@@ -107,7 +108,7 @@ export default function AboutPage() {
 
                   <Card className="bg-card border-0 border-l-4 border-accent shadow-lg rounded-funky overflow-hidden">
                     <CardHeader className="py-4">
-                      <CardTitle className="text-primary text-lg font-headline">Our Mission</CardTitle>
+                      <CardTitle className="text-primary text-lg font-headline italic">Our Mission</CardTitle>
                     </CardHeader>
                     <CardContent className="pb-6">
                       <p className="text-xs text-foreground/80 leading-relaxed font-medium">
@@ -124,7 +125,7 @@ export default function AboutPage() {
         {/* Key Pillars */}
         <section className="py-16 bg-slate-50">
           <div className="container mx-auto px-8 md:px-16 lg:px-32 text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-primary font-headline mb-3" data-aos="fade-up">
+            <h2 className="text-2xl md:text-3xl font-bold text-primary font-headline mb-3 italic" data-aos="fade-up">
               Key Pillars of Excellence
             </h2>
             <div className="w-16 h-1 bg-accent mx-auto mb-10" data-aos="fade-up"></div>
@@ -136,7 +137,7 @@ export default function AboutPage() {
                     <pillar.icon className="h-6 w-6" />
                   </div>
                   <CardHeader className="p-0 mb-3">
-                    <CardTitle className="text-lg text-primary font-bold leading-tight">{pillar.title}</CardTitle>
+                    <CardTitle className="text-lg text-primary font-bold leading-tight italic">{pillar.title}</CardTitle>
                   </CardHeader>
                   <CardContent className="p-0">
                     <p className="text-foreground/70 text-xs leading-relaxed font-medium">{pillar.desc}</p>
